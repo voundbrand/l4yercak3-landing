@@ -27,15 +27,34 @@ export const storeApplication = mutation({
   },
   handler: async (ctx, args) => {
     try {
+      // Helper function for translated error messages
+      const getErrorMessage = (key: string): string => {
+        const messages: Record<string, { en: string; de: string }> = {
+          missingFields: {
+            en: "Missing required fields",
+            de: "Erforderliche Felder fehlen"
+          },
+          invalidEmail: {
+            en: "Invalid email format",
+            de: "Ungültiges E-Mail-Format"
+          },
+          duplicateApplication: {
+            en: "An application with this email was already submitted in the last 7 days",
+            de: "Eine Bewerbung mit dieser E-Mail wurde bereits in den letzten 7 Tagen eingereicht"
+          }
+        };
+        return messages[key][args.language];
+      };
+
       // Validate required fields
       if (!args.email || !args.firstName || !args.lastName || !args.company) {
-        throw new Error("Missing required fields");
+        throw new Error(getErrorMessage("missingFields"));
       }
 
       // Validate email format
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(args.email)) {
-        throw new Error("Invalid email format");
+        throw new Error(getErrorMessage("invalidEmail"));
       }
 
       // Check for existing application with same email in last 7 days to prevent spam
@@ -47,7 +66,7 @@ export const storeApplication = mutation({
         .first();
 
       if (existingApplication) {
-        throw new Error("An application with this email was already submitted in the last 7 days");
+        throw new Error(getErrorMessage("duplicateApplication"));
       }
 
       // Store the application data
@@ -66,7 +85,9 @@ export const storeApplication = mutation({
       return {
         success: true,
         applicationId,
-        message: "Application submitted successfully",
+        message: args.language === "de"
+          ? "Bewerbung erfolgreich eingereicht"
+          : "Application submitted successfully",
       };
     } catch (error) {
       console.error("Error storing application data:", error);
