@@ -9,6 +9,7 @@
  */
 
 import type * as api_ from "../api.js";
+import type * as applicationLeads from "../applicationLeads.js";
 import type * as contacts from "../contacts.js";
 import type * as emails from "../emails.js";
 import type * as valueCalculatorLeads from "../valueCalculatorLeads.js";
@@ -29,6 +30,7 @@ import type {
  */
 declare const fullApi: ApiFromModules<{
   api: typeof api_;
+  applicationLeads: typeof applicationLeads;
   contacts: typeof contacts;
   emails: typeof emails;
   valueCalculatorLeads: typeof valueCalculatorLeads;

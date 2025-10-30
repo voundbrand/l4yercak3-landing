@@ -94,4 +94,41 @@ export default defineSchema({
     .index("by_lead_quality", ["leadQualityScore"])
     .index("by_organization", ["organizationName"])
     .index("by_email_tracking", ["customerEmailSent", "salesEmailSent"]),
+
+  applicationLeads: defineTable({
+    // Personal Information
+    firstName: v.string(),
+    lastName: v.string(),
+    email: v.string(),
+    phone: v.string(),
+
+    // Company Information
+    company: v.string(),
+    role: v.string(),
+
+    // Business Information
+    teamSize: v.string(),
+    monthlySpend: v.string(),
+    currentChallenges: v.string(),
+
+    // Tracking Fields
+    followUpSent: v.boolean(),
+    followUpSentAt: v.optional(v.number()),
+    status: v.union(
+      v.literal("new"),
+      v.literal("contacted"),
+      v.literal("qualified"),
+      v.literal("accepted"),
+      v.literal("rejected")
+    ),
+    notes: v.optional(v.string()),
+
+    // System Fields
+    language: v.union(v.literal("en"), v.literal("de")),
+    submittedAt: v.number(),
+    source: v.string(), // "urgency-pill-apply-now"
+  })
+    .index("by_email", ["email"])
+    .index("by_submission_date", ["submittedAt"])
+    .index("by_status", ["status"]),
 });

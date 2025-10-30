@@ -5,8 +5,11 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useMutation } from 'convex/react';
+import { api } from '../../convex/_generated/api';
 
 import { useTranslation } from 'react-i18next';
+import { useLanguage } from './language-provider';
 import { Button } from './ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from './ui/form';
 import { CalendarBookingModal } from './calendar-booking-modal';
@@ -39,9 +42,13 @@ interface ApplicationModalProps {
 
 export function ApplicationModal({ onClose }: ApplicationModalProps) {
   const { t } = useTranslation();
+  const { language } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const storeApplication = useMutation(api.applicationLeads.storeApplication);
 
   const form = useForm<ApplicationFormData>({
     resolver: zodResolver(applicationSchema),
@@ -60,17 +67,22 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
 
   const onSubmit = async (data: ApplicationFormData) => {
     setIsSubmitting(true);
-    
+    setErrorMessage(null);
+
     try {
-      // TODO: Implement actual submission logic
-      console.log('Application submitted:', data);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      setIsSubmitted(true);
+      const result = await storeApplication({
+        ...data,
+        language: language as 'en' | 'de',
+      });
+
+      if (result.success) {
+        setIsSubmitted(true);
+      } else {
+        setErrorMessage(result.error || 'Failed to submit application');
+      }
     } catch (error) {
       console.error('Error submitting application:', error);
+      setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred');
     } finally {
       setIsSubmitting(false);
     }
@@ -78,7 +90,7 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
         {/* Backdrop */}
         <motion.div
           key="backdrop"
@@ -86,7 +98,7 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm"
         />
 
         {/* Modal */}
@@ -95,7 +107,7 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-background border border-border rounded-2xl shadow-2xl"
+          className="relative w-full max-w-2xl my-8 bg-background border border-border rounded-2xl shadow-2xl"
         >
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-border">
@@ -170,6 +182,12 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
             ) : (
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  {/* Error Message */}
+                  {errorMessage && (
+                    <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+                      <p className="text-sm text-red-600 dark:text-red-400">{errorMessage}</p>
+                    </div>
+                  )}
                   {/* Personal Information */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <FormField
