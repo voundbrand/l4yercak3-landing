@@ -1,0 +1,26 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="radial" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a0a;stop-opacity:1" />
+    </radialGradient>
+    <linearGradient id="overlay" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.05" />
+      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0.02" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.05" />
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#radial)"/>
+  <rect width="1920" height="1080" fill="url(#overlay)"/>
+  
+  <!-- Subtle geometric pattern -->
+  <g opacity="0.1">
+    <circle cx="480" cy="270" r="120" fill="none" stroke="#ffffff" stroke-width="1"/>
+    <circle cx="1440" cy="810" r="180" fill="none" stroke="#ffffff" stroke-width="1"/>
+    <circle cx="960" cy="540" r="300" fill="none" stroke="#ffffff" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Central focus area -->
+  <circle cx="960" cy="540" r="2" fill="#ffffff" opacity="0.3"/>
+</svg>
