@@ -9,7 +9,7 @@ import { ConvexHttpClient } from 'convex/browser';
 import { api } from '../../../../../convex/_generated/api';
 import { generateApplicationCustomerEmail, ApplicationData } from '@/lib/email-templates/application-customer';
 import { generateApplicationSalesEmail } from '@/lib/email-templates/application-sales';
-import { sendEmailWithRetry, getSenderConfig, getSalesTeamEmail } from '@/lib/email-delivery/resend-client';
+import { sendEmailWithRetry, getSenderConfig, getSalesTeamEmail, getReplyToEmail } from '@/lib/email-delivery/resend-client';
 
 // Initialize Convex client
 const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL!;
@@ -68,6 +68,7 @@ export async function POST(request: NextRequest) {
     // Get email configuration
     const senderConfig = getSenderConfig();
     const salesTeamEmail = getSalesTeamEmail();
+    const replyToEmail = getReplyToEmail();
 
     // Send customer confirmation email
     const customerResult = await sendEmailWithRetry({
@@ -75,6 +76,7 @@ export async function POST(request: NextRequest) {
       to: validatedData.email,
       subject: customerEmail.subject,
       html: customerEmail.html,
+      replyTo: replyToEmail,
     });
 
     // Send sales team notification email
@@ -83,6 +85,7 @@ export async function POST(request: NextRequest) {
       to: salesTeamEmail,
       subject: salesEmail.subject,
       html: salesEmail.html,
+      replyTo: replyToEmail,
     });
 
     // Check if at least customer email was sent

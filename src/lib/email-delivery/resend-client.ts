@@ -54,6 +54,7 @@ export async function sendEmailWithRetry(
     to: string | string[];
     subject: string;
     html: string;
+    replyTo?: string;
     attachments?: Array<{
       filename: string;
       content: Buffer;
@@ -64,7 +65,7 @@ export async function sendEmailWithRetry(
   baseDelay: number = 1000
 ): Promise<{ success: boolean; messageId?: string; error?: string }> {
   const client = getResendClient();
-  
+
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
       const result = await client.emails.send({
@@ -72,6 +73,7 @@ export async function sendEmailWithRetry(
         to: emailData.to,
         subject: emailData.subject,
         html: emailData.html,
+        replyTo: emailData.replyTo,
         attachments: emailData.attachments?.map(attachment => ({
           filename: attachment.filename,
           content: attachment.content,
@@ -116,6 +118,7 @@ export async function sendBatchEmails(
     to: string | string[];
     subject: string;
     html: string;
+    replyTo?: string;
     attachments?: Array<{
       filename: string;
       content: Buffer;
@@ -203,11 +206,18 @@ export function getSenderConfig(): {
  */
 export function getSalesTeamEmail(): string {
   const salesEmail = process.env.SALES_EMAIL;
-  
+
   if (!salesEmail) {
     console.warn('SALES_EMAIL environment variable not set, using default');
-    return 'sales@mail.l4yercak3.com';
+    return 'remington@l4yercak3.com';
   }
-  
+
   return salesEmail;
+}
+
+/**
+ * Get reply-to email address
+ */
+export function getReplyToEmail(): string {
+  return 'remington@l4yercak3.com';
 }

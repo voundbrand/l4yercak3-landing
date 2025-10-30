@@ -6,7 +6,7 @@
 import { LeadData, CalculatedValues } from '../value-calculator/types';
 import { generateCustomerEmailTemplate } from '../email-templates/customer';
 import { generateSalesEmailTemplate } from '../email-templates/sales';
-import { sendEmailWithRetry, getSenderConfig, getSalesTeamEmail, validateEmailAddress } from './resend-client';
+import { sendEmailWithRetry, getSenderConfig, getSalesTeamEmail, getReplyToEmail, validateEmailAddress } from './resend-client';
 
 export interface EmailDeliveryResult {
   customerEmail: {
@@ -34,7 +34,8 @@ export async function sendValueReportEmails(
   const language = leadData.language || 'en';
   const senderConfig = getSenderConfig();
   const salesTeamEmail = getSalesTeamEmail();
-  
+  const replyToEmail = getReplyToEmail();
+
   // Validate email addresses
   if (!validateEmailAddress(leadData.email)) {
     return {
@@ -49,33 +50,35 @@ export async function sendValueReportEmails(
       overallSuccess: false
     };
   }
-  
+
   // Generate email templates
   const customerTemplate = generateCustomerEmailTemplate(leadData, calculatedValues, language);
   const salesTemplate = generateSalesEmailTemplate(leadData, calculatedValues, language);
-  
+
   // Prepare PDF attachment
   const pdfAttachment = {
     filename: pdfFilename,
     content: pdfBuffer,
     contentType: 'application/pdf'
   };
-  
+
   // Send customer email
   const customerResult = await sendEmailWithRetry({
     from: senderConfig.customerEmail,
     to: leadData.email,
     subject: customerTemplate.subject,
     html: customerTemplate.html,
+    replyTo: replyToEmail,
     attachments: [pdfAttachment]
   });
-  
+
   // Send sales team email (with same PDF so they see what customer received)
   const salesResult = await sendEmailWithRetry({
     from: senderConfig.salesEmail,
     to: salesTeamEmail,
     subject: salesTemplate.subject,
     html: salesTemplate.html,
+    replyTo: replyToEmail,
     attachments: [pdfAttachment]
   });
   
@@ -95,6 +98,7 @@ export async function sendFollowUpEmail(
 ): Promise<{ success: boolean; messageId?: string; error?: string }> {
   const language = leadData.language || 'en';
   const senderConfig = getSenderConfig();
+  const replyToEmail = getReplyToEmail();
   const firstName = leadData.fullName.split(' ')[0];
   
   const subject = language === 'de' 
@@ -170,7 +174,8 @@ export async function sendFollowUpEmail(
     from: senderConfig.customerEmail,
     to: leadData.email,
     subject,
-    html
+    html,
+    replyTo: replyToEmail
   });
 }
 
@@ -187,6 +192,7 @@ export async function sendAbandonedCalculatorEmail(
 ): Promise<{ success: boolean; messageId?: string; error?: string }> {
   const language = (partialData.language as 'en' | 'de') || 'en';
   const senderConfig = getSenderConfig();
+  const replyToEmail = getReplyToEmail();
   
   const subject = language === 'de'
     ? `Noch neugierig auf Ihr ${partialData.estimatedValue ? formatCurrency(partialData.estimatedValue, language) : '€100K+'} Potenzial?`
@@ -273,7 +279,8 @@ export async function sendAbandonedCalculatorEmail(
     from: senderConfig.systemEmail,
     to: partialData.email,
     subject,
-    html
+    html,
+    replyTo: replyToEmail
   });
 }
 
