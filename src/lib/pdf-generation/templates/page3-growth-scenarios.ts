@@ -291,7 +291,7 @@ export class GrowthScenariosTemplate extends BasePDFTemplate {
     this.setTextColor(this.colors.text);
     this.doc.text(title, this.config.margins.left, startY);
     
-    let currentY = startY + this.styles.spacing.sectionGap;
+    const currentY = startY + this.styles.spacing.sectionGap;
     
     // Timeline milestones
     const milestones = language === 'de' 

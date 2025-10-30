@@ -20,12 +20,19 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     // Mark as client-side to prevent hydration mismatch
     setIsClient(true);
-    
+
     // Get saved language from localStorage
     const savedLanguage = localStorage.getItem('language') as Language;
     if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'de')) {
       setLanguageState(savedLanguage);
       i18nInstance.changeLanguage(savedLanguage);
+    } else {
+      // Auto-detect browser language on first visit
+      const browserLang = navigator.language.split('-')[0].toLowerCase();
+      const detectedLang: Language = browserLang === 'de' ? 'de' : 'en';
+      setLanguageState(detectedLang);
+      i18nInstance.changeLanguage(detectedLang);
+      localStorage.setItem('language', detectedLang);
     }
   }, []);
 
