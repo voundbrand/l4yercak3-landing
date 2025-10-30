@@ -5,8 +5,6 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useMutation } from 'convex/react';
-import { api } from '../../convex/_generated/api';
 
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from './language-provider';
@@ -48,8 +46,6 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const storeApplication = useMutation(api.applicationLeads.storeApplication);
-
   const form = useForm<ApplicationFormData>({
     resolver: zodResolver(applicationSchema),
     defaultValues: {
@@ -70,10 +66,18 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
     setErrorMessage(null);
 
     try {
-      const result = await storeApplication({
-        ...data,
-        language: language as 'en' | 'de',
+      const response = await fetch('/api/application/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...data,
+          language: language as 'en' | 'de',
+        }),
       });
+
+      const result = await response.json();
 
       if (result.success) {
         setIsSubmitted(true);
