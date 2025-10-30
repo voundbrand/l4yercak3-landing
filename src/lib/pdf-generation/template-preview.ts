@@ -58,6 +58,13 @@ export function generateSampleData(): {
     timeline: 'Within 3 months',
     language: 'en',
     signatureAuthority: 75000,
+    // Required organization metrics
+    organizationSize: 450,
+    adminStaffCount: 3,
+    manualHoursPerWeek: 60,
+    loadedLaborCost: 65,
+    annualEvents: 24,
+    avgMemberValue: 180,
   };
 
   const calculatedValues: CalculatedValues = {
