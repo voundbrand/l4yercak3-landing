@@ -6,7 +6,7 @@
 import { LeadData, CalculatedValues } from '../value-calculator/types';
 import { generateCustomerEmailTemplate } from '../email-templates/customer';
 import { generateSalesEmailTemplate } from '../email-templates/sales';
-import { sendEmailWithRetry, getSenderConfig, getSalesTeamEmail, getReplyToEmail, validateEmailAddress } from './resend-client';
+import { sendEmailWithRetry, getSenderConfig, getSalesTeamEmail, getReplyToEmail, getCalAppointmentLink, validateEmailAddress } from './resend-client';
 
 export interface EmailDeliveryResult {
   customerEmail: {
@@ -99,6 +99,7 @@ export async function sendFollowUpEmail(
   const language = leadData.language || 'en';
   const senderConfig = getSenderConfig();
   const replyToEmail = getReplyToEmail();
+  const calLink = getCalAppointmentLink();
   const firstName = leadData.fullName.split(' ')[0];
   
   const subject = language === 'de' 
@@ -158,7 +159,7 @@ export async function sendFollowUpEmail(
     </p>
     
     <div style="text-align: center; margin: 25px 0;">
-        <a href="https://cal.com/voundbrand/open-end-meeting" class="cta-button">
+        <a href="${calLink}" class="cta-button">
             ${language === 'de' ? 'Gespräch vereinbaren' : 'Schedule Call'}
         </a>
     </div>

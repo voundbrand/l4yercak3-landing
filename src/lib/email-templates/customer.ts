@@ -6,6 +6,7 @@
 import { LeadData, CalculatedValues, Language } from '../value-calculator/types';
 import { getLocalizedContent } from '../pdf-generation/content';
 import { formatCurrencyLikeCalculator, formatNumberLikeCalculator } from '../value-calculator/i18n-bridge';
+import { getCalAppointmentLink } from '../email-delivery/resend-client';
 
 // Create wrapper functions for consistency
 const formatCurrency = (amount: number) => formatCurrencyLikeCalculator(amount);
@@ -21,6 +22,7 @@ export function generateCustomerEmailTemplate(
 } {
   const content = getLocalizedContent(language);
   const firstName = lead.fullName.split(' ')[0];
+  const calLink = getCalAppointmentLink();
   
   const subject = `${content.email.customer.subject} - ${formatCurrency(calculatedValues.totalValueCreated)} ${language === 'de' ? 'Potenzial' : 'Opportunity'}`;
   
@@ -178,7 +180,7 @@ export function generateCustomerEmailTemplate(
         </div>
         
         <div style="text-align: center; margin: 30px 0;">
-            <a href="https://cal.com/voundbrand/open-end-meeting" class="cta-button">${content.email.customer.cta}</a>
+            <a href="${calLink}" class="cta-button">${content.email.customer.cta}</a>
         </div>
         
         <div style="background-color: #eff6ff; padding: 15px; border-radius: 6px; margin: 25px 0;">

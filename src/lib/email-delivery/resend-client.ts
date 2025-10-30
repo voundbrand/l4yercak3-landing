@@ -216,8 +216,29 @@ export function getSalesTeamEmail(): string {
 }
 
 /**
- * Get reply-to email address
+ * Get reply-to email address from environment
  */
 export function getReplyToEmail(): string {
-  return 'remington@l4yercak3.com';
+  const replyToEmail = process.env.REPLY_TO_EMAIL;
+
+  if (!replyToEmail) {
+    console.warn('REPLY_TO_EMAIL environment variable not set, using default');
+    return 'remington@l4yercak3.com';
+  }
+
+  return replyToEmail;
+}
+
+/**
+ * Get Cal.com appointment booking link from environment
+ */
+export function getCalAppointmentLink(): string {
+  const calLink = process.env.CAL_APPT_LINK;
+
+  if (!calLink) {
+    console.warn('CAL_APPT_LINK environment variable not set, using default');
+    return 'https://cal.com/voundbrand/open-end-meeting';
+  }
+
+  return calLink;
 }
