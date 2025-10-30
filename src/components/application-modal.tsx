@@ -179,7 +179,7 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
                     {t('application.success.scheduleMessage')}
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <Button 
+                    <Button
                       onClick={() => setIsCalendarOpen(true)}
                       variant="outline"
                       size="lg"
@@ -190,6 +190,35 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
                       {t('application.buttons.close')}
                     </Button>
                   </div>
+                </div>
+
+                {/* Value Calculator CTA */}
+                <div className="pt-6 border-t border-border/50">
+                  <p className="text-sm text-muted-foreground">
+                    {language === 'de' ? (
+                      <>
+                        Während Sie warten,{' '}
+                        <a
+                          href="/do-more-with-less"
+                          className="text-foreground font-medium underline decoration-2 underline-offset-4 hover:decoration-primary transition-colors"
+                        >
+                          berechnen Sie, wie viel Sie für manuelle Aufgaben ausgeben
+                        </a>
+                        {' '}mit unserem Wertrechner
+                      </>
+                    ) : (
+                      <>
+                        While you wait,{' '}
+                        <a
+                          href="/do-more-with-less"
+                          className="text-foreground font-medium underline decoration-2 underline-offset-4 hover:decoration-primary transition-colors"
+                        >
+                          calculate how much you're spending on manual tasks
+                        </a>
+                        {' '}with our value calculator
+                      </>
+                    )}
+                  </p>
                 </div>
               </motion.div>
             ) : (
