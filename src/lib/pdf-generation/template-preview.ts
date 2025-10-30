@@ -68,68 +68,45 @@ export function generateSampleData(): {
   };
 
   const calculatedValues: CalculatedValues = {
-    // Admin staff calculations
-    adminWeeklyHours: 25,
-    adminAnnualHours: 1300,
-    adminAnnualWaste: 39000,
-    adminFreedHours: 1170,
-    adminLaborCostAvoided: 35100,
-
-    // Executive staff calculations  
-    executiveWeeklyHours: 15,
-    executiveAnnualHours: 780,
-    executiveAnnualWaste: 62400,
-    executiveFreedHours: 702,
-    executiveLaborCostAvoided: 56160,
-
-    // Combined totals
-    totalWeeklyHours: 40,
+    // Core Metrics
     totalAnnualHours: 2080,
     annualWaste: 101400,
     potentialFreedHours: 1872,
-    potentialFreedWeeklyHours: 36,
     laborCostAvoided: 91260,
-
-    // Revenue calculations
-    newMembersAcquired: 35,
-    memberRevenue: 105000,
-    newProgramRevenue: 75000,
-    partnershipRevenue: 60000,
-    churnReductionRevenue: 45000,
-    conservativeNewRevenue: 285000,
+    newRevenuePotential: 285000,
     totalValueCreated: 376260,
 
-    // Task breakdown
-    taskBreakdown: {
-      eventCoordination: {
-        annualHours: 624,
-        annualCost: 18720,
-        percentage: 30,
-      },
-      memberCommunication: {
-        annualHours: 520,
-        annualCost: 15600,
-        percentage: 25,
-      },
-      complianceReporting: {
-        annualHours: 416,
-        annualCost: 12480,
-        percentage: 20,
-      },
-      financialAdmin: {
-        annualHours: 312,
-        annualCost: 9360,
+    // Pricing Intelligence
+    pricing: {
+      conservative: {
         percentage: 15,
+        annualPrice: 56439,
+        customerKeeps: 319821,
+        roi: 567,
       },
-      dataManagement: {
-        annualHours: 208,
-        annualCost: 6240,
-        percentage: 10,
+      target: {
+        percentage: 20,
+        annualPrice: 75252,
+        customerKeeps: 301008,
+        roi: 400,
+      },
+      aggressive: {
+        percentage: 25,
+        annualPrice: 94065,
+        customerKeeps: 282195,
+        roi: 300,
+      },
+      premium: {
+        percentage: 30,
+        annualPrice: 112878,
+        customerKeeps: 263382,
+        roi: 233,
       },
     },
 
-    // Additional fields
-    leadQualityScore: 92,
+    // Sales Intelligence
+    recommendedPhase: 'Pilot with expansion',
+    leadQualityScore: 'HIGH',
   };
 
   return { leadData, calculatedValues };
@@ -163,59 +140,48 @@ export function generateTestScenarios(): Array<{
         timeline: 'Within 6 months',
         language: 'en',
         signatureAuthority: 25000,
+        organizationSize: 150,
+        adminStaffCount: 2,
+        manualHoursPerWeek: 23,
+        loadedLaborCost: 55,
+        annualEvents: 12,
+        avgMemberValue: 150,
       },
       calculatedValues: {
-        adminWeeklyHours: 15,
-        adminAnnualHours: 780,
-        adminAnnualWaste: 23400,
-        adminFreedHours: 702,
-        adminLaborCostAvoided: 21060,
-        executiveWeeklyHours: 8,
-        executiveAnnualHours: 416,
-        executiveAnnualWaste: 33280,
-        executiveFreedHours: 374,
-        executiveLaborCostAvoided: 29952,
-        totalWeeklyHours: 23,
         totalAnnualHours: 1196,
         annualWaste: 56680,
         potentialFreedHours: 1076,
-        potentialFreedWeeklyHours: 21,
         laborCostAvoided: 51012,
-        newMembersAcquired: 20,
-        memberRevenue: 60000,
-        newProgramRevenue: 40000,
-        partnershipRevenue: 30000,
-        churnReductionRevenue: 25000,
-        conservativeNewRevenue: 155000,
+        newRevenuePotential: 155000,
         totalValueCreated: 206012,
-        taskBreakdown: {
-          eventCoordination: {
-            annualHours: 359,
-            annualCost: 10770,
-            percentage: 30,
-          },
-          memberCommunication: {
-            annualHours: 299,
-            annualCost: 8970,
-            percentage: 25,
-          },
-          complianceReporting: {
-            annualHours: 239,
-            annualCost: 7170,
-            percentage: 20,
-          },
-          financialAdmin: {
-            annualHours: 179,
-            annualCost: 5370,
+        pricing: {
+          conservative: {
             percentage: 15,
+            annualPrice: 30902,
+            customerKeeps: 175110,
+            roi: 567,
           },
-          dataManagement: {
-            annualHours: 120,
-            annualCost: 3600,
-            percentage: 10,
+          target: {
+            percentage: 20,
+            annualPrice: 41202,
+            customerKeeps: 164810,
+            roi: 400,
+          },
+          aggressive: {
+            percentage: 25,
+            annualPrice: 51503,
+            customerKeeps: 154509,
+            roi: 300,
+          },
+          premium: {
+            percentage: 30,
+            annualPrice: 61804,
+            customerKeeps: 144208,
+            roi: 233,
           },
         },
-        leadQualityScore: 78,
+        recommendedPhase: 'Standard pilot',
+        leadQualityScore: 'MEDIUM',
       },
     },
     {
@@ -231,59 +197,48 @@ export function generateTestScenarios(): Array<{
         timeline: 'Within 1 month',
         language: 'de',
         signatureAuthority: 100000,
+        organizationSize: 600,
+        adminStaffCount: 4,
+        manualHoursPerWeek: 75,
+        loadedLaborCost: 70,
+        annualEvents: 36,
+        avgMemberValue: 200,
       },
       calculatedValues: {
-        adminWeeklyHours: 30,
-        adminAnnualHours: 1560,
-        adminAnnualWaste: 46800,
-        adminFreedHours: 1404,
-        adminLaborCostAvoided: 42120,
-        executiveWeeklyHours: 20,
-        executiveAnnualHours: 1040,
-        executiveAnnualWaste: 83200,
-        executiveFreedHours: 936,
-        executiveLaborCostAvoided: 74880,
-        totalWeeklyHours: 50,
         totalAnnualHours: 2600,
         annualWaste: 130000,
         potentialFreedHours: 2340,
-        potentialFreedWeeklyHours: 45,
         laborCostAvoided: 117000,
-        newMembersAcquired: 45,
-        memberRevenue: 135000,
-        newProgramRevenue: 90000,
-        partnershipRevenue: 75000,
-        churnReductionRevenue: 60000,
-        conservativeNewRevenue: 360000,
+        newRevenuePotential: 360000,
         totalValueCreated: 477000,
-        taskBreakdown: {
-          eventCoordination: {
-            annualHours: 780,
-            annualCost: 23400,
-            percentage: 30,
-          },
-          memberCommunication: {
-            annualHours: 650,
-            annualCost: 19500,
-            percentage: 25,
-          },
-          complianceReporting: {
-            annualHours: 520,
-            annualCost: 15600,
-            percentage: 20,
-          },
-          financialAdmin: {
-            annualHours: 390,
-            annualCost: 11700,
+        pricing: {
+          conservative: {
             percentage: 15,
+            annualPrice: 71550,
+            customerKeeps: 405450,
+            roi: 567,
           },
-          dataManagement: {
-            annualHours: 260,
-            annualCost: 7800,
-            percentage: 10,
+          target: {
+            percentage: 20,
+            annualPrice: 95400,
+            customerKeeps: 381600,
+            roi: 400,
+          },
+          aggressive: {
+            percentage: 25,
+            annualPrice: 119250,
+            customerKeeps: 357750,
+            roi: 300,
+          },
+          premium: {
+            percentage: 30,
+            annualPrice: 143100,
+            customerKeeps: 333900,
+            roi: 233,
           },
         },
-        leadQualityScore: 95,
+        recommendedPhase: 'Pilot with expansion',
+        leadQualityScore: 'HIGH',
       },
     },
   ];
