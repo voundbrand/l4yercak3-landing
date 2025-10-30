@@ -2,6 +2,8 @@
  * Email template for customer confirmation after pilot application
  */
 
+import { getCalAppointmentLink } from '../email-delivery/resend-client';
+
 export interface ApplicationData {
   firstName: string;
   lastName: string;
@@ -22,6 +24,7 @@ export function generateApplicationCustomerEmail(
   applicationData: ApplicationData
 ): { subject: string; html: string } {
   const { firstName, language } = applicationData;
+  const calLink = getCalAppointmentLink();
 
   // Get current quarter + year for context
   const getTargetQuarterAndYear = () => {
@@ -80,7 +83,7 @@ export function generateApplicationCustomerEmail(
         </p>
 
         <!-- Book a Call Button -->
-        <a href="https://cal.com/l4yercak3/discovery-call"
+        <a href="${calLink}"
            style="display: inline-block; margin: 0 8px 12px 0; padding: 12px 24px; background-color: #2563eb; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">
           📞 Beratungsgespräch buchen
         </a>
@@ -167,7 +170,7 @@ export function generateApplicationCustomerEmail(
         </p>
 
         <!-- Book a Call Button -->
-        <a href="https://cal.com/l4yercak3/discovery-call"
+        <a href="${calLink}"
            style="display: inline-block; margin: 0 8px 12px 0; padding: 12px 24px; background-color: #2563eb; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">
           📞 Book a Discovery Call
         </a>

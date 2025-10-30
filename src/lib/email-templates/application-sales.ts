@@ -3,6 +3,7 @@
  */
 
 import { ApplicationData } from './application-customer';
+import { getCalAppointmentLink } from '../email-delivery/resend-client';
 
 /**
  * Generate sales team notification email for pilot application
@@ -24,6 +25,7 @@ export function generateApplicationSalesEmail(
   } = applicationData;
 
   const fullName = `${firstName} ${lastName}`;
+  const calLink = getCalAppointmentLink();
 
   // Get current quarter + year
   const getTargetQuarterAndYear = () => {
@@ -158,7 +160,7 @@ export function generateApplicationSalesEmail(
             📧 Reply to ${firstName}
           </a>
 
-          <a href="https://cal.com/l4yercak3/discovery-call"
+          <a href="${calLink}"
              style="display: inline-block; margin-right: 8px; padding: 12px 24px; background-color: #059669; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">
             📅 Book Meeting
           </a>

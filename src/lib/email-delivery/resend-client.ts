@@ -193,11 +193,13 @@ export function getSenderConfig(): {
   customerEmail: string;
   salesEmail: string;
   systemEmail: string;
+  pilotEmail: string;
 } {
   return {
     customerEmail: 'L4YERCAK3 Sales <sales@mail.l4yercak3.com>',
     salesEmail: 'L4YERCAK3 Value Calculator <calculator@mail.l4yercak3.com>',
-    systemEmail: 'L4YERCAK3 System <noreply@mail.l4yercak3.com>'
+    systemEmail: 'L4YERCAK3 System <noreply@mail.l4yercak3.com>',
+    pilotEmail: 'L4YERCAK3 Pilot <pilot@mail.l4yercak3.com>'
   };
 }
 

@@ -72,7 +72,7 @@ export async function POST(request: NextRequest) {
 
     // Send customer confirmation email
     const customerResult = await sendEmailWithRetry({
-      from: senderConfig.customerEmail,
+      from: senderConfig.pilotEmail,
       to: validatedData.email,
       subject: customerEmail.subject,
       html: customerEmail.html,
@@ -81,7 +81,7 @@ export async function POST(request: NextRequest) {
 
     // Send sales team notification email
     const salesResult = await sendEmailWithRetry({
-      from: senderConfig.salesEmail,
+      from: senderConfig.pilotEmail,
       to: salesTeamEmail,
       subject: salesEmail.subject,
       html: salesEmail.html,
