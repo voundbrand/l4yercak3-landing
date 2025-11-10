@@ -526,15 +526,15 @@ export function ValueCalculator() {
           <div className="text-center mb-6">
             <h3 className={cn("text-2xl font-bold mb-2 transition-colors duration-300",
               readingMode === 'sepia' ? 'text-red-800' : 'text-red-600 dark:text-red-400')}>
-              ⚠️ {t('results.currentWaste.title')}
+              ⚠️ {t('doMoreWithLess.results.currentWaste.title')}
             </h3>
             <div className={cn("text-4xl font-bold mb-2 transition-colors duration-300",
               readingMode === 'sepia' ? 'text-red-700' : 'text-red-700 dark:text-red-300')}>
-              {formatCurrency(calculations.annualWaste)} {t('results.currentWaste.subtitle')}
+              {formatCurrency(calculations.annualWaste)} {t('doMoreWithLess.results.currentWaste.subtitle')}
             </div>
             <p className={cn("text-lg transition-colors duration-300",
               readingMode === 'sepia' ? 'text-red-700' : 'text-red-600 dark:text-red-400')}>
-              {formatNumber(calculations.totalAnnualHours)} {t('results.currentWaste.description')}
+              {formatNumber(calculations.totalAnnualHours)} {t('doMoreWithLess.results.currentWaste.description')}
             </p>
           </div>
           
