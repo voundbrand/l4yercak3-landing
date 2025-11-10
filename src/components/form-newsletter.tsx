@@ -81,7 +81,9 @@ export const FormNewsletter = ({
   }, [form]);
 
   async function onSubmit(values: NewsletterSchema) {
-    const state = await subscribe(values.email, values.subscriptionType, values.name);
+    // Get current language from i18n
+    const currentLanguage = (localStorage.getItem('language') || 'en') as 'en' | 'de';
+    const state = await subscribe(values.email, values.subscriptionType, values.name, currentLanguage);
 
     setSubmissionState(state);
 

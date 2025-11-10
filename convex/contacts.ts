@@ -7,10 +7,11 @@ export const subscribe = mutation({
     email: v.string(),
     name: v.optional(v.string()),
     subscriptionType: v.union(
-      v.literal("newsletter"), 
-      v.literal("private-access"), 
+      v.literal("newsletter"),
+      v.literal("private-access"),
       v.literal("both")
     ),
+    language: v.optional(v.union(v.literal("en"), v.literal("de"))),
   },
   handler: async (ctx, args) => {
     // Basic email validation
@@ -22,6 +23,7 @@ export const subscribe = mutation({
     const email = args.email.trim().toLowerCase();
     const name = args.name?.trim();
     const { subscriptionType } = args;
+    const language = args.language || "en"; // Default to English if not provided
 
     // Determine preferences based on subscription type
     const wantsNewsletter = subscriptionType === "newsletter" || subscriptionType === "both";
@@ -42,6 +44,7 @@ export const subscribe = mutation({
           subscriptionType,
           wantsNewsletter,
           wantsPrivateAccess,
+          language,
           ...(name && { name }),
         });
       } else {
@@ -50,6 +53,7 @@ export const subscribe = mutation({
           subscriptionType,
           wantsNewsletter,
           wantsPrivateAccess,
+          language,
           ...(name && { name }),
         });
       }
@@ -60,11 +64,13 @@ export const subscribe = mutation({
           email,
           name,
           subscriptionType,
+          language,
         });
         await ctx.scheduler.runAfter(0, api.emails.sendNotificationEmail, {
           email,
           name,
           subscriptionType,
+          language,
         });
       } catch (error) {
         console.error("Failed to send emails:", error);
@@ -83,6 +89,7 @@ export const subscribe = mutation({
       subscriptionType,
       wantsNewsletter,
       wantsPrivateAccess,
+      language,
       ...(name && { name }),
     });
 
@@ -103,11 +110,13 @@ export const subscribe = mutation({
         email,
         name,
         subscriptionType,
+        language,
       });
       await ctx.scheduler.runAfter(0, api.emails.sendNotificationEmail, {
         email,
         name,
         subscriptionType,
+        language,
       });
     } catch (error) {
       console.error("Failed to send emails:", error);

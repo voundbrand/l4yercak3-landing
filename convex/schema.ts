@@ -9,13 +9,15 @@ export default defineSchema({
     status: v.union(v.literal("active"), v.literal("unsubscribed")),
     source: v.string(),
     subscriptionType: v.union(
-      v.literal("newsletter"), 
-      v.literal("private-access"), 
+      v.literal("newsletter"),
+      v.literal("private-access"),
       v.literal("both")
     ),
     // Track individual preferences for future API consumption
     wantsNewsletter: v.boolean(),
     wantsPrivateAccess: v.boolean(),
+    // Language preference for email communications (optional for backwards compatibility)
+    language: v.optional(v.union(v.literal("en"), v.literal("de"))),
   }),
 
   valueCalculatorLeads: defineTable({

@@ -7,15 +7,17 @@ import type { ActionResult } from "./utils";
 const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
 
 export async function subscribe(
-  email: string, 
+  email: string,
   subscriptionType: "newsletter" | "private-access" | "both",
-  name?: string
+  name?: string,
+  language?: "en" | "de"
 ): Promise<ActionResult<string>> {
   try {
     const result = await convex.mutation(api.contacts.subscribe, {
       email,
       subscriptionType,
       ...(name && { name }),
+      ...(language && { language }),
     });
 
     return {
