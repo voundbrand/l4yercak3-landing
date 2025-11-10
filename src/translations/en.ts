@@ -34,7 +34,7 @@ export const en = {
     title: "l4yercak3",
     subtitle: "One Platform. Zero Manual Work. Infinite Scale.",
     urgency: "🔥 3 Implementation Spots Remaining for {quarter} {year} - Apply Now",
-    description: "Stop copying data between Excel, Outlook, and Lexware. One platform replaces your entire software stack. Put your name on the list to reserve your spot for {quarter} {year} today!",
+    description: "Stop copying data between Excel, Outlook, and Lexware. Put your name on the list to reserve your spot for {quarter} {year} today!",
     helperText: "Stay in the loop to get the latest updates on L4YERCAK3",
     emailPlaceholder: "Enter your email",
     manifesto: "Manifesto",

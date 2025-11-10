@@ -1,4 +1,4 @@
-import { mutation, query } from "./_generated/server";
+import { mutation, query, action } from "./_generated/server";
 import { v } from "convex/values";
 import { api } from "./_generated/api";
 
@@ -86,18 +86,15 @@ export const subscribe = mutation({
       ...(name && { name }),
     });
 
-    // Sync to external API (mock for now)
+    // Sync to CRM via action (fire-and-forget)
     try {
-      await ctx.scheduler.runAfter(0, api.api.syncToExternalAPI, {
+      await ctx.scheduler.runAfter(0, api.contacts.syncToCRM, {
         email,
         name,
         subscriptionType,
-        wantsNewsletter,
-        wantsPrivateAccess,
-        subscribedAt,
       });
     } catch (error) {
-      console.error("Failed to sync to external API:", error);
+      console.error("Failed to sync to CRM:", error);
     }
 
     // Send welcome and notification emails
@@ -142,5 +139,74 @@ export const getSubscriptions = query({
       .filter((q) => q.eq(q.field("status"), "active"))
       .order("desc")
       .collect();
+  },
+});
+
+/**
+ * Sync newsletter subscription to backend CRM
+ * This is an action that makes HTTP calls to external CRM
+ */
+export const syncToCRM = action({
+  args: {
+    email: v.string(),
+    name: v.optional(v.string()),
+    subscriptionType: v.optional(v.union(
+      v.literal("newsletter"),
+      v.literal("private-access"),
+      v.literal("both")
+    )),
+  },
+  handler: async (ctx, args) => {
+    const CRM_URL = process.env.BACKEND_CRM_URL;
+    const CRM_API_KEY = process.env.BACKEND_CRM_API_KEY;
+
+    // Skip if CRM not configured
+    if (!CRM_URL || !CRM_API_KEY) {
+      console.log("⚠️ CRM integration not configured - skipping sync");
+      return { success: false, error: "CRM not configured" };
+    }
+
+    try {
+      const [firstName, ...lastNameParts] = (args.name || args.email.split('@')[0]).split(' ');
+      const lastName = lastNameParts.join(' ') || 'Newsletter Subscriber';
+
+      const response = await fetch(`${CRM_URL}/api/v1/crm/contacts`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${CRM_API_KEY}`,
+        },
+        body: JSON.stringify({
+          contactInfo: {
+            firstName,
+            lastName,
+            email: args.email,
+            source: "newsletter",
+            notes: `Subscribed to: ${args.subscriptionType || 'newsletter'}`,
+          },
+          tags: ['newsletter', args.subscriptionType || 'general'].filter(Boolean),
+          metadata: {
+            subscriptionType: args.subscriptionType,
+            subscribedAt: new Date().toISOString(),
+          },
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        console.error("❌ CRM API error:", result);
+        return { success: false, error: result.error };
+      }
+
+      console.log(`✅ Contact synced to CRM: ${result.contactId}`);
+      return { success: true, contactId: result.contactId };
+    } catch (error) {
+      console.error("❌ Failed to sync to CRM:", error);
+      return {
+        success: false,
+        error: error instanceof Error ? error.message : String(error)
+      };
+    }
   },
 });

@@ -34,7 +34,7 @@ export const de = {
     title: "l4yercak3",
     subtitle: "Eine Plattform. Null manuelle Arbeit. Unendliche Skalierung.",
     urgency: "🔥 3 Implementierungsplätze für {quarter} {year} sind noch frei - Jetzt bewerben",
-    description: "Schluss mit Daten kopieren zwischen Excel, Outlook und Lexware. Eine Plattform ersetzt Ihren gesamten Software-Stack. Setzen Sie Ihren Namen auf die Liste, um Ihren Platz für {quarter} {year} heute zu reservieren!",
+    description: "Schluss mit Daten kopieren zwischen Excel, Outlook und Lexware. Setzen Sie Ihren Namen auf die Liste, um Ihren Platz für {quarter} {year} heute zu reservieren!",
     helperText: "Bleiben Sie auf dem Laufenden und erhalten Sie die neuesten Updates zu L4YERCAK3",
     emailPlaceholder: "E-Mail-Adresse eingeben",
     manifesto: "Manifest",

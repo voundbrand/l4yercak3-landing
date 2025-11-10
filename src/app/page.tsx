@@ -18,10 +18,14 @@ export default function Home() {
         <div className="absolute top-4 md:top-6 left-1/2 -translate-x-1/2 z-10 px-4">
           <UrgencyPill />
         </div>
-        
-        {/* Action Buttons - Top Right */}
-        <div className="absolute top-4 md:top-6 right-4 md:right-6 z-10 flex items-center gap-2 md:gap-3">
+
+        {/* Go To App Button - Top Left on Mobile, Top Right on Desktop */}
+        <div className="absolute top-4 md:top-6 left-4 md:left-auto md:right-[4.5rem] z-10">
           <GoToAppButton />
+        </div>
+
+        {/* Book Call Button - Top Right */}
+        <div className="absolute top-4 md:top-6 right-4 md:right-6 z-10">
           <BookCallButton />
         </div>
         

@@ -1,6 +1,6 @@
 export const doMoreWithLessDe = {
   // Meta information
-  title: "Wert-Rechner",
+  title: "Kosten-Rechner",
   subtitle: "Entdecken Sie, wie viel Wert L4YERCAK3 für Ihr Berufsnetzwerk freisetzen kann",
   
   // Form sections
@@ -84,9 +84,16 @@ export const doMoreWithLessDe = {
       title: "IHRE VERSTECKTEN KOSTEN",
       subtitle: "jährlich verschwendet für manuelle Arbeit",
       description: "Stunden menschlichen Potentials gefangen in:",
+      timeTrapped: "Zeit gefangen in:",
+      staffLabel: "Mitarbeiter",
+      executives: "Führungskräfte",
+      hoursPerWeek: "Stunden/Woche",
+      hoursPerYear: "Stunden/Jahr",
+      hour: "Stunde",
+      year: "Jahr",
       tasks: [
         "Veranstaltungsregistrierung und -koordination",
-        "Dateneingabe und Tabellenverwaltung", 
+        "Dateneingabe und Tabellenverwaltung",
         "Repetitive Mitgliederkommunikation",
         "Manuelle Compliance-Berichte",
         "Rechnungserstellung und Zahlungsverfolgung"
@@ -268,7 +275,7 @@ export const doMoreWithLessDe = {
   // Navigation and meta
   navigation: {
     backToHome: "Zurück zur Startseite",
-    title: "Wert-Rechner"
+    title: "Kosten-Rechner"
   },
 
   // Call to action

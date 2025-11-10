@@ -26,36 +26,6 @@ const CrossCircledIcon = () => (
   </svg>
 );
 
-const SubmissionStateMessage = ({ value, reset }: { value: ActionResult<string> | null, reset: () => void }) => {
-  const form = useFormContext<NewsletterSchema>();
-
-  useEffect(() => {
-    if (Object.keys(form.formState.errors).length > 0) {
-      reset();
-    }
-  }, [form.formState.errors, reset]);
-
-  return (
-    <FormStateMessage>
-      {value?.success === true && (
-        <motion.div
-          key={value.id}
-          className={cn(
-            alertVariants({ variant: "success" }),
-            "absolute top-0 left-0 right-0 mx-auto w-max"
-          )}
-          exit={{ opacity: 0, y: 10, scale: 0.8 }}
-          initial={{ opacity: 0, y: 10, scale: 0.8 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={SPRING_BUTTON}
-        >
-          <CheckCircledIcon />
-          <AlertTitle>{value.data}</AlertTitle>
-        </motion.div>
-      )}
-    </FormStateMessage>
-  )
-}
 
 const getDefaultValues = () => {
   // Always return default values on server to prevent hydration mismatch
@@ -68,11 +38,12 @@ export const FormNewsletter = ({
   submit,
 }: {
   input: (props: React.ComponentProps<"input">) => React.ReactNode;
-  submit: (props: React.ComponentProps<"button">) => React.ReactNode;
+  submit: (props: React.ComponentProps<"button"> & { isSuccess?: boolean }) => React.ReactNode;
 }) => {
   const { t } = useTranslation();
   const [submissionState, setSubmissionState] =
     useState<ActionResult<string> | null>(null);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const form = useForm<NewsletterSchema>({
     resolver: zodResolver(newsletterSchema),
@@ -115,6 +86,12 @@ export const FormNewsletter = ({
     setSubmissionState(state);
 
     if (state.success === true) {
+      setShowSuccess(true);
+      // Keep success state visible for 3 seconds
+      setTimeout(() => {
+        setShowSuccess(false);
+      }, 3000);
+
       form.reset({ email: '', name: '', subscriptionType: 'both' });
       // Clear localStorage on successful submission
       localStorage.removeItem('l4yercak3-email');
@@ -124,14 +101,13 @@ export const FormNewsletter = ({
 
     if (state.success === false) {
       form.setError("email", { message: state.message });
+      setShowSuccess(false);
     }
   }
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="relative pt-4 lg:pt-6">
-        <SubmissionStateMessage value={submissionState} reset={() => setSubmissionState(null)} />
-
         <div className="space-y-4">
           {/* Helper Text */}
           <div className="text-center">
@@ -174,6 +150,7 @@ export const FormNewsletter = ({
                       {submit({
                         type: "submit",
                         disabled: form.formState.isSubmitting,
+                        isSuccess: showSuccess,
                       })}
                     </div>
                   </div>

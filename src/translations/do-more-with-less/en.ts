@@ -84,9 +84,16 @@ export const doMoreWithLessEn = {
       title: "YOUR HIDDEN COST",
       subtitle: "wasted annually on manual work",
       description: "hours of human potential trapped in:",
+      timeTrapped: "Time trapped in:",
+      staffLabel: "staff",
+      executives: "executives",
+      hoursPerWeek: "hours/week",
+      hoursPerYear: "hours/year",
+      hour: "hour",
+      year: "year",
       tasks: [
         "Event registration and coordination",
-        "Data entry and spreadsheet management", 
+        "Data entry and spreadsheet management",
         "Repetitive member communications",
         "Manual compliance reporting",
         "Invoice creation and payment tracking"

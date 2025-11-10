@@ -10,6 +10,7 @@ import { api } from '../../../../../convex/_generated/api';
 import { generateApplicationCustomerEmail, ApplicationData } from '@/lib/email-templates/application-customer';
 import { generateApplicationSalesEmail } from '@/lib/email-templates/application-sales';
 import { sendEmailWithRetry, getSenderConfig, getSalesTeamEmail, getReplyToEmail } from '@/lib/email-delivery/resend-client';
+import { getBackendCRMClient } from '@/lib/crm-integration/backend-client';
 
 // Initialize Convex client
 const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL!;
@@ -87,6 +88,33 @@ export async function POST(request: NextRequest) {
       html: salesEmail.html,
       replyTo: replyToEmail,
     });
+
+    // Submit to backend CRM (fire-and-forget)
+    const crmClient = getBackendCRMClient();
+    if (crmClient.isEnabled()) {
+      crmClient.createContactFromApplication(
+        validatedData.firstName,
+        validatedData.lastName,
+        validatedData.email,
+        validatedData.phone,
+        validatedData.company,
+        validatedData.role,
+        validatedData.teamSize,
+        validatedData.monthlySpend,
+        validatedData.currentChallenges
+      ).then((result) => {
+        if (result.success) {
+          console.log(`✅ CRM contact created from application: ${result.contactId}`);
+          if (result.organizationId) {
+            console.log(`✅ CRM organization created/linked: ${result.organizationId}`);
+          }
+        } else {
+          console.error(`❌ CRM submission failed: ${result.error}`);
+        }
+      }).catch((error) => {
+        console.error('❌ CRM submission error:', error);
+      });
+    }
 
     // Check if at least customer email was sent
     if (!customerResult.success) {

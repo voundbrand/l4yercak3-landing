@@ -17,6 +17,13 @@ const ArrowRightIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+// Check Icon for success state
+const CheckIcon = ({ className }: { className?: string }) => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <path d="M13.5 4L6 11.5L2.5 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
 // Icons
 const Cross1Icon = ({ className }: { className?: string }) => (
   <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
@@ -159,34 +166,64 @@ export const Newsletter = () => {
                       {...(props as any)}
                     />
                   )}
-                  submit={(props) => (
-                    <motion.button
-                      className={cn(
-                        buttonVariants({
-                          variant: "iconButton",
-                          size: "icon-xl",
-                        }),
-                        "h-10 w-10 md:h-9 md:w-9" // Match input inner height
-                      )}
-                      {...(props as any)}
-                      initial={isInitialRender.current ? false : { opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{
-                        opacity: 0,
-                        transition: {
+                  submit={(props) => {
+                    const { isSuccess, ...buttonProps } = props as any;
+                    return (
+                      <motion.button
+                        className={cn(
+                          buttonVariants({
+                            variant: "iconButton",
+                            size: "icon-xl",
+                          }),
+                          "h-10 w-10 md:h-9 md:w-9 transition-colors duration-300",
+                          isSuccess && "bg-green-500 hover:bg-green-600"
+                        )}
+                        {...buttonProps}
+                        initial={isInitialRender.current ? false : { opacity: 0 }}
+                        animate={{
+                          opacity: 1,
+                          scale: isSuccess ? [1, 1.1, 1] : 1
+                        }}
+                        exit={{
+                          opacity: 0,
+                          transition: {
+                            duration: DURATION,
+                            ease: EASE_OUT_OPACITY,
+                          },
+                        }}
+                        transition={{
                           duration: DURATION,
-                          ease: EASE_OUT_OPACITY,
-                        },
-                      }}
-                      transition={{
-                        duration: DURATION,
-                        ease: EASE_OUT,
-                        delay: DELAY,
-                      }}
-                    >
-                      <ArrowRightIcon className="w-4 h-4 text-current" />
-                    </motion.button>
-                  )}
+                          ease: EASE_OUT,
+                          delay: DELAY,
+                          scale: { duration: 0.3 }
+                        }}
+                      >
+                        <AnimatePresenceWrapper mode="wait">
+                          {isSuccess ? (
+                            <motion.div
+                              key="check"
+                              initial={{ scale: 0, rotate: -180 }}
+                              animate={{ scale: 1, rotate: 0 }}
+                              exit={{ scale: 0, rotate: 180 }}
+                              transition={{ duration: 0.3, ease: EASE_OUT }}
+                            >
+                              <CheckIcon className="w-4 h-4 text-white" />
+                            </motion.div>
+                          ) : (
+                            <motion.div
+                              key="arrow"
+                              initial={{ scale: 0, rotate: -180 }}
+                              animate={{ scale: 1, rotate: 0 }}
+                              exit={{ scale: 0, rotate: 180 }}
+                              transition={{ duration: 0.3, ease: EASE_OUT }}
+                            >
+                              <ArrowRightIcon className="w-4 h-4 text-current" />
+                            </motion.div>
+                          )}
+                        </AnimatePresenceWrapper>
+                      </motion.button>
+                    );
+                  }}
                 />
               </div>
             </motion.div>

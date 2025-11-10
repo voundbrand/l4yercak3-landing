@@ -545,17 +545,17 @@ export function ValueCalculator() {
                 readingMode === 'sepia' ? 'bg-red-200/60' : 'bg-red-100/60 dark:bg-red-800/20')}>
                 <h4 className={cn("font-semibold mb-2 transition-colors duration-300",
                   readingMode === 'sepia' ? 'text-red-800' : 'text-red-700 dark:text-red-300')}>
-                  Administrative Staff
+                  {t('doMoreWithLess.form.sections.administrativeStaff')}
                 </h4>
                 <p className="text-sm">
-                  {inputs.adminStaffCount} staff × {inputs.adminHoursPerWeek} hours/week
+                  {inputs.adminStaffCount} {t('doMoreWithLess.results.currentWaste.staffLabel')} × {inputs.adminHoursPerWeek} {t('doMoreWithLess.results.currentWaste.hoursPerWeek')}
                 </p>
                 <p className="text-sm">
-                  {formatNumber(calculations.adminAnnualHours)} hours/year × €{inputs.adminLaborCost}/hour
+                  {formatNumber(calculations.adminAnnualHours)} {t('doMoreWithLess.results.currentWaste.hoursPerYear')} × €{inputs.adminLaborCost}/{t('doMoreWithLess.results.currentWaste.hour')}
                 </p>
                 <p className={cn("font-bold transition-colors duration-300",
                   readingMode === 'sepia' ? 'text-red-700' : 'text-red-600 dark:text-red-400')}>
-                  = {formatCurrency(calculations.adminAnnualWaste)}/year
+                  = {formatCurrency(calculations.adminAnnualWaste)}/{t('doMoreWithLess.results.currentWaste.year')}
                 </p>
               </div>
             )}
@@ -565,17 +565,17 @@ export function ValueCalculator() {
                 readingMode === 'sepia' ? 'bg-red-200/60' : 'bg-red-100/60 dark:bg-red-800/20')}>
                 <h4 className={cn("font-semibold mb-2 transition-colors duration-300",
                   readingMode === 'sepia' ? 'text-red-800' : 'text-red-700 dark:text-red-300')}>
-                  Executive Staff
+                  {t('doMoreWithLess.form.sections.executiveStaff')}
                 </h4>
                 <p className="text-sm">
-                  {inputs.executiveStaffCount} executives × {inputs.executiveHoursPerWeek} hours/week
+                  {inputs.executiveStaffCount} {t('doMoreWithLess.results.currentWaste.executives')} × {inputs.executiveHoursPerWeek} {t('doMoreWithLess.results.currentWaste.hoursPerWeek')}
                 </p>
                 <p className="text-sm">
-                  {formatNumber(calculations.executiveAnnualHours)} hours/year × €{inputs.executiveLaborCost}/hour
+                  {formatNumber(calculations.executiveAnnualHours)} {t('doMoreWithLess.results.currentWaste.hoursPerYear')} × €{inputs.executiveLaborCost}/{t('doMoreWithLess.results.currentWaste.hour')}
                 </p>
                 <p className={cn("font-bold transition-colors duration-300",
                   readingMode === 'sepia' ? 'text-red-700' : 'text-red-600 dark:text-red-400')}>
-                  = {formatCurrency(calculations.executiveAnnualWaste)}/year
+                  = {formatCurrency(calculations.executiveAnnualWaste)}/{t('doMoreWithLess.results.currentWaste.year')}
                 </p>
               </div>
             )}
@@ -584,34 +584,16 @@ export function ValueCalculator() {
           <div className="space-y-2">
             <p className={cn("text-sm transition-colors duration-300",
               readingMode === 'sepia' ? 'text-red-700' : 'text-red-700 dark:text-red-300')}>
-              Time trapped in:
+              {t('doMoreWithLess.results.currentWaste.timeTrapped')}
             </p>
             <ul className="space-y-1 text-sm">
-              <li className={cn("flex items-start gap-2 transition-colors duration-300",
-                readingMode === 'sepia' ? 'text-red-700' : 'text-red-700 dark:text-red-300')}>
-                <span>•</span>
-                <span>Event registration and coordination</span>
-              </li>
-              <li className={cn("flex items-start gap-2 transition-colors duration-300",
-                readingMode === 'sepia' ? 'text-red-700' : 'text-red-700 dark:text-red-300')}>
-                <span>•</span>
-                <span>Data entry and spreadsheet management</span>
-              </li>
-              <li className={cn("flex items-start gap-2 transition-colors duration-300",
-                readingMode === 'sepia' ? 'text-red-700' : 'text-red-700 dark:text-red-300')}>
-                <span>•</span>
-                <span>Repetitive member communications</span>
-              </li>
-              <li className={cn("flex items-start gap-2 transition-colors duration-300",
-                readingMode === 'sepia' ? 'text-red-700' : 'text-red-700 dark:text-red-300')}>
-                <span>•</span>
-                <span>Manual compliance reporting</span>
-              </li>
-              <li className={cn("flex items-start gap-2 transition-colors duration-300",
-                readingMode === 'sepia' ? 'text-red-700' : 'text-red-700 dark:text-red-300')}>
-                <span>•</span>
-                <span>Invoice creation and payment tracking</span>
-              </li>
+              {(t('doMoreWithLess.results.currentWaste.tasks', { returnObjects: true }) as string[]).map((task: string, index: number) => (
+                <li key={index} className={cn("flex items-start gap-2 transition-colors duration-300",
+                  readingMode === 'sepia' ? 'text-red-700' : 'text-red-700 dark:text-red-300')}>
+                  <span>•</span>
+                  <span>{task}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -630,7 +612,7 @@ export function ValueCalculator() {
             </div>
             <p className={cn("text-lg transition-colors duration-300",
               readingMode === 'sepia' ? 'text-blue-700' : 'text-blue-600 dark:text-blue-400')}>
-              That's {calculations.potentialFreedWeeklyHours} hours per week your team could spend on:
+              {t('doMoreWithLess.results.freedCapacity.description').replace('{weeklyHours}', calculations.potentialFreedWeeklyHours.toString())}
             </p>
           </div>
           <ul className="space-y-2 mb-4">

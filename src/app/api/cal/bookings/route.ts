@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getBackendCRMClient } from '@/lib/crm-integration/backend-client';
 
 const CAL_API_KEY = process.env.CAL_API_KEY;
 const CAL_API_URL = process.env.CAL_API_URL || 'https://api.cal.com/v1';
@@ -84,6 +85,27 @@ export async function POST(request: NextRequest) {
     }
 
     console.log('✅ Cal.com booking created successfully:', bookingResponse);
+
+    // Submit to backend CRM (fire-and-forget)
+    const crmClient = getBackendCRMClient();
+    if (crmClient.isEnabled()) {
+      const bookingId = bookingResponse?.id || bookingResponse?.uid;
+      crmClient.createContactFromAppointment(
+        name,
+        email,
+        phone,
+        notes,
+        bookingId
+      ).then((result) => {
+        if (result.success) {
+          console.log(`✅ CRM contact created from appointment: ${result.contactId}`);
+        } else {
+          console.error(`❌ CRM submission failed: ${result.error}`);
+        }
+      }).catch((error) => {
+        console.error('❌ CRM submission error:', error);
+      });
+    }
 
     return NextResponse.json({
       success: true,

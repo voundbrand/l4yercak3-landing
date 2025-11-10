@@ -17,22 +17,24 @@ export const sendWelcomeEmail = action({
     email: v.string(),
     name: v.optional(v.string()),
     subscriptionType: v.optional(v.union(
-      v.literal("newsletter"), 
-      v.literal("private-access"), 
+      v.literal("newsletter"),
+      v.literal("private-access"),
       v.literal("both")
     )),
   },
   handler: async (ctx, args) => {
     const resend = getResendClient();
-    
+
     if (!resend) {
       console.log("Resend not configured, skipping welcome email");
       return { success: false, error: "Email service not configured" };
     }
 
+    const fromEmail = process.env.SALES_EMAIL || "onboarding@resend.dev";
+
     try {
       const { data, error } = await resend.emails.send({
-        from: "l4yercak3 <onboarding@resend.dev>", // Using Resend's sandbox domain for testing
+        from: `l4yercak3 <${fromEmail}>`,
         to: [args.email],
         subject: "Welcome to l4yercak3 - Early Access Confirmed! 🚀",
         html: `
@@ -93,23 +95,26 @@ export const sendNotificationEmail = action({
     email: v.string(),
     name: v.optional(v.string()),
     subscriptionType: v.optional(v.union(
-      v.literal("newsletter"), 
-      v.literal("private-access"), 
+      v.literal("newsletter"),
+      v.literal("private-access"),
       v.literal("both")
     )),
   },
   handler: async (ctx, args) => {
     const resend = getResendClient();
-    
+
     if (!resend) {
       console.log("Resend not configured, skipping notification email");
       return { success: false, error: "Email service not configured" };
     }
 
+    const fromEmail = process.env.SALES_EMAIL || "onboarding@resend.dev";
+    const notificationEmail = process.env.NOTIFICATION_EMAIL || "itsmetherealremington@gmail.com";
+
     try {
       const { data, error } = await resend.emails.send({
-        from: "l4yercak3 Notifications <onboarding@resend.dev>", // Using Resend's sandbox domain for testing
-        to: ["notifications@example.com"], // Replace with your notification email
+        from: `l4yercak3 Notifications <${fromEmail}>`,
+        to: [notificationEmail],
         subject: "🎉 New Early Access Signup - l4yercak3",
         html: `
           <div style="font-family: 'Geist', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
