@@ -32,6 +32,9 @@ export const sendWelcomeEmail = action({
 
     const fromEmail = process.env.SALES_EMAIL || "onboarding@resend.dev";
 
+    // Note: Domain mail.l4yercak3.com is verified, so we can send to any email address
+    // No sandbox restrictions apply with a verified domain
+
     try {
       const { data, error } = await resend.emails.send({
         from: `l4yercak3 <${fromEmail}>`,
