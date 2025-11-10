@@ -167,8 +167,22 @@ export const syncToCRM = action({
     }
 
     try {
-      const [firstName, ...lastNameParts] = (args.name || args.email.split('@')[0]).split(' ');
-      const lastName = lastNameParts.join(' ') || 'Newsletter Subscriber';
+      // Parse name - if no name provided, use email-based fallback
+      let firstName: string;
+      let lastName: string;
+
+      if (args.name && args.name.trim()) {
+        // If name is provided, split it
+        const nameParts = args.name.trim().split(' ');
+        firstName = nameParts[0];
+        lastName = nameParts.slice(1).join(' ') || 'Subscriber';
+      } else {
+        // If no name, use email username with better formatting
+        const emailUsername = args.email.split('@')[0];
+        // Capitalize first letter of email username
+        firstName = emailUsername.charAt(0).toUpperCase() + emailUsername.slice(1);
+        lastName = 'Newsletter Subscriber';
+      }
 
       const response = await fetch(`${CRM_URL}/api/v1/crm/contacts`, {
         method: "POST",
@@ -177,18 +191,14 @@ export const syncToCRM = action({
           "Authorization": `Bearer ${CRM_API_KEY}`,
         },
         body: JSON.stringify({
-          contactInfo: {
-            firstName,
-            lastName,
-            email: args.email,
-            source: "newsletter",
-            notes: `Subscribed to: ${args.subscriptionType || 'newsletter'}`,
-          },
+          firstName,
+          lastName,
+          email: args.email,
+          source: "newsletter",
+          notes: `Subscribed to: ${args.subscriptionType || 'newsletter'}`,
           tags: ['newsletter', args.subscriptionType || 'general'].filter(Boolean),
-          metadata: {
-            subscriptionType: args.subscriptionType,
-            subscribedAt: new Date().toISOString(),
-          },
+          subscriptionType: args.subscriptionType,
+          subscribedAt: new Date().toISOString(),
         }),
       });
 
