@@ -20,7 +20,7 @@ export default function Home() {
         </div>
 
         {/* Go To App Button - Top Left on Mobile, Top Right on Desktop */}
-        <div className="absolute top-4 md:top-6 left-4 md:left-auto md:right-[4.5rem] z-10">
+        <div className="absolute top-4 md:top-6 left-4 md:left-auto md:right-52 z-10">
           <GoToAppButton />
         </div>
 
