@@ -18,16 +18,20 @@ export async function POST(request: NextRequest) {
       ...(language && { language }),
     });
 
-    console.log("[Subscribe API] Convex result:", result);
+    console.log("[Subscribe API] Convex result:", JSON.stringify(result, null, 2));
 
     // API routes serialize properly - return the full result
-    return NextResponse.json({
-      success: true,
-      message: result.message,
-      crmSyncScheduled: result.crmSyncScheduled,
-      emailsScheduled: result.emailsScheduled,
+    const response = {
+      success: true as const,
+      message: result?.message || "Subscription successful",
+      crmSyncScheduled: result?.crmSyncScheduled ?? false,
+      emailsScheduled: result?.emailsScheduled ?? false,
       id: Date.now().toString(),
-    });
+    };
+
+    console.log("[Subscribe API] Returning response:", JSON.stringify(response, null, 2));
+
+    return NextResponse.json(response);
   } catch (error) {
     console.error("[Subscribe API] Error:", error);
 
