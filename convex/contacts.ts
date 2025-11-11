@@ -97,15 +97,16 @@ export const subscribe = mutation({
       ...(name && { name }),
     });
 
-    // Sync to CRM via action (fire-and-forget) and schedule emails
+    // Sync to CRM via action and schedule emails
+    // Note: Using scheduler with delay 0 to run immediately in background
     try {
-      console.log(`[Subscribe] Scheduling CRM sync for ${email}`);
-      await ctx.scheduler.runAfter(0, api.contacts.syncToCRM, {
+      console.log(`[Subscribe] Scheduling immediate CRM sync for ${email}`);
+      const scheduledId = await ctx.scheduler.runAfter(0, api.contacts.syncToCRM, {
         email,
         name,
         subscriptionType,
       });
-      console.log(`[Subscribe] CRM sync scheduled successfully for ${email}`);
+      console.log(`[Subscribe] CRM sync scheduled with ID: ${scheduledId} for ${email}`);
 
       console.log(`[Subscribe] Scheduling welcome emails for ${email}`);
       await ctx.scheduler.runAfter(0, api.emails.sendWelcomeEmail, {
@@ -178,12 +179,19 @@ export const syncToCRM = action({
 
     const logPrefix = `[CRM Sync ${args.email}]`;
 
+    console.log(`${logPrefix} ⚡ Starting CRM sync action... (timestamp: ${Date.now()})`);
+    console.log(`${logPrefix} CRM_URL: ${CRM_URL ? 'SET (' + CRM_URL + ')' : '❌ NOT SET'}`);
+    console.log(`${logPrefix} CRM_API_KEY: ${CRM_API_KEY ? '✅ SET (length: ' + CRM_API_KEY.length + ')' : '❌ NOT SET'}`);
+
     // Skip if CRM not configured
     if (!CRM_URL || !CRM_API_KEY) {
       const message = "⚠️ CRM integration not configured - skipping sync";
-      console.log(`${logPrefix} ${message}`);
+      console.error(`${logPrefix} ${message}`);
+      console.error(`${logPrefix} Missing: ${!CRM_URL ? 'BACKEND_CRM_URL ' : ''}${!CRM_API_KEY ? 'BACKEND_CRM_API_KEY' : ''}`);
       return { success: false, error: "CRM not configured", logged: message };
     }
+
+    console.log(`${logPrefix} ✅ CRM configuration validated, proceeding with API call...`);
 
     try {
       // Parse name - if no name provided, use email-based fallback
@@ -247,5 +255,16 @@ export const syncToCRM = action({
         logged: errorMessage
       };
     }
+  },
+});
+
+// Helper query to get email by address
+export const getByEmail = query({
+  args: { email: v.string() },
+  handler: async (ctx, args) => {
+    return await ctx.db
+      .query("emailList")
+      .filter((q) => q.eq(q.field("email"), args.email))
+      .first();
   },
 });
