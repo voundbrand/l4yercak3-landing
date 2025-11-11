@@ -95,16 +95,16 @@ export const storeLead = mutation({
         }
       }
 
-      // Check for existing lead with same email in last 24 hours to prevent spam
-      const oneDayAgo = Date.now() - (24 * 60 * 60 * 1000);
-      const existingLead = await ctx.db
+      // Rate limiting: Check for spam (more than 5 submissions in 5 minutes)
+      const fiveMinutesAgo = Date.now() - (5 * 60 * 1000);
+      const recentSubmissions = await ctx.db
         .query("valueCalculatorLeads")
         .withIndex("by_email", (q) => q.eq("email", args.email))
-        .filter((q) => q.gt(q.field("submittedAt"), oneDayAgo))
-        .first();
+        .filter((q) => q.gt(q.field("submittedAt"), fiveMinutesAgo))
+        .collect();
 
-      if (existingLead) {
-        throw new Error("A lead with this email was already submitted in the last 24 hours");
+      if (recentSubmissions.length >= 5) {
+        throw new Error("Too many requests. Please wait a few minutes before submitting again.");
       }
 
       // Store the lead data
