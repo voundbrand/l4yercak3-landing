@@ -11,7 +11,7 @@ export async function subscribe(
   subscriptionType: "newsletter" | "private-access" | "both",
   name?: string,
   language?: "en" | "de"
-): Promise<ActionResult<string>> {
+): Promise<ActionResult<{ message: string; crmSyncScheduled: boolean; emailsScheduled: boolean }>> {
   try {
     const result = await convex.mutation(api.contacts.subscribe, {
       email,
@@ -25,7 +25,11 @@ export async function subscribe(
 
     return {
       success: true,
-      data: result.message,
+      data: {
+        message: result.message,
+        crmSyncScheduled: result.crmSyncScheduled,
+        emailsScheduled: result.emailsScheduled,
+      },
       id: Date.now().toString(),
     };
   } catch (error) {

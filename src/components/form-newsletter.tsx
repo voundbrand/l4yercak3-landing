@@ -42,7 +42,7 @@ export const FormNewsletter = ({
 }) => {
   const { t } = useTranslation();
   const [submissionState, setSubmissionState] =
-    useState<ActionResult<string> | null>(null);
+    useState<ActionResult<{ message: string; crmSyncScheduled: boolean; emailsScheduled: boolean }> | null>(null);
   const [showSuccess, setShowSuccess] = useState(false);
 
   const form = useForm<NewsletterSchema>({
@@ -98,12 +98,26 @@ export const FormNewsletter = ({
     setSubmissionState(state);
 
     if (state.success === true) {
-      // Log success in browser console
+      // Log success in browser console with CRM sync info
       console.log('%c✓ Newsletter subscription successful', 'color: #10b981; font-weight: bold; font-size: 14px', {
         subscriptionType: values.subscriptionType,
         language: currentLanguage,
+        message: state.data?.message,
+        crmSyncScheduled: state.data?.crmSyncScheduled,
+        emailsScheduled: state.data?.emailsScheduled,
         timestamp: new Date().toISOString(),
       });
+
+      // Log CRM sync status if scheduled
+      if (state.data?.crmSyncScheduled) {
+        console.log('%c📊 CRM Sync scheduled to L4YERCAK3 backend', 'color: #8b5cf6; font-weight: bold', {
+          backend: 'https://agreeable-lion-828.convex.site',
+          action: 'Creating contact in backend CRM',
+          email: values.email.replace(/(.{2})(.*)(@.*)/, '$1***$3'),
+          subscriptionType: values.subscriptionType,
+          note: 'Contact will appear in L4YERCAK3 app CRM within seconds',
+        });
+      }
 
       setShowSuccess(true);
       // Keep success state visible for 3 seconds
