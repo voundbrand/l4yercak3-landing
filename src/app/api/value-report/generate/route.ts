@@ -102,6 +102,12 @@ export async function POST(request: NextRequest) {
   try {
     // Parse and validate request body
     const body = await request.json();
+    console.log('[Value Report API] Request received', {
+      email: body.contactInfo?.email,
+      organizationName: body.contactInfo?.organizationName,
+      language: body.contactInfo?.language,
+    });
+
     const validatedData = ValueReportRequestSchema.parse(body);
     
     // Detect language from request headers and form data
@@ -230,12 +236,26 @@ export async function POST(request: NextRequest) {
     }
     
     // Send emails with PDF attachment
+    console.log('[Value Report API] Sending emails...', {
+      customerEmail: leadData.email,
+      pdfFilename: pdfResult.filename,
+      language: detectedLanguage,
+    });
+
     const emailResult = await sendValueReportEmails(
       leadData,
       calculatedValues,
       pdfResult.pdf,
       pdfResult.filename
     );
+
+    console.log('[Value Report API] Email result:', {
+      overallSuccess: emailResult.overallSuccess,
+      customerEmailSuccess: emailResult.customerEmail.success,
+      customerEmailError: emailResult.customerEmail.error,
+      salesEmailSuccess: emailResult.salesEmail.success,
+      salesEmailError: emailResult.salesEmail.error,
+    });
 
     // Update email tracking in Convex if we have a leadId
     if (convexUrl && leadId) {
