@@ -83,11 +83,28 @@ export const FormNewsletter = ({
   async function onSubmit(values: NewsletterSchema) {
     // Get current language from i18n
     const currentLanguage = (localStorage.getItem('language') || 'en') as 'en' | 'de';
+
+    // Log submission start in browser console
+    console.log('%c[Newsletter] Starting subscription', 'color: #3b82f6; font-weight: bold', {
+      email: values.email.replace(/(.{2})(.*)(@.*)/, '$1***$3'), // Mask email for privacy
+      subscriptionType: values.subscriptionType,
+      hasName: !!values.name,
+      language: currentLanguage,
+      timestamp: new Date().toISOString(),
+    });
+
     const state = await subscribe(values.email, values.subscriptionType, values.name, currentLanguage);
 
     setSubmissionState(state);
 
     if (state.success === true) {
+      // Log success in browser console
+      console.log('%c✓ Newsletter subscription successful', 'color: #10b981; font-weight: bold; font-size: 14px', {
+        subscriptionType: values.subscriptionType,
+        language: currentLanguage,
+        timestamp: new Date().toISOString(),
+      });
+
       setShowSuccess(true);
       // Keep success state visible for 3 seconds
       setTimeout(() => {
@@ -102,6 +119,14 @@ export const FormNewsletter = ({
     }
 
     if (state.success === false) {
+      // Log error in browser console
+      console.error('%c✗ Newsletter subscription failed', 'color: #ef4444; font-weight: bold; font-size: 14px', {
+        error: state.message,
+        subscriptionType: values.subscriptionType,
+        language: currentLanguage,
+        timestamp: new Date().toISOString(),
+      });
+
       form.setError("email", { message: state.message });
       setShowSuccess(false);
     }

@@ -92,7 +92,7 @@ export function LeadCaptureForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (submission.isSubmitting) return;
 
     const currentLanguage = (i18n.language === 'de' ? 'de' : 'en') as 'en' | 'de';
@@ -121,13 +121,35 @@ export function LeadCaptureForm({
       }
     };
 
-
+    // Log PDF generation start in browser console
+    console.log('%c[Value Calculator] Starting PDF report generation', 'color: #8b5cf6; font-weight: bold', {
+      email: formData.email.replace(/(.{2})(.*)(@.*)/, '$1***$3'), // Mask email for privacy
+      organizationName: formData.organizationName,
+      timeline: formData.timeline,
+      language: currentLanguage,
+      totalValue: calculatedValues.totalValueCreated,
+      attemptNumber: newAttemptCount,
+      timestamp: new Date().toISOString(),
+    });
 
     // Generate value report with comprehensive error handling
     const result = await generateValueReport(requestData, currentLanguage);
 
     if (result.success) {
       // Success!
+      console.log('%c✓ PDF report generated and sent successfully', 'color: #10b981; font-weight: bold; font-size: 14px', {
+        leadId: result.data?.leadId,
+        pdfFilename: result.data?.pdfFilename,
+        processingTime: result.data?.processingTime,
+        totalValue: result.data?.totalValue,
+        leadQuality: result.data?.leadQuality,
+        emailDelivery: result.data?.emailDelivery,
+        language: currentLanguage,
+        isPartialSuccess: result.isPartialSuccess,
+        warnings: result.data?.warnings,
+        timestamp: new Date().toISOString(),
+      });
+
       setSubmission({
         isSubmitting: false,
         isSuccess: true,
@@ -142,6 +164,16 @@ export function LeadCaptureForm({
       }
     } else {
       // Handle error or partial success
+      console.error('%c✗ PDF report generation failed', 'color: #ef4444; font-weight: bold; font-size: 14px', {
+        error: result.error,
+        isPartialSuccess: result.isPartialSuccess,
+        canRetry: result.canRetry,
+        attemptNumber: newAttemptCount,
+        language: currentLanguage,
+        fallbackInstructions: result.fallbackInstructions,
+        timestamp: new Date().toISOString(),
+      });
+
       setSubmission({
         isSubmitting: false,
         isSuccess: false,

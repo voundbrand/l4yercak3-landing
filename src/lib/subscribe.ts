@@ -20,20 +20,8 @@ export async function subscribe(
       ...(language && { language }),
     });
 
-    // Log to browser console for production debugging
-    if (typeof window !== 'undefined') {
-      console.log('[Newsletter Subscribe]', {
-        email: email.replace(/(.{2})(.*)(@.*)/, '$1***$3'), // Mask email for privacy
-        subscriptionType,
-        language,
-        crmSyncScheduled: result.crmSyncScheduled,
-        emailsScheduled: result.emailsScheduled,
-        timestamp: new Date().toISOString(),
-      });
-
-      // Add a success indicator in console
-      console.log('%c✓ Newsletter subscription successful', 'color: #10b981; font-weight: bold');
-    }
+    // Note: Browser console logging is handled in the client component (form-newsletter.tsx)
+    // This server action runs on the server where window/console.log aren't visible to users
 
     return {
       success: true,
@@ -41,12 +29,10 @@ export async function subscribe(
       id: Date.now().toString(),
     };
   } catch (error) {
+    // Server-side error logging (shows in server console, not browser)
     console.error("Subscription error:", error);
 
-    // Log error to browser console for debugging
-    if (typeof window !== 'undefined') {
-      console.error('%c✗ Newsletter subscription failed', 'color: #ef4444; font-weight: bold', error);
-    }
+    // Note: Browser console error logging is handled in the client component (form-newsletter.tsx)
 
     return {
       success: false,
