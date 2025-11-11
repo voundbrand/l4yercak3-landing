@@ -29,15 +29,19 @@ export async function subscribe(
     console.log("[Subscribe Server Action] Convex result:", JSON.stringify(result));
 
     // Note: Browser console logging is handled in the client component (form-newsletter.tsx)
-    // Flatten the structure for Next.js server action serialization
+    // Explicit serialization for Next.js server action
 
-    return {
-      success: true,
-      message: result.message,
-      crmSyncScheduled: result.crmSyncScheduled,
-      emailsScheduled: result.emailsScheduled,
-      id: Date.now().toString(),
+    const response = {
+      success: true as const,
+      message: String(result.message),
+      crmSyncScheduled: Boolean(result.crmSyncScheduled),
+      emailsScheduled: Boolean(result.emailsScheduled),
+      id: String(Date.now()),
     };
+
+    console.log("[Subscribe Server Action] Returning:", JSON.stringify(response));
+
+    return response;
   } catch (error) {
     // Server-side error logging (shows in server console, not browser)
     console.error("Subscription error:", error);
