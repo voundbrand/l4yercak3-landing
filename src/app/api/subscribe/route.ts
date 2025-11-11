@@ -10,6 +10,8 @@ export async function POST(request: NextRequest) {
     const { email, subscriptionType, name, language } = body;
 
     console.log("[Subscribe API] Request received:", { email, subscriptionType, name, language });
+    console.log("[Subscribe API] Convex URL:", process.env.NEXT_PUBLIC_CONVEX_URL);
+    console.log("[Subscribe API] API path:", "api.contacts.subscribe");
 
     const result = await convex.mutation(api.contacts.subscribe, {
       email,
@@ -18,7 +20,9 @@ export async function POST(request: NextRequest) {
       ...(language && { language }),
     });
 
-    console.log("[Subscribe API] Convex result:", JSON.stringify(result, null, 2));
+    console.log("[Subscribe API] Raw Convex result type:", typeof result);
+    console.log("[Subscribe API] Raw Convex result:", result);
+    console.log("[Subscribe API] Convex result JSON:", JSON.stringify(result, null, 2));
 
     // API routes serialize properly - return the full result
     const response = {
