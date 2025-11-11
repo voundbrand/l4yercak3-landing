@@ -4,7 +4,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { z } from 'zod';
+import { z, ZodIssue } from 'zod';
 import {
   transformCalculatorDataForPDF,
   validateTransformedData,
@@ -18,6 +18,7 @@ import { sendValueReportEmails } from '@/lib/email-delivery/email-service';
 import { validateResendConfig } from '@/lib/email-delivery/resend-client';
 import { ConvexHttpClient } from 'convex/browser';
 import { api } from '../../../../../convex/_generated/api';
+import { Id } from '../../../../../convex/_generated/dataModel';
 
 // Request validation schema
 const ValueReportRequestSchema = z.object({
@@ -89,8 +90,6 @@ const ValueReportRequestSchema = z.object({
     language: z.enum(['en', 'de']).optional(),
   }),
 });
-
-type ValueReportRequest = z.infer<typeof ValueReportRequestSchema>;
 
 /**
  * POST /api/value-report/generate
@@ -262,7 +261,7 @@ export async function POST(request: NextRequest) {
       try {
         const convex = new ConvexHttpClient(convexUrl);
         await convex.mutation(api.valueCalculatorLeads.updateEmailTracking, {
-          leadId: leadId as any,
+          leadId: leadId as Id<"valueCalculatorLeads">,
           customerEmailSent: emailResult.customerEmail.success,
           salesEmailSent: emailResult.salesEmail.success,
           pdfGenerated: true,
@@ -373,8 +372,7 @@ export async function POST(request: NextRequest) {
       
       // Check if at least customer email was sent
       const customerEmailSent = emailResult.customerEmail.success;
-      const salesEmailSent = emailResult.salesEmail.success;
-      
+
       if (customerEmailSent) {
         // Customer got their email, this is acceptable
         console.warn('Sales email failed but customer email succeeded');
@@ -448,7 +446,7 @@ export async function POST(request: NextRequest) {
         {
           success: false,
           error: 'Invalid request data',
-          details: error.issues.map((err: any) => ({
+          details: error.issues.map((err: ZodIssue) => ({
             field: err.path.join('.'),
             message: err.message
           }))
