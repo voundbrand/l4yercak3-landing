@@ -5,7 +5,7 @@ import type { NewsletterSchema } from "@/lib/schema";
 import { useForm, useFormContext } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { newsletterSchema } from "@/lib/schema";
-import { subscribe, type SubscribeResult } from "@/lib/subscribe";
+import type { SubscribeResult } from "@/lib/subscribe";
 import { useEffect, useState } from "react";
 import { ActionResult, cn } from "@/lib/utils";
 import { AlertTitle, alertVariants } from "./ui/alert";
@@ -93,10 +93,22 @@ export const FormNewsletter = ({
       timestamp: new Date().toISOString(),
     });
 
-    const state = await subscribe(values.email, values.subscriptionType, values.name, currentLanguage);
+    // Call API route instead of server action (API routes serialize properly in Next.js 16)
+    const response = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: values.email,
+        subscriptionType: values.subscriptionType,
+        name: values.name,
+        language: currentLanguage,
+      }),
+    });
 
-    // Debug: Log what we received from server action
-    console.log('%c[Debug] Server action response:', 'color: #f59e0b; font-weight: bold', state);
+    const state: SubscribeResult = await response.json();
+
+    // Debug: Log what we received from API
+    console.log('%c[Debug] API response:', 'color: #f59e0b; font-weight: bold', state);
 
     setSubmissionState(state);
 
