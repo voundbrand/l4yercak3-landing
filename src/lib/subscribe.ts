@@ -20,6 +20,9 @@ export async function subscribe(
       ...(language && { language }),
     });
 
+    // Server-side logging to verify what we got from Convex
+    console.log("[Subscribe Server Action] Convex result:", JSON.stringify(result));
+
     // Note: Browser console logging is handled in the client component (form-newsletter.tsx)
     // This server action runs on the server where window/console.log aren't visible to users
 

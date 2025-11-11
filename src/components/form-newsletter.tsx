@@ -95,6 +95,9 @@ export const FormNewsletter = ({
 
     const state = await subscribe(values.email, values.subscriptionType, values.name, currentLanguage);
 
+    // Debug: Log what we received from server action
+    console.log('%c[Debug] Server action response:', 'color: #f59e0b; font-weight: bold', state);
+
     setSubmissionState(state);
 
     if (state.success === true) {
