@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { api } from "../../../../convex/_generated/api";
 import { ConvexHttpClient } from "convex/browser";
 
-const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
-
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -11,6 +9,15 @@ export async function POST(request: NextRequest) {
 
     console.log("[Subscribe API] Request received:", { email, subscriptionType, name, language });
     console.log("[Subscribe API] Convex URL:", process.env.NEXT_PUBLIC_CONVEX_URL);
+
+    // Create Convex client inside the request handler to ensure fresh env vars
+    if (!process.env.NEXT_PUBLIC_CONVEX_URL) {
+      console.error("[Subscribe API] ERROR: NEXT_PUBLIC_CONVEX_URL is not set!");
+      throw new Error("Convex URL not configured");
+    }
+
+    const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL);
+    console.log("[Subscribe API] Convex client created successfully");
     console.log("[Subscribe API] API path:", "api.contacts.subscribe");
 
     const result = await convex.mutation(api.contacts.subscribe, {
@@ -37,7 +44,10 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(response);
   } catch (error) {
-    console.error("[Subscribe API] Error:", error);
+    console.error("[Subscribe API] Error caught:", error);
+    console.error("[Subscribe API] Error type:", typeof error);
+    console.error("[Subscribe API] Error message:", error instanceof Error ? error.message : String(error));
+    console.error("[Subscribe API] Error stack:", error instanceof Error ? error.stack : "No stack trace");
 
     return NextResponse.json(
       {
