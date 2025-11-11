@@ -68,6 +68,13 @@ export async function sendEmailWithRetry(
 
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
+      console.log(`[Resend] Sending email (attempt ${attempt}):`, {
+        from: emailData.from,
+        to: emailData.to,
+        subject: emailData.subject,
+        hasAttachments: !!emailData.attachments?.length,
+      });
+
       const result = await client.emails.send({
         from: emailData.from,
         to: emailData.to,
@@ -80,7 +87,13 @@ export async function sendEmailWithRetry(
           content_type: attachment.contentType || 'application/octet-stream'
         }))
       });
-      
+
+      console.log(`[Resend] Email sent successfully:`, {
+        messageId: result.data?.id,
+        status: result.error ? 'error' : 'success',
+        error: result.error,
+      });
+
       return {
         success: true,
         messageId: result.data?.id
