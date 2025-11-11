@@ -7,6 +7,8 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { email, subscriptionType, name, language } = body;
 
+    console.log("[Subscribe API] Request received:", { email, subscriptionType, name, language });
+
     // Create Convex client inside the request handler to ensure fresh env vars
     if (!process.env.NEXT_PUBLIC_CONVEX_URL) {
       throw new Error("Convex URL not configured");
@@ -21,13 +23,19 @@ export async function POST(request: NextRequest) {
       ...(language && { language }),
     });
 
-    return NextResponse.json({
+    console.log("[Subscribe API] Convex result:", result);
+
+    const response = {
       success: true,
       message: result.message,
       crmSyncScheduled: result.crmSyncScheduled,
       emailsScheduled: result.emailsScheduled,
       id: Date.now().toString(),
-    });
+    };
+
+    console.log("[Subscribe API] Returning response:", response);
+
+    return NextResponse.json(response);
   } catch (error) {
     console.error("[Subscribe API] Error:", error);
 

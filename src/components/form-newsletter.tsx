@@ -107,6 +107,9 @@ export const FormNewsletter = ({
 
     const state: SubscribeResult = await response.json();
 
+    // Debug: Log what we received from API
+    console.log('%c[Debug] API response:', 'color: #f59e0b; font-weight: bold', state);
+
     setSubmissionState(state);
 
     if (state.success === true) {
