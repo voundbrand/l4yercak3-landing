@@ -5,7 +5,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { 
+import {
   transformCalculatorDataForPDF,
   validateTransformedData,
   type ExistingCalculatorInputs,
@@ -16,6 +16,8 @@ import { detectLanguageFromContext } from '@/lib/value-calculator/i18n-bridge';
 import { getAPITemplateGenerator } from '@/lib/pdf-generation/apitemplate-generator';
 import { sendValueReportEmails } from '@/lib/email-delivery/email-service';
 import { validateResendConfig } from '@/lib/email-delivery/resend-client';
+import { ConvexHttpClient } from 'convex/browser';
+import { api } from '../../../../../convex/_generated/api';
 
 // Request validation schema
 const ValueReportRequestSchema = z.object({
@@ -122,18 +124,76 @@ export async function POST(request: NextRequest) {
       validatedData.calculatedValues as ExistingCalculatedValues,
       contactInfoWithLanguage
     );
-    
+
     // Validate transformed data
     const validation = validateTransformedData(leadData, calculatedValues);
     if (!validation.isValid) {
       return NextResponse.json(
-        { 
-          success: false, 
+        {
+          success: false,
           error: 'Data validation failed',
-          details: validation.errors 
+          details: validation.errors
         },
         { status: 400 }
       );
+    }
+
+    // Store lead data in Convex database
+    const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL;
+    let leadId: string | null = null;
+
+    if (convexUrl) {
+      try {
+        const convex = new ConvexHttpClient(convexUrl);
+        const result = await convex.mutation(api.valueCalculatorLeads.storeLead, {
+          // Contact Information
+          fullName: leadData.fullName,
+          email: leadData.email,
+          phone: leadData.phone,
+          organizationName: leadData.organizationName,
+          jobTitle: leadData.jobTitle,
+          signatureAuthority: leadData.signatureAuthority,
+          timeline: leadData.timeline,
+
+          // Organization Metrics
+          organizationSize: leadData.organizationSize,
+          adminStaffCount: leadData.adminStaffCount,
+          manualHoursPerWeek: leadData.manualHoursPerWeek,
+          loadedLaborCost: leadData.loadedLaborCost,
+          annualEvents: leadData.annualEvents,
+          avgMemberValue: leadData.avgMemberValue,
+          currentRevenue: leadData.currentRevenue,
+          industryType: leadData.industryType,
+
+          // Calculated Values
+          totalAnnualHours: calculatedValues.totalAnnualHours,
+          annualWaste: calculatedValues.annualWaste,
+          potentialFreedHours: calculatedValues.potentialFreedHours,
+          laborCostAvoided: calculatedValues.laborCostAvoided,
+          newRevenuePotential: calculatedValues.newRevenuePotential,
+          totalValueCreated: calculatedValues.totalValueCreated,
+
+          // Pricing Intelligence
+          conservativePricing: calculatedValues.pricing.conservative,
+          targetPricing: calculatedValues.pricing.target,
+          aggressivePricing: calculatedValues.pricing.aggressive,
+          premiumPricing: calculatedValues.pricing.premium,
+
+          // Sales Intelligence
+          recommendedPhase: calculatedValues.recommendedPhase,
+          leadQualityScore: calculatedValues.leadQualityScore,
+
+          // System Fields
+          language: detectedLanguage,
+        });
+
+        if (result.success && result.leadId) {
+          leadId = result.leadId;
+        }
+      } catch (convexError) {
+        console.error('Failed to store lead in Convex:', convexError);
+        // Continue even if Convex storage fails - don't block PDF/email delivery
+      }
     }
     
     // Validate email configuration
@@ -176,6 +236,22 @@ export async function POST(request: NextRequest) {
       pdfResult.pdf,
       pdfResult.filename
     );
+
+    // Update email tracking in Convex if we have a leadId
+    if (convexUrl && leadId) {
+      try {
+        const convex = new ConvexHttpClient(convexUrl);
+        await convex.mutation(api.valueCalculatorLeads.updateEmailTracking, {
+          leadId: leadId as any,
+          customerEmailSent: emailResult.customerEmail.success,
+          salesEmailSent: emailResult.salesEmail.success,
+          pdfGenerated: true,
+        });
+      } catch (convexError) {
+        console.error('Failed to update email tracking in Convex:', convexError);
+        // Continue even if tracking update fails
+      }
+    }
     
     if (!emailResult.overallSuccess) {
       console.error('Email delivery failed:', {
@@ -196,7 +272,7 @@ export async function POST(request: NextRequest) {
           message: 'Value report generated and delivered to customer successfully',
           warnings: ['Internal notification delivery failed'],
           data: {
-            leadId: `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+            leadId: leadId || `temp-${Date.now()}`,
             pdfFilename: pdfResult.filename,
             emailDelivery: {
               customerMessageId: emailResult.customerEmail.messageId,
@@ -233,12 +309,12 @@ export async function POST(request: NextRequest) {
     
     // Success response
     const processingTime = Date.now() - startTime;
-    
+
     return NextResponse.json({
       success: true,
       message: 'Value report generated and delivered successfully',
       data: {
-        leadId: `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`, // Temporary ID
+        leadId: leadId || `temp-${Date.now()}`,
         pdfFilename: pdfResult.filename,
         emailDelivery: {
           customerMessageId: emailResult.customerEmail.messageId,

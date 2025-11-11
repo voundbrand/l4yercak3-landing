@@ -76,7 +76,11 @@ export const subscribe = mutation({
         console.error("Failed to send emails:", error);
       }
 
-      return getSuccessMessage(subscriptionType, true);
+      return {
+        message: getSuccessMessage(subscriptionType, true),
+        crmSyncScheduled: false, // Already exists, no new sync needed
+        emailsScheduled: true,
+      };
     }
 
     // Create new subscription
@@ -93,19 +97,14 @@ export const subscribe = mutation({
       ...(name && { name }),
     });
 
-    // Sync to CRM via action (fire-and-forget)
+    // Sync to CRM via action (fire-and-forget) and schedule emails
     try {
       await ctx.scheduler.runAfter(0, api.contacts.syncToCRM, {
         email,
         name,
         subscriptionType,
       });
-    } catch (error) {
-      console.error("Failed to sync to CRM:", error);
-    }
 
-    // Send welcome and notification emails
-    try {
       await ctx.scheduler.runAfter(0, api.emails.sendWelcomeEmail, {
         email,
         name,
@@ -119,10 +118,14 @@ export const subscribe = mutation({
         language,
       });
     } catch (error) {
-      console.error("Failed to send emails:", error);
+      console.error("Failed to schedule CRM sync or emails:", error);
     }
 
-    return getSuccessMessage(subscriptionType, false);
+    return {
+      message: getSuccessMessage(subscriptionType, false),
+      crmSyncScheduled: true,
+      emailsScheduled: true,
+    };
   },
 });
 
@@ -169,10 +172,13 @@ export const syncToCRM = action({
     const CRM_URL = process.env.BACKEND_CRM_URL;
     const CRM_API_KEY = process.env.BACKEND_CRM_API_KEY;
 
+    const logPrefix = `[CRM Sync ${args.email}]`;
+
     // Skip if CRM not configured
     if (!CRM_URL || !CRM_API_KEY) {
-      console.log("⚠️ CRM integration not configured - skipping sync");
-      return { success: false, error: "CRM not configured" };
+      const message = "⚠️ CRM integration not configured - skipping sync";
+      console.log(`${logPrefix} ${message}`);
+      return { success: false, error: "CRM not configured", logged: message };
     }
 
     try {
@@ -214,17 +220,27 @@ export const syncToCRM = action({
       const result = await response.json();
 
       if (!response.ok) {
-        console.error("❌ CRM API error:", result);
-        return { success: false, error: result.error };
+        const errorMessage = `❌ CRM API error: ${result.error}`;
+        console.error(`${logPrefix} ${errorMessage}`);
+        return { success: false, error: result.error, logged: errorMessage };
       }
 
-      console.log(`✅ Contact synced to CRM: ${result.contactId}`);
-      return { success: true, contactId: result.contactId };
+      const successMessage = `✅ Contact synced to CRM: ${result.contactId}`;
+      console.log(`${logPrefix} ${successMessage}`);
+      return {
+        success: true,
+        contactId: result.contactId,
+        logged: successMessage,
+        firstName,
+        lastName
+      };
     } catch (error) {
-      console.error("❌ Failed to sync to CRM:", error);
+      const errorMessage = `❌ Failed to sync to CRM: ${error instanceof Error ? error.message : String(error)}`;
+      console.error(`${logPrefix} ${errorMessage}`);
       return {
         success: false,
-        error: error instanceof Error ? error.message : String(error)
+        error: error instanceof Error ? error.message : String(error),
+        logged: errorMessage
       };
     }
   },
