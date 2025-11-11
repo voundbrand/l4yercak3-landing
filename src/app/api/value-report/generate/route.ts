@@ -272,6 +272,98 @@ export async function POST(request: NextRequest) {
         // Continue even if tracking update fails
       }
     }
+
+    // Sync to backend CRM (contact + organization creation)
+    const CRM_URL = process.env.BACKEND_CRM_URL;
+    const CRM_API_KEY = process.env.BACKEND_CRM_API_KEY;
+
+    if (CRM_URL && CRM_API_KEY) {
+      try {
+        console.log('[Value Report API] Syncing to CRM:', {
+          email: leadData.email,
+          organization: leadData.organizationName,
+        });
+
+        // Parse name for CRM
+        const nameParts = leadData.fullName.trim().split(' ');
+        const firstName = nameParts[0];
+        const lastName = nameParts.slice(1).join(' ') || 'Lead';
+
+        const crmResponse = await fetch(`${CRM_URL}/api/v1/crm/contacts`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${CRM_API_KEY}`,
+          },
+          body: JSON.stringify({
+            subtype: 'lead',
+            firstName,
+            lastName,
+            email: leadData.email,
+            phone: leadData.phone,
+            jobTitle: leadData.jobTitle,
+            source: 'value-calculator',
+            sourceRef: leadId || `temp-${Date.now()}`,
+            tags: ['LC-report', 'value-calculator', calculatedValues.leadQualityScore.toLowerCase()],
+            notes: `Value Calculator Lead - ${calculatedValues.leadQualityScore} quality. Timeline: ${leadData.timeline}. Total value: $${calculatedValues.totalValueCreated.toLocaleString()}`,
+            customFields: {
+              signatureAuthority: leadData.signatureAuthority,
+              timeline: leadData.timeline,
+              recommendedPhase: calculatedValues.recommendedPhase,
+              leadQualityScore: calculatedValues.leadQualityScore,
+              language: detectedLanguage,
+              totalValueCreated: calculatedValues.totalValueCreated,
+              laborCostAvoided: calculatedValues.laborCostAvoided,
+              newRevenuePotential: calculatedValues.newRevenuePotential,
+            },
+            organizationInfo: {
+              name: leadData.organizationName,
+              industry: leadData.industryType,
+              // Store comprehensive organization metrics
+              size: leadData.organizationSize,
+              adminStaffCount: leadData.adminStaffCount,
+              manualHoursPerWeek: leadData.manualHoursPerWeek,
+              loadedLaborCost: leadData.loadedLaborCost,
+              annualEvents: leadData.annualEvents,
+              avgMemberValue: leadData.avgMemberValue,
+              currentRevenue: leadData.currentRevenue,
+              // Calculated values for organization
+              metrics: {
+                totalAnnualHours: calculatedValues.totalAnnualHours,
+                annualWaste: calculatedValues.annualWaste,
+                potentialFreedHours: calculatedValues.potentialFreedHours,
+                laborCostAvoided: calculatedValues.laborCostAvoided,
+                newRevenuePotential: calculatedValues.newRevenuePotential,
+                totalValueCreated: calculatedValues.totalValueCreated,
+              },
+              pricing: {
+                conservative: calculatedValues.pricing.conservative,
+                target: calculatedValues.pricing.target,
+                aggressive: calculatedValues.pricing.aggressive,
+                premium: calculatedValues.pricing.premium,
+              },
+            },
+          }),
+        });
+
+        const crmResult = await crmResponse.json();
+
+        if (!crmResponse.ok) {
+          console.error('[Value Report API] CRM sync failed:', crmResult.error);
+        } else {
+          console.log('[Value Report API] CRM sync successful:', {
+            contactId: crmResult.contactId,
+            crmOrganizationId: crmResult.crmOrganizationId,
+            isNewContact: crmResult.isNewContact,
+          });
+        }
+      } catch (crmError) {
+        console.error('[Value Report API] CRM sync error:', crmError);
+        // Continue even if CRM sync fails - don't block the response
+      }
+    } else {
+      console.warn('[Value Report API] CRM not configured - skipping sync');
+    }
     
     if (!emailResult.overallSuccess) {
       console.error('Email delivery failed:', {
