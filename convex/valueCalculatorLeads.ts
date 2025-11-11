@@ -95,16 +95,16 @@ export const storeLead = mutation({
         }
       }
 
-      // Rate limiting: Check for spam (more than 5 submissions in 5 minutes)
-      const fiveMinutesAgo = Date.now() - (5 * 60 * 1000);
+      // Rate limiting: Check for spam (more than 5 submissions in 1 minute)
+      const oneMinuteAgo = Date.now() - (60 * 1000);
       const recentSubmissions = await ctx.db
         .query("valueCalculatorLeads")
         .withIndex("by_email", (q) => q.eq("email", args.email))
-        .filter((q) => q.gt(q.field("submittedAt"), fiveMinutesAgo))
+        .filter((q) => q.gt(q.field("submittedAt"), oneMinuteAgo))
         .collect();
 
       if (recentSubmissions.length >= 5) {
-        throw new Error("Too many requests. Please wait a few minutes before submitting again.");
+        throw new Error("Too many requests. Please wait a minute before submitting again.");
       }
 
       // Store the lead data
