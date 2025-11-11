@@ -306,8 +306,6 @@ export async function POST(request: NextRequest) {
             tags: ['LC-report', 'value-calculator', calculatedValues.leadQualityScore.toLowerCase()],
             notes: `Value Calculator Lead - ${calculatedValues.leadQualityScore} quality. Timeline: ${leadData.timeline}. Total value: $${calculatedValues.totalValueCreated.toLocaleString()}`,
             customFields: {
-              firstName, // Ensure first name is updated
-              lastName, // Ensure last name is updated
               signatureAuthority: leadData.signatureAuthority,
               timeline: leadData.timeline,
               recommendedPhase: calculatedValues.recommendedPhase,
