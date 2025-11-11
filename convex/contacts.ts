@@ -99,12 +99,15 @@ export const subscribe = mutation({
 
     // Sync to CRM via action (fire-and-forget) and schedule emails
     try {
+      console.log(`[Subscribe] Scheduling CRM sync for ${email}`);
       await ctx.scheduler.runAfter(0, api.contacts.syncToCRM, {
         email,
         name,
         subscriptionType,
       });
+      console.log(`[Subscribe] CRM sync scheduled successfully for ${email}`);
 
+      console.log(`[Subscribe] Scheduling welcome emails for ${email}`);
       await ctx.scheduler.runAfter(0, api.emails.sendWelcomeEmail, {
         email,
         name,
@@ -117,8 +120,9 @@ export const subscribe = mutation({
         subscriptionType,
         language,
       });
+      console.log(`[Subscribe] Welcome emails scheduled successfully for ${email}`);
     } catch (error) {
-      console.error("Failed to schedule CRM sync or emails:", error);
+      console.error(`[Subscribe] Failed to schedule CRM sync or emails for ${email}:`, error);
     }
 
     return {
