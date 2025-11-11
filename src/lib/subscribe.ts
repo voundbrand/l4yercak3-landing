@@ -6,12 +6,17 @@ import type { ActionResult } from "./utils";
 
 const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
 
+// Custom return type for subscribe action (flattened for server action serialization)
+export type SubscribeResult =
+  | { success: true; message: string; crmSyncScheduled: boolean; emailsScheduled: boolean; id: string }
+  | { success: false; message: string; id: string };
+
 export async function subscribe(
   email: string,
   subscriptionType: "newsletter" | "private-access" | "both",
   name?: string,
   language?: "en" | "de"
-): Promise<ActionResult<{ message: string; crmSyncScheduled: boolean; emailsScheduled: boolean }>> {
+): Promise<SubscribeResult> {
   try {
     const result = await convex.mutation(api.contacts.subscribe, {
       email,
@@ -24,15 +29,13 @@ export async function subscribe(
     console.log("[Subscribe Server Action] Convex result:", JSON.stringify(result));
 
     // Note: Browser console logging is handled in the client component (form-newsletter.tsx)
-    // This server action runs on the server where window/console.log aren't visible to users
+    // Flatten the structure for Next.js server action serialization
 
     return {
       success: true,
-      data: {
-        message: result.message,
-        crmSyncScheduled: result.crmSyncScheduled,
-        emailsScheduled: result.emailsScheduled,
-      },
+      message: result.message,
+      crmSyncScheduled: result.crmSyncScheduled,
+      emailsScheduled: result.emailsScheduled,
       id: Date.now().toString(),
     };
   } catch (error) {

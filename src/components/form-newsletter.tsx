@@ -5,7 +5,7 @@ import type { NewsletterSchema } from "@/lib/schema";
 import { useForm, useFormContext } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { newsletterSchema } from "@/lib/schema";
-import { subscribe } from "@/lib/subscribe";
+import { subscribe, type SubscribeResult } from "@/lib/subscribe";
 import { useEffect, useState } from "react";
 import { ActionResult, cn } from "@/lib/utils";
 import { AlertTitle, alertVariants } from "./ui/alert";
@@ -42,7 +42,7 @@ export const FormNewsletter = ({
 }) => {
   const { t } = useTranslation();
   const [submissionState, setSubmissionState] =
-    useState<ActionResult<{ message: string; crmSyncScheduled: boolean; emailsScheduled: boolean }> | null>(null);
+    useState<SubscribeResult | null>(null);
   const [showSuccess, setShowSuccess] = useState(false);
 
   const form = useForm<NewsletterSchema>({
@@ -105,14 +105,14 @@ export const FormNewsletter = ({
       console.log('%c✓ Newsletter subscription successful', 'color: #10b981; font-weight: bold; font-size: 14px', {
         subscriptionType: values.subscriptionType,
         language: currentLanguage,
-        message: state.data?.message,
-        crmSyncScheduled: state.data?.crmSyncScheduled,
-        emailsScheduled: state.data?.emailsScheduled,
+        message: state.message,
+        crmSyncScheduled: state.crmSyncScheduled,
+        emailsScheduled: state.emailsScheduled,
         timestamp: new Date().toISOString(),
       });
 
       // Log CRM sync status if scheduled
-      if (state.data?.crmSyncScheduled) {
+      if (state.crmSyncScheduled) {
         console.log('%c📊 CRM Sync scheduled to L4YERCAK3 backend', 'color: #8b5cf6; font-weight: bold', {
           backend: 'https://agreeable-lion-828.convex.site',
           action: 'Creating contact in backend CRM',
