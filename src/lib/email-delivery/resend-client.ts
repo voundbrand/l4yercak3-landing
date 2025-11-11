@@ -94,6 +94,11 @@ export async function sendEmailWithRetry(
         error: result.error,
       });
 
+      // Check if there was actually an error
+      if (result.error) {
+        throw new Error(result.error.message || 'Email sending failed');
+      }
+
       return {
         success: true,
         messageId: result.data?.id
@@ -227,7 +232,8 @@ export function getSalesTeamEmail(): string {
     return 'remington@l4yercak3.com';
   }
 
-  return salesEmail;
+  // Clean email: remove whitespace, newlines, etc.
+  return salesEmail.trim().replace(/[\n\r\t]/g, '');
 }
 
 /**
@@ -241,7 +247,8 @@ export function getReplyToEmail(): string {
     return 'remington@l4yercak3.com';
   }
 
-  return replyToEmail;
+  // Clean email: remove whitespace, newlines, etc.
+  return replyToEmail.trim().replace(/[\n\r\t]/g, '');
 }
 
 /**
