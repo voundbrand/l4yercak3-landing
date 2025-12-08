@@ -60,8 +60,8 @@ function DoMoreWithLessContent() {
             >
               {t('doMoreWithLess.cta.buttons.scheduleDemo')}
             </button>
-            <Link 
-              href="/learn-more"
+            <Link
+              href="/ship-fast"
               className={cn("inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-colors",
                 currentTheme.buttonSecondary)}
             >

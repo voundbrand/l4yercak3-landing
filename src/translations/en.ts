@@ -1,6 +1,8 @@
 import { manifestoEn } from './manifesto';
 import { learnMoreEn } from './learn-more';
-import { doMoreWithLessEn } from './do-more-with-less';
+import { doMoreWithLessEn } from './go-to-market';
+import { buildSprintEn } from './build-sprint';
+import { founderCalculatorEn } from './founder-calculator';
 
 export const en = {
   common: {
@@ -23,8 +25,9 @@ export const en = {
   navigation: {
     home: "Home",
     manifesto: "Manifesto",
-    learnMore: "Learn More",
-    valueCalculator: "Do More with Less",
+    learnMore: "Ship Fast",
+    valueCalculator: "Go to Market",
+    buildSprint: "Build Sprint",
     toggleMenu: "Toggle menu",
     closeMenu: "Close menu",
     switchToEnglish: "Switch to English",
@@ -32,14 +35,14 @@ export const en = {
   },
   newsletter: {
     title: "l4yercak3",
-    subtitle: "One Platform. Zero Manual Work. Infinite Scale.",
-    urgency: "🔥 3 Implementation Spots Remaining for {quarter} {year} - Apply Now",
-    description: "Stop copying data between Excel, Outlook, and Lexware. Put your name on the list to reserve your spot for {quarter} {year} today!",
-    helperText: "Stay in the loop to get the latest updates on L4YERCAK3",
+    subtitle: "Your Backend. Already Built. Ship This Quarter.",
+    urgency: "🔥 3 Build Sprint Spots for {quarter} {year} — Apply Now",
+    description: "Stop rebuilding auth, database, email, and payments for every project. We built the infrastructure. You build what makes your product unique.",
+    helperText: "Get updates on l4yercak3 — new features, builder resources, launch stories",
     emailPlaceholder: "Enter your email",
     manifesto: "Manifesto",
-    learnMore: "Learn More",
-    calculateROI: "Do More with Less",
+    learnMore: "Ship Fast",
+    calculateROI: "Go to Market",
     subscriptionTypes: {
       newsletter: "Get Updates",
       privateAccess: "Apply for Access",
@@ -58,44 +61,64 @@ export const en = {
     }
   },
   application: {
-    title: "Apply for Early Access",
-    subtitle: "Reserve your implementation spot for {quarter} {year}",
+    title: "Apply for Build Sprint",
+    subtitle: "Reserve your spot for {quarter} {year}",
     fields: {
       firstName: "First Name",
       lastName: "Last Name",
       email: "Email Address",
       phone: "Phone Number",
-      company: "Company Name",
+      company: "Company / Project Name",
       role: "Your Role",
-      teamSize: "Team Size",
-      monthlySpend: "Monthly Software Spend",
-      currentChallenges: "Current Challenges"
+      fundingStage: "Funding Stage",
+      techTeamSize: "Technical Team Size",
+      primaryGoal: "Primary Goal",
+      timelineUrgency: "Timeline",
+      currentStack: "Current Tech Stack (optional)",
+      whatYouWantToBuild: "What do you want to build?"
     },
     placeholders: {
       firstName: "Enter your first name",
       lastName: "Enter your last name",
       email: "Enter your email address",
       phone: "Enter your phone number",
-      company: "Enter your company name",
-      role: "e.g., CEO, Operations Manager",
-      currentChallenges: "Describe your current challenges with manual processes, data copying, or software integration..."
+      company: "Your startup or project name",
+      role: "e.g., Founder, CTO, Technical Co-founder",
+      currentStack: "e.g., React, Node.js, PostgreSQL, or 'Starting fresh'",
+      whatYouWantToBuild: "Describe your product idea, the problem you're solving, and what you need to launch..."
     },
     options: {
-      teamSize: {
-        placeholder: "Select team size",
-        "1-5": "1-5 employees",
-        "6-20": "6-20 employees",
-        "21-50": "21-50 employees",
-        "51-100": "51-100 employees",
-        "100+": "100+ employees"
+      fundingStage: {
+        placeholder: "Select funding stage",
+        "bootstrapped": "Bootstrapped / Self-funded",
+        "pre-seed": "Pre-seed",
+        "seed": "Seed",
+        "series-a": "Series A",
+        "series-b+": "Series B+"
       },
-      monthlySpend: {
-        placeholder: "Select monthly spend",
-        "<500": "Less than €500",
-        "500-1000": "€500 - €1,000",
-        "1000-2500": "€1,000 - €2,500",
-        "2500-5000": "€2,500 - €5,000",
-        "5000+": "€5,000+"
+      techTeamSize: {
+        placeholder: "Select team size",
+        "solo": "Solo founder (no devs yet)",
+        "1-2": "1-2 developers",
+        "3-5": "3-5 developers",
+        "6-10": "6-10 developers",
+        "10+": "10+ developers"
+      },
+      primaryGoal: {
+        placeholder: "Select your primary goal",
+        "mvp": "Build MVP from scratch",
+        "v1-launch": "Ship v1.0 to production",
+        "scale": "Scale existing product",
+        "pivot": "Pivot / New direction",
+        "rebuild": "Rebuild legacy system"
+      },
+      timelineUrgency: {
+        placeholder: "Select timeline",
+        "asap": "ASAP - Need to ship yesterday",
+        "1-2-months": "1-2 months",
+        "this-quarter": "This quarter",
+        "next-quarter": "Next quarter",
+        "exploring": "Just exploring options"
       }
     },
     buttons: {
@@ -105,15 +128,17 @@ export const en = {
       close: "Close"
     },
     success: {
-      title: "Thank you for your application!",
-      message: "Remington Splettstoesser, the founder of L4YERCAK3 will be in touch with you!",
-      scheduleMessage: "If you want to pick a time for a call, you can:",
-      scheduleButton: "Choose a Time"
+      title: "Application received!",
+      message: "Remington Splettstoesser, founder of L4YERCAK3, will review your application and reach out within 24 hours.",
+      scheduleMessage: "Want to skip the wait? Book a call directly:",
+      scheduleButton: "Book a Call"
     }
   },
   manifesto: manifestoEn,
   learnMore: learnMoreEn,
   doMoreWithLess: doMoreWithLessEn,
+  buildSprint: buildSprintEn,
+  founderCalculator: founderCalculatorEn,
   footer: {
     copyright: "© 2024 l4yercak3. All rights reserved."
   }

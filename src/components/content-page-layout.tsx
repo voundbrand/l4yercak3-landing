@@ -2,11 +2,15 @@
 
 import { useState, useEffect, ReactNode, createContext, useContext } from 'react';
 import Link from 'next/link';
-import { ArrowLeftIcon } from '@radix-ui/react-icons';
+import { GitHubLogoIcon, InstagramLogoIcon } from '@radix-ui/react-icons';
 import { cn } from '@/lib/utils';
 import { BookCallButton } from '@/components/book-call-button';
 import { MinimalNav } from '@/components/minimal-nav';
 import { useTranslation } from 'react-i18next';
+import { socialLinks } from '@/lib/constants';
+import XLogoIcon from './icons/x';
+import LinkedInIcon from './icons/linkedin';
+import YouTubeIcon from './icons/youtube';
 
 // Reading mode icons
 const MoonIcon = ({ className }: { className?: string }) => (
@@ -192,9 +196,91 @@ export function ContentPageLayout({
       </div>
 
       {/* Footer */}
-      <footer className="border-t border-border/20 mt-16">
-        <div className="max-w-4xl mx-auto px-6 py-8 text-center text-muted-foreground">
-          <p>{t('footer.copyright')}</p>
+      <footer className={cn("border-t mt-16 transition-colors duration-300",
+        readingMode === 'sepia' ? 'border-amber-200/50' : 'border-border/20')}>
+        <div className="max-w-4xl mx-auto px-6 py-8">
+          <div className="flex flex-col items-center gap-4">
+            {/* Social Media Icons */}
+            <div className="flex gap-4 md:gap-6 items-center">
+              <Link
+                target="_blank"
+                href={socialLinks.linkedin}
+                className={cn(
+                  "p-2 rounded-full transition-all duration-200",
+                  readingMode === 'sepia'
+                    ? "bg-amber-200/50 hover:bg-amber-300/50 text-amber-800"
+                    : "bg-white/10 hover:bg-white/20 text-foreground"
+                )}
+                aria-label="Follow Remington on LinkedIn"
+              >
+                <LinkedInIcon className="size-5" />
+              </Link>
+              <Link
+                target="_blank"
+                href={socialLinks.x}
+                className={cn(
+                  "p-2 rounded-full transition-all duration-200",
+                  readingMode === 'sepia'
+                    ? "bg-amber-200/50 hover:bg-amber-300/50 text-amber-800"
+                    : "bg-white/10 hover:bg-white/20 text-foreground"
+                )}
+                aria-label="Follow Remington on X (Twitter)"
+              >
+                <XLogoIcon className="size-5" />
+              </Link>
+              <Link
+                target="_blank"
+                href={socialLinks.instagram}
+                className={cn(
+                  "p-2 rounded-full transition-all duration-200",
+                  readingMode === 'sepia'
+                    ? "bg-amber-200/50 hover:bg-amber-300/50 text-amber-800"
+                    : "bg-white/10 hover:bg-white/20 text-foreground"
+                )}
+                aria-label="Follow Remington on Instagram"
+              >
+                <InstagramLogoIcon className="size-5" />
+              </Link>
+              <Link
+                target="_blank"
+                href={socialLinks.youtube}
+                className={cn(
+                  "p-2 rounded-full transition-all duration-200",
+                  readingMode === 'sepia'
+                    ? "bg-amber-200/50 hover:bg-amber-300/50 text-amber-800"
+                    : "bg-white/10 hover:bg-white/20 text-foreground"
+                )}
+                aria-label="Subscribe to Remington on YouTube"
+              >
+                <YouTubeIcon className="size-5" />
+              </Link>
+              <Link
+                target="_blank"
+                href={socialLinks.github}
+                className={cn(
+                  "p-2 rounded-full transition-all duration-200",
+                  readingMode === 'sepia'
+                    ? "bg-amber-200/50 hover:bg-amber-300/50 text-amber-800"
+                    : "bg-white/10 hover:bg-white/20 text-foreground"
+                )}
+                aria-label="Follow Remington on GitHub"
+              >
+                <GitHubLogoIcon className="size-5" />
+              </Link>
+            </div>
+
+            {/* VC Batch Slogan */}
+            <div className={cn("text-xs font-medium transition-colors duration-300",
+              readingMode === 'sepia' ? 'text-amber-600' : 'text-foreground/60')}>
+              L4YERCAK3 is a vc83-batch-1 startup
+            </div>
+
+            {/* Copyright */}
+            <p className={cn("text-sm transition-colors duration-300",
+              readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground')}>
+              {t('footer.copyright')}
+            </p>
+          </div>
         </div>
       </footer>
     </main>

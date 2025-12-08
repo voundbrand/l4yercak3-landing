@@ -13,17 +13,21 @@ import { Button } from './ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from './ui/form';
 import { CalendarBookingModal } from './calendar-booking-modal';
 
-// Application form schema
+// Application form schema - Founder-focused fields
 const applicationSchema = z.object({
   firstName: z.string().min(1, 'First name is required').min(2, 'First name must be at least 2 characters'),
   lastName: z.string().min(1, 'Last name is required').min(2, 'Last name must be at least 2 characters'),
   email: z.string().min(1, 'Email is required').email('Please enter a valid email address'),
   phone: z.string().min(1, 'Phone number is required').min(10, 'Please enter a valid phone number'),
-  company: z.string().min(1, 'Company name is required').min(2, 'Company name must be at least 2 characters'),
+  company: z.string().min(1, 'Company/Project name is required').min(2, 'Company name must be at least 2 characters'),
   role: z.string().min(1, 'Role is required').min(2, 'Role must be at least 2 characters'),
-  teamSize: z.string().min(1, 'Please select team size'),
-  currentChallenges: z.string().min(1, 'Please describe your current challenges').min(10, 'Please provide more details (at least 10 characters)'),
-  monthlySpend: z.string().min(1, 'Please select monthly software spend'),
+  // Founder-specific fields
+  fundingStage: z.string().min(1, 'Please select your funding stage'),
+  techTeamSize: z.string().min(1, 'Please select your technical team size'),
+  primaryGoal: z.string().min(1, 'Please select your primary goal'),
+  timelineUrgency: z.string().min(1, 'Please select your timeline'),
+  currentStack: z.string().optional(),
+  whatYouWantToBuild: z.string().min(1, 'Please describe what you want to build').min(10, 'Please provide more details (at least 10 characters)'),
 });
 
 type ApplicationFormData = z.infer<typeof applicationSchema>;
@@ -62,9 +66,12 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
       phone: '',
       company: '',
       role: '',
-      teamSize: '',
-      currentChallenges: '',
-      monthlySpend: '',
+      fundingStage: '',
+      techTeamSize: '',
+      primaryGoal: '',
+      timelineUrgency: '',
+      currentStack: '',
+      whatYouWantToBuild: '',
     },
   });
 
@@ -100,6 +107,8 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
   };
 
   if (!mounted) return null;
+
+  const inputClassName = "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border/50 focus-visible:border-border/80 disabled:cursor-not-allowed disabled:opacity-50 transition-colors";
 
   const modalContent = (
     <AnimatePresence>
@@ -172,7 +181,7 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
                 <p className="text-lg text-muted-foreground mb-6 max-w-md mx-auto">
                   {t('application.success.message')}
                 </p>
-                
+
                 {/* Schedule Call Option */}
                 <div className="mb-8">
                   <p className="text-sm text-muted-foreground mb-4">
@@ -199,23 +208,23 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
                       <>
                         Während Sie warten,{' '}
                         <a
-                          href="/do-more-with-less"
+                          href="/go-to-market"
                           className="text-foreground font-medium underline decoration-2 underline-offset-4 hover:decoration-primary transition-colors"
                         >
-                          berechnen Sie, wie viel Sie für manuelle Aufgaben ausgeben
+                          berechnen Sie Ihre Time-to-Market Ersparnis
                         </a>
-                        {' '}mit unserem Wertrechner
+                        {' '}mit unserem Rechner
                       </>
                     ) : (
                       <>
                         While you wait,{' '}
                         <a
-                          href="/do-more-with-less"
+                          href="/go-to-market"
                           className="text-foreground font-medium underline decoration-2 underline-offset-4 hover:decoration-primary transition-colors"
                         >
-                          calculate how much you're spending on manual tasks
+                          calculate your time-to-market savings
                         </a>
-                        {' '}with our value calculator
+                        {' '}with our calculator
                       </>
                     )}
                   </p>
@@ -230,6 +239,7 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
                       <p className="text-sm text-red-600 dark:text-red-400">{errorMessage}</p>
                     </div>
                   )}
+
                   {/* Personal Information */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <FormField
@@ -241,7 +251,7 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
                           <FormControl>
                             <input
                               {...field}
-                              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border/50 focus-visible:border-border/80 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
+                              className={inputClassName}
                               placeholder={t('application.placeholders.firstName')}
                             />
                           </FormControl>
@@ -259,7 +269,7 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
                           <FormControl>
                             <input
                               {...field}
-                              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border/50 focus-visible:border-border/80 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
+                              className={inputClassName}
                               placeholder={t('application.placeholders.lastName')}
                             />
                           </FormControl>
@@ -279,7 +289,7 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
                           <input
                             {...field}
                             type="email"
-                            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border/50 focus-visible:border-border/80 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
+                            className={inputClassName}
                             placeholder={t('application.placeholders.email')}
                           />
                         </FormControl>
@@ -297,15 +307,15 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
                         <FormControl>
                           <div className="flex">
                             <select className="flex h-10 w-32 rounded-l-md border border-r-0 border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border/50 focus-visible:border-border/80 transition-colors">
-                              <option value="+49">🇩🇪 +49</option>
-                              <option value="+1">🇺🇸 +1</option>
-                              <option value="+44">🇬🇧 +44</option>
-                              <option value="+33">🇫🇷 +33</option>
-                              <option value="+39">🇮🇹 +39</option>
-                              <option value="+34">🇪🇸 +34</option>
-                              <option value="+31">🇳🇱 +31</option>
-                              <option value="+41">🇨🇭 +41</option>
-                              <option value="+43">🇦🇹 +43</option>
+                              <option value="+49">+49</option>
+                              <option value="+1">+1</option>
+                              <option value="+44">+44</option>
+                              <option value="+33">+33</option>
+                              <option value="+39">+39</option>
+                              <option value="+34">+34</option>
+                              <option value="+31">+31</option>
+                              <option value="+41">+41</option>
+                              <option value="+43">+43</option>
                             </select>
                             <input
                               {...field}
@@ -331,7 +341,7 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
                           <FormControl>
                             <input
                               {...field}
-                              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border/50 focus-visible:border-border/80 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
+                              className={inputClassName}
                               placeholder={t('application.placeholders.company')}
                             />
                           </FormControl>
@@ -349,7 +359,7 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
                           <FormControl>
                             <input
                               {...field}
-                              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border/50 focus-visible:border-border/80 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
+                              className={inputClassName}
                               placeholder={t('application.placeholders.role')}
                             />
                           </FormControl>
@@ -359,25 +369,25 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
                     />
                   </div>
 
-                  {/* Business Information */}
+                  {/* Founder-Specific Fields */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
-                      name="teamSize"
+                      name="fundingStage"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-left block">{t('application.fields.teamSize')}</FormLabel>
+                          <FormLabel className="text-left block">{t('application.fields.fundingStage')}</FormLabel>
                           <FormControl>
                             <select
                               {...field}
-                              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border/50 focus-visible:border-border/80 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
+                              className={inputClassName}
                             >
-                              <option value="">{t('application.options.teamSize.placeholder')}</option>
-                              <option value="1-5">{t('application.options.teamSize.1-5')}</option>
-                              <option value="6-20">{t('application.options.teamSize.6-20')}</option>
-                              <option value="21-50">{t('application.options.teamSize.21-50')}</option>
-                              <option value="51-100">{t('application.options.teamSize.51-100')}</option>
-                              <option value="100+">{t('application.options.teamSize.100+')}</option>
+                              <option value="">{t('application.options.fundingStage.placeholder')}</option>
+                              <option value="bootstrapped">{t('application.options.fundingStage.bootstrapped')}</option>
+                              <option value="pre-seed">{t('application.options.fundingStage.pre-seed')}</option>
+                              <option value="seed">{t('application.options.fundingStage.seed')}</option>
+                              <option value="series-a">{t('application.options.fundingStage.series-a')}</option>
+                              <option value="series-b+">{t('application.options.fundingStage.series-b+')}</option>
                             </select>
                           </FormControl>
                           <FormMessage className="text-left" />
@@ -387,21 +397,71 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
 
                     <FormField
                       control={form.control}
-                      name="monthlySpend"
+                      name="techTeamSize"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-left block">{t('application.fields.monthlySpend')}</FormLabel>
+                          <FormLabel className="text-left block">{t('application.fields.techTeamSize')}</FormLabel>
                           <FormControl>
                             <select
                               {...field}
-                              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border/50 focus-visible:border-border/80 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
+                              className={inputClassName}
                             >
-                              <option value="">{t('application.options.monthlySpend.placeholder')}</option>
-                              <option value="<500">{t('application.options.monthlySpend.<500')}</option>
-                              <option value="500-1000">{t('application.options.monthlySpend.500-1000')}</option>
-                              <option value="1000-2500">{t('application.options.monthlySpend.1000-2500')}</option>
-                              <option value="2500-5000">{t('application.options.monthlySpend.2500-5000')}</option>
-                              <option value="5000+">{t('application.options.monthlySpend.5000+')}</option>
+                              <option value="">{t('application.options.techTeamSize.placeholder')}</option>
+                              <option value="solo">{t('application.options.techTeamSize.solo')}</option>
+                              <option value="1-2">{t('application.options.techTeamSize.1-2')}</option>
+                              <option value="3-5">{t('application.options.techTeamSize.3-5')}</option>
+                              <option value="6-10">{t('application.options.techTeamSize.6-10')}</option>
+                              <option value="10+">{t('application.options.techTeamSize.10+')}</option>
+                            </select>
+                          </FormControl>
+                          <FormMessage className="text-left" />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <FormField
+                      control={form.control}
+                      name="primaryGoal"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-left block">{t('application.fields.primaryGoal')}</FormLabel>
+                          <FormControl>
+                            <select
+                              {...field}
+                              className={inputClassName}
+                            >
+                              <option value="">{t('application.options.primaryGoal.placeholder')}</option>
+                              <option value="mvp">{t('application.options.primaryGoal.mvp')}</option>
+                              <option value="v1-launch">{t('application.options.primaryGoal.v1-launch')}</option>
+                              <option value="scale">{t('application.options.primaryGoal.scale')}</option>
+                              <option value="pivot">{t('application.options.primaryGoal.pivot')}</option>
+                              <option value="rebuild">{t('application.options.primaryGoal.rebuild')}</option>
+                            </select>
+                          </FormControl>
+                          <FormMessage className="text-left" />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="timelineUrgency"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-left block">{t('application.fields.timelineUrgency')}</FormLabel>
+                          <FormControl>
+                            <select
+                              {...field}
+                              className={inputClassName}
+                            >
+                              <option value="">{t('application.options.timelineUrgency.placeholder')}</option>
+                              <option value="asap">{t('application.options.timelineUrgency.asap')}</option>
+                              <option value="1-2-months">{t('application.options.timelineUrgency.1-2-months')}</option>
+                              <option value="this-quarter">{t('application.options.timelineUrgency.this-quarter')}</option>
+                              <option value="next-quarter">{t('application.options.timelineUrgency.next-quarter')}</option>
+                              <option value="exploring">{t('application.options.timelineUrgency.exploring')}</option>
                             </select>
                           </FormControl>
                           <FormMessage className="text-left" />
@@ -412,16 +472,34 @@ export function ApplicationModal({ onClose }: ApplicationModalProps) {
 
                   <FormField
                     control={form.control}
-                    name="currentChallenges"
+                    name="currentStack"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-left block">{t('application.fields.currentChallenges')}</FormLabel>
+                        <FormLabel className="text-left block">{t('application.fields.currentStack')}</FormLabel>
+                        <FormControl>
+                          <input
+                            {...field}
+                            className={inputClassName}
+                            placeholder={t('application.placeholders.currentStack')}
+                          />
+                        </FormControl>
+                        <FormMessage className="text-left" />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="whatYouWantToBuild"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-left block">{t('application.fields.whatYouWantToBuild')}</FormLabel>
                         <FormControl>
                           <textarea
                             {...field}
                             rows={4}
                             className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border/50 focus-visible:border-border/80 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
-                            placeholder={t('application.placeholders.currentChallenges')}
+                            placeholder={t('application.placeholders.whatYouWantToBuild')}
                           />
                         </FormControl>
                         <FormMessage className="text-left" />

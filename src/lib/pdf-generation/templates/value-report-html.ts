@@ -1,6 +1,6 @@
 /**
  * HTML template for L4YERCAK3 Value Report
- * Beautiful, professional design based on the do-more-with-less page content
+ * Beautiful, professional design based on the go-to-market page content
  */
 
 export const VALUE_REPORT_HTML = `

@@ -1,6 +1,6 @@
 /**
  * Localized content for PDF templates
- * Based on the do-more-with-less translations
+ * Based on the go-to-market translations
  */
 
 import { Language } from '../../value-calculator/types';

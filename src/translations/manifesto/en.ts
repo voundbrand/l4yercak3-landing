@@ -5,158 +5,133 @@ export const manifestoEn = {
   publishedOn: "Published",
   readMore: "Read the full manifesto",
 
-  // Preview text for landing page (first ~1000 characters)
-  preview: `"The point solution era is over. For the past twenty years, we've been sold a lie. 'Do one thing well,' they said. 'Specialized tools are better,' they promised. 'Just integrate them,' they assured us. They were wrong.
+  // Preview text for landing page
+  preview: `"The boilerplate era is over. For the past decade, founders have rebuilt the same infrastructure for every project. Auth. Database. Email. Payments. AI integration. The same 60% of work, repeated endlessly.
 
-The result? Organizations drowning in disconnected tools. Humans forced to be the integration layer between systems that refuse to talk to each other. This isn't efficiency. This is chaos.
+The result? Talented builders spending months on plumbing instead of products. First-mover advantage lost to setup time. Ideas dying in development hell because the boring parts took too long.
 
-The market is finally waking up. Software consolidation is accelerating. Compound platforms are eating point solutions for breakfast. The companies that survive the next decade will be those that solve interconnected problems, not isolated tasks.
+Here's what nobody tells you: that "simple" auth system will cost you three weeks. Payments integration? Another two. Email deliverability debugging? Don't ask. By the time you've wired it all together, your competitor has already shipped.
 
-The point solution era is dead. The compound platform era has begun."`,
+We built the boring parts. All of them. Auth that works. Payments that reconcile. Email that lands in inboxes. AI that's already connected. Database that scales. One codebase. One invoice. Zero plumbing.
+
+Stop being an infrastructure engineer. Start being a founder again."`,
 
   // Full manifesto sections
   sections: {
     pointSolutionEra: {
-      title: "The Point Solution Era is Over",
-      content: `For the past twenty years, we've been sold a lie.
+      title: "The Boilerplate Era is Over",
+      content: `For the past decade, founders have been trapped in a loop.
 
-"Do one thing well," they said. "Specialized tools are better," they promised. "Just integrate them," they assured us.
+Build auth. Configure database. Set up email. Integrate payments. Connect AI. Deploy infrastructure. Repeat for every single project.
 
-**They were wrong.**
+This is insanity.
 
-The result? Organizations drowning in disconnected tools. Humans forced to be the integration layer between systems that refuse to talk to each other. Administrators spending 60% of their time copying data between applications instead of doing work that matters.
+The average founder spends 60% of their development time on infrastructure that has nothing to do with their actual product. Auth that could be a library. Database that could be a service. Payments that could be an integration.
 
-**This isn't efficiency. This is chaos.**
+But "could be" isn't "is." So founders keep rebuilding the same boring parts while their competitors ship.
 
-The market is finally waking up. Software consolidation is accelerating. Compound platforms are eating point solutions for breakfast. The companies that survive the next decade will be those that solve interconnected problems, not isolated tasks.
+The boilerplate era gave us development hell.
 
-**The point solution era is dead. The compound platform era has begun.**`
+The compound builder era gives us time to actually build.`
     },
 
     whatWeBelieve: {
       title: "What We Believe",
       systemsThinking: {
-        title: "1. Systems Thinking Over Feature Thinking",
-        content: `Real problems don't live in silos.
+        title: "1. Ship Speed is Everything",
+        content: `The window for first-mover advantage is measured in weeks, not years.
 
-Professional networks don't need "better event software." They need CRM that talks to events that triggers emails that processes payments that generates invoices that tracks compliance that creates analytics—all working together as one system.
+Every day you spend on auth is a day your competitor spends on features. Every week configuring infrastructure is a week they're talking to customers. Every month in development hell is a month they're generating revenue.
 
-**We believe in building systems, not features.**
+We believe in relentless shipping speed.
 
-Point solutions optimize one piece of a workflow and leave you to figure out the other nine. Compound platforms optimize the entire workflow because they own all the pieces.
+The founders who win aren't the ones with the best ideas. They're the ones who validate fastest, iterate fastest, and get to revenue fastest.
 
-**The whole is greater than the sum of its parts. Always.**`
+Your job is to build what's unique. Our job is to make everything else instant.`
       },
       humansAI: {
-        title: "2. Humans + AI, Not Humans vs. AI",
-        content: `The narrative around AI is broken.
+        title: "2. Systems Over Services",
+        content: `SaaS products don't need "better auth" or "better payments" or "better email."
 
-One side fears mass unemployment. The other side dreams of replacing humans entirely. Both are wrong.
+They need auth that talks to payments that triggers emails that updates the dashboard that feeds analytics—all working together as one system.
 
-**AI doesn't replace humans. AI frees them.**
+We believe in building systems, not services.
 
-Administrators trapped answering the same question 50 times per week aren't inefficient—they're imprisoned by busywork. AI agents that handle repetitive inquiries don't eliminate jobs. They eliminate soul-crushing tasks that prevent humans from doing work that actually matters.
+Point solutions optimize one piece. You figure out the other nine.
 
-**We build AI that multiplies human capacity, not replaces human workers.**
+Compound platforms optimize the entire stack because they own all the pieces.
 
-The goal isn't efficiency for its own sake. The goal is human multiplication—freeing people from repetitive tasks so they can focus on strategy, relationships, creativity, and growth.
-
-A freed administrator who generates €55,000 in new revenue is infinitely more valuable than theoretical "labor cost savings."
-
-**This isn't replacement. This is amplification.**`
+The whole is faster than the sum of its parts. Always.`
       },
       expansionOverAcquisition: {
-        title: "3. Expansion Over Acquisition",
-        content: `Traditional SaaS is addicted to new logos.
+        title: "3. Builders + AI, Not Builders vs. AI",
+        content: `The narrative around AI is broken.
 
-Sell once. Pray for renewal. Burn cash acquiring customers. Repeat until you run out of money or find someone foolish enough to buy you.
+One side fears replacement. The other side promises magic. Both are wrong.
 
-**This model is broken.**
+AI doesn't build products. Builders do. AI accelerates builders.
 
-Public SaaS companies now spend 50% more on sales and marketing than five years ago while generating 10% less new revenue. Customer acquisition costs have exploded. The math doesn't work anymore.
+The founder who can leverage AI to ship 3x faster isn't being replaced—they're becoming unstoppable. AI that handles boilerplate doesn't eliminate development. It eliminates the boring parts of development.
 
-**We believe in a different model: Prove value, then expand.**
+We build AI that multiplies builder capacity, not replaces builder creativity.
 
-Start small. Deliver results. Earn the right to grow the relationship. Expand only when the customer experiences value firsthand, not because we have quarterly targets to hit.
-
-**Our success depends entirely on your success.**
-
-If you don't see value in Phase 1, you won't buy Phase 2. If Phase 2 doesn't deliver, you churn. This alignment changes everything about how we build product, deliver support, and think about the relationship.
-
-**We grow with you. Or we don't grow at all.**`
+This isn't replacement. This is amplification.`
       },
       privacyAsRight: {
-        title: "4. Privacy as a Right, Not a Feature",
-        content: `Data sovereignty isn't a competitive talking point. It's the law.
+        title: "4. Expansion Over Acquisition",
+        content: `Traditional SaaS is addicted to new logos.
 
-German professional networks handle physician data, attorney-client communications, financial records—information governed by strict EU regulations. GDPR Article 9 isn't optional. It's mandatory.
+Sell once. Pray for renewal. Burn cash acquiring customers. Repeat until exit or death.
 
-**Your data lives in the EU. Processed by EU-sovereign AI. Protected by German law.**
+This model is broken.
 
-No US server transmission. No compliance shortcuts. No "we're working on GDPR certification." Either you're compliant on day one, or you're breaking the law.
+We believe in a different model: Prove value, then expand.
 
-**We believe privacy is a right, not a feature you pay extra for.**
+Start with one project. Deliver results. Earn the right to grow the relationship. Expand only when you experience value firsthand.
 
-Public LLMs transmit data to American servers. Cloud AI services route through US parent companies. This isn't just bad practice—it's illegal for regulated industries.
+Our success depends entirely on your success.
 
-**We built private AI infrastructure in Frankfurt because anything else would be a crime.**
+If the Build Sprint doesn't deliver results, you don't continue. If we don't help you ship, we don't deserve your business.
 
-This creates an unassailable moat. Competitors building on OpenAI or Claude cannot legally serve regulated professional networks in the EU. They would need to rebuild their entire AI infrastructure from scratch.
-
-**That's not our problem. That's their problem.**`
+We grow with you. Or we don't grow at all.`
       },
       compoundLearning: {
-        title: "5. Compound Learning Accelerates Everyone",
-        content: `Every customer makes the platform smarter for all customers.
+        title: "5. Privacy as a Right, Not a Feature",
+        content: `Your users' data isn't a monetization opportunity. It's a responsibility.
 
-What takes six months to deploy in medical networks takes two months in legal associations because we've already learned the compliance patterns. What takes two months in legal takes four weeks in tax advisory.
+Your data lives in the EU. Processed by EU-sovereign AI. Protected by German law.
 
-**Each vertical accelerates the next.**
+No US server transmission. No compliance shortcuts. No "we're working on certifications." Either you're compliant on day one, or you're not.
 
-This is the compound advantage that point solutions can never achieve because they start from zero every time.
-
-Medical network teaches us compliance automation → Legal benefits.
-Legal teaches us document workflows → Tax advisors benefit.
-Tax teaches us financial processing → Medical billing benefits.
-
-**Knowledge compounds. Experience multiplies. Everyone wins.**`
+We believe privacy is a right, not a feature you pay extra for.`
       },
       invisibleIntegration: {
         title: "6. Integration Should Be Invisible",
-        content: `If you're manually copying data between systems, someone failed.
+        content: `If you're writing custom code to connect your auth to your database to your email to your payments, someone failed.
 
-If you're maintaining Zapier workflows, someone failed.
+If you're maintaining Zapier workflows between your own systems, someone failed.
 
-If you're the human integration layer between disconnected tools, someone failed.
+If you're the glue between your own infrastructure, someone failed.
 
-**Integration should be invisible.**
+Integration should be invisible.
 
-Applications built on a unified data model talk to each other automatically. Events trigger workflows. Data flows seamlessly. Humans oversee systems instead of being trapped in them.
+Applications built on a unified data model talk to each other automatically. Events trigger workflows. Data flows seamlessly. You build features instead of connections.
 
-**Connected is not the same as integrated.**
-
-Connected tools require glue (Zapier, APIs, custom code). Integrated platforms are built on the same foundation. There's nothing to connect because it's already one system.
-
-**We believe software should work together without you thinking about it.**`
+We believe software should work together without you thinking about it.`
       },
       compoundPlatforms: {
-        title: "7. Compound Platforms Beat Point Solutions",
+        title: "7. Compound Platforms Win",
         content: `This isn't opinion. This is market reality.
 
-HubSpot started with email marketing. Now they sell an entire business operating system.
-Salesforce started with CRM. Now they have fifteen products.
-Adobe bundled everything into Creative Cloud.
-Microsoft put AI across every application.
+Vercel started with deployment. Now they sell the entire frontend cloud.
+Supabase started with database. Now they have auth, storage, edge functions.
+Stripe started with payments. Now they have billing, invoicing, identity, radar.
 
-**The pattern is unmistakable: Compound platforms are eating point solutions for breakfast.**
+The pattern is unmistakable: Compound platforms are eating point solutions for breakfast.
 
-Why? Because real problems span multiple domains. Organizations don't want ten specialized tools. They want one system that solves interconnected problems.
+Why? Because real products span multiple domains. Founders don't want ten specialized tools. They want one system that handles the boring parts so they can focus on the interesting ones.
 
-**Point solutions optimize for simplicity. Compound platforms optimize for transformation.**
-
-Point solutions are easier to buy (lower price, simpler decision). Compound platforms are easier to use (no integration chaos, unified data).
-
-**We optimize for the user experience, not the sales process.**`
+Point solutions optimize for simplicity. Compound platforms optimize for shipping.`
       }
     },
 
@@ -164,43 +139,43 @@ Point solutions are easier to buy (lower price, simpler decision). Compound plat
       title: "What We Reject",
       items: [
         {
-          title: "We Reject: Software That Makes Humans the Integration Layer",
-          content: "If your employees spend hours copying data between disconnected systems, your software has failed them.\n\n**Humans should direct systems, not serve them.**"
+          title: "We Reject: Infrastructure That Fights You",
+          content: "If you're spending more time configuring tools than building features, your tools have failed you.\n\nInfrastructure should accelerate building, not slow it down."
         },
         {
-          title: "We Reject: AI That Replaces Instead of Empowers",
-          content: "AI deployed to cut headcount is AI deployed wrong.\n\n**Technology should multiply human capacity, not eliminate human workers.**"
+          title: "We Reject: AI Hype Without AI Substance",
+          content: "\"AI-powered\" means nothing if it doesn't ship faster.\n\nTechnology should multiply your output, not your buzzword count."
         },
         {
-          title: "We Reject: Acquisition-Driven Growth Models",
-          content: "Burning millions on customer acquisition while delivering mediocre products is not a sustainable business.\n\n**Growth should come from value creation, not marketing spend.**"
+          title: "We Reject: Boilerplate as a Business Model",
+          content: "Charging founders to rebuild the same infrastructure every project is not a service—it's a tax on ambition.\n\nThe boring parts should be solved once, for everyone."
         },
         {
           title: "We Reject: Privacy as a Negotiable Feature",
-          content: "If your AI transmits customer data to foreign servers, you're not providing a service—you're committing a crime in regulated industries.\n\n**Compliance is not optional.**"
+          content: "If your infrastructure transmits user data to foreign servers by default, you're not providing a platform—you're creating liability.\n\nCompliance is not optional."
         },
         {
-          title: "We Reject: Feature Bloat Disguised as Innovation",
-          content: "Adding features nobody asked for doesn't make software better. It makes it more confusing.\n\n**We build what solves real problems, not what looks good in marketing slides.**"
+          title: "We Reject: Complexity Disguised as Flexibility",
+          content: "\"You can customize anything\" often means \"you have to configure everything.\"\n\nWe build what works by default, not what works after a week of setup."
         }
       ]
     },
 
     whyNow: {
       title: "Why Now?",
-      subtitle: "Three forces are converging to make this moment inevitable:",
+      subtitle: "Three forces are converging:",
       forces: [
         {
           title: "1. AI Has Crossed the Threshold",
-          content: "Private LLMs work reliably. EU-sovereign hosting is widely available. Agent frameworks are mature.\n\n**AI is no longer experimental. It's production-ready.**\n\nThe technology that was impossible three years ago is now table stakes. Organizations that deploy AI-powered operations in 2025 will be market leaders in 2030. Those that wait will spend 2027-2029 playing catch-up."
+          content: "Private LLMs work reliably. EU-sovereign hosting is available. Agent frameworks are mature.\n\nAI is no longer experimental. It's production-ready.\n\nFounders deploying AI-accelerated development in 2025 will have shipped twice as much by 2027."
         },
         {
-          title: "2. Point Solution Economics Have Collapsed",
-          content: "SaaS companies are spending more to acquire less. Buyers are exhausted by tool proliferation. Nobody wants another login or another disconnected system.\n\n**The market is consolidating whether you like it or not.**\n\nThe choice isn't \"point solution or compound platform.\" The choice is \"which compound platform.\""
+          title: "2. Boilerplate Economics Have Collapsed",
+          content: "Every founder rebuilding auth is wasting time. Every team configuring payments from scratch is burning money. Nobody wants to solve solved problems.\n\nThe market is consolidating around platforms that eliminate setup."
         },
         {
-          title: "3. Professional Networks Are Ready",
-          content: "COVID accelerated digital transformation. Paper forms and manual processes are over. Younger administrators expect modern tools. Members demand digital experiences.\n\n**The appetite for change has never been higher.**\n\nThe window for being first is 18-24 months. After that, being innovative becomes being average."
+          title: "3. Founders Are Ready",
+          content: "The tolerance for development friction is at an all-time low. Founders have seen what's possible with modern tooling. They expect to ship fast.\n\nThe appetite for speed has never been higher."
         }
       ]
     },
@@ -209,119 +184,99 @@ Point solutions are easier to buy (lower price, simpler decision). Compound plat
       title: "The Stakes",
       ifRight: {
         title: "If We're Right:",
-        content: "Professional networks that deploy compound AI platforms become:\n- Regional market leaders\n- Employers of choice (meaningful work, not busywork)\n- Member magnets (modern experience, not outdated chaos)\n- Strategic powerhouses (freed capacity drives growth)"
+        content: "Founders who build on compound platforms become:\n- First to market (while competitors configure)\n- Capital efficient (ship more with less)\n- Attractive to investors (velocity matters)\n- Free to focus (on problems worth solving)"
       },
       ifWrong: {
         title: "If We're Wrong:",
-        content: "We go out of business. Our customers revert to their old systems. The world continues as it was.\n\n**But we're not wrong.**\n\nThe data is undeniable. Point solution economics are broken. Software markets are consolidating. AI is production-ready. Professional networks are ready for transformation.\n\n**The question isn't whether compound platforms will win. The question is which one.**"
+        content: "We go out of business. Founders go back to rebuilding auth for the 47th time.\n\nBut we're not wrong."
       }
     },
 
     theMovement: {
-      title: "The Movement",
-      content: `This isn't just about L4YERCAK3. This is about how professional services should work.
+      title: "Our Commitment",
+      content: `To Our Builders:
 
-**We're building proof that:**
-- Compound platforms can serve small organizations profitably
-- AI can multiply human capacity without eliminating jobs
-- Expansion revenue models align incentives better than acquisition models
-- Privacy-first architecture creates unassailable competitive moats
-- Systems thinking beats feature thinking every time
+We will never prioritize new customers over existing builder success. Our business model depends on you shipping—which means we only win when you win.
 
-**If we succeed, we prove the model works.**
+Your launch is not a side effect. It's the entire business model.
 
-Then medical networks, legal associations, tax advisors, engineering societies, and trade organizations across Europe have a blueprint for transformation.
+To Our Team:
 
-Then other software companies see that compound platforms can serve SMBs, not just enterprises.
+We will build infrastructure that solves real problems, not features that look good in demos.
 
-Then the narrative shifts from "AI will eliminate jobs" to "AI will free humans to do work that matters."
+Shipping code is not the goal. Helping builders ship is.
 
-**This is bigger than one company.**`
+To Ourselves:
+
+We will not compromise on these beliefs to chase short-term revenue. We will not sacrifice privacy for convenience.
+
+We will build the platform we wish existed when we were starting.`
     },
 
     theInvitation: {
       title: "The Invitation",
-      content: `We're not asking you to believe us.
+      content: `This is not just about l4yercak3. This is about how software should be built.
 
-We're asking you to look at the evidence:
-- HaffNet saves 400+ hours annually with the core platform
-- 3x ROI in Year 1 proven with real data
-- Point solution economics are collapsing (public data)
-- Software consolidation is accelerating (observable trend)
-- Professional networks are ready for change (ask any administrator)
+We're building proof that compound platforms can serve founders profitably. That AI can multiply builder capacity. That the boring parts can be solved once, for everyone.
 
-**Then decide for yourself.**
+If we succeed, we prove the model works. Then every founder has a blueprint for shipping faster.
 
-Join the networks deploying AI-powered operations now. Or wait two years and be one of many scrambling to catch up.
-
-Be the innovative organization others study. Or be the one explaining to your board why you're falling behind.
-
-Free your team to do strategic work. Or keep them trapped copying data between Excel and Lexware.
-
-**The choice is yours.**
-
-But understand: This moment won't last. The window for being first is closing. Compound platforms are coming whether you adopt L4YERCAK3 or not.
-
-**You can lead the transformation. Or you can be transformed.**`
+This is bigger than one company.`
     },
 
     ourCommitment: {
       title: "Our Commitment",
       toCustomers: {
-        title: "To Our Customers:",
-        content: "We will never prioritize new customer acquisition over existing customer success. Our business model depends on expansion revenue, which means we only win when you win.\n\n**Your success is not a side effect. It's the entire business model.**"
+        title: "To Our Builders:",
+        content: "We will never prioritize new customers over existing builder success. Our business model depends on you shipping—which means we only win when you win.\n\nYour launch is not a side effect. It's the entire business model."
       },
       toTeam: {
         title: "To Our Team:",
-        content: "We will build product that solves real problems, not features that look good in demos. We will treat every hour of development as an investment in customer value.\n\n**Shipping code is not the goal. Creating value is.**"
+        content: "We will build infrastructure that solves real problems, not features that look good in demos.\n\nShipping code is not the goal. Helping builders ship is."
       },
       toIndustry: {
         title: "To Our Industry:",
-        content: "We will publish our learnings openly. We will share our mistakes transparently. We will prove that compound platforms can serve professional networks profitably.\n\n**If we succeed, the entire industry benefits.**"
+        content: "We will publish our learnings openly. We will share our mistakes transparently. We will prove that compound platforms can serve founders profitably.\n\nIf we succeed, the entire industry benefits."
       },
       toOurselves: {
         title: "To Ourselves:",
-        content: "We will not compromise on our beliefs to chase short-term revenue. We will not build on public LLMs because \"it's easier.\" We will not burn cash on customer acquisition while delivering mediocre products.\n\n**We will build the company we believe should exist.**"
+        content: "We will not compromise on these beliefs to chase short-term revenue. We will not sacrifice privacy for convenience.\n\nWe will build the platform we wish existed when we were starting."
       }
     },
 
     bottomLine: {
       title: "The Bottom Line",
-      content: "**Point solutions gave us tool chaos.**\n\n**Compound platforms give us systems that work.**\n\n**L4YERCAK3 gives professional networks the freedom to focus on their mission instead of their operations.**\n\nThat's not a product pitch. That's a philosophy.\n\n**This is our manifesto. This is what we believe. This is what we're building.**"
+      content: "The boilerplate era gave us development hell.\n\nCompound platforms give us time to build.\n\nL4YERCAK3 gives founders the freedom to focus on what matters instead of what's been solved.\n\nThis is our manifesto. This is what we believe. This is what we're building."
     },
 
     joinUs: {
       title: "Join Us",
-      content: `**If you believe:**
-- Systems beat point solutions
-- AI should multiply humans, not replace them
+      content: `If you believe:
+- Ship speed beats perfectionism
+- Systems beat services
+- AI should multiply builders, not replace them
 - Software should work together invisibly
 - Privacy is a right, not a feature
-- Expansion beats acquisition
-- Compound learning accelerates everyone
+- Compound platforms win
 
-**Then you're part of this movement.**
+Then you're part of this movement.
 
-Whether you become a customer or not. Whether you work with us or not. Whether you build competing software or not.
-
-**The compound platform era is here.**
-
-**Be part of building it.**`
+The compound builder era is here. Be part of building it.`
     },
 
     signature: {
-      content: "*This manifesto reflects our beliefs as of January 26, 2025. Our beliefs may evolve as we learn, but our commitment to these principles will not.*\n\n*Signed,*\n*The L4YERCAK3 Team*"
+      content: "Signed,\nThe L4YERCAK3 Team"
     }
   },
 
   // Call to action
   cta: {
-    title: "Ready to be part of the future?",
-    description: "Join our community and be the first to experience what we're building.",
+    title: "Ready to Ship?",
+    description: "Join the founders who are building faster by starting with more.",
     buttons: {
-      scheduleCall: "Schedule a Call",
+      scheduleCall: "Book a Strategy Call",
       calculateROI: "Do More with Less",
-      readStory: "Read Our Story"
+      readStory: "Apply for Build Sprint"
     }
   }
 };

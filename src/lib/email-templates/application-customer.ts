@@ -89,14 +89,14 @@ export function generateApplicationCustomerEmail(
         </a>
 
         <!-- Value Calculator Button -->
-        <a href="https://l4yercak3.com/do-more-with-less"
+        <a href="https://l4yercak3.com/go-to-market"
            style="display: inline-block; margin: 0 8px 12px 0; padding: 12px 24px; background-color: #ffffff; color: #2563eb; text-decoration: none; border-radius: 6px; border: 2px solid #2563eb; font-weight: 600; font-size: 14px;">
           💰 ROI-Rechner
         </a>
       </div>
 
       <p style="margin: 24px 0 0 0; font-size: 14px; line-height: 1.6; color: #64748b;">
-        Möchten Sie sofort sehen, wie viel Wert L4YERCAK3 für Ihre Organisation schaffen kann? Nutzen Sie unseren <a href="https://l4yercak3.com/do-more-with-less" style="color: #2563eb; text-decoration: none;">interaktiven ROI-Rechner</a> und erhalten Sie einen personalisierten Wertbericht.
+        Möchten Sie sofort sehen, wie viel Wert L4YERCAK3 für Ihre Organisation schaffen kann? Nutzen Sie unseren <a href="https://l4yercak3.com/go-to-market" style="color: #2563eb; text-decoration: none;">interaktiven ROI-Rechner</a> und erhalten Sie einen personalisierten Wertbericht.
       </p>
 
       <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid #e5e7eb;">
@@ -176,14 +176,14 @@ export function generateApplicationCustomerEmail(
         </a>
 
         <!-- Value Calculator Button -->
-        <a href="https://l4yercak3.com/do-more-with-less"
+        <a href="https://l4yercak3.com/go-to-market"
            style="display: inline-block; margin: 0 8px 12px 0; padding: 12px 24px; background-color: #ffffff; color: #2563eb; text-decoration: none; border-radius: 6px; border: 2px solid #2563eb; font-weight: 600; font-size: 14px;">
           💰 Calculate Your ROI
         </a>
       </div>
 
       <p style="margin: 24px 0 0 0; font-size: 14px; line-height: 1.6; color: #64748b;">
-        Want to see exactly how much value L4YERCAK3 can create for your organization? Use our <a href="https://l4yercak3.com/do-more-with-less" style="color: #2563eb; text-decoration: none;">interactive value calculator</a> to get a personalized value report.
+        Want to see exactly how much value L4YERCAK3 can create for your organization? Use our <a href="https://l4yercak3.com/go-to-market" style="color: #2563eb; text-decoration: none;">interactive value calculator</a> to get a personalized value report.
       </p>
 
       <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid #e5e7eb;">

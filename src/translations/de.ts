@@ -1,6 +1,8 @@
 import { manifestoDe } from './manifesto';
 import { learnMoreDe } from './learn-more';
-import { doMoreWithLessDe } from './do-more-with-less';
+import { doMoreWithLessDe } from './go-to-market';
+import { buildSprintDe } from './build-sprint';
+import { founderCalculatorDe } from './founder-calculator';
 
 export const de = {
   common: {
@@ -23,8 +25,9 @@ export const de = {
   navigation: {
     home: "Startseite",
     manifesto: "Manifest",
-    learnMore: "Mehr erfahren",
-    valueCalculator: "Tue mehr mit weniger",
+    learnMore: "Schnell Shippen",
+    valueCalculator: "Go to Market",
+    buildSprint: "Build Sprint",
     toggleMenu: "Menü umschalten",
     closeMenu: "Menü schließen",
     switchToEnglish: "Zu Englisch wechseln",
@@ -32,14 +35,14 @@ export const de = {
   },
   newsletter: {
     title: "l4yercak3",
-    subtitle: "Eine Plattform. Null manuelle Arbeit. Unendliche Skalierung.",
-    urgency: "🔥 3 Implementierungsplätze für {quarter} {year} sind noch frei - Jetzt bewerben",
-    description: "Schluss mit Daten kopieren zwischen Excel, Outlook und Lexware. Setzen Sie Ihren Namen auf die Liste, um Ihren Platz für {quarter} {year} heute zu reservieren!",
-    helperText: "Bleiben Sie auf dem Laufenden und erhalten Sie die neuesten Updates zu L4YERCAK3",
+    subtitle: "Dein Backend. Bereits gebaut. Shippe dieses Quartal.",
+    urgency: "🔥 3 Build Sprint Plätze für {quarter} {year} — Jetzt bewerben",
+    description: "Schluss mit dem Neubauen von Auth, Datenbank, E-Mail und Payments für jedes Projekt. Wir haben die Infrastruktur gebaut. Du baust, was dein Produkt einzigartig macht.",
+    helperText: "Updates zu l4yercak3 erhalten — neue Features, Builder-Ressourcen, Launch-Stories",
     emailPlaceholder: "E-Mail-Adresse eingeben",
     manifesto: "Manifest",
-    learnMore: "Mehr erfahren",
-    calculateROI: "Tue mehr mit weniger",
+    learnMore: "Schnell Shippen",
+    calculateROI: "Go to Market",
     subscriptionTypes: {
       newsletter: "Updates erhalten",
       privateAccess: "Zugang beantragen",
@@ -58,44 +61,64 @@ export const de = {
     }
   },
   application: {
-    title: "Für frühen Zugang bewerben",
-    subtitle: "Reservieren Sie Ihren Implementierungsplatz für {quarter} {year}",
+    title: "Für Build Sprint bewerben",
+    subtitle: "Reservieren Sie Ihren Platz für {quarter} {year}",
     fields: {
       firstName: "Vorname",
       lastName: "Nachname",
       email: "E-Mail-Adresse",
       phone: "Telefonnummer",
-      company: "Firmenname",
+      company: "Firma / Projektname",
       role: "Ihre Position",
-      teamSize: "Teamgröße",
-      monthlySpend: "Monatliche Software-Ausgaben",
-      currentChallenges: "Aktuelle Herausforderungen"
+      fundingStage: "Finanzierungsphase",
+      techTeamSize: "Technische Teamgröße",
+      primaryGoal: "Hauptziel",
+      timelineUrgency: "Zeitrahmen",
+      currentStack: "Aktueller Tech-Stack (optional)",
+      whatYouWantToBuild: "Was möchten Sie bauen?"
     },
     placeholders: {
       firstName: "Geben Sie Ihren Vornamen ein",
       lastName: "Geben Sie Ihren Nachnamen ein",
       email: "Geben Sie Ihre E-Mail-Adresse ein",
       phone: "Geben Sie Ihre Telefonnummer ein",
-      company: "Geben Sie Ihren Firmennamen ein",
-      role: "z.B. Geschäftsführer, Betriebsleiter",
-      currentChallenges: "Beschreiben Sie Ihre aktuellen Herausforderungen mit manuellen Prozessen, Datenkopierung oder Software-Integration..."
+      company: "Ihr Startup- oder Projektname",
+      role: "z.B. Gründer, CTO, Technischer Mitgründer",
+      currentStack: "z.B. React, Node.js, PostgreSQL, oder 'Von Grund auf neu'",
+      whatYouWantToBuild: "Beschreiben Sie Ihre Produktidee, das Problem das Sie lösen, und was Sie zum Launch benötigen..."
     },
     options: {
-      teamSize: {
-        placeholder: "Teamgröße auswählen",
-        "1-5": "1-5 Mitarbeiter",
-        "6-20": "6-20 Mitarbeiter",
-        "21-50": "21-50 Mitarbeiter",
-        "51-100": "51-100 Mitarbeiter",
-        "100+": "100+ Mitarbeiter"
+      fundingStage: {
+        placeholder: "Finanzierungsphase auswählen",
+        "bootstrapped": "Bootstrapped / Eigenfinanziert",
+        "pre-seed": "Pre-Seed",
+        "seed": "Seed",
+        "series-a": "Series A",
+        "series-b+": "Series B+"
       },
-      monthlySpend: {
-        placeholder: "Monatliche Ausgaben auswählen",
-        "<500": "Weniger als €500",
-        "500-1000": "€500 - €1.000",
-        "1000-2500": "€1.000 - €2.500",
-        "2500-5000": "€2.500 - €5.000",
-        "5000+": "€5.000+"
+      techTeamSize: {
+        placeholder: "Teamgröße auswählen",
+        "solo": "Solo-Gründer (noch keine Entwickler)",
+        "1-2": "1-2 Entwickler",
+        "3-5": "3-5 Entwickler",
+        "6-10": "6-10 Entwickler",
+        "10+": "10+ Entwickler"
+      },
+      primaryGoal: {
+        placeholder: "Ihr Hauptziel auswählen",
+        "mvp": "MVP von Grund auf bauen",
+        "v1-launch": "v1.0 in Produktion bringen",
+        "scale": "Bestehendes Produkt skalieren",
+        "pivot": "Pivot / Neue Richtung",
+        "rebuild": "Legacy-System neu aufbauen"
+      },
+      timelineUrgency: {
+        placeholder: "Zeitrahmen auswählen",
+        "asap": "ASAP - Musste gestern fertig sein",
+        "1-2-months": "1-2 Monate",
+        "this-quarter": "Dieses Quartal",
+        "next-quarter": "Nächstes Quartal",
+        "exploring": "Nur Optionen erkunden"
       }
     },
     buttons: {
@@ -105,15 +128,17 @@ export const de = {
       close: "Schließen"
     },
     success: {
-      title: "Vielen Dank für Ihre Bewerbung!",
-      message: "Remington Splettstoesser, der Gründer von L4YERCAK3, wird sich mit Ihnen in Verbindung setzen!",
-      scheduleMessage: "Wenn Sie einen Termin für ein Gespräch wählen möchten, können Sie:",
-      scheduleButton: "Termin wählen"
+      title: "Bewerbung eingegangen!",
+      message: "Remington Splettstoesser, Gründer von L4YERCAK3, wird Ihre Bewerbung prüfen und sich innerhalb von 24 Stunden melden.",
+      scheduleMessage: "Möchten Sie nicht warten? Buchen Sie direkt einen Anruf:",
+      scheduleButton: "Anruf buchen"
     }
   },
   manifesto: manifestoDe,
   learnMore: learnMoreDe,
   doMoreWithLess: doMoreWithLessDe,
+  buildSprint: buildSprintDe,
+  founderCalculator: founderCalculatorDe,
   footer: {
     copyright: "© 2024 l4yercak3. Alle Rechte vorbehalten."
   }

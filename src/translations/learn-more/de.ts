@@ -1,12 +1,12 @@
 export const learnMoreDe = {
   // Meta information
-  title: "Wo Wert geschaffen wird",
-  subtitle: "Warum manche Netzwerke gedeihen, während andere kämpfen",
-  
+  title: "Warum Gründer Build Sprint wählen",
+  subtitle: "Überspringe Monate an Infrastruktur-Arbeit. Shippe dein Produkt dieses Quartal.",
+
   // Navigation sections
   sections: {
     problem: "Das Problem",
-    solution: "Unsere Lösung", 
+    solution: "Unsere Lösung",
     impact: "Die Auswirkung",
     vision: "Unsere Vision"
   },
@@ -14,219 +14,222 @@ export const learnMoreDe = {
   // Main content sections
   content: {
     intro: {
-      title: "Die verborgene Wahrheit über manuelle Routinearbeit",
-      subtitle: "Es ist 9 Uhr morgens an einem Dienstag. Sarah, die Geschäftsführerin eines regionalen Ärztenetzwerks, öffnet ihren Laptop und sieht 47 ungelesene E-Mails. Zehn davon stellen dieselbe Frage: 'Wann ist die nächste CME-Veranstaltung?'",
-      description: "Sie kopiert die Veranstaltungsdetails aus ihrer Excel-Tabelle – der mit 15 Registerkarten für Anmeldungen, Zahlungen, CME-Punkte, Raumbuchungen, Catering-Bestellungen – und fügt sie in jede Antwort ein. Eine nach der anderen. Persönliche Begrüßungen. Individuelle Antworten. Senden klicken. Nächste E-Mail. Das dauert 45 Minuten. Es wird am Donnerstag wieder passieren. Und nächste Woche. Um 11 Uhr hat sie manuell die Veranstaltungsseite auf ihrer WordPress-Website aktualisiert, 23 neue Anmeldungen aus E-Mails in die 'Anmeldungs-Master-Liste' kopiert, 5 PDF-Zertifikate in Word erstellt (jedes dauert 10 Minuten, um Ärztename und CME-Punkte einzutragen) und Zahlungserinnerungen an 12 Mitglieder gesendet, deren Rechnungen überfällig sind. Sie arbeitet seit zwei Stunden. Sie hat noch keine einzige Minute strategische Arbeit geleistet.",
+      title: "Die Infrastruktur-Falle",
+      subtitle: "Du hast eine großartige Produktidee. Du hast Funding. Du hast ein technisches Team. Warum fühlt es sich dann so an, als würdest du dasselbe bauen wie jedes andere Startup?",
+      description: "Authentifizierung. Payments. E-Mail-Systeme. Datenbank-Architektur. Admin-Dashboards. Dateispeicher. KI-Integration. Bevor du eine einzige Zeile Produkt-Code schreibst, stehen dir 3-6 Monate Infrastruktur-Arbeit bevor. Und hier ist die brutale Wahrheit: Nichts davon gibt dir einen Wettbewerbsvorteil. Deine User interessiert nicht, wie elegant du OAuth implementiert hast. Sie interessiert das Produkt, das du ihnen versprochen hast.",
       hiddenTruth: {
-        title: "Was Software-Anbieter Ihnen nicht sagen wollen",
-        secret: "Hier ist das Branchengeheimnis, das sie Ihnen nie verraten werden: Point-Solutions sind nicht zufällig kaputt. Sie sind so konzipiert.",
-        explanation: "Jede 'Integration', die fehlschlägt. Jeder manuelle Workaround, den Sie erstellen. Jede Stunde, die Sie damit verbringen, Daten zwischen Systemen zu kopieren. Es ist beabsichtigt. Warum? Weil in dem Moment, in dem alles nahtlos zusammenarbeitet, Sie keine 7 verschiedenen Software-Abonnements benötigen. Sie brauchen nur eines. Die gesamte SaaS-Industrie hängt davon ab, dass Sie in der Tool-Verwirrung gefangen bleiben.",
-        revelation: "Aber was wäre, wenn jemand das Gegenteil gebaut hätte? Was wäre, wenn jemand ein System geschaffen hätte, in dem alles tatsächlich zusammenarbeitet? Wo Daten automatisch fließen? Wo KI-Agenten das Chaos bewältigen, während Sie sich auf Wachstum konzentrieren? Was wäre, wenn dieses System bereits existiert?"
+        title: "Was VCs dir nicht sagen",
+        secret: "Hier ist, was wir gelernt haben, als wir Hunderte von gefundeten Startups beobachtet haben: Die erfolgreichen sind nicht die mit der besten Infrastruktur. Es sind die, die am schnellsten auf den Markt gekommen sind.",
+        explanation: "Jede Woche, die du mit Auth-Entwicklung verbringst, ist eine Woche, in der deine Konkurrenten mit Kunden sprechen. Jeder Sprint für Payment-Integration ist ein Sprint, den du nicht für dein Kernprodukt nutzt. Jeder Monat Infrastruktur ist ein Monat Burn Rate ohne Produkt-Fortschritt.",
+        revelation: "Aber was wäre, wenn du das alles überspringen könntest? Was wäre, wenn die Infrastruktur bereits gebaut, kampferprobt und bereit für deine Anpassungen wäre? Was wäre, wenn du in 12 Wochen statt 12 Monaten vom Funding zum Markt könntest?"
       },
       realCost: {
-        title: "Die Rechnung, die sie hoffen, dass Sie sie nie machen",
-        description: "Sarah ist eine von drei Administratorinnen im Netzwerk. Sie sind kluge, fähige Menschen, die sich sehr um die Unterstützung von Ärzten kümmern. Aber hier ist, was niemand sieht: Die wahren Kosten sind nicht die Software-Abonnements. Es ist die menschliche Integrationsschicht.",
-        discovery: "3 Mitarbeiter. 60 Stunden jede Woche. 3.120 Stunden jedes Jahr. Aber hier ist, was wir entdeckt haben, was andere übersehen haben: Das sind nicht nur 'administrative Stunden.' Es ist strategische Kapazität, die verbrannt wird.",
-        impact: "Jede Stunde, die Sarah mit dem Kopieren von Daten verbringt, ist eine Stunde, in der sie keine neuen Mitglieder rekrutiert. Jede Stunde, in der sie dieselbe Frage zum 50. Mal beantwortet, ist eine Stunde, in der sie keine Unternehmenspartnerschaften sichert. Jede Stunde der Zahlungsabstimmung ist eine Stunde, in der sie keine innovativen Programme entwickelt.",
-        conclusion: "Die Netzwerke, die das zuerst herausgefunden haben, ziehen bereits davon."
+        title: "Die Rechnung, die alles verändert",
+        description: "Machen wir die echte Kalkulation, die die meisten Gründer vermeiden:",
+        discovery: "Ein Senior-Entwickler kostet €80-120/Stunde voll geladen. Infrastruktur dauert 12-20 Wochen mit einem kompetenten Team. Das sind €50.000-150.000 an Engineering-Zeit, bevor dein erstes Produkt-Feature shipped. Aber das ist nicht mal der echte Preis.",
+        impact: "Der echte Preis ist Time-to-Market. Jeder Monat Verzögerung ist ein Monat verbrannter Runway. Ein Monat, in dem Konkurrenten schneller sind. Ein Monat, in dem sich Marktbedingungen ändern. Ein Monat, in dem deine frühen Unterstützer sich fragen, wann sie das Produkt sehen, das du ihnen gepitcht hast.",
+        conclusion: "Die Startups, die das zuerst verstehen, sind die, die gewinnen."
       }
     },
 
     exclusiveClub: {
-      title: "Was sie auszeichnet",
-      networksTitle: "Hinter den Kulissen",
-      networksDescription: "Es gibt eine kleine Gruppe professioneller Netzwerke, die anders arbeiten. Sie führen mehr Veranstaltungen mit weniger Leuten durch. Ihre Administratoren konzentrieren sich auf Strategie, nicht auf Tabellen. Ihre Mitglieder erhalten sofortige Antworten auf Fragen. Ihre Compliance-Berichte werden mit einem Klick generiert. Sie verwenden nicht bessere Versionen derselben Tools, die Sie haben. Sie verwenden etwas völlig anderes.",
-      selectionTitle: "Die richtige Passung",
-      selectionDescription: "Wir arbeiten nicht mit jedem. Das können wir nicht. Dieses Jahr erhalten nur 12 Netzwerke Zugang zu dem, was wir gebaut haben. Warum so wenige? Weil eine Transformation dieser Tiefe Partnerschaft erfordert, nicht nur Software-Lieferung. Wir werden Teil Ihres Teams. Wir lernen Ihre Arbeitsabläufe. Wir optimieren für Ihre spezifischen Bedürfnisse. Wir sorgen für Ihren Erfolg. Massenmarkt-Software dient den Massen. Dies dient den wenigen, die führen wollen.",
+      title: "Für wen Build Sprint ist",
+      networksTitle: "Die Gründer, mit denen wir arbeiten",
+      networksDescription: "Build Sprint ist nicht für jeden. Wir arbeiten mit gefundeten Gründern und technischen Teams, die verstehen, dass Speed-to-Market alles ist. Teams, die lieber 12 Wochen Produkt bauen als 12 Monate Infrastruktur. Gründer, die den Unterschied kennen zwischen 'wir haben es selbst gebaut' und 'wir haben es zuerst geshippt.'",
+      selectionTitle: "Begrenzte Kapazität",
+      selectionDescription: "Wir nehmen jedes Quartal nur eine begrenzte Anzahl Build Sprint Kunden an. Warum? Weil wir keine Software verkaufen—wir partnern mit dir, um dein Produkt zu shippen. Wir lernen deine Domäne. Wir passen unsere Plattform für deine Bedürfnisse an. Wir sind 12 Wochen mit dir im Schützengraben. Diese Art von Partnerschaft skaliert nicht unendlich.",
       criteriaTitle: "Wonach wir suchen",
-      criteriaDescription: "Nicht jedes Netzwerk ist bereit für diese Art von Veränderung. Wir suchen nach:",
+      criteriaDescription: "Die besten Build Sprint Kunden teilen diese Eigenschaften:",
       criteria: [
-        "Visionärer Führung, die über aktuelle Grenzen hinaussieht",
-        "Bereitschaft, den Komfort des vertrauten Chaos aufzugeben",
-        "Engagement für Wachstum statt nur Wartung",
-        "Verständnis, dass Transformation Partnerschaft erfordert"
+        "Gefundet (Seed bis Series A) mit mindestens 12 Monaten Runway",
+        "Klare Produktvision—du weißt, was du bauen willst",
+        "Technischer Gründer oder starker technischer Co-Founder",
+        "Bereitschaft, schnell zu handeln und schnell Entscheidungen zu treffen"
       ],
-      conclusion: "Wenn Sie noch in Begriffen von 'Software kaufen' denken, ist das nichts für Sie. Wenn Sie in Begriffen von 'organisatorischer Evolution' denken, lassen Sie uns sprechen."
+      conclusion: "Wenn du noch in der 'Ideen erkunden'-Phase bist, ist Build Sprint noch nichts für dich. Wenn du bereit bist zu shippen, lass uns reden."
     },
 
     transformationTeaser: {
-      title: "Der Unterschied",
+      title: "Was sich mit Build Sprint ändert",
       whatChangesTitle: "Die Ergebnisse",
-      whatChanges: "Netzwerke, die unmöglich zu skalieren schienen, führen plötzlich 3x mehr Veranstaltungen mit demselben Team durch. Administratoren, die in Routinearbeit ertranken, sichern jetzt Partnerschaften im Wert von mehr als ihrem gesamten vorherigen Jahresbudget. KI-Agenten bearbeiten Mitgliederanfragen mit einer Genauigkeit, die menschliche Antworten langsam und unvollständig erscheinen lässt. Compliance-Berichte, die früher Tage dauerten, erscheinen jetzt sofort, perfekt für die Einreichung bei Behörden formatiert. Die Ergebnisse scheinen unmöglich, bis Sie sie selbst sehen.",
-      methodTitle: "Was wir anders machen",
-      methodDescription: "Wir können die vollständige Methodik hier nicht erklären. Nicht weil wir von Natur aus geheimnisvoll sind – sondern weil der Ansatz so grundlegend anders ist als traditionelle Software, dass er eine Demonstration erfordert.",
-      whatWeCantell: "Was wir Ihnen sagen können:",
-      methodology: "Statt 10 unverbundener Tools, die sich bekämpfen, stellen Sie sich ein System vor, in dem alles automatisch fließt. Statt die menschliche Integrationsschicht zu sein, stellen Sie sich KI-Agenten vor, die nie schlafen, nie Fehler machen und aus jeder Interaktion lernen. Statt Software zu verwalten, stellen Sie sich Software vor, die sich selbst verwaltet, während Sie sich auf das konzentrieren, was nur Menschen können: Strategie, Beziehungen, Wachstum.",
-      results: "Die Netzwerke, die diesen Ansatz verwenden, berichten von Transformationen, die wie Fiktion klingen.",
-      undergroundTitle: "Unsere Partner",
-      undergroundDescription: "Die Administratoren, die diese Transformation erlebt haben, sprechen nicht öffentlich darüber. Nicht weil sie zum Schweigen verpflichtet sind, sondern weil es unglaublich klingt, es zu erklären.",
+      whatChanges: "Gründer, die Build Sprint durchlaufen haben, beschreiben dieselbe Erfahrung: 'Wir hatten geplant, unsere ersten 6 Monate mit Infrastruktur zu verbringen. Stattdessen haben wir unser MVP in Woche 8 geshippt und Monate 2-3 mit echten Usern iteriert.' Das ist nicht nur schneller—es ist eine fundamental andere Trajektorie. Echtes User-Feedback in Wochen statt Monaten. Product-Market-Fit Signale bevor dein Runway halb aufgebraucht ist. Ein Team fokussiert auf das, was dich einzigartig macht, statt auf Standard-Infrastruktur.",
+      methodTitle: "Wie es funktioniert",
+      methodDescription: "Build Sprint ist kein Template oder Boilerplate. Es ist ein bewährtes System, verfeinert über Dutzende von Launches:",
+      whatWeCantell: "Die Build Sprint Methodik:",
+      methodology: "Woche 1-2: Deep Dive in deine Produktvision. Wir lernen deine Domäne, deine User, deine Wettbewerbslandschaft. Wir passen unsere Infrastruktur-Plattform für deine spezifischen Bedürfnisse an. Woche 3-8: Intensive Produktentwicklung. Dein Team fokussiert sich rein auf deine differenzierenden Features, während wir Infrastruktur, DevOps und technische Architektur handhaben. Woche 9-12: Polish, Testing und Launch-Vorbereitung. Wir stellen sicher, dass dein Produkt produktionsreif, skalierbar und sicher ist.",
+      results: "Teams shippen konsistent in 12 Wochen, was 6-9 Monate gedauert hätte, wenn sie von Grund auf gebaut hätten.",
+      undergroundTitle: "Von Gründern, die es erlebt haben",
+      undergroundDescription: "Wir teilen keine Kundennamen ohne Erlaubnis, aber hier ist, was sie uns sagen:",
       testimonials: [
-        "Ich habe früher 20 Stunden pro Woche mit manueller Koordination verbracht. Jetzt verbringe ich 20 Stunden pro Woche mit strategischen Partnerschaften.",
-        "Unsere KI-Agenten beantworten Mitgliederfragen besser als ich es je konnte. Und sie tun es um 3 Uhr morgens.",
-        "Wir gingen von der knappen Verwaltung von 15 Veranstaltungen zu einer Kapazität für 50. Gleiches Team. Gleiches Budget."
+        "Wir gingen von der Funding-Ankündigung zu zahlenden Kunden in 11 Wochen. Unsere Investoren konnten es nicht glauben.",
+        "Die Infrastruktur hat einfach funktioniert. Wir haben null Zeit mit OAuth-Flows oder Payment-Webhooks debuggen verbracht.",
+        "Unsere Konkurrenten, die dieselbe Runde geraiset haben, bauen immer noch Infrastruktur. Wir iterieren bereits auf User-Feedback."
       ],
-      testimonialsNote: "Das sind keine Testimonials. Das sind Feldberichte aus der Zukunft."
+      testimonialsNote: "So sieht Speed-to-Market wirklich aus."
     },
 
     hiddenArchitecture: {
-      title: "Das Fundament",
-      discoveryTitle: "Was wir gelernt haben",
-      discoveryDescription: "Das Problem ist nicht, dass professionelle Netzwerke bessere Event-Software oder besseres CRM oder bessere E-Mail-Tools brauchen. Das Problem ist, dass sie aufhören müssen, in Begriffen separater Tools zu denken. Was wäre, wenn Mitgliederdaten, Veranstaltungsmanagement, Compliance-Tracking, Finanzverarbeitung und Kommunikation nicht verschiedene Anwendungen wären, die integriert werden müssen? Was wäre, wenn sie verschiedene Ansichten desselben zugrunde liegenden Systems wären?",
-      compoundTitle: "Der Compound-Vorteil",
-      compoundDescription: "Die meisten Software-Unternehmen bauen Features. Wir haben eine Methodik gebaut. Die meisten Plattformen verbinden bestehende Tools. Wir haben die Notwendigkeit für Tools ganz eliminiert. Die meisten KI-Implementierungen automatisieren einzelne Aufgaben. Wir haben KI-Agenten geschaffen, die Ihren gesamten Betrieb verstehen. Das Ergebnis ist etwas, das nirgendwo sonst auf dem Markt existiert.",
-      aiWorkforceTitle: "Die KI-Belegschaft",
-      aiWorkforceDescription: "Sechs KI-Agenten. Arbeiten 24/7. Nie müde. Nie überfordert. Machen nie denselben Fehler zweimal.",
+      title: "Die Build Sprint Plattform",
+      discoveryTitle: "Von Gründern gebaut, für Gründer",
+      discoveryDescription: "Wir haben die Infrastruktur-Plattform gebaut, die wir uns gewünscht hätten, als wir Startups gegründet haben. Keine generische PaaS. Keine Sammlung von APIs, die du zusammenstückelst. Ein komplettes, integriertes System, designed für einen Zweck: gefundete Startups so schnell wie möglich auf den Markt zu bringen.",
+      compoundTitle: "Der Stack",
+      compoundDescription: "Alles was du brauchst, nichts was du nicht brauchst. Convex Echtzeit-Datenbank mit typsicheren Queries. Authentifizierung, die jeden Use Case handhabt (E-Mail, OAuth, Magic Links, 2FA). Stripe-Integration mit eingebauter Abo-Logik. E-Mail-Systeme, die tatsächlich in Posteingänge kommen. Dateispeicher mit CDN-Delivery. KI-Integration bereit für deine Features. Alles integriert. Alles getestet. Alles produktionsreif.",
+      aiWorkforceTitle: "Was enthalten ist",
+      aiWorkforceDescription: "Build Sprint gibt dir Zugang zu einer kompletten Infrastruktur-Plattform:",
       agents: [
         {
-          name: "Anmeldungs-Agent",
-          description: "Bearbeitet Mitgliederanfragen mit Kontext, von dem Sie nicht wussten, dass er möglich ist."
+          name: "Authentifizierungssystem",
+          description: "E-Mail/Passwort, OAuth-Provider, Magic Links, 2FA—alles konfiguriert und bereit."
         },
         {
-          name: "Kommunikations-Agent", 
-          description: "Erstellt Newsletter, Social-Media-Posts und Kampagnen, die persönlich gestaltet wirken."
+          name: "Payment-Verarbeitung",
+          description: "Stripe-Integration mit Abo-Management, Rechnungsstellung und Webhooks."
         },
         {
-          name: "Compliance-Agent",
-          description: "Generiert Berichte, die Aufsichtsbehörden ohne Fragen akzeptieren."
+          name: "Echtzeit-Datenbank",
+          description: "Convex-powered mit automatischer Synchronisierung, Offline-Support und Typsicherheit."
         },
         {
-          name: "Finanz-Agent",
-          description: "Verarbeitet Zahlungen und gleicht Konten mit einer Genauigkeit ab, die menschliche Fehler eliminiert."
+          name: "E-Mail-Infrastruktur",
+          description: "Transaktionale E-Mails, Templates und Zustellbarkeits-Optimierung."
         },
         {
-          name: "Analytics-Agent",
-          description: "Bringt Erkenntnisse hervor, die Wachstumschancen aufzeigen, die Sie nie gesehen haben."
+          name: "Admin-Dashboard",
+          description: "Nutzerverwaltung, Analytics und operative Tools out of the box."
         },
         {
-          name: "Support-Agent",
-          description: "Bietet Mitgliederservice, der Ihr menschliches Team übermenschlich aussehen lässt."
+          name: "KI-Integration",
+          description: "EU-gehostete LLMs, Embedding-Pipelines und KI-Feature-Grundlagen."
         }
       ],
-      agentsConclusion: "Die Netzwerke, die diese Agenten verwenden, berichten von Kapazitätssteigerungen, die unmöglich erscheinen."
+      agentsConclusion: "Alles ist anpassbar. Alles gehört dir. Kein Vendor Lock-in."
     },
 
     selectionCriteria: {
-      title: "Für wen das ist",
-      whyNotEveryoneTitle: "Die Realität",
-      whyNotEveryoneDescription: "Das ist keine Software, die Sie kaufen und installieren. Es ist organisatorische Transformation, die Partnerschaft erfordert. Wir werden 90 Tage lang Teil Ihres Teams. Wir lernen Ihre Arbeitsabläufe. Wir migrieren Ihre Daten. Wir schulen Ihre Leute. Wir optimieren Ihre Prozesse. Wir sorgen für Ihren Erfolg. Diese Art von Partnerschaft skaliert nicht auf Hunderte von Kunden.",
-      applicationTitle: "Der nächste Schritt",
-      applicationDescription: "Wenn Sie denken, dass das richtig für Ihr Netzwerk sein könnte, ist der erste Schritt ein Strategiegespräch. Wir werden besprechen:",
+      title: "Die Build Sprint Stufen",
+      whyNotEveryoneTitle: "Drei Wege, mit uns zu arbeiten",
+      whyNotEveryoneDescription: "Wir haben Build Sprint strukturiert, um verschiedene Phasen und Bedürfnisse abzudecken. Jede Stufe enthält unsere komplette Infrastruktur-Plattform—der Unterschied ist das Level an Hands-on Partnerschaft.",
+      applicationTitle: "Starter (€7.500)",
+      applicationDescription: "Für technische Gründer, die schnell vorankommen wollen:",
       applicationPoints: [
-        "Ihre aktuelle operative Realität (das Chaos, das Sie verwalten)",
-        "Ihre Wachstumsvision (wo Sie in 24 Monaten sein wollen)",
-        "Ihre Bereitschaft für Veränderung (wie engagiert Sie für Transformation sind)",
-        "Ob wir gegenseitig passen (Partnerschaft funktioniert in beide Richtungen)"
+        "Voller Plattform-Zugang mit allen Infrastruktur-Komponenten",
+        "Selbstgeführtes Setup mit umfassender Dokumentation",
+        "Community-Support und Office Hours",
+        "Perfekt für erfahrene Entwickler, die den Geschwindigkeitsvorteil wollen"
       ],
-      applicationNote: "Das ist kein Verkaufsgespräch. Es ist ein Auswahlinterview.",
-      selectedTitle: "Die Erfahrung",
+      applicationNote: "Am besten für: Technische Gründer mit starker Entwicklungserfahrung.",
+      selectedTitle: "Growth (€15.000)",
       selectedTimeline: [
-        "Monat 1: Tiefe Entdeckung und individuelles Systemdesign",
-        "Monat 2: Datenmigration und Workflow-Konstruktion",
-        "Monat 3: Teamschulung und Live-Deployment",
-        "Monat 4+: Optimierung und Expansionsplanung"
+        "Alles aus Starter, plus:",
+        "Dedizierter Slack-Kanal mit unserem Team",
+        "Wöchentliche Architektur-Reviews und Code-Feedback",
+        "Priority-Support mit 24-Stunden-Antwortzeit",
+        "Custom-Integrationen für deine spezifischen Bedürfnisse"
       ],
-      selectedResult: "Bis Monat 6: Sie arbeiten auf einem Niveau, das vor 12 Monaten unmöglich schien."
+      selectedResult: "Am besten für: Teams, die Experten-Guidance ohne volle Partnerschaft wollen."
     },
 
     hiddenEconomics: {
-      title: "Die verborgene Ökonomie",
-      roiTitle: "Was sie Ihnen nicht über ROI sagen",
-      roiDescription: "Jeder Software-Anbieter zeigt Ihnen Kosteneinsparungen. 'Sparen Sie X Stunden pro Woche!' 'Reduzieren Sie manuelle Arbeit um Y%!' Dort liegt nicht der wahre Wert. Der wahre Wert liegt darin, was möglich wird, wenn Ihre Administratoren nicht in operativem Chaos gefangen sind.",
+      title: "Scale (€25.000)",
+      roiTitle: "Voller Partnerschafts-Modus",
+      roiDescription: "Das ist Build Sprint, wie es designed wurde. Wir werden für 12 Wochen eine Erweiterung deines Teams:",
       realValue: [
-        "Strategische Partnerschaften, die mehr Umsatz generieren als Ihr gesamtes vorheriges Software-Budget.",
-        "Mitgliederrekrutierung, die Ihre Netzwerkgröße verdoppelt, ohne Ihre operative Komplexität zu verdoppeln.",
-        "Programmentwicklung, die Sie als Innovationsführer in Ihrer Region positioniert."
+        "Eingebetteter Engineering-Support—wir sind in deinen Standups, deinem Slack, deiner Codebase",
+        "Custom Plattform-Modifikationen für deine spezifische Domäne",
+        "Direkter Zugang zu unseren Senior-Architekten für technische Entscheidungen",
+        "Launch-Vorbereitung inklusive Security-Review und Skalierbarkeits-Testing"
       ],
-      realValueConclusion: "Die Netzwerke, die das verstehen, bauen bereits Wettbewerbsgräben auf, die unmöglich zu überwinden sein werden.",
-      compoundTitle: "Der Compound-Effekt",
+      realValueConclusion: "Am besten für: Gefundete Startups, die maximale Geschwindigkeit und minimales Risiko wollen.",
+      compoundTitle: "Die ROI-Realität",
       compoundTimeline: [
-        "Jahr 1: Operative Transformation (aufhören, in Routinearbeit zu ertrinken)",
-        "Jahr 2: Strategische Kapazität (anfangen zu bauen, was wichtig ist)",
-        "Jahr 3: Marktführerschaft (werden Sie das Netzwerk, das andere studieren)"
+        "6 Monate Engineering-Zeit vermieden = €75.000-150.000 gespart",
+        "3-6 Monate schneller auf dem Markt = Frühere Einnahmen, längerer Runway",
+        "Technische Schulden vermieden = Zukünftige Velocity erhalten",
+        "Kampferprobte Infrastruktur = Weniger Production-Feuer"
       ],
-      compoundConclusion: "Die frühen Anwender werden ihre Märkte besitzen. Die späten Anwender werden Jahre damit verbringen, aufzuholen."
+      compoundConclusion: "Build Sprint zahlt sich aus, bevor du launchst."
     },
 
     secretiveVision: {
-      title: "Die Vision",
-      whereThisGoesTitle: "Wohin das führt",
-      whereThisGoesDescription: "Wir haben eine Roadmap, die weit über das hinausgeht, was Sie heute sehen. Medizinische Netzwerke sind nur der Anfang. Rechtsanwaltsvereinigungen. Steuerberatungsfirmen. Ingenieurgesellschaften. Handelsorganisationen. Unternehmensschulungsabteilungen. Jedes professionelle Netzwerk steht vor derselben grundlegenden Herausforderung: zu viel manuelle Koordination, nicht genug strategische Kapazität. Wir bauen das Betriebssystem für professionelle Netzwerke. Alle.",
-      networkEffectTitle: "Der Netzwerkeffekt",
-      networkEffectDescription: "Jedes Netzwerk, das beitritt, macht die Plattform für alle anderen klüger. Medizinische Compliance-Workflows informieren rechtliche Compliance-Features. Event-Management-Muster von Ingenieurgesellschaften verbessern Handelsvereinigungsfähigkeiten. KI-Agenten lernen aus jeder Interaktion über alle Branchen hinweg.",
-      networkEffectBenefit: "Die ersten Netzwerke, die beitreten, profitieren von allem, was danach kommt. Die letzten Netzwerke, die beitreten, erhalten den Nutzen von allem, was vorher kam. Aber die ersten Netzwerke bekommen etwas, was die letzten nie haben werden: Wettbewerbsvorteil.",
-      windowTitle: "Das 18-Monats-Fenster",
-      windowDescription: "Drei Kräfte konvergieren gerade jetzt:",
+      title: "Warum wir das gebaut haben",
+      whereThisGoesTitle: "Unsere Geschichte",
+      whereThisGoesDescription: "Wir waren Gründer. Wir haben Geld geraiset. Wir haben Monate damit verbracht, Infrastruktur zu bauen, während unser Runway brannte. Wir haben zugesehen, wie Konkurrenten geshippt haben, während wir OAuth gedebugged haben. Wir haben Build Sprint gebaut, weil wir es leid waren zu sehen, wie großartige Ideen langsame Tode in der Infrastruktur-Hölle sterben. Die Technologie existiert, um in Wochen statt Monaten zu shippen. Jemand musste sie nur richtig verpacken.",
+      networkEffectTitle: "Die Build Sprint Community",
+      networkEffectDescription: "Jeder Gründer, der durch Build Sprint geht, tritt einer Community von Buildern bei, die dieselben Herausforderungen erlebt haben. Geteilte Erkenntnisse. Warme Intros. Technische Ratschläge von Leuten, die es erlebt haben. Die Infrastruktur-Plattform wird mit jedem Launch besser. Die Community wird mit jedem Gründer stärker.",
+      networkEffectBenefit: "Du bekommst nicht nur eine Plattform. Du trittst einem Netzwerk von Gründern bei, die Shippen über Infrastruktur-Bauen priorisieren.",
+      windowTitle: "Das Fenster ist jetzt",
+      windowDescription: "Drei Dinge konvergieren, die dies zur besten Zeit in der Geschichte machen, ein gefundeter Gründer zu sein:",
       forces: [
-        "KI ist produktionsreif. Private LLMs funktionieren zuverlässig. EU-souveränes Hosting ist verfügbar. Agent-Frameworks sind ausgereift.",
-        "Professionelle Netzwerke sind bereit zur Modernisierung. COVID beschleunigte die digitale Transformation. Jüngere Administratoren erwarten moderne Tools. Mitglieder fordern digitale Erfahrungen.",
-        "Marktkonsolidierung findet statt. Point-Solutions sterben. Compound-Plattformen gewinnen. First-Mover etablieren Positionen, die unmöglich zu überwinden werden."
+        "KI ist produktionsreif. Features, die früher Monate gedauert haben, können in Wochen shippen.",
+        "Infrastruktur ist gelöst. Du musst Authentifizierung oder Payments nicht mehr neu erfinden.",
+        "Märkte bewegen sich schneller als je zuvor. Der Vorteil geht an den, der zuerst shipped, nicht an den, der am elegantesten baut."
       ],
-      windowConclusion: "Das Fenster, um der Erste in Ihrer Region zu sein, beträgt 18-24 Monate. Danach konkurrieren Sie mit Netzwerken, die KI-Belegschaften haben, während Sie noch Daten in Excel kopieren."
+      windowConclusion: "Die Gründer, die das erkennen, gewinnen bereits. Die Frage ist: Wirst du einer von ihnen sein?"
     },
 
     invitation: {
-      title: "Ihr Zug",
-      skepticalTitle: "Wir verstehen es",
-      skepticalDescription: "Sie haben recht, skeptisch zu sein. Wir machen Behauptungen, die unmöglich klingen. KI-Agenten, die besser arbeiten als Menschen. Operative Transformationen, die wie Fiktion scheinen. Wettbewerbsvorteile, die zu dramatisch klingen, um real zu sein.",
-      notSayingTitle: "Hier ist, was wir NICHT sagen:",
+      title: "Dein Zug",
+      skepticalTitle: "Wir verstehen das",
+      skepticalDescription: "Du bist wahrscheinlich skeptisch. '6 Monate Infrastruktur-Arbeit überspringen? In 12 Wochen shippen? Klingt zu gut, um wahr zu sein.' Fair. Wir wären auch skeptisch. Deshalb bitten wir dich nicht, uns beim Wort zu nehmen.",
+      notSayingTitle: "Was wir NICHT sagen:",
       notSaying: [
-        "Kaufen Sie unsere Software und alles funktioniert magisch",
-        "Das ist einfach und erfordert kein Change Management",
-        "Jeder, der das versucht, hat Erfolg"
+        "Das ersetzt dein Engineering-Team",
+        "Du brauchst keine technischen Skills",
+        "Jedes Startup hat mit Build Sprint Erfolg"
       ],
-      sayingTitle: "Hier ist, was wir sagen:",
+      sayingTitle: "Was wir sagen:",
       saying: [
-        "Die Netzwerke, die diesen Ansatz verwenden, berichten von Ergebnissen, die unglaublich klingen",
-        "Die Transformation ist real, aber sie erfordert Partnerschaft und Engagement",
-        "Die frühen Anwender bauen Vorteile auf, die sich über Jahre hinweg verstärken werden"
+        "Infrastruktur sollte nicht dein Wettbewerbskampffeld sein",
+        "Speed-to-Market ist der am meisten unterschätzte Vorteil",
+        "Deine Ingenieure sollten Produkt bauen, nicht Sanitär"
       ],
-      evidenceTitle: "Die Beweise (was wir teilen können)",
-      evidenceDescription: "Wir haben ein Netzwerk in Produktion. Die Ergebnisse sind dokumentiert. Die Zeiteinsparungen sind verfolgt. Der ROI ist gemessen. Aber wir können die Details nicht öffentlich teilen. Warum? Weil Wettbewerbsvorteile verschwinden, sobald jeder Zugang zu denselben Informationen hat.",
+      evidenceTitle: "Sieh selbst",
+      evidenceDescription: "Wir zeigen dir gerne genau, was Build Sprint enthält. Geh durch die Plattform. Sprich mit Gründern, die sie genutzt haben. Triff eine informierte Entscheidung.",
       evidencePoints: [
-        "Referenzgespräche mit unserem aktuellen Kunden",
-        "Demonstrationen der Plattform mit Ihren tatsächlichen Arbeitsabläufen",
-        "Individuelle ROI-Berechnungen basierend auf Ihrer spezifischen Situation",
-        "Detaillierte Diskussionen über Implementierung und Partnerschaft"
+        "Plattform-Demo mit deinem spezifischen Use Case im Kopf",
+        "Referenz-Calls mit vorherigen Build Sprint Gründern",
+        "Technischer Deep-Dive mit unserem Architektur-Team",
+        "Custom-Vorschlag basierend auf deiner Produktvision"
       ],
-      evidenceConclusion: "Das vollständige Bild wird nur klar, wenn wir direkt sprechen.",
-      choiceTitle: "Die Wahl",
-      option1Title: "Option 1:",
-      option1Description: "Setzen Sie Ihren aktuellen Ansatz fort. Verbringen Sie weiterhin Stunden jede Woche mit manueller Koordination. Beantworten Sie weiterhin dieselben Fragen wiederholt. Bleiben Sie weiterhin bei Ihrer aktuellen Kapazität stecken. Sehen Sie weiterhin strategische Gelegenheiten vorbeiziehen, weil keine Zeit da ist.",
-      option1Result: "In 18 Monaten: Dieselben Probleme. Dieselben Grenzen. Dieselbe Frustration. Plus das Wissen, dass andere Netzwerke in Ihrer Region jetzt auf Niveaus arbeiten, die Sie nicht erreichen können.",
-      option2Title: "Option 2:",
-      option2Description: "Buchen Sie ein Strategiegespräch. Sehen Sie, ob Sie zu dem passen, was wir bauen. Verstehen Sie, wie Transformation tatsächlich aussieht. Treffen Sie eine informierte Entscheidung darüber, ob das für Ihr Netzwerk sinnvoll ist.",
-      option2Result: "In 18 Monaten: Entweder arbeiten Sie mit KI-Agenten und Compound-Systemen, die Ihnen Wettbewerbsvorteile geben, oder Sie haben Klarheit darüber, warum Sie einen anderen Weg gewählt haben.",
-      applicationTitle: "Die Bewerbung",
-      applicationDescription: "Wenn Sie denken, dass Ihr Netzwerk bereit für diese Art von Transformation sein könnte, ist der erste Schritt ein Gespräch. Wir werden besprechen:",
+      evidenceConclusion: "Kein Druck. Kein harter Verkauf. Nur Informationen, damit du entscheiden kannst, ob das richtig für dich ist.",
+      choiceTitle: "Zwei Wege",
+      option1Title: "Weg 1: Selbst bauen",
+      option1Description: "Verbringe die nächsten 3-6 Monate mit Infrastruktur. Authentifizierung, Payments, Datenbank-Architektur, DevOps, Security, Monitoring. All die Dinge, die dein Produkt nicht differenzieren, aber nötig sind zum Shippen.",
+      option1Result: "Ergebnis: Du launchst in 6-12 Monaten. Du hast signifikant Runway verbrannt. Deine Konkurrenten, die schneller waren, haben einen Vorsprung.",
+      option2Title: "Weg 2: Build Sprint",
+      option2Description: "Starte mit Infrastruktur, die bereits gebaut ist. Verbringe 12 Wochen komplett auf dein Produkt fokussiert. Shippe, während andere noch CI/CD-Pipelines aufsetzen.",
+      option2Result: "Ergebnis: Du launchst in 12 Wochen. Du hast Monate an Runway erhalten. Du iterierst auf echtem User-Feedback, während Konkurrenten OAuth debuggen.",
+      applicationTitle: "Bereit zu shippen?",
+      applicationDescription: "Wenn Build Sprint richtig für dich klingt, passiert als nächstes:",
       applicationPoints: [
-        "Ihre aktuelle operative Realität (was funktioniert, was kaputt ist)",
-        "Ihre strategische Vision (wo Sie in 24 Monaten sein wollen)",
-        "Ihre Bereitschaft für Veränderung (wie engagiert Sie für Transformation sind)",
-        "Ob wir gegenseitig passen (das muss für beide funktionieren)"
+        "15-Minuten Intro-Call, um dein Produkt und deine Timeline zu verstehen",
+        "Technische Bewertung, um zu bestätigen, dass Build Sprint gut passt",
+        "Vorschlag mit empfohlener Stufe und Anpassungen",
+        "Wenn wir beide übereinstimmen, dass es passt: Kickoff innerhalb von 2 Wochen"
       ],
-      applicationNote: "Das ist kein Verkaufsgespräch. Es ist ein Auswahlgespräch. Wir suchen nach Netzwerken, die ihre Märkte führen wollen, nicht nur in ihnen überleben. Sind Sie eines davon?",
-      nextStepTitle: "Der nächste Schritt",
-      nextStepDescription: "Buchen Sie ein 30-minütiges Strategiegespräch. Kein Druck. Kein harter Verkauf. Nur Klarheit darüber, ob das für Ihr Netzwerk sinnvoll ist. Wenn ja, besprechen wir die nächsten Schritte. Wenn nicht, haben Sie ein besseres Verständnis dafür, was Transformation tatsächlich erfordert. So oder so werden Sie mehr wissen als jetzt."
+      applicationNote: "Wir lehnen etwa die Hälfte der Gründer ab, die sich bewerben. Nicht weil sie nicht großartig sind—weil Build Sprint nicht für jede Situation richtig ist. Wir sind lieber ehrlich über Fit als dein Geld zu nehmen.",
+      nextStepTitle: "Nächster Schritt",
+      nextStepDescription: "Buche einen 15-Minuten Intro-Call. Wir lernen über dein Produkt, du lernst über Build Sprint. Wenn es passt, bewegen wir uns schnell. Wenn nicht, gehst du zumindest mit einem klareren Bild deiner Infrastruktur-Strategie."
     },
 
     epilogue: {
-      title: "Die Zukunft",
-      description: "In sechs Monaten wird es eine kleine Gruppe professioneller Netzwerke geben, die auf Niveaus arbeiten, die für ihre Konkurrenten unmöglich erscheinen. Ihre Administratoren werden sich auf Strategie konzentrieren, während KI-Agenten den Betrieb übernehmen. Ihre Mitglieder werden Service erhalten, der andere Netzwerke veraltet aussehen lässt. Ihr Wachstum wird sich beschleunigen, während ihre operative Komplexität abnimmt.",
-      secretive: "Sie werden nicht öffentlich darüber sprechen. Nicht weil sie geheimnisvoll sind, sondern weil es unglaublich klingt, es zu erklären.",
-      question: "Die Frage ist: Wird Ihr Netzwerk Teil dieser Gruppe sein? Oder werden Sie sie studieren und sich fragen, wie sie so weit vorausgekommen sind?",
-      conclusion: "Die Zukunft gehört Netzwerken, die den Compound-Vorteil verstehen. Das Fenster, um sich ihnen anzuschließen, wird in Monaten gemessen, nicht in Jahren. Die Wahl liegt bei Ihnen."
+      title: "Die Gründer, die shippen",
+      description: "In 12 Wochen werden einige der Gründer, die das hier lesen, ihre Produkte gelauncht haben. Sie werden echte User haben, die echtes Feedback geben. Sie werden auf Product-Market-Fit iterieren, während ihre Konkurrenten noch Auth-Flows bauen.",
+      secretive: "Sie werden nichts Magisches getan haben. Sie haben nur erkannt, dass Infrastruktur ein gelöstes Problem ist und danach gehandelt.",
+      question: "Die Frage ist: Wirst du einer von ihnen sein? Oder wirst du von der Seitenlinie zusehen, drei Monate in einem Infrastruktur-Projekt, und dich fragen, warum du nicht schneller gehandelt hast?",
+      conclusion: "Build Sprint existiert, weil Gründer es verdienen zu shippen. Die Technologie ist bereit. Die Plattform ist gebaut. Die einzige Frage ist: Bist du bereit, dich zu bewegen?"
     }
   },
 
   // Call to action
   cta: {
-    title: "Bereit, Ihren Markt zu führen?",
-    description: "Lassen Sie uns telefonieren und uns kennenlernen. Sie werden auf jeden Fall etwas Neues lernen.",
+    title: "Bereit zu shippen?",
+    description: "Lass uns über dein Produkt sprechen und sehen, ob Build Sprint das Richtige ist.",
     buttons: {
-      scheduleDemo: "Mit uns in Kontakt treten",
-      calculateROI: "Tue mehr mit weniger", 
-      readCaseStudy: "Referenzgespräch verfügbar",
-      downloadManifesto: "Zugang anfordern"
+      scheduleDemo: "Intro-Call buchen",
+      calculateROI: "Deine Ersparnis berechnen",
+      readCaseStudy: "Plattform ansehen",
+      downloadManifesto: "Für Build Sprint bewerben"
     }
   }
 };

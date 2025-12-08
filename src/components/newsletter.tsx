@@ -268,7 +268,7 @@ export const Newsletter = () => {
                 )}
               </Button>
               
-              <Link href="/learn-more" className="w-full md:w-auto">
+              <Link href="/ship-fast" className="w-full md:w-auto">
                 <Button
                   variant="outline"
                   className="px-6 md:px-8 w-full md:w-auto text-sm md:text-base bg-background/20 border-border/50 hover:bg-background/10 hover:border-border/30 text-foreground hover:text-foreground/80 transition-colors"
@@ -278,7 +278,7 @@ export const Newsletter = () => {
                 </Button>
               </Link>
               
-              <Link href="/do-more-with-less" className="w-full md:w-auto">
+              <Link href="/go-to-market" className="w-full md:w-auto">
                 <Button
                   variant="outline"
                   className="px-6 md:px-8 w-full md:w-auto text-sm md:text-base bg-background/20 border-border/50 hover:bg-background/10 hover:border-border/30 text-foreground hover:text-foreground/80 transition-colors"

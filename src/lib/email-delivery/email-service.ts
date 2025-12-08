@@ -258,7 +258,7 @@ export async function sendAbandonedCalculatorEmail(
     </p>
     
     <div style="text-align: center; margin: 25px 0;">
-        <a href="https://l4yercak3.com/do-more-with-less" class="cta-button">
+        <a href="https://l4yercak3.com/go-to-market" class="cta-button">
             ${language === 'de' ? 'Wertbewertung fortsetzen' : 'Continue Your Value Assessment'}
         </a>
     </div>
