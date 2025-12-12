@@ -237,7 +237,7 @@ function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) 
       {/* Sidebar */}
       <aside
         className={cn(
-          "fixed top-0 left-0 z-50 h-full w-72 border-r transition-transform duration-300 lg:translate-x-0 lg:static lg:z-0",
+          "fixed top-0 left-0 z-50 h-full w-72 border-r transition-transform duration-300 lg:translate-x-0 lg:sticky lg:top-0 lg:h-screen lg:z-0",
           theme.sidebar,
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
@@ -301,12 +301,12 @@ export function DocsLayout({ children }: DocsLayoutProps) {
   return (
     <DocsReadingModeContext.Provider value={{ readingMode, setReadingMode, themeClasses: theme }}>
       <div className={cn("min-h-screen transition-colors duration-300", theme.main)}>
-        <div className="flex">
+        <div className="flex min-h-screen">
           {/* Sidebar */}
           <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
           {/* Main Content */}
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 min-w-0 flex flex-col">
             {/* Header */}
             <header className={cn("sticky top-0 z-30 border-b backdrop-blur-sm", theme.header)}>
               <div className="flex items-center justify-between px-4 py-3 lg:px-6">
@@ -389,14 +389,14 @@ export function DocsLayout({ children }: DocsLayoutProps) {
             </header>
 
             {/* Content */}
-            <main className="p-6 lg:p-10">
+            <main className="flex-1 p-6 lg:p-10">
               <div className="max-w-4xl mx-auto">
                 {children}
               </div>
             </main>
 
             {/* Footer */}
-            <footer className={cn("border-t mt-16",
+            <footer className={cn("border-t mt-auto",
               readingMode === 'sepia' ? 'border-amber-200/50' : 'border-border/20'
             )}>
               <div className="max-w-4xl mx-auto px-6 py-8">
