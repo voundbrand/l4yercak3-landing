@@ -3,19 +3,21 @@
 import { DocsLayout, useDocsTheme } from '@/components/docs-layout';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
 function GitHubDocsContent() {
   const theme = useDocsTheme();
+  const { t } = useTranslation();
 
   return (
     <article>
       {/* Breadcrumb */}
       <nav className={cn("flex items-center gap-2 text-sm mb-6", theme.muted)}>
-        <Link href="/docs" className="hover:underline">Docs</Link>
+        <Link href="/docs" className="hover:underline">{t('docs.common.documentation')}</Link>
         <span>/</span>
-        <Link href="/docs" className="hover:underline">Integrations</Link>
+        <Link href="/docs" className="hover:underline">{t('docs.nav.integrations')}</Link>
         <span>/</span>
-        <span className={theme.headings}>GitHub</span>
+        <span className={theme.headings}>{t('docs.nav.github')}</span>
       </nav>
 
       {/* Title Section */}
@@ -28,82 +30,72 @@ function GitHubDocsContent() {
           </div>
           <div>
             <h1 className={cn("font-serif text-4xl md:text-5xl italic", theme.headings)}>
-              GitHub Integration
+              {t('docs.github.title')}
             </h1>
             <span className="inline-block mt-2 px-2 py-0.5 text-xs rounded-full bg-green-500/20 text-green-600 dark:text-green-400">
-              New
+              {t('docs.common.new')}
             </span>
           </div>
         </div>
         <p className={cn("text-lg leading-relaxed", theme.muted)}>
-          Connect your l4yercak3 platform to GitHub for seamless web app deployment. Enables automatic repository creation, code synchronization, and integration with Vercel for one-click deployments.
+          {t('docs.github.subtitle')}
         </p>
       </div>
 
       {/* Table of Contents */}
       <div className={cn("p-4 rounded-lg mb-8", theme.quote)}>
-        <h3 className={cn("font-semibold mb-3", theme.headings)}>On this page</h3>
+        <h3 className={cn("font-semibold mb-3", theme.headings)}>{t('docs.common.onThisPage')}</h3>
         <ul className="space-y-2 text-sm">
-          <li><a href="#overview" className="hover:underline">Overview</a></li>
-          <li><a href="#permissions" className="hover:underline">Required Permissions</a></li>
-          <li><a href="#setup" className="hover:underline">Setting Up the Integration</a></li>
-          <li><a href="#features" className="hover:underline">Features</a></li>
-          <li><a href="#troubleshooting" className="hover:underline">Troubleshooting</a></li>
+          <li><a href="#overview" className="hover:underline">{t('docs.github.overview.title')}</a></li>
+          <li><a href="#permissions" className="hover:underline">{t('docs.github.permissions.title')}</a></li>
+          <li><a href="#setup" className="hover:underline">{t('docs.github.setup.title')}</a></li>
+          <li><a href="#features" className="hover:underline">{t('docs.github.features.title')}</a></li>
+          <li><a href="#troubleshooting" className="hover:underline">{t('docs.github.troubleshooting.title')}</a></li>
         </ul>
       </div>
 
       {/* Overview */}
       <section id="overview" className="mb-12 scroll-mt-20">
         <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
-          Overview
+          {t('docs.github.overview.title')}
         </h2>
         <p className={cn("mb-4", theme.content)}>
-          The l4yercak3 GitHub integration allows you to connect your GitHub account for seamless repository management and deployment workflows. Combined with our Vercel integration, you can achieve a complete CI/CD pipeline.
-        </p>
-        <p className={cn("mb-4", theme.content)}>
-          With the GitHub integration, you can:
+          {t('docs.github.overview.content')}
         </p>
         <ul className={cn("list-disc pl-6 space-y-2", theme.content)}>
-          <li>Automatically create repositories for new projects</li>
-          <li>Sync code between l4yercak3 and GitHub</li>
-          <li>Trigger deployments from GitHub pushes</li>
-          <li>Manage repository settings from the l4yercak3 dashboard</li>
+          {(t('docs.github.overview.features', { returnObjects: true }) as string[]).map((feature, index) => (
+            <li key={index}>{feature}</li>
+          ))}
         </ul>
       </section>
 
       {/* Required Permissions */}
       <section id="permissions" className="mb-12 scroll-mt-20">
         <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
-          Required Permissions
+          {t('docs.github.permissions.title')}
         </h2>
         <p className={cn("mb-4", theme.content)}>
-          When connecting the GitHub integration, you&apos;ll be asked to grant the following permissions:
+          {t('docs.github.permissions.intro')}
         </p>
         <div className={cn("overflow-x-auto rounded-lg border", theme.quote)}>
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b">
-                <th className={cn("px-4 py-3 text-left font-semibold", theme.headings)}>Permission</th>
-                <th className={cn("px-4 py-3 text-left font-semibold", theme.headings)}>Description</th>
+                <th className={cn("px-4 py-3 text-left font-semibold", theme.headings)}>
+                  {t('docs.github.permissions.table.headers.permission')}
+                </th>
+                <th className={cn("px-4 py-3 text-left font-semibold", theme.headings)}>
+                  {t('docs.github.permissions.table.headers.description')}
+                </th>
               </tr>
             </thead>
             <tbody>
-              <tr className="border-b">
-                <td className={cn("px-4 py-3", theme.content)}>Repository Access</td>
-                <td className={cn("px-4 py-3", theme.muted)}>Create and manage repositories</td>
-              </tr>
-              <tr className="border-b">
-                <td className={cn("px-4 py-3", theme.content)}>Contents</td>
-                <td className={cn("px-4 py-3", theme.muted)}>Read and write repository contents</td>
-              </tr>
-              <tr className="border-b">
-                <td className={cn("px-4 py-3", theme.content)}>Webhooks</td>
-                <td className={cn("px-4 py-3", theme.muted)}>Create webhooks for deployment triggers</td>
-              </tr>
-              <tr>
-                <td className={cn("px-4 py-3", theme.content)}>User Info</td>
-                <td className={cn("px-4 py-3", theme.muted)}>Identify your GitHub account</td>
-              </tr>
+              {(t('docs.github.permissions.table.rows', { returnObjects: true }) as Array<{permission: string, description: string}>).map((row, index, arr) => (
+                <tr key={index} className={index < arr.length - 1 ? "border-b" : ""}>
+                  <td className={cn("px-4 py-3", theme.content)}>{row.permission}</td>
+                  <td className={cn("px-4 py-3", theme.muted)}>{row.description}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
@@ -112,21 +104,27 @@ function GitHubDocsContent() {
       {/* Setting Up */}
       <section id="setup" className="mb-12 scroll-mt-20">
         <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
-          Setting Up the Integration
+          {t('docs.github.setup.title')}
         </h2>
         <ol className={cn("list-decimal pl-6 space-y-3", theme.content)}>
-          <li>Navigate to <strong>Settings → Integrations</strong> in your l4yercak3 dashboard</li>
-          <li>Click <strong>&quot;Connect GitHub&quot;</strong></li>
-          <li>You&apos;ll be redirected to GitHub to authorize the <a href="https://github.com/apps/l4yercak3-platform" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-80">l4yercak3 GitHub App</a></li>
-          <li>Select the account or organization you want to connect</li>
-          <li>Choose which repositories to grant access to (all or selected)</li>
-          <li>Grant the required permissions</li>
-          <li>You&apos;ll be redirected back to l4yercak3</li>
+          {(t('docs.github.setup.steps', { returnObjects: true }) as string[]).map((step, index) => (
+            <li key={index} dangerouslySetInnerHTML={{
+              __html: step
+                .replace('l4yercak3 GitHub App', '<a href="https://github.com/apps/l4yercak3-platform" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-80">l4yercak3 GitHub App</a>')
+            }} />
+          ))}
         </ol>
         <div className={cn("p-4 rounded-lg border-l-4 border-blue-500 mt-6", theme.cta)}>
           <p className="font-semibold mb-2">Tip</p>
           <p className={theme.muted}>
-            You can install the GitHub App directly from <a href="https://github.com/apps/l4yercak3-platform" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-80">github.com/apps/l4yercak3-platform</a>
+            {t('docs.github.setup.tip')?.toString().includes('github.com') ? (
+              <span dangerouslySetInnerHTML={{
+                __html: t('docs.github.setup.tip').replace(
+                  'github.com/apps/l4yercak3-platform',
+                  '<a href="https://github.com/apps/l4yercak3-platform" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-80">github.com/apps/l4yercak3-platform</a>'
+                )
+              }} />
+            ) : t('docs.github.setup.tip')}
           </p>
         </div>
       </section>
@@ -134,31 +132,39 @@ function GitHubDocsContent() {
       {/* Features */}
       <section id="features" className="mb-12 scroll-mt-20">
         <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
-          Features
+          {t('docs.github.features.title')}
         </h2>
         <div className="grid gap-4">
           <div className={cn("p-4 rounded-lg", theme.quote)}>
-            <h3 className={cn("font-semibold mb-2", theme.headings)}>Automatic Repository Creation</h3>
+            <h3 className={cn("font-semibold mb-2", theme.headings)}>
+              {t('docs.github.features.items.autoRepo.title')}
+            </h3>
             <p className={theme.muted}>
-              Create a new GitHub repository directly from l4yercak3 when starting a new project.
+              {t('docs.github.features.items.autoRepo.description')}
             </p>
           </div>
           <div className={cn("p-4 rounded-lg", theme.quote)}>
-            <h3 className={cn("font-semibold mb-2", theme.headings)}>Code Synchronization</h3>
+            <h3 className={cn("font-semibold mb-2", theme.headings)}>
+              {t('docs.github.features.items.codeSync.title')}
+            </h3>
             <p className={theme.muted}>
-              Keep your l4yercak3 projects in sync with GitHub repositories automatically.
+              {t('docs.github.features.items.codeSync.description')}
             </p>
           </div>
           <div className={cn("p-4 rounded-lg", theme.quote)}>
-            <h3 className={cn("font-semibold mb-2", theme.headings)}>Vercel Integration</h3>
+            <h3 className={cn("font-semibold mb-2", theme.headings)}>
+              {t('docs.github.features.items.vercelIntegration.title')}
+            </h3>
             <p className={theme.muted}>
-              Combine with our Vercel integration for one-click deployments directly from GitHub.
+              {t('docs.github.features.items.vercelIntegration.description')}
             </p>
           </div>
           <div className={cn("p-4 rounded-lg", theme.quote)}>
-            <h3 className={cn("font-semibold mb-2", theme.headings)}>Repository Management</h3>
+            <h3 className={cn("font-semibold mb-2", theme.headings)}>
+              {t('docs.github.features.items.repoManagement.title')}
+            </h3>
             <p className={theme.muted}>
-              Manage repository settings and configurations from your l4yercak3 dashboard.
+              {t('docs.github.features.items.repoManagement.description')}
             </p>
           </div>
         </div>
@@ -167,31 +173,36 @@ function GitHubDocsContent() {
       {/* Troubleshooting */}
       <section id="troubleshooting" className="mb-12 scroll-mt-20">
         <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
-          Troubleshooting
+          {t('docs.github.troubleshooting.title')}
         </h2>
         <div className="space-y-4">
           <div className={cn("p-4 rounded-lg", theme.quote)}>
             <h3 className={cn("text-lg font-semibold mb-2", theme.headings)}>
-              Authorization Failed
+              {t('docs.github.troubleshooting.issues.authFailed.title')}
             </h3>
             <p className={theme.muted}>
-              Ensure you have the necessary permissions on your GitHub account. If you&apos;re part of an organization, you may need admin approval to install GitHub Apps.
+              {t('docs.github.troubleshooting.issues.authFailed.content')}
             </p>
           </div>
           <div className={cn("p-4 rounded-lg", theme.quote)}>
             <h3 className={cn("text-lg font-semibold mb-2", theme.headings)}>
-              Repository Not Syncing
+              {t('docs.github.troubleshooting.issues.notSyncing.title')}
             </h3>
             <p className={theme.muted}>
-              Check that the repository is included in the GitHub App&apos;s access list. Go to your GitHub settings and verify the l4yercak3 app has access to the repository.
+              {t('docs.github.troubleshooting.issues.notSyncing.content')}
             </p>
           </div>
           <div className={cn("p-4 rounded-lg", theme.quote)}>
             <h3 className={cn("text-lg font-semibold mb-2", theme.headings)}>
-              Permission Denied
+              {t('docs.github.troubleshooting.issues.permissionDenied.title')}
             </h3>
             <p className={theme.muted}>
-              Try disconnecting and reconnecting the integration. You can also reinstall the GitHub App from <a href="https://github.com/apps/l4yercak3-platform" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-80">github.com/apps/l4yercak3-platform</a>.
+              <span dangerouslySetInnerHTML={{
+                __html: t('docs.github.troubleshooting.issues.permissionDenied.content').replace(
+                  'github.com/apps/l4yercak3-platform',
+                  '<a href="https://github.com/apps/l4yercak3-platform" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-80">github.com/apps/l4yercak3-platform</a>'
+                )
+              }} />
             </p>
           </div>
         </div>
@@ -200,17 +211,17 @@ function GitHubDocsContent() {
       {/* Related Links */}
       <div className={cn("rounded-xl p-6 border", theme.cta)}>
         <h3 className={cn("font-semibold mb-4", theme.headings)}>
-          Related Integrations
+          {t('docs.github.relatedIntegrations.title')}
         </h3>
         <p className={cn("mb-4", theme.muted)}>
-          Get the most out of l4yercak3 by combining GitHub with our other integrations:
+          {t('docs.github.relatedIntegrations.content')}
         </p>
         <div className="flex flex-wrap gap-4">
           <Link
             href="/docs/integrations/vercel"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-foreground text-background font-medium hover:opacity-90 transition-opacity"
           >
-            Vercel Integration
+            {t('docs.nav.vercel')} {t('docs.nav.integrations').toLowerCase().includes('integration') ? '' : 'Integration'}
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -222,7 +233,7 @@ function GitHubDocsContent() {
               theme.content
             )}
           >
-            Get Help
+            {t('docs.nav.helpCenter')}
           </Link>
         </div>
       </div>

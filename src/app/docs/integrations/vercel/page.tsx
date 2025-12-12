@@ -3,19 +3,21 @@
 import { DocsLayout, useDocsTheme } from '@/components/docs-layout';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
 function VercelDocsContent() {
   const theme = useDocsTheme();
+  const { t } = useTranslation();
 
   return (
     <article>
       {/* Breadcrumb */}
       <nav className={cn("flex items-center gap-2 text-sm mb-6", theme.muted)}>
-        <Link href="/docs" className="hover:underline">Docs</Link>
+        <Link href="/docs" className="hover:underline">{t('docs.common.documentation')}</Link>
         <span>/</span>
-        <Link href="/docs" className="hover:underline">Integrations</Link>
+        <Link href="/docs" className="hover:underline">{t('docs.nav.integrations')}</Link>
         <span>/</span>
-        <span className={theme.headings}>Vercel</span>
+        <span className={theme.headings}>{t('docs.nav.vercel')}</span>
       </nav>
 
       {/* Title Section */}
@@ -28,307 +30,179 @@ function VercelDocsContent() {
           </div>
           <div>
             <h1 className={cn("font-serif text-4xl md:text-5xl italic", theme.headings)}>
-              Vercel Integration
+              {t('docs.vercel.title')}
             </h1>
             <span className="inline-block mt-2 px-2 py-0.5 text-xs rounded-full bg-green-500/20 text-green-600 dark:text-green-400">
-              New
+              {t('docs.common.new')}
             </span>
           </div>
         </div>
         <p className={cn("text-lg leading-relaxed", theme.muted)}>
-          Deploy web apps from l4yercak3 to Vercel with one click. Manage projects, configure environments, and monitor deployments.
+          {t('docs.vercel.subtitle')}
         </p>
       </div>
 
       {/* Table of Contents */}
       <div className={cn("p-4 rounded-lg mb-8", theme.quote)}>
-        <h3 className={cn("font-semibold mb-3", theme.headings)}>On this page</h3>
+        <h3 className={cn("font-semibold mb-3", theme.headings)}>{t('docs.common.onThisPage')}</h3>
         <ul className="space-y-2 text-sm">
-          <li><a href="#overview" className="hover:underline">Overview</a></li>
-          <li><a href="#getting-started" className="hover:underline">Getting Started</a></li>
-          <li><a href="#permissions" className="hover:underline">Permissions</a></li>
-          <li><a href="#features" className="hover:underline">Features</a></li>
-          <li><a href="#environment-variables" className="hover:underline">Environment Variables</a></li>
-          <li><a href="#troubleshooting" className="hover:underline">Troubleshooting</a></li>
-          <li><a href="#privacy" className="hover:underline">Data & Privacy</a></li>
-          <li><a href="#disconnecting" className="hover:underline">Disconnecting</a></li>
+          <li><a href="#overview" className="hover:underline">{t('docs.vercel.overview.title')}</a></li>
+          <li><a href="#permissions" className="hover:underline">{t('docs.vercel.permissions.title')}</a></li>
+          <li><a href="#setup" className="hover:underline">{t('docs.vercel.setup.title')}</a></li>
+          <li><a href="#deployment" className="hover:underline">{t('docs.vercel.deployment.title')}</a></li>
+          <li><a href="#env-vars" className="hover:underline">{t('docs.vercel.envVars.title')}</a></li>
+          <li><a href="#troubleshooting" className="hover:underline">{t('docs.vercel.troubleshooting.title')}</a></li>
         </ul>
       </div>
 
-      {/* Content */}
-      <div className={cn("prose prose-lg max-w-none", theme.content)}>
+      {/* Overview */}
+      <section id="overview" className="mb-12 scroll-mt-20">
+        <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
+          {t('docs.vercel.overview.title')}
+        </h2>
+        <p className={cn("mb-4", theme.content)}>
+          {t('docs.vercel.overview.content')}
+        </p>
+        <ul className={cn("list-disc pl-6 space-y-2", theme.content)}>
+          {(t('docs.vercel.overview.features', { returnObjects: true }) as string[]).map((feature, index) => (
+            <li key={index}>{feature}</li>
+          ))}
+        </ul>
+      </section>
 
-        {/* Overview */}
-        <section id="overview" className="mb-12 scroll-mt-20">
-          <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
-            Overview
-          </h2>
-          <p className="mb-4">
-            The l4yercak3 Vercel integration allows you to deploy your web applications directly to Vercel from within the l4yercak3 platform. This integration provides:
-          </p>
-          <ul className="list-disc pl-6 space-y-2 mb-4">
-            <li>Deploy published web apps directly to Vercel</li>
-            <li>Configure environment variables automatically</li>
-            <li>Monitor deployment status in real-time</li>
-            <li>Manage multiple projects across teams</li>
-            <li>Access deployment logs and analytics</li>
-          </ul>
-        </section>
-
-        {/* Getting Started */}
-        <section id="getting-started" className="mb-12 scroll-mt-20">
-          <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
-            Getting Started
-          </h2>
-
-          <h3 className={cn("text-xl font-semibold mb-3 mt-6", theme.headings)}>
-            Step 1: Connect Your Account
-          </h3>
-          <p className="mb-4">
-            Navigate to <strong>Settings → Integrations</strong> in your l4yercak3 dashboard and click &quot;Connect Vercel&quot;.
-          </p>
-
-          <h3 className={cn("text-xl font-semibold mb-3 mt-6", theme.headings)}>
-            Step 2: Authorize Access
-          </h3>
-          <p className="mb-4">
-            You&apos;ll be redirected to Vercel to authorize the integration. Review the requested permissions and click &quot;Authorize&quot;.
-          </p>
-
-          <h3 className={cn("text-xl font-semibold mb-3 mt-6", theme.headings)}>
-            Step 3: Select Projects
-          </h3>
-          <p className="mb-4">
-            Choose which Vercel projects you want to manage from l4yercak3, or create new ones directly from the platform.
-          </p>
-
-          <h3 className={cn("text-xl font-semibold mb-3 mt-6", theme.headings)}>
-            Step 4: Deploy
-          </h3>
-          <p className="mb-4">
-            Use the one-click deploy button on any published web app to push it to Vercel. Your app will be live in seconds.
-          </p>
-
-          <div className={cn("p-4 rounded-lg mt-6 border-l-4 border-blue-500", theme.cta)}>
-            <p className="font-semibold mb-2">Pro Tip</p>
-            <p className={theme.muted}>
-              Enable automatic deployments to push changes to Vercel whenever you update your app in l4yercak3.
-            </p>
-          </div>
-        </section>
-
-        {/* Permissions */}
-        <section id="permissions" className="mb-12 scroll-mt-20">
-          <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
-            Permissions
-          </h2>
-          <p className="mb-4">
-            When you connect your Vercel account, we request the following permissions:
-          </p>
-
-          <div className={cn("rounded-lg overflow-hidden border", theme.quote)}>
-            <table className="w-full">
-              <thead className={cn("border-b", theme.cta)}>
-                <tr>
-                  <th className="text-left p-4 font-semibold">Scope</th>
-                  <th className="text-left p-4 font-semibold">Purpose</th>
+      {/* Required Permissions */}
+      <section id="permissions" className="mb-12 scroll-mt-20">
+        <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
+          {t('docs.vercel.permissions.title')}
+        </h2>
+        <p className={cn("mb-4", theme.content)}>
+          {t('docs.vercel.permissions.intro')}
+        </p>
+        <div className={cn("overflow-x-auto rounded-lg border", theme.quote)}>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b">
+                <th className={cn("px-4 py-3 text-left font-semibold", theme.headings)}>
+                  {t('docs.vercel.permissions.table.headers.permission')}
+                </th>
+                <th className={cn("px-4 py-3 text-left font-semibold", theme.headings)}>
+                  {t('docs.vercel.permissions.table.headers.description')}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {(t('docs.vercel.permissions.table.rows', { returnObjects: true }) as Array<{permission: string, description: string}>).map((row, index, arr) => (
+                <tr key={index} className={index < arr.length - 1 ? "border-b" : ""}>
+                  <td className={cn("px-4 py-3", theme.content)}><code className="text-sm">{row.permission}</code></td>
+                  <td className={cn("px-4 py-3", theme.muted)}>{row.description}</td>
                 </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-inherit">
-                  <td className="p-4"><code className="text-sm">deployments:write</code></td>
-                  <td className={cn("p-4", theme.muted)}>Create and manage deployments</td>
-                </tr>
-                <tr className="border-b border-inherit">
-                  <td className="p-4"><code className="text-sm">projects:read</code></td>
-                  <td className={cn("p-4", theme.muted)}>Read project information</td>
-                </tr>
-                <tr className="border-b border-inherit">
-                  <td className="p-4"><code className="text-sm">projects:write</code></td>
-                  <td className={cn("p-4", theme.muted)}>Create and update projects</td>
-                </tr>
-                <tr className="border-b border-inherit">
-                  <td className="p-4"><code className="text-sm">user:read</code></td>
-                  <td className={cn("p-4", theme.muted)}>Read user profile information</td>
-                </tr>
-                <tr>
-                  <td className="p-4"><code className="text-sm">teams:read</code></td>
-                  <td className={cn("p-4", theme.muted)}>Read team information (for organization deployments)</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-        {/* Features */}
-        <section id="features" className="mb-12 scroll-mt-20">
-          <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
-            Features
-          </h2>
+      {/* Setting Up */}
+      <section id="setup" className="mb-12 scroll-mt-20">
+        <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
+          {t('docs.vercel.setup.title')}
+        </h2>
+        <ol className={cn("list-decimal pl-6 space-y-3", theme.content)}>
+          {(t('docs.vercel.setup.steps', { returnObjects: true }) as string[]).map((step, index) => (
+            <li key={index}>{step}</li>
+          ))}
+        </ol>
+      </section>
 
-          <div className="grid gap-4">
-            <div className={cn("p-4 rounded-lg", theme.quote)}>
-              <h3 className={cn("font-semibold mb-2", theme.headings)}>One-Click Deploys</h3>
-              <p className={theme.muted}>
-                Deploy any published web app to Vercel with a single click. No manual configuration required.
-              </p>
-            </div>
+      {/* Deploying a Project */}
+      <section id="deployment" className="mb-12 scroll-mt-20">
+        <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
+          {t('docs.vercel.deployment.title')}
+        </h2>
+        <p className={cn("mb-4", theme.content)}>
+          {t('docs.vercel.deployment.content')}
+        </p>
+        <ol className={cn("list-decimal pl-6 space-y-3", theme.content)}>
+          {(t('docs.vercel.deployment.steps', { returnObjects: true }) as string[]).map((step, index) => (
+            <li key={index}>{step}</li>
+          ))}
+        </ol>
+      </section>
 
-            <div className={cn("p-4 rounded-lg", theme.quote)}>
-              <h3 className={cn("font-semibold mb-2", theme.headings)}>Environment Variables</h3>
-              <p className={theme.muted}>
-                Automatically sync environment variables from l4yercak3 to your Vercel projects.
-              </p>
-            </div>
+      {/* Environment Variables */}
+      <section id="env-vars" className="mb-12 scroll-mt-20">
+        <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
+          {t('docs.vercel.envVars.title')}
+        </h2>
+        <p className={cn("mb-4", theme.content)}>
+          {t('docs.vercel.envVars.content')}
+        </p>
+        <ul className={cn("list-disc pl-6 space-y-2", theme.content)}>
+          {(t('docs.vercel.envVars.features', { returnObjects: true }) as string[]).map((feature, index) => (
+            <li key={index}>{feature}</li>
+          ))}
+        </ul>
+      </section>
 
-            <div className={cn("p-4 rounded-lg", theme.quote)}>
-              <h3 className={cn("font-semibold mb-2", theme.headings)}>Real-Time Status</h3>
-              <p className={theme.muted}>
-                Monitor deployment progress and status directly within l4yercak3.
-              </p>
-            </div>
-
-            <div className={cn("p-4 rounded-lg", theme.quote)}>
-              <h3 className={cn("font-semibold mb-2", theme.headings)}>Team Support</h3>
-              <p className={theme.muted}>
-                Deploy to personal accounts or team projects. Manage access across your organization.
-              </p>
-            </div>
-
-            <div className={cn("p-4 rounded-lg", theme.quote)}>
-              <h3 className={cn("font-semibold mb-2", theme.headings)}>Deployment Logs</h3>
-              <p className={theme.muted}>
-                Access build logs and analytics to troubleshoot issues quickly.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Environment Variables */}
-        <section id="environment-variables" className="mb-12 scroll-mt-20">
-          <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
-            Environment Variables
-          </h2>
-          <p className="mb-4">
-            l4yercak3 can automatically sync environment variables to your Vercel projects. This ensures your deployed apps have access to all required configuration.
-          </p>
-
-          <h3 className={cn("text-xl font-semibold mb-3 mt-6", theme.headings)}>
-            How It Works
-          </h3>
-          <ol className="list-decimal pl-6 space-y-2 mb-4">
-            <li>Define environment variables in your l4yercak3 project settings</li>
-            <li>Mark variables for sync with the &quot;Sync to Vercel&quot; option</li>
-            <li>Variables are automatically pushed during deployment</li>
-            <li>Sensitive values are encrypted in transit</li>
-          </ol>
-
-          <div className={cn("p-4 rounded-lg border-l-4 border-amber-500", theme.cta)}>
-            <p className="font-semibold mb-2">Important</p>
-            <p className={theme.muted}>
-              Environment variables marked as &quot;Secret&quot; in l4yercak3 will be created as encrypted environment variables in Vercel.
-            </p>
-          </div>
-        </section>
-
-        {/* Troubleshooting */}
-        <section id="troubleshooting" className="mb-12 scroll-mt-20">
-          <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
-            Troubleshooting
-          </h2>
-
-          <div className="space-y-6">
-            <div className={cn("p-4 rounded-lg", theme.quote)}>
-              <h3 className={cn("font-semibold mb-2", theme.headings)}>Deployment Failed</h3>
-              <p className={cn("mb-2", theme.muted)}>
-                Check your build logs for specific errors. Common issues include:
-              </p>
-              <ul className={cn("list-disc pl-6 space-y-1", theme.muted)}>
-                <li>Missing environment variables</li>
-                <li>Build script errors</li>
-                <li>Incompatible Node.js version</li>
-                <li>Missing dependencies</li>
-              </ul>
-            </div>
-
-            <div className={cn("p-4 rounded-lg", theme.quote)}>
-              <h3 className={cn("font-semibold mb-2", theme.headings)}>Authorization Error</h3>
-              <p className={theme.muted}>
-                Try disconnecting and reconnecting the integration. Ensure you have the necessary permissions on your Vercel account or team.
-              </p>
-            </div>
-
-            <div className={cn("p-4 rounded-lg", theme.quote)}>
-              <h3 className={cn("font-semibold mb-2", theme.headings)}>Environment Variables Not Syncing</h3>
-              <p className={theme.muted}>
-                Verify your environment variables are correctly configured in l4yercak3 with the &quot;Sync to Vercel&quot; option enabled. After making changes, trigger a new deployment for the variables to take effect.
-              </p>
-            </div>
-
-            <div className={cn("p-4 rounded-lg", theme.quote)}>
-              <h3 className={cn("font-semibold mb-2", theme.headings)}>Project Not Found</h3>
-              <p className={theme.muted}>
-                Make sure the Vercel project exists and you have access to it. If deploying to a team project, verify you have the correct team permissions.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Data & Privacy */}
-        <section id="privacy" className="mb-12 scroll-mt-20">
-          <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
-            Data & Privacy
-          </h2>
+      {/* Troubleshooting */}
+      <section id="troubleshooting" className="mb-12 scroll-mt-20">
+        <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
+          {t('docs.vercel.troubleshooting.title')}
+        </h2>
+        <div className="space-y-4">
           <div className={cn("p-4 rounded-lg", theme.quote)}>
-            <p className="font-semibold mb-3">What we access:</p>
-            <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li>Deploy your web applications to Vercel</li>
-              <li>Configure project settings and environment variables</li>
-              <li>Monitor deployment status and logs</li>
-            </ul>
-            <p>
-              We only deploy projects you explicitly authorize through our platform. Your Vercel credentials are encrypted and stored securely. We never access or modify projects outside of the l4yercak3 deployment workflow.
+            <h3 className={cn("text-lg font-semibold mb-2", theme.headings)}>
+              {t('docs.vercel.troubleshooting.issues.deployment.title')}
+            </h3>
+            <p className={theme.muted}>
+              {t('docs.vercel.troubleshooting.issues.deployment.content')}
             </p>
           </div>
-          <p className="mt-4">
-            For more details, see our <Link href="/privacy" className="underline hover:opacity-80">Privacy Policy</Link>.
-          </p>
-        </section>
+          <div className={cn("p-4 rounded-lg", theme.quote)}>
+            <h3 className={cn("text-lg font-semibold mb-2", theme.headings)}>
+              {t('docs.vercel.troubleshooting.issues.permissions.title')}
+            </h3>
+            <p className={theme.muted}>
+              {t('docs.vercel.troubleshooting.issues.permissions.content')}
+            </p>
+          </div>
+          <div className={cn("p-4 rounded-lg", theme.quote)}>
+            <h3 className={cn("text-lg font-semibold mb-2", theme.headings)}>
+              {t('docs.vercel.troubleshooting.issues.notSyncing.title')}
+            </h3>
+            <p className={theme.muted}>
+              {t('docs.vercel.troubleshooting.issues.notSyncing.content')}
+            </p>
+          </div>
+        </div>
+      </section>
 
-        {/* Disconnecting */}
-        <section id="disconnecting" className="mb-12 scroll-mt-20">
-          <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
-            Disconnecting
-          </h2>
-          <p className="mb-4">
-            You can disconnect the Vercel integration at any time:
-          </p>
-          <ol className="list-decimal pl-6 space-y-2 mb-4">
-            <li>Go to <strong>Settings → Integrations</strong> in l4yercak3</li>
-            <li>Click &quot;Disconnect&quot; next to Vercel</li>
-            <li>Optionally, revoke access from your Vercel dashboard under <strong>Account Settings → Integrations</strong></li>
-          </ol>
-          <p className={theme.muted}>
-            Disconnecting will not affect existing deployments on Vercel. You can reconnect at any time.
-          </p>
-        </section>
-
-      </div>
-
-      {/* Related Links */}
-      <div className={cn("rounded-xl p-6 mt-12 border", theme.cta)}>
+      {/* Support */}
+      <div className={cn("rounded-xl p-6 border", theme.cta)}>
         <h3 className={cn("font-semibold mb-4", theme.headings)}>
-          Related Documentation
+          {t('docs.vercel.support.title')}
         </h3>
+        <p className={cn("mb-4", theme.muted)}>
+          {t('docs.vercel.support.content')}
+        </p>
         <div className="flex flex-wrap gap-4">
-          <Link href="/docs/quickstart" className="underline hover:opacity-80">
-            Quick Start Guide
+          <Link
+            href="/docs/integrations/github"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-foreground text-background font-medium hover:opacity-90 transition-opacity"
+          >
+            {t('docs.nav.github')} Integration
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
           </Link>
-          <Link href="/docs/integrations/github" className="underline hover:opacity-80">
-            GitHub Integration
-          </Link>
-          <Link href="/support" className="underline hover:opacity-80">
-            Support
+          <Link
+            href="/support"
+            className={cn(
+              "inline-flex items-center gap-2 px-4 py-2 rounded-lg border font-medium hover:bg-black/5 dark:hover:bg-white/5 transition-colors",
+              theme.content
+            )}
+          >
+            {t('docs.nav.helpCenter')}
           </Link>
         </div>
       </div>
@@ -336,17 +210,17 @@ function VercelDocsContent() {
       {/* Legal Links */}
       <div className={cn("rounded-xl p-6 mt-4 border", theme.quote)}>
         <h3 className={cn("font-semibold mb-4", theme.headings)}>
-          Legal & Compliance
+          {t('docs.nav.legal')}
         </h3>
         <div className="flex flex-wrap gap-4">
           <Link href="/privacy" className="underline hover:opacity-80">
-            Privacy Policy
+            {t('docs.nav.privacyPolicy')}
           </Link>
           <Link href="/terms" className="underline hover:opacity-80">
-            Terms of Service
+            {t('docs.nav.termsOfService')}
           </Link>
           <Link href="/eula" className="underline hover:opacity-80">
-            EULA
+            {t('docs.nav.eula')}
           </Link>
         </div>
       </div>
