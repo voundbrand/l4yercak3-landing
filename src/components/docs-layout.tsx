@@ -213,7 +213,12 @@ function NavItem({ item, depth = 0 }: { item: DocNavItem; depth?: number }) {
     >
       <span>{t(item.titleKey)}</span>
       {item.badgeKey && (
-        <span className="px-1.5 py-0.5 text-xs rounded-full bg-primary/20 text-primary">
+        <span className={cn(
+          "px-1.5 py-0.5 text-xs rounded-full",
+          context?.readingMode === 'sepia'
+            ? 'bg-amber-600/20 text-amber-700'
+            : 'bg-primary/20 text-primary'
+        )}>
           {t(item.badgeKey)}
         </span>
       )}
