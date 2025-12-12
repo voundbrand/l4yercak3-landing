@@ -278,7 +278,7 @@ export function ContentPageLayout({
                   readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
                 )}
               >
-                Privacy
+                {t('legal.links.privacy')}
               </Link>
               <Link
                 href="/terms"
@@ -287,7 +287,7 @@ export function ContentPageLayout({
                   readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
                 )}
               >
-                Terms
+                {t('legal.links.terms')}
               </Link>
               <Link
                 href="/eula"
@@ -296,7 +296,7 @@ export function ContentPageLayout({
                   readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
                 )}
               >
-                EULA
+                {t('legal.links.eula')}
               </Link>
               <Link
                 href="/docs"
@@ -305,7 +305,7 @@ export function ContentPageLayout({
                   readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
                 )}
               >
-                Docs
+                {t('legal.links.docs')}
               </Link>
               <Link
                 href="/support"
@@ -314,14 +314,14 @@ export function ContentPageLayout({
                   readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
                 )}
               >
-                Support
+                {t('legal.links.support')}
               </Link>
             </div>
 
             {/* VC Batch Slogan */}
             <div className={cn("text-xs font-medium transition-colors duration-300",
               readingMode === 'sepia' ? 'text-amber-600' : 'text-foreground/60')}>
-              L4YERCAK3 is a vc83-batch-1 startup
+              {t('footer.vcBatch')}
             </div>
 
             {/* Copyright */}

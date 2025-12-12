@@ -3,6 +3,8 @@ import { learnMoreEn } from './learn-more';
 import { doMoreWithLessEn } from './go-to-market';
 import { buildSprintEn } from './build-sprint';
 import { founderCalculatorEn } from './founder-calculator';
+import { legalEn } from './legal';
+import { docsEn } from './docs';
 
 export const en = {
   common: {
@@ -139,7 +141,10 @@ export const en = {
   doMoreWithLess: doMoreWithLessEn,
   buildSprint: buildSprintEn,
   founderCalculator: founderCalculatorEn,
+  legal: legalEn,
+  docs: docsEn,
   footer: {
-    copyright: "© 2024 l4yercak3. All rights reserved."
+    copyright: "© 2024 l4yercak3. All rights reserved.",
+    vcBatch: "L4YERCAK3 is a vc83-batch-1 startup"
   }
 };

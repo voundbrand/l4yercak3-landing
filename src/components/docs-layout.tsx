@@ -72,42 +72,43 @@ type ReadingMode = 'dark' | 'sepia';
 
 // Navigation structure
 export interface DocNavItem {
-  title: string;
+  titleKey: string;
   href?: string;
   children?: DocNavItem[];
-  badge?: string;
+  badgeKey?: string;
 }
 
-export const docsNavigation: DocNavItem[] = [
+export const docsNavigationConfig: DocNavItem[] = [
   {
-    title: 'Getting Started',
+    titleKey: 'docs.nav.gettingStarted',
     children: [
-      { title: 'Introduction', href: '/docs' },
-      { title: 'Quick Start', href: '/docs/quickstart' },
+      { titleKey: 'docs.nav.introduction', href: '/docs' },
+      { titleKey: 'docs.nav.quickStart', href: '/docs/quickstart' },
     ],
   },
   {
-    title: 'Integrations',
+    titleKey: 'docs.nav.integrations',
     children: [
-      { title: 'Vercel', href: '/docs/integrations/vercel', badge: 'New' },
-      { title: 'GitHub', href: '/docs/integrations/github' },
+      { titleKey: 'docs.nav.vercel', href: '/docs/integrations/vercel', badgeKey: 'docs.common.new' },
+      { titleKey: 'docs.nav.github', href: '/docs/integrations/github', badgeKey: 'docs.common.new' },
+      { titleKey: 'docs.nav.microsoft', href: '/docs/integrations/microsoft', badgeKey: 'docs.common.new' },
     ],
   },
   {
-    title: 'Legal',
+    titleKey: 'docs.nav.legal',
     children: [
-      { title: 'Privacy Policy', href: '/privacy' },
-      { title: 'Terms of Service', href: '/terms' },
-      { title: 'EULA', href: '/eula' },
-      { title: 'DPA', href: '/dpa' },
-      { title: 'Reseller Agreement', href: '/reseller' },
+      { titleKey: 'docs.nav.privacyPolicy', href: '/privacy' },
+      { titleKey: 'docs.nav.termsOfService', href: '/terms' },
+      { titleKey: 'docs.nav.eula', href: '/eula' },
+      { titleKey: 'docs.nav.dpa', href: '/dpa' },
+      { titleKey: 'docs.nav.resellerAgreement', href: '/reseller' },
     ],
   },
   {
-    title: 'Support',
+    titleKey: 'docs.nav.support',
     children: [
-      { title: 'Help Center', href: '/support' },
-      { title: 'Contact Us', href: '/support#contact' },
+      { titleKey: 'docs.nav.helpCenter', href: '/support' },
+      { titleKey: 'docs.nav.contactUs', href: '/support#contact' },
     ],
   },
 ];
@@ -156,6 +157,7 @@ function NavItem({ item, depth = 0 }: { item: DocNavItem; depth?: number }) {
   const pathname = usePathname();
   const context = useContext(DocsReadingModeContext);
   const theme = context?.themeClasses || getThemeClasses('dark');
+  const { t } = useTranslation();
 
   const isActive = item.href === pathname;
   const hasChildren = item.children && item.children.length > 0;
@@ -181,7 +183,7 @@ function NavItem({ item, depth = 0 }: { item: DocNavItem; depth?: number }) {
             depth === 0 ? theme.navSection : theme.navItem
           )}
         >
-          <span>{item.title}</span>
+          <span>{t(item.titleKey)}</span>
           {isOpen ? (
             <ChevronDownIcon className="w-4 h-4 opacity-50" />
           ) : (
@@ -209,10 +211,10 @@ function NavItem({ item, depth = 0 }: { item: DocNavItem; depth?: number }) {
         isActive ? theme.navItemActive : theme.navItem
       )}
     >
-      <span>{item.title}</span>
-      {item.badge && (
+      <span>{t(item.titleKey)}</span>
+      {item.badgeKey && (
         <span className="px-1.5 py-0.5 text-xs rounded-full bg-primary/20 text-primary">
-          {item.badge}
+          {t(item.badgeKey)}
         </span>
       )}
     </Link>
@@ -258,7 +260,7 @@ function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) 
 
           {/* Navigation */}
           <nav className="flex-1 overflow-y-auto p-4">
-            {docsNavigation.map((item, index) => (
+            {docsNavigationConfig.map((item, index) => (
               <NavItem key={index} item={item} />
             ))}
           </nav>
@@ -320,7 +322,7 @@ export function DocsLayout({ children }: DocsLayoutProps) {
                   </button>
 
                   {/* Breadcrumb or title */}
-                  <span className={cn("text-sm font-medium", theme.muted)}>Documentation</span>
+                  <span className={cn("text-sm font-medium", theme.muted)}>{t('docs.common.documentation')}</span>
                 </div>
 
                 <div className="flex items-center gap-3">
@@ -462,7 +464,7 @@ export function DocsLayout({ children }: DocsLayoutProps) {
                         readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
                       )}
                     >
-                      Privacy
+                      {t('legal.links.privacy')}
                     </Link>
                     <Link
                       href="/terms"
@@ -471,7 +473,7 @@ export function DocsLayout({ children }: DocsLayoutProps) {
                         readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
                       )}
                     >
-                      Terms
+                      {t('legal.links.terms')}
                     </Link>
                     <Link
                       href="/eula"
@@ -480,7 +482,7 @@ export function DocsLayout({ children }: DocsLayoutProps) {
                         readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
                       )}
                     >
-                      EULA
+                      {t('legal.links.eula')}
                     </Link>
                     <Link
                       href="/docs"
@@ -489,7 +491,7 @@ export function DocsLayout({ children }: DocsLayoutProps) {
                         readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
                       )}
                     >
-                      Docs
+                      {t('legal.links.docs')}
                     </Link>
                     <Link
                       href="/support"
@@ -498,13 +500,13 @@ export function DocsLayout({ children }: DocsLayoutProps) {
                         readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
                       )}
                     >
-                      Support
+                      {t('legal.links.support')}
                     </Link>
                   </div>
 
                   {/* Copyright */}
                   <p className={cn("text-sm", theme.muted)}>
-                    © {new Date().getFullYear()} Vound Brand UG (haftungsbeschränkt). All rights reserved.
+                    {t('footer.copyright')}
                   </p>
                 </div>
               </div>

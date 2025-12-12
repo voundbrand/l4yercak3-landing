@@ -4,7 +4,7 @@ import { DocsLayout, useDocsTheme } from '@/components/docs-layout';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
-function GitHubDocsContent() {
+function MicrosoftDocsContent() {
   const theme = useDocsTheme();
 
   return (
@@ -15,7 +15,7 @@ function GitHubDocsContent() {
         <span>/</span>
         <Link href="/docs" className="hover:underline">Integrations</Link>
         <span>/</span>
-        <span className={theme.headings}>GitHub</span>
+        <span className={theme.headings}>Microsoft</span>
       </nav>
 
       {/* Title Section */}
@@ -23,12 +23,12 @@ function GitHubDocsContent() {
         <div className="flex items-center gap-4 mb-4">
           <div className={cn("p-3 rounded-lg", theme.cta)}>
             <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              <path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zm12.6 0H12.6V0H24v11.4z"/>
             </svg>
           </div>
           <div>
             <h1 className={cn("font-serif text-4xl md:text-5xl italic", theme.headings)}>
-              GitHub Integration
+              Microsoft Integration
             </h1>
             <span className="inline-block mt-2 px-2 py-0.5 text-xs rounded-full bg-green-500/20 text-green-600 dark:text-green-400">
               New
@@ -36,7 +36,7 @@ function GitHubDocsContent() {
           </div>
         </div>
         <p className={cn("text-lg leading-relaxed", theme.muted)}>
-          Connect your l4yercak3 platform to GitHub for seamless web app deployment. Enables automatic repository creation, code synchronization, and integration with Vercel for one-click deployments.
+          Connect your l4yercak3 platform to Microsoft 365 and Azure services for enterprise-grade authentication, file management, and team collaboration. Powered by Microsoft Entra ID (formerly Azure AD).
         </p>
       </div>
 
@@ -58,16 +58,17 @@ function GitHubDocsContent() {
           Overview
         </h2>
         <p className={cn("mb-4", theme.content)}>
-          The l4yercak3 GitHub integration allows you to connect your GitHub account for seamless repository management and deployment workflows. Combined with our Vercel integration, you can achieve a complete CI/CD pipeline.
+          The l4yercak3 Microsoft integration enables seamless connectivity with Microsoft 365 services and Azure infrastructure. This enterprise-grade integration is powered by Microsoft Entra ID and provides secure authentication and authorization.
         </p>
         <p className={cn("mb-4", theme.content)}>
-          With the GitHub integration, you can:
+          With the Microsoft integration, you can:
         </p>
         <ul className={cn("list-disc pl-6 space-y-2", theme.content)}>
-          <li>Automatically create repositories for new projects</li>
-          <li>Sync code between l4yercak3 and GitHub</li>
-          <li>Trigger deployments from GitHub pushes</li>
-          <li>Manage repository settings from the l4yercak3 dashboard</li>
+          <li>Sign in with your Microsoft account or organization credentials</li>
+          <li>Access Microsoft 365 services (SharePoint, OneDrive, Teams)</li>
+          <li>Deploy to Azure cloud infrastructure</li>
+          <li>Sync files and documents across platforms</li>
+          <li>Leverage enterprise single sign-on (SSO)</li>
         </ul>
       </section>
 
@@ -77,7 +78,7 @@ function GitHubDocsContent() {
           Required Permissions
         </h2>
         <p className={cn("mb-4", theme.content)}>
-          When connecting the GitHub integration, you&apos;ll be asked to grant the following permissions:
+          When connecting the Microsoft integration, you&apos;ll be asked to grant the following permissions:
         </p>
         <div className={cn("overflow-x-auto rounded-lg border", theme.quote)}>
           <table className="w-full text-sm">
@@ -89,24 +90,27 @@ function GitHubDocsContent() {
             </thead>
             <tbody>
               <tr className="border-b">
-                <td className={cn("px-4 py-3", theme.content)}>Repository Access</td>
-                <td className={cn("px-4 py-3", theme.muted)}>Create and manage repositories</td>
+                <td className={cn("px-4 py-3", theme.content)}>User.Read</td>
+                <td className={cn("px-4 py-3", theme.muted)}>Sign in and read your profile</td>
               </tr>
               <tr className="border-b">
-                <td className={cn("px-4 py-3", theme.content)}>Contents</td>
-                <td className={cn("px-4 py-3", theme.muted)}>Read and write repository contents</td>
+                <td className={cn("px-4 py-3", theme.content)}>Files.ReadWrite</td>
+                <td className={cn("px-4 py-3", theme.muted)}>Access and manage your OneDrive files</td>
               </tr>
               <tr className="border-b">
-                <td className={cn("px-4 py-3", theme.content)}>Webhooks</td>
-                <td className={cn("px-4 py-3", theme.muted)}>Create webhooks for deployment triggers</td>
+                <td className={cn("px-4 py-3", theme.content)}>Sites.ReadWrite.All</td>
+                <td className={cn("px-4 py-3", theme.muted)}>Access SharePoint sites and content</td>
               </tr>
               <tr>
-                <td className={cn("px-4 py-3", theme.content)}>User Info</td>
-                <td className={cn("px-4 py-3", theme.muted)}>Identify your GitHub account</td>
+                <td className={cn("px-4 py-3", theme.content)}>offline_access</td>
+                <td className={cn("px-4 py-3", theme.muted)}>Maintain access to data you&apos;ve granted access to</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p className={cn("mt-4 text-sm", theme.muted)}>
+          App ID: <code className="px-2 py-1 rounded bg-black/10 dark:bg-white/10">2dea334b-f0cf-4c18-bd97-a178104e84be</code>
+        </p>
       </section>
 
       {/* Setting Up */}
@@ -116,17 +120,16 @@ function GitHubDocsContent() {
         </h2>
         <ol className={cn("list-decimal pl-6 space-y-3", theme.content)}>
           <li>Navigate to <strong>Settings → Integrations</strong> in your l4yercak3 dashboard</li>
-          <li>Click <strong>&quot;Connect GitHub&quot;</strong></li>
-          <li>You&apos;ll be redirected to GitHub to authorize the <a href="https://github.com/apps/l4yercak3-platform" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-80">l4yercak3 GitHub App</a></li>
-          <li>Select the account or organization you want to connect</li>
-          <li>Choose which repositories to grant access to (all or selected)</li>
-          <li>Grant the required permissions</li>
+          <li>Click <strong>&quot;Connect Microsoft&quot;</strong></li>
+          <li>You&apos;ll be redirected to Microsoft to sign in with your account</li>
+          <li>Review the requested permissions and click <strong>&quot;Accept&quot;</strong></li>
+          <li>If you&apos;re part of an organization, admin consent may be required</li>
           <li>You&apos;ll be redirected back to l4yercak3</li>
         </ol>
         <div className={cn("p-4 rounded-lg border-l-4 border-blue-500 mt-6", theme.cta)}>
-          <p className="font-semibold mb-2">Tip</p>
+          <p className="font-semibold mb-2">Enterprise Users</p>
           <p className={theme.muted}>
-            You can install the GitHub App directly from <a href="https://github.com/apps/l4yercak3-platform" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-80">github.com/apps/l4yercak3-platform</a>
+            If your organization requires admin consent, contact your IT administrator to approve the l4yercak3 Backoffice Software app in your Microsoft Entra admin center.
           </p>
         </div>
       </section>
@@ -138,27 +141,33 @@ function GitHubDocsContent() {
         </h2>
         <div className="grid gap-4">
           <div className={cn("p-4 rounded-lg", theme.quote)}>
-            <h3 className={cn("font-semibold mb-2", theme.headings)}>Automatic Repository Creation</h3>
+            <h3 className={cn("font-semibold mb-2", theme.headings)}>Microsoft Account Sign-In</h3>
             <p className={theme.muted}>
-              Create a new GitHub repository directly from l4yercak3 when starting a new project.
+              Sign in to l4yercak3 using your Microsoft personal or work account for seamless authentication.
             </p>
           </div>
           <div className={cn("p-4 rounded-lg", theme.quote)}>
-            <h3 className={cn("font-semibold mb-2", theme.headings)}>Code Synchronization</h3>
+            <h3 className={cn("font-semibold mb-2", theme.headings)}>OneDrive Integration</h3>
             <p className={theme.muted}>
-              Keep your l4yercak3 projects in sync with GitHub repositories automatically.
+              Access and sync files from OneDrive directly within your l4yercak3 projects.
             </p>
           </div>
           <div className={cn("p-4 rounded-lg", theme.quote)}>
-            <h3 className={cn("font-semibold mb-2", theme.headings)}>Vercel Integration</h3>
+            <h3 className={cn("font-semibold mb-2", theme.headings)}>SharePoint Connectivity</h3>
             <p className={theme.muted}>
-              Combine with our Vercel integration for one-click deployments directly from GitHub.
+              Connect to SharePoint sites for document management and team collaboration.
             </p>
           </div>
           <div className={cn("p-4 rounded-lg", theme.quote)}>
-            <h3 className={cn("font-semibold mb-2", theme.headings)}>Repository Management</h3>
+            <h3 className={cn("font-semibold mb-2", theme.headings)}>Azure Deployment</h3>
             <p className={theme.muted}>
-              Manage repository settings and configurations from your l4yercak3 dashboard.
+              Deploy your web applications to Azure App Service and Azure Static Web Apps.
+            </p>
+          </div>
+          <div className={cn("p-4 rounded-lg", theme.quote)}>
+            <h3 className={cn("font-semibold mb-2", theme.headings)}>Enterprise SSO</h3>
+            <p className={theme.muted}>
+              Leverage your organization&apos;s single sign-on for secure, passwordless access.
             </p>
           </div>
         </div>
@@ -172,18 +181,18 @@ function GitHubDocsContent() {
         <div className="space-y-4">
           <div className={cn("p-4 rounded-lg", theme.quote)}>
             <h3 className={cn("text-lg font-semibold mb-2", theme.headings)}>
-              Authorization Failed
+              Admin Consent Required
             </h3>
             <p className={theme.muted}>
-              Ensure you have the necessary permissions on your GitHub account. If you&apos;re part of an organization, you may need admin approval to install GitHub Apps.
+              If you see &quot;Need admin approval&quot;, your organization requires an administrator to approve the app. Contact your IT admin to grant consent in the Microsoft Entra admin center.
             </p>
           </div>
           <div className={cn("p-4 rounded-lg", theme.quote)}>
             <h3 className={cn("text-lg font-semibold mb-2", theme.headings)}>
-              Repository Not Syncing
+              Sign-In Failed
             </h3>
             <p className={theme.muted}>
-              Check that the repository is included in the GitHub App&apos;s access list. Go to your GitHub settings and verify the l4yercak3 app has access to the repository.
+              Ensure you&apos;re using the correct Microsoft account. If you have multiple accounts, try signing out of all Microsoft services first, then reconnect.
             </p>
           </div>
           <div className={cn("p-4 rounded-lg", theme.quote)}>
@@ -191,7 +200,15 @@ function GitHubDocsContent() {
               Permission Denied
             </h3>
             <p className={theme.muted}>
-              Try disconnecting and reconnecting the integration. You can also reinstall the GitHub App from <a href="https://github.com/apps/l4yercak3-platform" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-80">github.com/apps/l4yercak3-platform</a>.
+              Try disconnecting and reconnecting the integration. Ensure you accept all requested permissions during the authorization flow.
+            </p>
+          </div>
+          <div className={cn("p-4 rounded-lg", theme.quote)}>
+            <h3 className={cn("text-lg font-semibold mb-2", theme.headings)}>
+              Files Not Syncing
+            </h3>
+            <p className={theme.muted}>
+              Verify you have the Files.ReadWrite permission granted. Check that your OneDrive storage isn&apos;t full and that the files aren&apos;t protected by additional security policies.
             </p>
           </div>
         </div>
@@ -203,7 +220,7 @@ function GitHubDocsContent() {
           Related Integrations
         </h3>
         <p className={cn("mb-4", theme.muted)}>
-          Get the most out of l4yercak3 by combining GitHub with our other integrations:
+          Get the most out of l4yercak3 by combining Microsoft with our other integrations:
         </p>
         <div className="flex flex-wrap gap-4">
           <Link
@@ -211,6 +228,15 @@ function GitHubDocsContent() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-foreground text-background font-medium hover:opacity-90 transition-opacity"
           >
             Vercel Integration
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </Link>
+          <Link
+            href="/docs/integrations/github"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-foreground text-background font-medium hover:opacity-90 transition-opacity"
+          >
+            GitHub Integration
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -230,10 +256,10 @@ function GitHubDocsContent() {
   );
 }
 
-export default function GitHubDocsPage() {
+export default function MicrosoftDocsPage() {
   return (
     <DocsLayout>
-      <GitHubDocsContent />
+      <MicrosoftDocsContent />
     </DocsLayout>
   );
 }
