@@ -269,6 +269,55 @@ export function ContentPageLayout({
               </Link>
             </div>
 
+            {/* Legal Links */}
+            <div className="flex flex-wrap justify-center gap-4 text-xs">
+              <Link
+                href="/privacy"
+                className={cn(
+                  "hover:underline transition-colors",
+                  readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
+                )}
+              >
+                Privacy
+              </Link>
+              <Link
+                href="/terms"
+                className={cn(
+                  "hover:underline transition-colors",
+                  readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
+                )}
+              >
+                Terms
+              </Link>
+              <Link
+                href="/eula"
+                className={cn(
+                  "hover:underline transition-colors",
+                  readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
+                )}
+              >
+                EULA
+              </Link>
+              <Link
+                href="/docs"
+                className={cn(
+                  "hover:underline transition-colors",
+                  readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
+                )}
+              >
+                Docs
+              </Link>
+              <Link
+                href="/support"
+                className={cn(
+                  "hover:underline transition-colors",
+                  readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
+                )}
+              >
+                Support
+              </Link>
+            </div>
+
             {/* VC Batch Slogan */}
             <div className={cn("text-xs font-medium transition-colors duration-300",
               readingMode === 'sepia' ? 'text-amber-600' : 'text-foreground/60')}>
