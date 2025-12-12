@@ -95,6 +95,25 @@ export const Footer = () => {
       </ClientOnly>
       </div>
       
+      {/* Legal Links */}
+      <div className="flex flex-wrap justify-center gap-4 text-xs text-foreground/60">
+        <Link href="/privacy" className="hover:underline hover:text-foreground/80 transition-colors">
+          Privacy
+        </Link>
+        <Link href="/terms" className="hover:underline hover:text-foreground/80 transition-colors">
+          Terms
+        </Link>
+        <Link href="/eula" className="hover:underline hover:text-foreground/80 transition-colors">
+          EULA
+        </Link>
+        <Link href="/docs" className="hover:underline hover:text-foreground/80 transition-colors">
+          Docs
+        </Link>
+        <Link href="/support" className="hover:underline hover:text-foreground/80 transition-colors">
+          Support
+        </Link>
+      </div>
+
       {/* VC Batch Slogan */}
       <div className="text-xs text-foreground/60 font-medium">
         L4YERCAK3 is a vc83-batch-1 startup
