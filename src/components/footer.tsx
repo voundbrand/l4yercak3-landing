@@ -12,12 +12,24 @@ import { cn } from "@/lib/utils";
 import { ClientOnly } from "./client-only";
 import { useTranslation } from 'react-i18next';
 
-export const Footer = () => {
+type ReadingMode = 'dark' | 'sepia';
+
+interface FooterProps {
+  readingMode?: ReadingMode;
+}
+
+export const Footer = ({ readingMode = 'dark' }: FooterProps) => {
   const { language, setLanguage } = useLanguage();
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col items-center gap-2 absolute bottom-[var(--inset)] left-1/2 -translate-x-1/2">
+    <footer className={cn(
+      "w-full py-8 md:py-12 border-t transition-colors duration-300",
+      readingMode === 'sepia'
+        ? 'bg-amber-50 border-amber-200/50'
+        : 'bg-background border-border/50'
+    )}>
+      <div className="max-w-4xl mx-auto px-6 flex flex-col items-center gap-4">
       {/* Social Icons and Language Toggle */}
       <div className="flex gap-4 md:gap-6 items-center">
       {/* Social Media Icons */}
@@ -96,28 +108,58 @@ export const Footer = () => {
       </div>
       
       {/* Legal Links */}
-      <div className="flex flex-wrap justify-center gap-4 text-xs text-foreground/60">
-        <Link href="/privacy" className="hover:underline hover:text-foreground/80 transition-colors">
+      <div className={cn(
+        "flex flex-wrap justify-center gap-4 text-xs transition-colors duration-300",
+        readingMode === 'sepia' ? 'text-amber-700' : 'text-foreground/60'
+      )}>
+        <Link href="/privacy" className={cn(
+          "hover:underline transition-colors",
+          readingMode === 'sepia' ? 'hover:text-amber-900' : 'hover:text-foreground/80'
+        )}>
           {t('legal.links.privacy')}
         </Link>
-        <Link href="/terms" className="hover:underline hover:text-foreground/80 transition-colors">
+        <Link href="/terms" className={cn(
+          "hover:underline transition-colors",
+          readingMode === 'sepia' ? 'hover:text-amber-900' : 'hover:text-foreground/80'
+        )}>
           {t('legal.links.terms')}
         </Link>
-        <Link href="/eula" className="hover:underline hover:text-foreground/80 transition-colors">
+        <Link href="/eula" className={cn(
+          "hover:underline transition-colors",
+          readingMode === 'sepia' ? 'hover:text-amber-900' : 'hover:text-foreground/80'
+        )}>
           {t('legal.links.eula')}
         </Link>
-        <Link href="/docs" className="hover:underline hover:text-foreground/80 transition-colors">
+        <Link href="/docs" className={cn(
+          "hover:underline transition-colors",
+          readingMode === 'sepia' ? 'hover:text-amber-900' : 'hover:text-foreground/80'
+        )}>
           {t('legal.links.docs')}
         </Link>
-        <Link href="/support" className="hover:underline hover:text-foreground/80 transition-colors">
+        <Link href="/support" className={cn(
+          "hover:underline transition-colors",
+          readingMode === 'sepia' ? 'hover:text-amber-900' : 'hover:text-foreground/80'
+        )}>
           {t('legal.links.support')}
         </Link>
       </div>
 
       {/* VC Batch Slogan */}
-      <div className="text-xs text-foreground/60 font-medium">
+      <div className={cn(
+        "text-xs font-medium transition-colors duration-300",
+        readingMode === 'sepia' ? 'text-amber-600' : 'text-foreground/60'
+      )}>
         {t('footer.vcBatch')}
       </div>
-    </div>
+
+      {/* Copyright */}
+      <div className={cn(
+        "text-xs mt-2 transition-colors duration-300",
+        readingMode === 'sepia' ? 'text-amber-600/70' : 'text-foreground/40'
+      )}>
+        {t('footer.copyright')}
+      </div>
+      </div>
+    </footer>
   );
 };

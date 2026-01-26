@@ -26,6 +26,31 @@ const ClockIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const GlobeIcon = ({ className }: { className?: string }) => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <path d="M8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM2 8C2 7.26 2.14 6.55 2.39 5.9L5 8.5V9.5C5 10.05 5.45 10.5 6 10.5V12.74C3.66 12.02 2 9.72 2 8ZM12.41 11.87C12.28 11.38 11.84 11 11.33 11H10.5V9C10.5 8.72 10.28 8.5 10 8.5H6V7.5H7C7.28 7.5 7.5 7.28 7.5 7V6H8.5C9.05 6 9.5 5.55 9.5 5V4.59C11.92 5.35 13.67 7.48 13.96 10.04C13.52 10.73 12.99 11.35 12.41 11.87Z" fill="currentColor"/>
+  </svg>
+);
+
+// Common timezones with friendly labels
+const timezoneOptions = [
+  { value: 'Europe/Berlin', label: 'CET (Berlin)', offset: '+1/+2' },
+  { value: 'Europe/London', label: 'GMT (London)', offset: '+0/+1' },
+  { value: 'Europe/Paris', label: 'CET (Paris)', offset: '+1/+2' },
+  { value: 'Europe/Amsterdam', label: 'CET (Amsterdam)', offset: '+1/+2' },
+  { value: 'Europe/Zurich', label: 'CET (Zurich)', offset: '+1/+2' },
+  { value: 'Europe/Vienna', label: 'CET (Vienna)', offset: '+1/+2' },
+  { value: 'America/New_York', label: 'EST (New York)', offset: '-5/-4' },
+  { value: 'America/Chicago', label: 'CST (Chicago)', offset: '-6/-5' },
+  { value: 'America/Denver', label: 'MST (Denver)', offset: '-7/-6' },
+  { value: 'America/Los_Angeles', label: 'PST (Los Angeles)', offset: '-8/-7' },
+  { value: 'America/Toronto', label: 'EST (Toronto)', offset: '-5/-4' },
+  { value: 'Asia/Dubai', label: 'GST (Dubai)', offset: '+4' },
+  { value: 'Asia/Singapore', label: 'SGT (Singapore)', offset: '+8' },
+  { value: 'Asia/Tokyo', label: 'JST (Tokyo)', offset: '+9' },
+  { value: 'Australia/Sydney', label: 'AEST (Sydney)', offset: '+10/+11' },
+];
+
 interface CalendarBookingModalProps {
   onClose: () => void;
   readingMode?: 'dark' | 'sepia';
@@ -51,10 +76,21 @@ export function CalendarBookingModal({ onClose, readingMode = 'dark' }: Calendar
   const [submitting, setSubmitting] = useState(false);
   const [bookingSuccess, setBookingSuccess] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [selectedTimezone, setSelectedTimezone] = useState('Europe/Berlin');
 
   // Ensure component is mounted before rendering portal
   useEffect(() => {
     setMounted(true);
+    // Try to detect user's timezone on mount
+    try {
+      const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      // Check if it's in our list, otherwise keep default
+      if (timezoneOptions.some(tz => tz.value === userTimezone)) {
+        setSelectedTimezone(userTimezone);
+      }
+    } catch {
+      // Keep default Europe/Berlin
+    }
   }, []);
 
   // Theme classes based on reading mode
@@ -67,6 +103,8 @@ export function CalendarBookingModal({ onClose, readingMode = 'dark' }: Calendar
       input: "bg-background/80 border-border/30 text-foreground",
       button: "bg-primary text-primary-foreground hover:bg-primary/90",
       buttonSecondary: "border-border/30 text-foreground hover:bg-white/5",
+      formOverlay: "bg-zinc-900 text-foreground",
+      formInput: "bg-zinc-800 border-zinc-700 text-white placeholder:text-zinc-400",
     },
     sepia: {
       backdrop: "bg-amber-900/60",
@@ -76,6 +114,8 @@ export function CalendarBookingModal({ onClose, readingMode = 'dark' }: Calendar
       input: "bg-amber-50/90 border-amber-300/40 text-amber-950 placeholder:text-amber-700/50",
       button: "bg-amber-800 text-amber-50 hover:bg-amber-700",
       buttonSecondary: "border-amber-300/40 text-amber-950 hover:bg-amber-100/70",
+      formOverlay: "bg-amber-50 text-amber-950",
+      formInput: "bg-white border-amber-300 text-amber-950 placeholder:text-amber-600",
     },
   };
 
@@ -103,7 +143,7 @@ export function CalendarBookingModal({ onClose, readingMode = 'dark' }: Calendar
     calendarDays.push(i);
   }
 
-  // Load month availability when month changes
+  // Load month availability when month or timezone changes
   useEffect(() => {
     const loadMonthAvailability = async () => {
       setLoadingMonth(true);
@@ -112,7 +152,7 @@ export function CalendarBookingModal({ onClose, readingMode = 'dark' }: Calendar
           currentMonth.getFullYear(),
           currentMonth.getMonth(),
           30,
-          'Europe/Berlin'
+          selectedTimezone
         );
         setAvailableDays(availability);
       } catch (error) {
@@ -124,7 +164,7 @@ export function CalendarBookingModal({ onClose, readingMode = 'dark' }: Calendar
     };
 
     loadMonthAvailability();
-  }, [currentMonth]);
+  }, [currentMonth, selectedTimezone]);
 
   const navigateMonth = (direction: number) => {
     const newMonth = new Date(currentMonth);
@@ -144,9 +184,28 @@ export function CalendarBookingModal({ onClose, readingMode = 'dark' }: Calendar
       setSelectedDate(date);
       setSelectedSlot(null);
       setLoading(true);
-      
+
       try {
-        const slots = await fetchAvailableSlots(date, 30, 'Europe/Berlin');
+        const slots = await fetchAvailableSlots(date, 30, selectedTimezone);
+        setAvailableSlots(slots);
+      } catch (error) {
+        console.error('Error fetching slots:', error);
+        setAvailableSlots([]);
+      } finally {
+        setLoading(false);
+      }
+    }
+  };
+
+  // Handle timezone change - refetch slots if a date is selected
+  const handleTimezoneChange = async (newTimezone: string) => {
+    setSelectedTimezone(newTimezone);
+    setSelectedSlot(null);
+
+    if (selectedDate) {
+      setLoading(true);
+      try {
+        const slots = await fetchAvailableSlots(selectedDate, 30, newTimezone);
         setAvailableSlots(slots);
       } catch (error) {
         console.error('Error fetching slots:', error);
@@ -180,7 +239,7 @@ export function CalendarBookingModal({ onClose, readingMode = 'dark' }: Calendar
         notes: bookingData.notes,
         startTime: selectedSlot.originalStartTime,
         endTime: selectedSlot.originalEndTime || selectedSlot.endTime.toISOString(),
-        timeZone: 'Europe/Berlin',
+        timeZone: selectedTimezone,
         location: bookingData.location || locationOptions[0].value,
       };
 
@@ -219,6 +278,7 @@ export function CalendarBookingModal({ onClose, readingMode = 'dark' }: Calendar
   const modalContent = (
     <AnimatePresence>
       <motion.div
+        key="calendar-backdrop"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -226,6 +286,7 @@ export function CalendarBookingModal({ onClose, readingMode = 'dark' }: Calendar
         onClick={onClose}
       >
         <motion.div
+          key="calendar-modal"
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -239,13 +300,34 @@ export function CalendarBookingModal({ onClose, readingMode = 'dark' }: Calendar
               <CalendarIcon className={readingMode === 'sepia' ? 'text-amber-950' : 'text-foreground'} />
               <h2 className={cn("text-2xl font-serif italic", readingMode === 'sepia' ? 'text-amber-950' : 'text-foreground')}>{t('common.bookCallTitle')}</h2>
             </div>
-            <button
-              onClick={onClose}
-              className="p-2 rounded-full hover:bg-white/10 transition-colors"
-              aria-label="Close"
-            >
-              <XIcon className={readingMode === 'sepia' ? 'text-amber-950/80' : 'text-foreground/80'} />
-            </button>
+            <div className="flex items-center gap-3">
+              {/* Timezone Selector */}
+              <div className="flex items-center gap-2">
+                <GlobeIcon className={cn("flex-shrink-0", readingMode === 'sepia' ? 'text-amber-950/60' : 'text-foreground/60')} />
+                <select
+                  value={selectedTimezone}
+                  onChange={(e) => handleTimezoneChange(e.target.value)}
+                  className={cn(
+                    "text-sm rounded-lg border px-2 py-1.5 focus:outline-none transition-colors cursor-pointer",
+                    currentTheme.input,
+                    readingMode === 'sepia' ? 'focus:border-amber-800' : 'focus:border-primary'
+                  )}
+                >
+                  {timezoneOptions.map((tz) => (
+                    <option key={tz.value} value={tz.value}>
+                      {tz.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <button
+                onClick={onClose}
+                className="p-2 rounded-full hover:bg-white/10 transition-colors"
+                aria-label="Close"
+              >
+                <XIcon className={readingMode === 'sepia' ? 'text-amber-950/80' : 'text-foreground/80'} />
+              </button>
+            </div>
           </div>
 
           {/* Content */}
@@ -369,15 +451,15 @@ export function CalendarBookingModal({ onClose, readingMode = 'dark' }: Calendar
           {/* Footer */}
           {!showBookingForm && !bookingSuccess && (
             <div className="border-t border-border/20 p-6">
-              <div className="flex items-center justify-between">
-                <div className={cn("text-sm", readingMode === 'sepia' ? 'text-amber-950/80' : 'text-foreground/80')}>
+              <div className="flex items-center justify-between gap-4">
+                <div className={cn("text-sm flex-1", readingMode === 'sepia' ? 'text-amber-950/80' : 'text-foreground/80')}>
                   {selectedDate && selectedSlot ? (
                     <span>
-                      {selectedDate.toLocaleDateString('en-US', { 
-                        weekday: 'long', 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric' 
+                      {selectedDate.toLocaleDateString('en-US', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
                       })} at {selectedSlot.time}
                     </span>
                   ) : (
@@ -388,12 +470,15 @@ export function CalendarBookingModal({ onClose, readingMode = 'dark' }: Calendar
                   onClick={handleBookCall}
                   disabled={!selectedDate || !selectedSlot}
                   className={cn(
-                    "px-6 py-3 rounded-full font-medium transition-all duration-200",
+                    "inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-base transition-all duration-200",
                     selectedDate && selectedSlot
-                      ? cn(currentTheme.button, "shadow-button")
-                      : "opacity-50 cursor-not-allowed"
+                      ? cn(currentTheme.button, "shadow-button hover:scale-[1.02] active:scale-[0.98]")
+                      : readingMode === 'sepia'
+                        ? "bg-amber-800/30 text-amber-950/40 cursor-not-allowed"
+                        : "bg-primary/30 text-foreground/40 cursor-not-allowed"
                   )}
                 >
+                  <CalendarIcon className="w-5 h-5" />
                   {t('common.bookCallButton')}
                 </button>
               </div>
@@ -404,28 +489,29 @@ export function CalendarBookingModal({ onClose, readingMode = 'dark' }: Calendar
           <AnimatePresence>
             {showBookingForm && !bookingSuccess && (
               <motion.div
+                key="booking-form"
                 initial={{ y: '100%', opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: '100%', opacity: 0 }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
-                className={cn("absolute inset-0 backdrop-blur-xl border-t flex flex-col", currentTheme.modal, currentTheme.header)}
+                className={cn("absolute inset-0 flex flex-col rounded-3xl", currentTheme.formOverlay)}
               >
-                <div className="flex-1 overflow-y-auto p-4">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className={cn("text-lg font-semibold", readingMode === 'sepia' ? 'text-amber-950' : 'text-foreground')}>Contact Information</h3>
+                <div className="flex-1 overflow-y-auto p-6">
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className={cn("text-xl font-semibold", readingMode === 'sepia' ? 'text-amber-950' : 'text-white')}>Contact Information</h3>
                     <button
                       onClick={() => setShowBookingForm(false)}
-                      className="p-1.5 rounded-full hover:bg-white/10 transition-colors"
+                      className={cn("p-2 rounded-full transition-colors", readingMode === 'sepia' ? 'hover:bg-amber-200' : 'hover:bg-zinc-800')}
                       aria-label="Back"
                     >
-                      <XIcon className={readingMode === 'sepia' ? 'text-amber-950/80' : 'text-foreground/80'} />
+                      <XIcon className={readingMode === 'sepia' ? 'text-amber-950/80' : 'text-white/80'} />
                     </button>
                   </div>
-                  
-                  <form onSubmit={handleBookingSubmit} className="space-y-3">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                  <form onSubmit={handleBookingSubmit} className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className={cn("block text-xs font-medium mb-1", readingMode === 'sepia' ? 'text-amber-950/80' : 'text-foreground/80')}>
+                        <label className={cn("block text-sm font-medium mb-2", readingMode === 'sepia' ? 'text-amber-900' : 'text-zinc-300')}>
                           Name *
                         </label>
                         <input
@@ -433,12 +519,12 @@ export function CalendarBookingModal({ onClose, readingMode = 'dark' }: Calendar
                           required
                           value={bookingData.name || ''}
                           onChange={(e) => setBookingData(prev => ({ ...prev, name: e.target.value }))}
-                          className={cn("w-full px-3 py-2 text-sm rounded-lg border focus:outline-none transition-colors", currentTheme.input, readingMode === 'sepia' ? 'focus:border-amber-800' : 'focus:border-primary')}
+                          className={cn("w-full px-4 py-3 text-sm rounded-xl border focus:outline-none focus:ring-2 transition-all", currentTheme.formInput, readingMode === 'sepia' ? 'focus:ring-amber-500' : 'focus:ring-primary/50')}
                           placeholder="Your full name"
                         />
                       </div>
                       <div>
-                        <label className={cn("block text-xs font-medium mb-1", readingMode === 'sepia' ? 'text-amber-950/80' : 'text-foreground/80')}>
+                        <label className={cn("block text-sm font-medium mb-2", readingMode === 'sepia' ? 'text-amber-900' : 'text-zinc-300')}>
                           Email *
                         </label>
                         <input
@@ -446,33 +532,33 @@ export function CalendarBookingModal({ onClose, readingMode = 'dark' }: Calendar
                           required
                           value={bookingData.email || ''}
                           onChange={(e) => setBookingData(prev => ({ ...prev, email: e.target.value }))}
-                          className={cn("w-full px-3 py-2 text-sm rounded-lg border focus:outline-none transition-colors", currentTheme.input, readingMode === 'sepia' ? 'focus:border-amber-800' : 'focus:border-primary')}
+                          className={cn("w-full px-4 py-3 text-sm rounded-xl border focus:outline-none focus:ring-2 transition-all", currentTheme.formInput, readingMode === 'sepia' ? 'focus:ring-amber-500' : 'focus:ring-primary/50')}
                           placeholder="your@email.com"
                         />
                       </div>
                     </div>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className={cn("block text-xs font-medium mb-1", readingMode === 'sepia' ? 'text-amber-950/80' : 'text-foreground/80')}>
+                        <label className={cn("block text-sm font-medium mb-2", readingMode === 'sepia' ? 'text-amber-900' : 'text-zinc-300')}>
                           Phone (optional)
                         </label>
                         <input
                           type="tel"
                           value={bookingData.phone || ''}
                           onChange={(e) => setBookingData(prev => ({ ...prev, phone: e.target.value }))}
-                          className={cn("w-full px-3 py-2 text-sm rounded-lg border focus:outline-none transition-colors", currentTheme.input, readingMode === 'sepia' ? 'focus:border-amber-800' : 'focus:border-primary')}
+                          className={cn("w-full px-4 py-3 text-sm rounded-xl border focus:outline-none focus:ring-2 transition-all", currentTheme.formInput, readingMode === 'sepia' ? 'focus:ring-amber-500' : 'focus:ring-primary/50')}
                           placeholder="+1 (555) 123-4567"
                         />
                       </div>
                       <div>
-                        <label className={cn("block text-xs font-medium mb-1", readingMode === 'sepia' ? 'text-amber-950/80' : 'text-foreground/80')}>
+                        <label className={cn("block text-sm font-medium mb-2", readingMode === 'sepia' ? 'text-amber-900' : 'text-zinc-300')}>
                           Meeting Location
                         </label>
                         <select
                           value={bookingData.location || locationOptions[0].value}
                           onChange={(e) => setBookingData(prev => ({ ...prev, location: e.target.value }))}
-                          className={cn("w-full px-3 py-2 text-sm rounded-lg border focus:outline-none transition-colors", currentTheme.input, readingMode === 'sepia' ? 'focus:border-amber-800' : 'focus:border-primary')}
+                          className={cn("w-full px-4 py-3 text-sm rounded-xl border focus:outline-none focus:ring-2 transition-all", currentTheme.formInput, readingMode === 'sepia' ? 'focus:ring-amber-500' : 'focus:ring-primary/50')}
                         >
                           {locationOptions.map((option) => (
                             <option key={option.value} value={option.value}>
@@ -482,28 +568,28 @@ export function CalendarBookingModal({ onClose, readingMode = 'dark' }: Calendar
                         </select>
                       </div>
                     </div>
-                    
+
                     <div>
-                      <label className={cn("block text-xs font-medium mb-1", readingMode === 'sepia' ? 'text-amber-950/80' : 'text-foreground/80')}>
+                      <label className={cn("block text-sm font-medium mb-2", readingMode === 'sepia' ? 'text-amber-900' : 'text-zinc-300')}>
                         Notes (optional)
                       </label>
                       <textarea
                         value={bookingData.notes || ''}
                         onChange={(e) => setBookingData(prev => ({ ...prev, notes: e.target.value }))}
-                        rows={2}
-                        className={cn("w-full px-3 py-2 text-sm rounded-lg border focus:outline-none transition-colors resize-none", currentTheme.input, readingMode === 'sepia' ? 'focus:border-amber-800' : 'focus:border-primary')}
+                        rows={3}
+                        className={cn("w-full px-4 py-3 text-sm rounded-xl border focus:outline-none focus:ring-2 transition-all resize-none", currentTheme.formInput, readingMode === 'sepia' ? 'focus:ring-amber-500' : 'focus:ring-primary/50')}
                         placeholder="Anything you'd like to discuss..."
                       />
                     </div>
                   </form>
                 </div>
-                
-                <div className="border-t border-border/20 p-4">
-                  <div className="flex gap-3">
+
+                <div className={cn("border-t p-6", readingMode === 'sepia' ? 'border-amber-200' : 'border-zinc-800')}>
+                  <div className="flex gap-4">
                     <button
                       type="button"
                       onClick={() => setShowBookingForm(false)}
-                      className={cn("flex-1 px-4 py-2 text-sm rounded-lg border transition-colors", currentTheme.buttonSecondary)}
+                      className={cn("flex-1 px-4 py-3 text-sm rounded-xl border font-medium transition-colors", readingMode === 'sepia' ? 'border-amber-300 text-amber-900 hover:bg-amber-100' : 'border-zinc-700 text-zinc-300 hover:bg-zinc-800')}
                     >
                       Back
                     </button>
@@ -511,10 +597,12 @@ export function CalendarBookingModal({ onClose, readingMode = 'dark' }: Calendar
                       onClick={handleBookingSubmit}
                       disabled={submitting || !bookingData.name || !bookingData.email}
                       className={cn(
-                        "flex-1 px-4 py-2 text-sm rounded-lg font-medium transition-all duration-200",
+                        "flex-1 px-4 py-3 text-sm rounded-xl font-semibold transition-all duration-200",
                         !submitting && bookingData.name && bookingData.email
-                          ? cn(currentTheme.button, "shadow-button")
-                          : "opacity-50 cursor-not-allowed"
+                          ? cn(currentTheme.button, "shadow-button hover:scale-[1.02] active:scale-[0.98]")
+                          : readingMode === 'sepia'
+                            ? "bg-amber-300 text-amber-600 cursor-not-allowed"
+                            : "bg-zinc-700 text-zinc-500 cursor-not-allowed"
                       )}
                     >
                       {submitting ? 'Booking...' : 'Confirm Booking'}

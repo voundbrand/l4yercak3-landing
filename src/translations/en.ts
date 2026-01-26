@@ -5,6 +5,7 @@ import { buildSprintEn } from './build-sprint';
 import { founderCalculatorEn } from './founder-calculator';
 import { legalEn } from './legal';
 import { docsEn } from './docs';
+import { landingEn } from './landing';
 
 export const en = {
   common: {
@@ -143,6 +144,7 @@ export const en = {
   founderCalculator: founderCalculatorEn,
   legal: legalEn,
   docs: docsEn,
+  landing: landingEn,
   footer: {
     copyright: "© 2024 l4yercak3. All rights reserved.",
     vcBatch: "L4YERCAK3 is a vc83-batch-1 startup"

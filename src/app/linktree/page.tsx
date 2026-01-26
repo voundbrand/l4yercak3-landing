@@ -1,36 +1,100 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 import { Background } from '@/components/background';
+import { useLanguage } from '@/components/language-provider';
+import { cn } from '@/lib/utils';
 
-const links = [
-  {
-    id: 'skool',
-    title: 'Join the Community',
-    description: 'Courses, templates, weekly calls.',
-    href: 'https://www.skool.com/l4yercak3/about',
-    icon: (
-      <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-    badge: 'Free',
-    featured: true,
-  },
-  {
-    id: 'platform',
-    title: 'Go to Platform',
-    description: 'CRM, automations, client portals.',
-    href: 'https://app.l4yercak3.com',
-    icon: (
-      <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-];
+// YouTube video ID for the intro video
+const YOUTUBE_VIDEO_ID = "OwHQDLCFg0w";
+
+// Video Modal Component
+function VideoModal({
+  isOpen,
+  onClose,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+}) {
+  if (!isOpen) return null;
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+        onClick={onClose}
+      >
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.9, opacity: 0 }}
+          className="relative w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button
+            onClick={onClose}
+            className="absolute -top-12 right-0 text-white/60 hover:text-white transition-colors"
+          >
+            <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          <iframe
+            src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0`}
+            title="L4YERCAK3 Introduction"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full"
+          />
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
+// Icons
+const CommunityIcon = () => (
+  <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const PlatformIcon = () => (
+  <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const GitHubIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+  </svg>
+);
+
+const YouTubeIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+  </svg>
+);
+
+const DesktopIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const BoltIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
 
 // Tech stack icons
 const TechIcons: Record<string, React.ReactNode> = {
@@ -164,12 +228,70 @@ const socials = [
 ];
 
 export default function LinktreePage() {
+  const { t } = useTranslation();
+  const { language, setLanguage } = useLanguage();
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
+  const boilerplates = [
+    {
+      id: 'getposted',
+      title: t('landing.linktree.boilerplates.getposted.title'),
+      description: t('landing.linktree.boilerplates.getposted.description'),
+      href: 'https://buy.polar.sh/polar_cl_NQt8HVWkCJALbX27SqdU4QfO8BIZti7qJhTVL1HisQV',
+      price: t('landing.linktree.boilerplates.getposted.price'),
+      icon: <DesktopIcon />,
+      techStack: ['react', 'typescript', 'vite', 'tailwind', 'tauri'] as const,
+    },
+    {
+      id: 'atheon',
+      title: t('landing.linktree.boilerplates.atheon.title'),
+      description: t('landing.linktree.boilerplates.atheon.description'),
+      href: 'https://buy.polar.sh/polar_cl_Wg3IUOO3tqo0EVAx9LESYc0LwSUbDlA2IZGVr4Kzz7O',
+      price: t('landing.linktree.boilerplates.atheon.price'),
+      icon: <BoltIcon />,
+      techStack: ['expo', 'react', 'typescript'] as const,
+    },
+  ];
+
   return (
     <main className="min-h-[100dvh] w-full relative overflow-x-hidden">
       <Background
         src="/layercake-bg.png"
         placeholder="/layercake-bg.png"
       />
+
+      {/* Video Modal */}
+      <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} />
+
+      {/* Language Toggle - Top Left */}
+      <div className="absolute top-4 md:top-6 left-4 md:left-6 z-20">
+        <div className="flex items-center gap-1 p-1 rounded-full bg-white/10 backdrop-blur-sm">
+          <button
+            onClick={() => setLanguage('en')}
+            className={cn(
+              "px-2 py-1 rounded-full text-xs font-semibold transition-all duration-200",
+              language === 'en'
+                ? "bg-white/20 text-white"
+                : "text-white/60 hover:text-white/80"
+            )}
+            aria-label={t('navigation.switchToEnglish')}
+          >
+            EN
+          </button>
+          <button
+            onClick={() => setLanguage('de')}
+            className={cn(
+              "px-2 py-1 rounded-full text-xs font-semibold transition-all duration-200",
+              language === 'de'
+                ? "bg-white/20 text-white"
+                : "text-white/60 hover:text-white/80"
+            )}
+            aria-label={t('navigation.switchToGerman')}
+          >
+            DE
+          </button>
+        </div>
+      </div>
 
       {/* Safe area container with proper mobile padding */}
       <div className="relative z-10 min-h-[100dvh] flex flex-col items-center px-5 py-8 pb-safe sm:px-6 sm:py-12 md:py-16">
@@ -194,57 +316,133 @@ export default function LinktreePage() {
 
           {/* Headline */}
           <h1 className="font-serif text-xl sm:text-2xl md:text-3xl italic text-white mb-1.5 sm:mb-2 px-2">
-            Building in public.
+            {t('landing.linktree.headline')}
           </h1>
           <p className="text-white/70 text-xs sm:text-sm md:text-base max-w-[280px] sm:max-w-sm mx-auto leading-relaxed">
-            l4yercak3 — The Universal Backend I always wanted
+            {t('landing.linktree.tagline')}
           </p>
         </motion.div>
 
         {/* Main Links */}
         <div className="w-full max-w-md space-y-2.5 sm:space-y-3 mb-6 sm:mb-8">
-          {links.map((link, index) => (
-            <motion.a
-              key={link.id}
-              href={link.href}
+          {/* Community Link */}
+          <motion.a
+            href="https://www.skool.com/l4yercak3/about"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="block w-full p-3.5 sm:p-4 rounded-2xl backdrop-blur-md border transition-all duration-300 active:scale-[0.98] bg-white/15 border-white/30 hover:bg-white/25 hover:border-white/50"
+          >
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-primary/30 text-white">
+                <CommunityIcon />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h2 className="font-semibold text-white text-sm sm:text-base">
+                    {t('landing.linktree.links.community.title')}
+                  </h2>
+                  <span className="px-2 py-0.5 bg-green-500/40 text-white text-[10px] sm:text-xs rounded-full font-medium">
+                    {t('landing.linktree.links.community.badge')}
+                  </span>
+                </div>
+                <p className="text-white/60 text-xs sm:text-sm truncate">
+                  {t('landing.linktree.links.community.description')}
+                </p>
+              </div>
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white/40 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+          </motion.a>
+
+          {/* Platform Link */}
+          <motion.a
+            href="https://app.l4yercak3.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="block w-full p-3.5 sm:p-4 rounded-2xl backdrop-blur-md border transition-all duration-300 active:scale-[0.98] bg-white/10 border-white/20 hover:bg-white/20 hover:border-white/40"
+          >
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-white/10 text-white/80">
+                <PlatformIcon />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h2 className="font-semibold text-white text-sm sm:text-base">
+                  {t('landing.linktree.links.platform.title')}
+                </h2>
+                <p className="text-white/60 text-xs sm:text-sm truncate">
+                  {t('landing.linktree.links.platform.description')}
+                </p>
+              </div>
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white/40 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+          </motion.a>
+        </div>
+
+        {/* Free Resources Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
+          className="w-full max-w-md mb-6 sm:mb-8"
+        >
+          <h3 className="text-white/50 text-[10px] sm:text-xs uppercase tracking-wider text-center mb-2.5 sm:mb-3">
+            {t('landing.linktree.sections.freeResources')}
+          </h3>
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
+            {/* Systems - GitHub */}
+            <a
+              href="https://github.com/voundbrand/l4yercak3-systems"
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 + index * 0.1 }}
-              className={`
-                block w-full p-3.5 sm:p-4 rounded-2xl backdrop-blur-md border transition-all duration-300 active:scale-[0.98]
-                ${link.featured
-                  ? 'bg-white/15 border-white/30 hover:bg-white/25 hover:border-white/50'
-                  : 'bg-white/10 border-white/20 hover:bg-white/20 hover:border-white/40'
-                }
-              `}
+              className="p-3 sm:p-4 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md hover:bg-white/20 hover:border-white/40 transition-all duration-300 group active:scale-[0.98] cursor-pointer"
             >
-              <div className="flex items-center gap-3 sm:gap-4">
-                <div className={`
-                  w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0
-                  ${link.featured ? 'bg-primary/30 text-white' : 'bg-white/10 text-white/80'}
-                `}>
-                  {link.icon}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <h2 className="font-semibold text-white text-sm sm:text-base">{link.title}</h2>
-                    {link.badge && (
-                      <span className="px-2 py-0.5 bg-green-500/40 text-white text-[10px] sm:text-xs rounded-full font-medium">
-                        {link.badge}
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-white/60 text-xs sm:text-sm truncate">{link.description}</p>
-                </div>
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white/40 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white/10 flex items-center justify-center text-white/70 mb-2 sm:mb-3 group-hover:bg-white/20 transition-colors">
+                <GitHubIcon />
               </div>
-            </motion.a>
-          ))}
-        </div>
+              <h3 className="font-semibold text-white text-xs sm:text-sm mb-0.5 sm:mb-1">
+                {t('landing.linktree.freeResources.systems.title')}
+              </h3>
+              <p className="text-white/50 text-[10px] sm:text-xs line-clamp-2 leading-relaxed">
+                {t('landing.linktree.freeResources.systems.description')}
+              </p>
+              <div className="mt-2 sm:mt-3">
+                <span className="px-2 py-0.5 bg-white/20 text-white/80 text-[10px] rounded-full font-medium">
+                  {t('landing.linktree.freeResources.systems.badge')}
+                </span>
+              </div>
+            </a>
+
+            {/* GTM Video */}
+            <button
+              onClick={() => setIsVideoOpen(true)}
+              className="p-3 sm:p-4 rounded-2xl bg-red-500/20 border border-red-500/30 backdrop-blur-md hover:bg-red-500/30 hover:border-red-500/50 transition-all duration-300 group active:scale-[0.98] cursor-pointer text-left"
+            >
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-red-500/30 flex items-center justify-center text-red-400 mb-2 sm:mb-3 group-hover:bg-red-500/40 transition-colors">
+                <YouTubeIcon />
+              </div>
+              <h3 className="font-semibold text-white text-xs sm:text-sm mb-0.5 sm:mb-1">
+                {t('landing.linktree.freeResources.gtmVideo.title')}
+              </h3>
+              <p className="text-white/50 text-[10px] sm:text-xs line-clamp-2 leading-relaxed">
+                {t('landing.linktree.freeResources.gtmVideo.description')}
+              </p>
+              <div className="mt-2 sm:mt-3">
+                <span className="px-2 py-0.5 bg-red-500/40 text-white text-[10px] rounded-full font-medium">
+                  {t('landing.linktree.freeResources.gtmVideo.badge')}
+                </span>
+              </div>
+            </button>
+          </div>
+        </motion.div>
 
         {/* Free Resources Section */}
         <motion.div
@@ -313,7 +511,7 @@ export default function LinktreePage() {
           className="w-full max-w-md mb-6 sm:mb-8"
         >
           <h3 className="text-white/50 text-[10px] sm:text-xs uppercase tracking-wider text-center mb-2.5 sm:mb-3">
-            Boilerplates
+            {t('landing.linktree.sections.boilerplates')}
           </h3>
           <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
             {boilerplates.map((item) => (

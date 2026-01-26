@@ -15,7 +15,7 @@ export const Background = ({
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
-    <div className="absolute left-0 top-0 w-full h-full overflow-hidden">
+    <div className="absolute left-0 top-0 w-full h-full overflow-hidden pointer-events-none z-0">
       <motion.div
         className="w-full h-full"
         initial={{ scale: 1.1 }}

@@ -122,8 +122,14 @@ export async function fetchMonthAvailability(
     if (data.data && Array.isArray(data.data)) {
       data.data.forEach((slot: { time: string }) => {
         const slotDate = new Date(slot.time);
-        if (slotDate.getMonth() === month && slotDate.getFullYear() === year) {
-          availableDays.add(slotDate.getDate());
+        // Get the date parts in the user's selected timezone
+        const dateInTimezone = new Date(slotDate.toLocaleString('en-US', { timeZone }));
+        const slotMonth = dateInTimezone.getMonth();
+        const slotYear = dateInTimezone.getFullYear();
+        const slotDay = dateInTimezone.getDate();
+
+        if (slotMonth === month && slotYear === year) {
+          availableDays.add(slotDay);
         }
       });
     }
