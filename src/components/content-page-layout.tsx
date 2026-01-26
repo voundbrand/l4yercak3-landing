@@ -4,7 +4,7 @@ import { useState, useEffect, ReactNode, createContext, useContext } from 'react
 import Link from 'next/link';
 import { GitHubLogoIcon, InstagramLogoIcon } from '@radix-ui/react-icons';
 import { cn } from '@/lib/utils';
-import { CommunityButton } from '@/components/community-button';
+import { Button } from '@/components/ui/button';
 import { MinimalNav } from '@/components/minimal-nav';
 import { useTranslation } from 'react-i18next';
 import { socialLinks } from '@/lib/constants';
@@ -30,21 +30,6 @@ const SunIcon = ({ className }: { className?: string }) => (
     <path d="M11.6029 4.39705C11.7982 4.59231 11.7982 4.90889 11.6029 5.10416L10.5423 6.16482C10.347 6.36008 10.0304 6.36008 9.83518 6.16482C9.63992 5.96955 9.63992 5.65297 9.83518 5.45771L10.8958 4.39705C11.0911 4.20178 11.4077 4.20178 11.6029 4.39705Z" fill="currentColor"/>
     <path d="M6.16482 9.83518C6.36008 10.0304 6.36008 10.347 6.16482 10.5423L5.10416 11.6029C4.90889 11.7982 4.59231 11.7982 4.39705 11.6029C4.20178 11.4077 4.20178 11.0911 4.39705 10.8958L5.45771 9.83518C5.65297 9.63992 5.96955 9.63992 6.16482 9.83518Z" fill="currentColor"/>
     <path d="M8 5.5C6.61929 5.5 5.5 6.61929 5.5 8C5.5 9.38071 6.61929 10.5 8 10.5C9.38071 10.5 10.5 9.38071 10.5 8C10.5 6.61929 9.38071 5.5 8 5.5Z" fill="currentColor"/>
-  </svg>
-);
-
-// Language Icons
-const ENIcon = ({ className }: { className?: string }) => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-    <rect width="16" height="16" rx="2" fill="currentColor" fillOpacity="0.1"/>
-    <text x="8" y="11" textAnchor="middle" fontSize="8" fontWeight="600" fill="currentColor">EN</text>
-  </svg>
-);
-
-const DEIcon = ({ className }: { className?: string }) => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-    <rect width="16" height="16" rx="2" fill="currentColor" fillOpacity="0.1"/>
-    <text x="8" y="11" textAnchor="middle" fontSize="8" fontWeight="600" fill="currentColor">DE</text>
   </svg>
 );
 
@@ -121,65 +106,79 @@ export function ContentPageLayout({
               l4yercak3
             </Link>
             
-            <div className="flex items-center gap-4">
-              {/* Language Toggle */}
-              <div className="flex items-center gap-1 p-1 rounded-full bg-black/5 dark:bg-white/5">
-                <button
-                  onClick={() => i18n.changeLanguage('en')}
-                  className={cn(
-                    "p-2 rounded-full transition-all duration-200",
-                    i18n.language === 'en' 
-                      ? "bg-white/20 text-current" 
-                      : "text-current/60 hover:text-current/80"
-                  )}
-                  title={t('common.english')}
-                >
-                  <ENIcon className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={() => i18n.changeLanguage('de')}
-                  className={cn(
-                    "p-2 rounded-full transition-all duration-200",
-                    i18n.language === 'de' 
-                      ? "bg-white/20 text-current" 
-                      : "text-current/60 hover:text-current/80"
-                  )}
-                  title={t('common.german')}
-                >
-                  <DEIcon className="w-4 h-4" />
-                </button>
-              </div>
-
+            <div className="flex items-center gap-2">
               {/* Reading Mode Toggle */}
-              <div className="flex items-center gap-1 p-1 rounded-full bg-black/5 dark:bg-white/5">
+              <div className={cn(
+                "flex items-center gap-1 p-1 rounded-full",
+                readingMode === 'sepia' ? "bg-amber-900/10" : "bg-foreground/10"
+              )}>
                 <button
                   onClick={() => setReadingMode('dark')}
                   className={cn(
-                    "p-2 rounded-full transition-all duration-200",
-                    readingMode === 'dark' 
-                      ? "bg-white/20 text-current" 
-                      : "text-current/60 hover:text-current/80"
+                    "px-2 py-1 rounded-full transition-all duration-200 flex items-center justify-center",
+                    readingMode === 'dark'
+                      ? "bg-foreground/20 text-foreground"
+                      : readingMode === 'sepia' ? "text-amber-700 hover:text-amber-900" : "text-foreground/60 hover:text-foreground/80"
                   )}
                   title={t('common.darkMode')}
                 >
-                  <MoonIcon className="w-4 h-4" />
+                  <MoonIcon className="w-3.5 h-3.5" />
                 </button>
                 <button
                   onClick={() => setReadingMode('sepia')}
                   className={cn(
-                    "p-2 rounded-full transition-all duration-200",
-                    readingMode === 'sepia' 
-                      ? "bg-amber-200/50 text-current" 
-                      : "text-current/60 hover:text-current/80"
+                    "px-2 py-1 rounded-full transition-all duration-200 flex items-center justify-center",
+                    readingMode === 'sepia'
+                      ? "bg-amber-200/50 text-amber-900"
+                      : "text-foreground/60 hover:text-foreground/80"
                   )}
                   title={t('common.sepiaMode')}
                 >
-                  <SunIcon className="w-4 h-4" />
+                  <SunIcon className="w-3.5 h-3.5" />
                 </button>
               </div>
-              
+
+              {/* Language Toggle */}
+              <div className={cn(
+                "flex items-center gap-1 p-1 rounded-full",
+                readingMode === 'sepia' ? "bg-amber-900/10" : "bg-foreground/10"
+              )}>
+                <button
+                  onClick={() => i18n.changeLanguage('en')}
+                  className={cn(
+                    "px-2 py-1 rounded-full text-xs font-semibold transition-all duration-200",
+                    i18n.language === 'en'
+                      ? readingMode === 'sepia' ? "bg-amber-200/50 text-amber-900" : "bg-foreground/20 text-foreground"
+                      : readingMode === 'sepia' ? "text-amber-700 hover:text-amber-900" : "text-foreground/60 hover:text-foreground/80"
+                  )}
+                  aria-label={t('navigation.switchToEnglish')}
+                >
+                  EN
+                </button>
+                <button
+                  onClick={() => i18n.changeLanguage('de')}
+                  className={cn(
+                    "px-2 py-1 rounded-full text-xs font-semibold transition-all duration-200",
+                    i18n.language === 'de'
+                      ? readingMode === 'sepia' ? "bg-amber-200/50 text-amber-900" : "bg-foreground/20 text-foreground"
+                      : readingMode === 'sepia' ? "text-amber-700 hover:text-amber-900" : "text-foreground/60 hover:text-foreground/80"
+                  )}
+                  aria-label={t('navigation.switchToGerman')}
+                >
+                  DE
+                </button>
+              </div>
+
               {/* Community Button */}
-              <CommunityButton />
+              <Button asChild size="sm" className="text-sm">
+                <Link
+                  href="https://www.skool.com/l4yercak3/about"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t('common.joinCommunity')}
+                </Link>
+              </Button>
             </div>
           </div>
         </div>

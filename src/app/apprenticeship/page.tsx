@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { ContentPageLayout, useContentTheme, useReadingMode } from '@/components/content-page-layout';
 import { ApprenticeshipModal } from '@/components/apprenticeship-modal';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
 
@@ -23,16 +24,9 @@ function ApprenticeshipContent() {
           {t('landing.apprenticeship.page.hero.subheadline')}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className={cn(
-              "inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium text-lg transition-colors",
-              "bg-primary text-primary-foreground hover:bg-primary/90",
-              readingMode === 'sepia' && "bg-amber-800 hover:bg-amber-700 text-amber-50"
-            )}
-          >
+          <Button size="lg" className="text-base" onClick={() => setIsModalOpen(true)}>
             {t('landing.apprenticeship.page.hero.cta')}
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -240,16 +234,9 @@ function ApprenticeshipContent() {
           <p className={cn("mb-6 transition-colors duration-300", theme.muted)}>
             {t('landing.apprenticeship.page.cta.description')}
           </p>
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className={cn(
-              "inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium text-lg transition-colors",
-              "bg-primary text-primary-foreground hover:bg-primary/90",
-              readingMode === 'sepia' && "bg-amber-800 hover:bg-amber-700 text-amber-50"
-            )}
-          >
+          <Button size="lg" className="text-base" onClick={() => setIsModalOpen(true)}>
             {t('landing.apprenticeship.page.cta.button')}
-          </button>
+          </Button>
         </div>
       </div>
 

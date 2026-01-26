@@ -1,7 +1,8 @@
 'use client';
 
+import Link from 'next/link';
 import { ContentPageLayout, useContentTheme } from '@/components/content-page-layout';
-import { CommunityButton } from '@/components/community-button';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
 
@@ -269,7 +270,15 @@ function ManifestoContent() {
               <div className="whitespace-pre-line italic mb-8">
                 {t('manifesto.sections.signature.content')}
               </div>
-              <CommunityButton />
+              <Button asChild size="lg" className="text-base">
+                <Link
+                  href="https://www.skool.com/l4yercak3/about"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t('common.joinCommunity')}
+                </Link>
+              </Button>
             </section>
           </div>
         </div>
