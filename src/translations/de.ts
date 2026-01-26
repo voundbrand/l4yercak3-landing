@@ -34,6 +34,7 @@ export const de = {
     valueCalculator: "Go to Market",
     buildSprint: "Build Sprint",
     toggleMenu: "Menü umschalten",
+    openMenu: "Menü öffnen",
     closeMenu: "Menü schließen",
     switchToEnglish: "Zu Englisch wechseln",
     switchToGerman: "Zu Deutsch wechseln"

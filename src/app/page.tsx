@@ -10,6 +10,7 @@ import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { UrgencyPill } from "@/components/urgency-pill";
 import { useLanguage } from "@/components/language-provider";
+import { MobileMenu } from "@/components/mobile-menu";
 import { cn } from "@/lib/utils";
 
 // Reading mode type
@@ -175,8 +176,8 @@ export default function Home() {
       <section className="relative h-[100dvh] w-full">
         <Background src="/layercake-bg.png" placeholder="/layercake-bg.png" />
 
-        {/* Reading Mode & Language Toggle - Top Left */}
-        <div className="absolute top-4 md:top-6 left-4 md:left-6 z-20 flex items-center gap-2">
+        {/* Reading Mode & Language Toggle - Top Left (Desktop Only) */}
+        <div className="absolute top-4 md:top-6 left-4 md:left-6 z-20 hidden md:flex items-center gap-2">
           {/* Reading Mode Toggle */}
           <div className="flex items-center gap-1 p-1 rounded-full bg-white/10 backdrop-blur-sm">
             <button
@@ -234,13 +235,13 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Urgency Pill - Top Center */}
+        {/* Urgency Pill - Top Center (visible on all screens) */}
         <div className="absolute top-4 md:top-6 left-1/2 -translate-x-1/2 z-20 px-4">
           <UrgencyPill />
         </div>
 
-        {/* Community CTA - Top Right */}
-        <div className="absolute top-4 md:top-6 right-4 md:right-6 z-20">
+        {/* Community CTA - Top Right (Desktop Only) */}
+        <div className="absolute top-4 md:top-6 right-4 md:right-6 z-20 hidden md:block">
           <Button asChild size="sm" className="text-sm">
             <Link
               href="https://www.skool.com/l4yercak3/about"
@@ -250,6 +251,17 @@ export default function Home() {
               {t("landing.hero.cta")}
             </Link>
           </Button>
+        </div>
+
+        {/* Mobile Menu - Top Right (Mobile Only) */}
+        <div className="absolute top-4 right-4 z-20 md:hidden">
+          <MobileMenu
+            readingMode={readingMode}
+            setReadingMode={setReadingMode}
+            language={language}
+            setLanguage={setLanguage}
+            variant="hero"
+          />
         </div>
 
         {/* Hero Content */}

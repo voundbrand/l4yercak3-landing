@@ -7,9 +7,7 @@ import LinkedInIcon from "./icons/linkedin";
 import YouTubeIcon from "./icons/youtube";
 import { socialLinks } from "@/lib/constants";
 import Link from "next/link";
-import { useLanguage } from "./language-provider";
 import { cn } from "@/lib/utils";
-import { ClientOnly } from "./client-only";
 import { useTranslation } from 'react-i18next';
 
 type ReadingMode = 'dark' | 'sepia';
@@ -19,7 +17,6 @@ interface FooterProps {
 }
 
 export const Footer = ({ readingMode = 'dark' }: FooterProps) => {
-  const { language, setLanguage } = useLanguage();
   const { t } = useTranslation();
 
   return (
@@ -65,46 +62,14 @@ export const Footer = ({ readingMode = 'dark' }: FooterProps) => {
       >
         <YouTubeIcon className="size-5 md:size-6" />
       </Link>
-      <Link 
-        target="_blank" 
-        className={cn(buttonVariants({ size: "icon" }), "md:w-12 md:h-12")} 
+      <Link
+        target="_blank"
+        className={cn(buttonVariants({ size: "icon" }), "md:w-12 md:h-12")}
         href={socialLinks.github}
         aria-label="Follow Remington on GitHub"
       >
         <GitHubLogoIcon className="size-5 md:size-6" />
       </Link>
-
-      {/* Language Toggle */}
-      <ClientOnly>
-        <div className="flex items-center gap-1">
-          <button
-            onClick={() => setLanguage('en')}
-            className={cn(
-              buttonVariants({ size: "icon" }),
-              "md:w-12 md:h-12 text-xs font-semibold transition-all duration-200",
-              language === 'en' 
-                ? "opacity-100" 
-                : "opacity-60 hover:opacity-80"
-            )}
-            aria-label={t('navigation.switchToEnglish')}
-          >
-            EN
-          </button>
-          <button
-            onClick={() => setLanguage('de')}
-            className={cn(
-              buttonVariants({ size: "icon" }),
-              "md:w-12 md:h-12 text-xs font-semibold transition-all duration-200",
-              language === 'de' 
-                ? "opacity-100" 
-                : "opacity-60 hover:opacity-80"
-            )}
-            aria-label={t('navigation.switchToGerman')}
-          >
-            DE
-          </button>
-        </div>
-      </ClientOnly>
       </div>
       
       {/* Legal Links */}

@@ -6,6 +6,7 @@ import { GitHubLogoIcon, InstagramLogoIcon } from '@radix-ui/react-icons';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { MinimalNav } from '@/components/minimal-nav';
+import { MobileMenu } from '@/components/mobile-menu';
 import { useTranslation } from 'react-i18next';
 import { socialLinks } from '@/lib/constants';
 import XLogoIcon from './icons/x';
@@ -106,7 +107,8 @@ export function ContentPageLayout({
               l4yercak3
             </Link>
             
-            <div className="flex items-center gap-2">
+            {/* Desktop Controls */}
+            <div className="hidden md:flex items-center gap-2">
               {/* Reading Mode Toggle */}
               <div className={cn(
                 "flex items-center gap-1 p-1 rounded-full",
@@ -180,12 +182,21 @@ export function ContentPageLayout({
                 </Link>
               </Button>
             </div>
+
+            {/* Mobile Menu */}
+            <MobileMenu
+              readingMode={readingMode}
+              setReadingMode={setReadingMode}
+              language={i18n.language as 'en' | 'de'}
+              setLanguage={(lang) => i18n.changeLanguage(lang)}
+              variant="content"
+            />
           </div>
         </div>
       </header>
 
-      {/* Navigation underneath the header divider */}
-      <div className="max-w-4xl mx-auto px-6 py-3">
+      {/* Navigation underneath the header divider (Desktop Only) */}
+      <div className="hidden md:block max-w-4xl mx-auto px-6 py-3">
         <MinimalNav />
       </div>
 
