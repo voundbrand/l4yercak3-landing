@@ -1,13 +1,12 @@
 'use client';
 
-import Link from 'next/link';
-import { ContentPageLayout, useContentTheme, useReadingMode } from '@/components/content-page-layout';
+import { ContentPageLayout, useContentTheme } from '@/components/content-page-layout';
+import { CommunityButton } from '@/components/community-button';
 import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
 
 function ManifestoContent() {
   const theme = useContentTheme();
-  const { readingMode } = useReadingMode();
   const { t } = useTranslation();
 
   return (
@@ -21,10 +20,10 @@ function ManifestoContent() {
             {t('manifesto.subtitle')}
           </p>
           <div className={cn("mt-8 text-sm transition-colors duration-300", theme.muted)}>
-            <time>{t('manifesto.publishedOn')} {new Date('2025-01-26').toLocaleDateString('en-US', { 
-              year: 'numeric', 
-              month: 'long', 
-              day: 'numeric' 
+            <time>{t('manifesto.publishedOn')} {new Date('2025-01-26').toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
             })}</time>
           </div>
         </div>
@@ -32,7 +31,7 @@ function ManifestoContent() {
         {/* Content */}
         <div className="prose prose-lg max-w-none">
           <div className={cn("text-xl leading-relaxed space-y-8 transition-colors duration-300", theme.content)}>
-            
+
             {/* Point Solution Era */}
             <section>
               <h2 className={cn("font-serif text-3xl italic mb-6 transition-colors duration-300", theme.headings)}>
@@ -48,7 +47,7 @@ function ManifestoContent() {
               <h2 className={cn("font-serif text-3xl italic mb-6 transition-colors duration-300", theme.headings)}>
                 {t('manifesto.sections.whatWeBelieve.title')}
               </h2>
-              
+
               {/* Systems Thinking */}
               <div className="mb-8">
                 <h3 className={cn("text-2xl font-semibold mb-4 transition-colors duration-300", theme.headings)}>
@@ -260,59 +259,18 @@ function ManifestoContent() {
               <h2 className={cn("font-serif text-3xl italic mb-6 transition-colors duration-300", theme.headings)}>
                 {t('manifesto.sections.joinUs.title')}
               </h2>
-              <div className="whitespace-pre-line mb-8">
+              <div className="whitespace-pre-line">
                 {t('manifesto.sections.joinUs.content')}
-              </div>
-              <div className="text-center">
-                <Link
-                  href="https://www.skool.com/l4yercak3/about"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    "inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium text-lg transition-colors",
-                    readingMode === 'sepia'
-                      ? 'bg-green-700 hover:bg-green-800 text-white'
-                      : 'bg-green-600 hover:bg-green-700 text-white'
-                  )}
-                >
-                  Join Free Community
-                </Link>
               </div>
             </section>
 
             {/* Signature */}
             <section className="text-center">
-              <div className="whitespace-pre-line italic">
+              <div className="whitespace-pre-line italic mb-8">
                 {t('manifesto.sections.signature.content')}
               </div>
+              <CommunityButton />
             </section>
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="mt-16 text-center">
-          <div className={cn("rounded-2xl p-8 transition-colors duration-300", theme.cta)}>
-            <h3 className={cn("font-serif text-2xl italic mb-4 transition-colors duration-300", theme.headings)}>
-              {t('manifesto.cta.title')}
-            </h3>
-            <p className={cn("mb-6 transition-colors duration-300", theme.muted)}>
-              {t('manifesto.cta.description')}
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="https://www.skool.com/l4yercak3/about"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  "inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium text-lg transition-colors",
-                  readingMode === 'sepia'
-                    ? 'bg-green-700 hover:bg-green-800 text-white'
-                    : 'bg-green-600 hover:bg-green-700 text-white'
-                )}
-              >
-                Join Free Community
-              </Link>
-            </div>
           </div>
         </div>
       </article>

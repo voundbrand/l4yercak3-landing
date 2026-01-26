@@ -19,6 +19,7 @@ export const de = {
     bookCall: "Anruf buchen",
     bookCallTitle: "Anruf buchen",
     letsConnect: "Mit uns in Kontakt treten",
+    joinCommunity: "Community beitreten",
     goToApp: "Zur App",
     availableTimes: "Verfügbare Zeiten",
     selectDate: "Wählen Sie ein Datum, um verfügbare Zeiten zu sehen",

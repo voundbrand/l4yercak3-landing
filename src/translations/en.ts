@@ -19,6 +19,7 @@ export const en = {
     bookCall: "Book a Call",
     bookCallTitle: "Book a Call",
     letsConnect: "Let's Connect",
+    joinCommunity: "Join Community",
     goToApp: "Go to App",
     availableTimes: "Available Times",
     selectDate: "Select a date to see available times",
