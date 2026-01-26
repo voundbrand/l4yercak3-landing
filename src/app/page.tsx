@@ -712,109 +712,62 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="flex flex-col h-full"
             >
-              <div className="flex items-center justify-between mb-4">
-                <h3 className={cn("font-semibold text-xl transition-colors duration-300", theme.headings)}>
-                  {t("landing.features.free.title")}
-                </h3>
-                <span className={cn("px-3 py-1 text-xs font-semibold rounded-full", readingMode === 'sepia' ? 'bg-green-200 text-green-800' : 'bg-green-500/20 text-green-400')}>
-                  {t("landing.features.free.subtitle")}
-                </span>
-              </div>
+              <h3 className={cn("font-semibold text-xl mb-4 transition-colors duration-300", theme.headings)}>
+                {t("landing.features.free.title")}
+              </h3>
               <div className={cn("p-6 md:p-8 rounded-2xl border flex flex-col flex-1 transition-colors duration-300", readingMode === 'sepia' ? 'bg-amber-100/80 border-amber-300/50' : 'bg-primary/5 border-primary/20')}>
-                {/* Feature Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                  {/* Fundamentals */}
-                  <div className={cn("p-3 rounded-xl transition-colors", readingMode === 'sepia' ? 'bg-amber-50/80' : 'bg-background/30')}>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className={cn("text-base", readingMode === 'sepia' ? 'text-amber-600' : 'text-primary')}>📹</span>
-                      <span className={cn("font-medium text-sm", theme.headings)}>{t("landing.features.free.items.fundamentals.title")}</span>
-                    </div>
-                    <p className={cn("text-xs leading-relaxed", theme.muted)}>{t("landing.features.free.items.fundamentals.description")}</p>
-                  </div>
+                {/* Compact Feature List */}
+                <ul className={cn("space-y-3 flex-1 transition-colors duration-300", theme.muted)}>
+                  <li className="flex items-start gap-3">
+                    <svg className={cn("w-4 h-4 mt-0.5 shrink-0", readingMode === 'sepia' ? 'text-amber-600' : 'text-primary')} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span>{t("landing.features.free.items.fundamentals.title")} — {t("landing.features.free.items.fundamentals.description")}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className={cn("w-4 h-4 mt-0.5 shrink-0", readingMode === 'sepia' ? 'text-amber-600' : 'text-primary')} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span>
+                      <Link
+                        href="https://github.com/voundbrand/l4yercak3-systems"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={cn("underline hover:no-underline", readingMode === 'sepia' ? 'text-amber-700 hover:text-amber-900' : 'text-primary hover:text-primary/80')}
+                      >
+                        {t("landing.features.free.items.frameworks.title")}
+                      </Link>
+                      {" "}— {t("landing.features.free.items.frameworks.description")}
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className={cn("w-4 h-4 mt-0.5 shrink-0", readingMode === 'sepia' ? 'text-amber-600' : 'text-primary')} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span>{t("landing.features.free.items.templates.title")} — {t("landing.features.free.items.templates.description")}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className={cn("w-4 h-4 mt-0.5 shrink-0", readingMode === 'sepia' ? 'text-amber-600' : 'text-primary')} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span>{t("landing.features.free.items.community.title")} — {t("landing.features.free.items.community.description")}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className={cn("w-4 h-4 mt-0.5 shrink-0", readingMode === 'sepia' ? 'text-amber-600' : 'text-primary')} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M13 10V3L4 14h7v7l9-11h-7z" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span>{t("landing.features.free.items.challenges.title")} — {t("landing.features.free.items.challenges.description")}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className={cn("w-4 h-4 mt-0.5 shrink-0", readingMode === 'sepia' ? 'text-amber-600' : 'text-primary')} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 10l7-7m0 0l7 7m-7-7v18" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span>{t("landing.features.free.items.levels.title")} — {t("landing.features.free.items.levels.description")}</span>
+                  </li>
+                </ul>
 
-                  {/* Frameworks */}
-                  <div className={cn("p-3 rounded-xl transition-colors", readingMode === 'sepia' ? 'bg-amber-50/80' : 'bg-background/30')}>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className={cn("text-base", readingMode === 'sepia' ? 'text-amber-600' : 'text-primary')}>📚</span>
-                      <span className={cn("font-medium text-sm", theme.headings)}>
-                        <Link
-                          href="https://github.com/voundbrand/l4yercak3-systems"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={cn("underline hover:no-underline", readingMode === 'sepia' ? 'hover:text-amber-700' : 'hover:text-primary/80')}
-                        >
-                          {t("landing.features.free.items.frameworks.title")}
-                        </Link>
-                      </span>
-                    </div>
-                    <p className={cn("text-xs leading-relaxed", theme.muted)}>{t("landing.features.free.items.frameworks.description")}</p>
-                  </div>
-
-                  {/* Templates */}
-                  <div className={cn("p-3 rounded-xl transition-colors", readingMode === 'sepia' ? 'bg-amber-50/80' : 'bg-background/30')}>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className={cn("text-base", readingMode === 'sepia' ? 'text-amber-600' : 'text-primary')}>📝</span>
-                      <span className={cn("font-medium text-sm", theme.headings)}>{t("landing.features.free.items.templates.title")}</span>
-                    </div>
-                    <p className={cn("text-xs leading-relaxed", theme.muted)}>{t("landing.features.free.items.templates.description")}</p>
-                  </div>
-
-                  {/* Community */}
-                  <div className={cn("p-3 rounded-xl transition-colors", readingMode === 'sepia' ? 'bg-amber-50/80' : 'bg-background/30')}>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className={cn("text-base", readingMode === 'sepia' ? 'text-amber-600' : 'text-primary')}>👥</span>
-                      <span className={cn("font-medium text-sm", theme.headings)}>{t("landing.features.free.items.community.title")}</span>
-                    </div>
-                    <p className={cn("text-xs leading-relaxed", theme.muted)}>{t("landing.features.free.items.community.description")}</p>
-                  </div>
-
-                  {/* Build Challenges */}
-                  <div className={cn("p-3 rounded-xl transition-colors", readingMode === 'sepia' ? 'bg-amber-50/80' : 'bg-background/30')}>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className={cn("text-base", readingMode === 'sepia' ? 'text-amber-600' : 'text-primary')}>🏆</span>
-                      <span className={cn("font-medium text-sm", theme.headings)}>{t("landing.features.free.items.challenges.title")}</span>
-                    </div>
-                    <p className={cn("text-xs leading-relaxed", theme.muted)}>{t("landing.features.free.items.challenges.description")}</p>
-                  </div>
-
-                  {/* Levels */}
-                  <div className={cn("p-3 rounded-xl transition-colors", readingMode === 'sepia' ? 'bg-amber-50/80' : 'bg-background/30')}>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className={cn("text-base", readingMode === 'sepia' ? 'text-amber-600' : 'text-primary')}>⬆️</span>
-                      <span className={cn("font-medium text-sm", theme.headings)}>{t("landing.features.free.items.levels.title")}</span>
-                    </div>
-                    <p className={cn("text-xs leading-relaxed", theme.muted)}>{t("landing.features.free.items.levels.description")}</p>
-                  </div>
-                </div>
-
-                {/* Level Breakdown */}
-                <div className={cn("p-4 rounded-xl border mb-6", readingMode === 'sepia' ? 'bg-amber-50/50 border-amber-200/50' : 'bg-background/20 border-border/20')}>
-                  <p className={cn("text-xs font-semibold uppercase tracking-wider mb-3", theme.muted)}>{t("landing.features.free.levelBreakdown.title")}</p>
-                  <div className="space-y-2">
-                    <div className="flex items-start gap-2 text-xs">
-                      <span className={cn("w-14 font-medium shrink-0", readingMode === 'sepia' ? 'text-amber-700' : 'text-primary')}>Level 1</span>
-                      <span className={theme.muted}>{t("landing.features.free.levelBreakdown.levels.level1")}</span>
-                    </div>
-                    <div className="flex items-start gap-2 text-xs">
-                      <span className={cn("w-14 font-medium shrink-0", readingMode === 'sepia' ? 'text-amber-700' : 'text-primary')}>Level 2</span>
-                      <span className={theme.muted}>{t("landing.features.free.levelBreakdown.levels.level2")}</span>
-                    </div>
-                    <div className="flex items-start gap-2 text-xs">
-                      <span className={cn("w-14 font-medium shrink-0", readingMode === 'sepia' ? 'text-amber-700' : 'text-primary')}>Level 3</span>
-                      <span className={theme.muted}>{t("landing.features.free.levelBreakdown.levels.level3")}</span>
-                    </div>
-                    <div className="flex items-start gap-2 text-xs">
-                      <span className={cn("w-14 font-medium shrink-0", readingMode === 'sepia' ? 'text-amber-700' : 'text-primary')}>Level 4</span>
-                      <span className={theme.muted}>{t("landing.features.free.levelBreakdown.levels.level4")}</span>
-                    </div>
-                    <div className="flex items-start gap-2 text-xs">
-                      <span className={cn("w-14 font-medium shrink-0", readingMode === 'sepia' ? 'text-amber-700' : 'text-primary')}>Level 5</span>
-                      <span className={theme.muted}>{t("landing.features.free.levelBreakdown.levels.level5")}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex justify-end mt-auto">
+                <div className="flex justify-end mt-6">
                   <Button asChild size="sm" className={cn("transition-colors shrink-0", readingMode === 'sepia' ? 'bg-green-700 hover:bg-green-800 text-white' : 'bg-green-600 hover:bg-green-700 text-white')}>
                     <Link
                       href="https://www.skool.com/l4yercak3/about"
