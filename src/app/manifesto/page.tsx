@@ -1,12 +1,13 @@
 'use client';
 
-import { ContentPageLayout, useContentTheme } from '@/components/content-page-layout';
-import { ConnectButton } from '@/components/connect-button';
+import Link from 'next/link';
+import { ContentPageLayout, useContentTheme, useReadingMode } from '@/components/content-page-layout';
 import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
 
 function ManifestoContent() {
   const theme = useContentTheme();
+  const { readingMode } = useReadingMode();
   const { t } = useTranslation();
 
   return (
@@ -259,8 +260,23 @@ function ManifestoContent() {
               <h2 className={cn("font-serif text-3xl italic mb-6 transition-colors duration-300", theme.headings)}>
                 {t('manifesto.sections.joinUs.title')}
               </h2>
-              <div className="whitespace-pre-line">
+              <div className="whitespace-pre-line mb-8">
                 {t('manifesto.sections.joinUs.content')}
+              </div>
+              <div className="text-center">
+                <Link
+                  href="https://www.skool.com/l4yercak3/about"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    "inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium text-lg transition-colors",
+                    readingMode === 'sepia'
+                      ? 'bg-green-700 hover:bg-green-800 text-white'
+                      : 'bg-green-600 hover:bg-green-700 text-white'
+                  )}
+                >
+                  Join Free Community
+                </Link>
               </div>
             </section>
 
@@ -283,7 +299,19 @@ function ManifestoContent() {
               {t('manifesto.cta.description')}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <ConnectButton />
+              <Link
+                href="https://www.skool.com/l4yercak3/about"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium text-lg transition-colors",
+                  readingMode === 'sepia'
+                    ? 'bg-green-700 hover:bg-green-800 text-white'
+                    : 'bg-green-600 hover:bg-green-700 text-white'
+                )}
+              >
+                Join Free Community
+              </Link>
             </div>
           </div>
         </div>

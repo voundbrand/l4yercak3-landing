@@ -28,6 +28,7 @@ export const en = {
   navigation: {
     home: "Home",
     manifesto: "Manifesto",
+    apprenticeship: "Apprenticeship",
     learnMore: "Ship Fast",
     valueCalculator: "Go to Market",
     buildSprint: "Build Sprint",

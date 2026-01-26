@@ -28,6 +28,7 @@ export const de = {
   navigation: {
     home: "Startseite",
     manifesto: "Manifest",
+    apprenticeship: "Lehre",
     learnMore: "Schnell Shippen",
     valueCalculator: "Go to Market",
     buildSprint: "Build Sprint",
