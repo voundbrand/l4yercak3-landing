@@ -124,7 +124,6 @@ const freeResources = [
     title: 'Layer Cake Systems',
     description: 'Go-to-market framework: ICP, Git, AI, storytelling & community.',
     repoHref: 'https://github.com/voundbrand/l4yercak3-systems',
-    videoHref: 'https://youtu.be/LY4tOG9K69Q',
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" strokeLinecap="round" strokeLinejoin="round" />
@@ -415,17 +414,15 @@ export default function LinktreePage() {
                         </svg>
                         Repo
                       </a>
-                      <a
-                        href={item.videoHref}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <button
+                        onClick={() => setIsVideoOpen(true)}
                         className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-500/20 hover:bg-red-500/30 border border-red-500/30 hover:border-red-500/50 text-white/80 hover:text-white text-xs sm:text-sm transition-all duration-300 active:scale-[0.98]"
                       >
                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                         </svg>
                         Watch
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>
