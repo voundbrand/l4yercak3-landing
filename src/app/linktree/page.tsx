@@ -9,8 +9,8 @@ import { Background } from '@/components/background';
 import { useLanguage } from '@/components/language-provider';
 import { cn } from '@/lib/utils';
 
-// YouTube video ID for the intro video
-const YOUTUBE_VIDEO_ID = "OwHQDLCFg0w";
+// YouTube video ID for the GTM masterclass
+const YOUTUBE_VIDEO_ID = "LY4tOG9K69Q";
 
 // Video Modal Component
 function VideoModal({
