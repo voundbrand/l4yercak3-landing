@@ -31,9 +31,6 @@ interface NavLink {
 const navLinks: NavLink[] = [
   { href: '/', labelKey: 'navigation.home' },
   { href: '/manifesto', labelKey: 'navigation.manifesto' },
-  { href: '/ship-fast', labelKey: 'navigation.learnMore' },
-  { href: '/go-to-market', labelKey: 'navigation.valueCalculator' },
-  { href: '/build-sprint', labelKey: 'navigation.buildSprint' },
 ];
 
 interface MinimalNavProps {
