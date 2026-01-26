@@ -1,272 +1,279 @@
 export const manifestoDe = {
   // Meta information
   title: "Das L4YERCAK3 Manifest",
-  subtitle: "Eine Erklärung darüber, wie Software funktionieren sollte",
+  subtitle: "Für Builder, die shippen aber nicht verkaufen können",
   publishedOn: "Veröffentlicht am",
   readMore: "Das vollständige Manifest lesen",
 
   // Preview text for landing page
-  preview: `Die Boilerplate-Ära ist vorbei. Im letzten Jahrzehnt haben Gründer dieselbe Infrastruktur für jedes Projekt neu gebaut. Auth. Datenbank. E-Mail. Payments. KI-Integration. Die gleichen 60% der Arbeit, immer und immer wieder.
+  preview: `"Du kannst alles bauen. Aber niemand kauft.
 
-Das Ergebnis? Talentierte Builder, die Monate mit Klempnerarbeit statt Produkten verbringen. First-Mover-Vorteil verloren durch Setup-Zeit. Ideen, die in der Entwicklungshölle sterben, weil die langweiligen Teile zu lange dauerten.
+Du hast Apps geshippt. Projekte abgeschlossen. Code geschrieben, der tatsächlich funktioniert. Du bist kein Anfänger mehr.
 
-Was dir niemand sagt: Dieses einfache Auth-System kostet dich drei Wochen. Payment-Integration? Noch mal zwei. E-Mail-Zustellbarkeit debuggen? Frag nicht. Bis du alles zusammengebaut hast, hat dein Konkurrent schon geshippt.
+Trotzdem ist deine Festplatte ein Friedhof von Produkten, die niemand benutzt hat. Deine Launches bekamen Likes von anderen Entwicklern, nicht von Kunden. Dein MRR ist immer noch null.
 
-Wir haben die langweiligen Teile gebaut. Alle. Auth, das funktioniert. Payments, die abrechnen. E-Mails, die im Posteingang landen. KI, die bereits verbunden ist. Datenbank, die skaliert. Eine Codebase. Eine Rechnung. Null Klempnerarbeit.
+Hier ist die unbequeme Wahrheit: Bauen ist der einfache Teil. Die Skills, die dich hierher gebracht haben, werden dich nicht weiterbringen.
 
-Hör auf, Infrastruktur-Ingenieur zu sein. Sei wieder Gründer.`,
+Du brauchst kein weiteres Tutorial. Du brauchst keine bessere Idee. Du musst die andere Hälfte des Spiels lernen—die Hälfte, die sie dir nie beigebracht haben.
 
-  // Simplified sections structure
+Hör auf, neu anzufangen. Fang an, Erfolge zu stapeln."`,
+
+  // Full manifesto sections
   sections: {
     pointSolutionEra: {
-      title: "Die Boilerplate-Ära ist vorbei",
-      content: `Im letzten Jahrzehnt waren Gründer in einer Schleife gefangen.
+      title: "Die Tutorial-Falle",
+      content: `Du hast die Videos geschaut. Die Kurse gemacht. Die Apps gebaut.
 
-Auth bauen. Datenbank konfigurieren. E-Mail einrichten. Payments integrieren. KI verbinden. Infrastruktur deployen. Für jedes einzelne Projekt wiederholen.
+Du kannst ein SaaS an einem Wochenende hochziehen. Du hast mehr MVPs geshippt als die meisten Entwickler in ihrer gesamten Karriere. Du kämpfst nicht mit Code—du kämpfst mit Kunden.
 
-Das ist Wahnsinn.
+Und hier wird es schlimmer: Je mehr du baust, desto mehr glaubst du, dass das nächste Projekt anders sein wird. Dieses Mal ist die Idee besser. Dieses Mal ist die Ausführung sauberer. Dieses Mal wird es funktionieren.
 
-Der durchschnittliche Gründer verbringt 60% seiner Entwicklungszeit mit Infrastruktur, die nichts mit seinem eigentlichen Produkt zu tun hat. Auth, das eine Library sein könnte. Datenbank, die ein Service sein könnte. Payments, die eine Integration sein könnten.
+Wird es nicht.
 
-Aber könnte sein ist nicht ist. Also bauen Gründer weiter dieselben langweiligen Teile neu, während ihre Konkurrenten shippen.
+Weil das Problem nie das Produkt war.
 
-Die Boilerplate-Ära gab uns die Entwicklungshölle.
+Das Problem ist, dass du die eine Hälfte des Spiels gemeistert und die andere komplett ignoriert hast. Du hast gelernt zu bauen. Du hast nie gelernt zu verkaufen.
 
-Die Compound-Builder-Ära gibt uns Zeit, tatsächlich zu bauen.`
+Der Markt belohnt nicht die besten Produkte. Er belohnt die Produkte, die ihre Käufer finden.
+
+Tutorial-Hölle geht nicht darum, Coden zu lernen. Es geht darum, dieselben Skills immer wieder zu lernen, während man die unbequemen vermeidet, die wirklich zählen.`
     },
+
     whatWeBelieve: {
       title: "Woran wir glauben",
       systemsThinking: {
-        title: "1. Ship-Geschwindigkeit ist alles",
-        content: `Das Zeitfenster für First-Mover-Vorteil wird in Wochen gemessen, nicht in Jahren.
+        title: "1. Bauen ist nur die halbe Miete",
+        content: `Jeder erfolgreiche Gründer weiß etwas, das du noch nicht gelernt hast:
 
-Jeder Tag, den du mit Auth verbringst, ist ein Tag, an dem dein Konkurrent Features baut. Jede Woche Infrastruktur-Konfiguration ist eine Woche, in der sie mit Kunden sprechen. Jeder Monat in der Entwicklungshölle ist ein Monat, in dem sie Umsatz generieren.
+Der Code ist vielleicht 30% der Arbeit. Positionierung, Messaging, Distribution, Sales, Pricing, Kundenrecherche—da leben oder sterben Produkte.
 
-Wir glauben an unerbittliche Shipping-Geschwindigkeit.
+Du hast die 30% optimiert und die 70% ignoriert.
 
-Die Gründer, die gewinnen, sind nicht die mit den besten Ideen. Es sind die, die am schnellsten validieren, am schnellsten iterieren und am schnellsten Umsatz generieren.
+Nicht weil du faul bist. Weil es dir niemand beigebracht hat. Weil die Entwickler-Community Code-Shipping feiert, nicht Umsatz-Shipping. Weil "Marketing" sich wie ein Schimpfwort anfühlt.
 
-Dein Job ist es, das Einzigartige zu bauen. Unser Job ist es, alles andere sofort verfügbar zu machen.`
+Ist es nicht. Es ist der Unterschied zwischen einem Nebenprojekt und einem Business.`
       },
       humansAI: {
-        title: "2. Systeme statt Services",
-        content: `SaaS-Produkte brauchen kein besseres Auth oder bessere Payments oder bessere E-Mail.
+        title: "2. KI beschleunigt, ersetzt nicht",
+        content: `KI-Tools lassen dich schneller bauen als je zuvor. Cursor, Claude, v0, Bolt—du kannst in Tagen shippen, was früher Monate dauerte.
 
-Sie brauchen Auth, das mit Payments spricht, das E-Mails auslöst, das das Dashboard aktualisiert, das Analytics füttert—alles zusammenarbeitend als ein System.
+Aber hier ist, was KI nicht für dich tun kann:
 
-Wir glauben daran, Systeme zu bauen, nicht Services.
+Sie kann dir nicht sagen, was du bauen sollst. Sie kann deine Kunden nicht finden. Sie kann dein Produkt nicht positionieren. Sie kann keine Verkaufsgespräche führen. Sie kann keine Einwände behandeln. Sie kann kein Vertrauen aufbauen.
 
-Punktlösungen optimieren ein Teil. Du findest die anderen neun heraus.
+KI ist ein Multiplikator. Wenn deine Strategie null ist, ist 10x null immer noch null.
 
-Compound-Plattformen optimieren den gesamten Stack, weil sie alle Teile besitzen.
-
-Das Ganze ist schneller als die Summe seiner Teile. Immer.`
+Die Builder, die gewinnen, ersetzen sich nicht selbst mit KI. Sie nutzen KI, um schneller voranzukommen, während sie ihre menschliche Energie auf das fokussieren, was wirklich zählt: Kunden verstehen und echte Probleme lösen.`
       },
       expansionOverAcquisition: {
-        title: "3. Builder + KI, nicht Builder vs. KI",
-        content: `Die Erzählung über KI ist kaputt.
+        title: "3. Fertigwerden schlägt Anfangen",
+        content: `Dein Friedhof halbfertiger Projekte ist keine Lernerfahrung. Es ist ein Muster.
 
-Eine Seite fürchtet Ersetzung. Die andere verspricht Magie. Beide liegen falsch.
+Jedes Mal, wenn du ein Projekt aufgibst, verlierst du. Nicht weil die Idee gut war—sie war vielleicht schrecklich. Aber weil du nie lang genug geblieben bist, um zu lernen, was falsch war.
 
-KI baut keine Produkte. Builder tun es. KI beschleunigt Builder.
+Die Gründer, die es schaffen, sind nicht die mit den besten ersten Ideen. Sie sind die, die lang genug im Spiel geblieben sind, um sich zu etwas durchzuiterieren, das funktioniert.
 
-Der Gründer, der KI nutzen kann, um 3x schneller zu shippen, wird nicht ersetzt—er wird unaufhaltbar. KI, die Boilerplate übernimmt, eliminiert nicht die Entwicklung. Sie eliminiert die langweiligen Teile der Entwicklung.
+Anfangen ist einfach. Anfangen macht Spaß. Anfangen ist, wo du das Gefühl hast, alles sei möglich.
 
-Wir bauen KI, die Builder-Kapazität multipliziert, nicht Builder-Kreativität ersetzt.
+Fertigwerden ist, wo du lernst. Fertigwerden ist, wo du wächst. Fertigwerden ist, wo das Geld ist.
 
-Das ist keine Ersetzung. Das ist Verstärkung.`
+Du hast kein Ideen-Problem. Du hast ein Fertigwerden-Problem.`
       },
       privacyAsRight: {
-        title: "4. Expansion statt Akquisition",
-        content: `Traditionelle SaaS ist süchtig nach neuen Logos.
+        title: "4. Verkaufen ist nicht schmierig",
+        content: `Irgendwann hast du entschieden, dass Sales manipulativ ist. Dass Marketing für Scharlatane ist. Dass gute Produkte sich selbst verkaufen.
 
-Einmal verkaufen. Auf Verlängerung hoffen. Geld für Kundenakquise verbrennen. Wiederholen bis Exit oder Tod.
+Das ist die größte Lüge in Tech.
 
-Dieses Modell ist kaputt.
+Gute Produkte verkaufen sich nicht selbst. Sie sterben in Vergessenheit, während schlechtere Produkte mit besserem Marketing den Markt übernehmen.
 
-Wir glauben an ein anderes Modell: Wert beweisen, dann expandieren.
+Verkaufen heißt nicht, Leute zu überzeugen, Dinge zu kaufen, die sie nicht brauchen. Verkaufen heißt, Leute mit Problemen zu finden und ihnen zu zeigen, dass du diese Probleme lösen kannst.
 
-Mit einem Projekt starten. Ergebnisse liefern. Das Recht verdienen, die Beziehung auszubauen. Nur expandieren, wenn du den Wert selbst erlebst.
+Wenn dein Produkt Menschen wirklich hilft, ist es egoistisch, es nicht zu verkaufen. Du hältst die Lösung von den Menschen fern, die sie brauchen, weil du dich unwohl dabei fühlst, Gespräche zu führen.
 
-Unser Erfolg hängt vollständig von deinem Erfolg ab.
-
-Wenn der Build Sprint keine Ergebnisse liefert, machst du nicht weiter. Wenn wir dir nicht beim Shippen helfen, verdienen wir dein Geschäft nicht.
-
-Wir wachsen mit dir. Oder wir wachsen gar nicht.`
+Das Unbehagen, das du bei Sales empfindest, kostet dich alles.`
       },
       compoundLearning: {
-        title: "5. Privatsphäre als Recht, nicht als Feature",
-        content: `Die Daten deiner Nutzer sind keine Monetarisierungsmöglichkeit. Sie sind eine Verantwortung.
+        title: "5. Community schlägt Isolation",
+        content: `Du hast versucht, das alleine herauszufinden.
 
-Deine Daten leben in der EU. Verarbeitet von EU-souveräner KI. Geschützt durch deutsches Recht.
+Blogposts lesen. YouTube-Videos schauen. Auf Reddit lurken. Ratschläge von Leuten aufnehmen, mit denen du nie sprechen wirst.
 
-Keine US-Server-Übertragung. Keine Compliance-Abkürzungen. Kein Wir arbeiten an Zertifizierungen. Entweder bist du am ersten Tag compliant, oder nicht.
+Und es funktioniert nicht.
 
-Wir glauben, Privatsphäre ist ein Recht, kein Feature, für das du extra bezahlst.`
+Weil ein Business aufzubauen kein Informationsproblem ist. Es ist ein Accountability-Problem. Ein Feedback-Problem. Ein "jemand muss dir sagen, dass deine Idee schlecht ist, bevor du 6 Monate damit verbringst, sie zu bauen"-Problem.
+
+Die Builder, die es schaffen, sind nicht schlauer. Sie sind umgeben von anderen Buildern, die sie pushen, herausfordern und zur Verantwortung ziehen.
+
+Isolation fühlt sich sicher an. Community liefert Ergebnisse.`
       },
       invisibleIntegration: {
-        title: "6. Integration sollte unsichtbar sein",
-        content: `Wenn du Custom Code schreibst, um dein Auth mit deiner Datenbank mit deiner E-Mail mit deinen Payments zu verbinden, hat jemand versagt.
+        title: "6. Erfahrung schlägt Theorie",
+        content: `Du kannst jedes Buch über Sales lesen. Jedes Video über Marketing schauen. Jeden Kurs über Positionierung machen.
 
-Wenn du Zapier-Workflows zwischen deinen eigenen Systemen pflegst, hat jemand versagt.
+Nichts davon zählt, bis du es tust.
 
-Wenn du der Kleber zwischen deiner eigenen Infrastruktur bist, hat jemand versagt.
+Die Lücke zwischen Wissen und Tun ist, wo die meisten Builder sterben. Sie werden Experten in Theorie, während sie Amateure in der Praxis bleiben.
 
-Integration sollte unsichtbar sein.
+Echtes Lernen passiert im Feld. Mit Kunden reden. Abgelehnt werden. Deinen Pitch anpassen. Nochmal versuchen. Besser scheitern.
 
-Anwendungen, die auf einem einheitlichen Datenmodell aufbauen, sprechen automatisch miteinander. Events triggern Workflows. Daten fließen nahtlos. Du baust Features statt Verbindungen.
-
-Wir glauben, Software sollte zusammenarbeiten, ohne dass du darüber nachdenken musst.`
+Der schnellste Weg zu lernen ist nicht Konsum. Es ist Handeln mit Feedback.`
       },
       compoundPlatforms: {
-        title: "7. Compound-Plattformen gewinnen",
-        content: `Das ist keine Meinung. Das ist Marktrealität.
+        title: "7. Kleine Gewinne kumulieren",
+        content: `Du wartest auf den großen Durchbruch. Den viralen Launch. Das Hockey-Stick-Wachstum.
 
-Vercel startete mit Deployment. Jetzt verkaufen sie die gesamte Frontend-Cloud.
-Supabase startete mit Datenbank. Jetzt haben sie Auth, Storage, Edge Functions.
-Stripe startete mit Payments. Jetzt haben sie Billing, Invoicing, Identity, Radar.
+So funktioniert es nicht.
 
-Das Muster ist unverkennbar: Compound-Plattformen fressen Punktlösungen zum Frühstück.
+Jeder erfolgreiche Gründer, den du bewunderst, hat sein Publikum langsam aufgebaut. Erste Kunden kamen einzeln. Wachstum passierte durch konstante, langweilige Arbeit über Monate und Jahre.
 
-Warum? Weil echte Produkte mehrere Domänen umfassen. Gründer wollen keine zehn spezialisierten Tools. Sie wollen ein System, das die langweiligen Teile erledigt, damit sie sich auf die interessanten konzentrieren können.
+Die Overnight-Erfolge, die du siehst? Sie sind die sichtbare Spitze von Jahren unsichtbarer Arbeit.
 
-Punktlösungen optimieren für Einfachheit. Compound-Plattformen optimieren fürs Shippen.`
+Hör auf, auf den Durchbruch zu warten. Fang an, kleine Gewinne zu stapeln. Erstes Gespräch. Erste Anmeldung. Erster Euro. Erste Hundert. Erste Tausend.
+
+Jeder kleine Gewinn schafft Momentum. Momentum schafft Selbstvertrauen. Selbstvertrauen schafft den nächsten Gewinn.
+
+So funktioniert es wirklich.`
       }
     },
+
     whatWeReject: {
       title: "Was wir ablehnen",
       items: [
         {
-          title: "Wir lehnen ab: Infrastruktur, die gegen dich kämpft",
-          content: "Wenn du mehr Zeit mit Tool-Konfiguration verbringst als mit Feature-Bau, haben deine Tools dich im Stich gelassen.\n\nInfrastruktur sollte das Bauen beschleunigen, nicht verlangsamen."
+          title: "Wir lehnen ab: In Isolation bauen",
+          content: "Wenn du deine Arbeit nur mit anderen Entwicklern teilst, machst du kein Marketing—du performst.\n\nDeine Kunden sind nicht auf Hacker News. Sie checken nicht Product Hunt. Sie sind woanders und warten darauf, gefunden zu werden."
         },
         {
-          title: "Wir lehnen ab: KI-Hype ohne KI-Substanz",
-          content: "KI-powered bedeutet nichts, wenn es nicht schneller shippt.\n\nTechnologie sollte deinen Output multiplizieren, nicht deine Buzzword-Anzahl."
+          title: "Wir lehnen ab: Ideen über Ausführung",
+          content: "Deine Idee ist nicht besonders. Jemand anders hat sie schon gedacht. Jemand anders baut sie wahrscheinlich gerade.\n\nWas zählt, ist nicht die Idee. Es ist, wer besser ausführt und wer die Kunden zuerst findet."
         },
         {
-          title: "Wir lehnen ab: Boilerplate als Geschäftsmodell",
-          content: "Gründern Geld dafür zu berechnen, dieselbe Infrastruktur für jedes Projekt neu zu bauen, ist kein Service—es ist eine Steuer auf Ambition.\n\nDie langweiligen Teile sollten einmal gelöst werden, für alle."
+          title: "Wir lehnen ab: Perfektion vor Launch",
+          content: "Dein MVP muss nicht perfekt sein. Er muss existieren.\n\nEtwas Unperfektes zu shippen lehrt dich mehr als etwas Perfektes zu planen es je wird."
         },
         {
-          title: "Wir lehnen ab: Privatsphäre als verhandelbares Feature",
-          content: "Wenn deine Infrastruktur standardmäßig Nutzerdaten an ausländische Server überträgt, bietest du keine Plattform—du erschaffst Haftung.\n\nCompliance ist nicht optional."
+          title: "Wir lehnen ab: Metriken über Geld",
+          content: "Vanity-Metriken—Follower, Likes, Stars—sind Entwickler-Dopamin. Sie fühlen sich gut an und bedeuten nichts.\n\nDie einzige Metrik, die zählt, ist Umsatz. Alles andere ist Ablenkung."
         },
         {
-          title: "Wir lehnen ab: Komplexität getarnt als Flexibilität",
-          content: "Du kannst alles anpassen bedeutet oft du musst alles konfigurieren.\n\nWir bauen, was standardmäßig funktioniert, nicht was nach einer Woche Setup funktioniert."
+          title: "Wir lehnen ab: Es alleine durchziehen",
+          content: "Der einsame Genie-Gründer ist ein Mythos. Hinter jedem Erfolg steht ein Netzwerk von Unterstützern, Beratern und Community.\n\nUm Hilfe zu bitten ist keine Schwäche. Es ist Hebel."
         }
       ]
     },
+
     whyNow: {
       title: "Warum jetzt?",
-      subtitle: "Drei Kräfte konvergieren:",
+      subtitle: "Drei Dinge haben sich geändert:",
       forces: [
         {
-          title: "1. KI hat die Schwelle überschritten",
-          content: "Private LLMs funktionieren zuverlässig. EU-souveränes Hosting ist verfügbar. Agent-Frameworks sind ausgereift.\n\nKI ist nicht mehr experimentell. Sie ist produktionsreif.\n\nGründer, die 2025 KI-beschleunigte Entwicklung einsetzen, werden bis 2027 doppelt so viel geshippt haben."
+          title: "1. Bauen war noch nie einfacher",
+          content: "KI-Tools haben die Zeit von Idee zu MVP kollabieren lassen. Was Monate dauerte, dauert jetzt Tage. Was Teams brauchte, braucht jetzt eine Person.\n\nDas ist unglaublich für Builder. Es ist auch eine Falle.\n\nWenn jeder schnell bauen kann, hört schnell bauen auf, ein Vorteil zu sein. Der neue Vorteil ist alles andere—Positionierung, Distribution, Sales.\n\nDas Spiel hat sich geändert. Die meisten Builder haben es nicht bemerkt."
         },
         {
-          title: "2. Boilerplate-Ökonomie ist kollabiert",
-          content: "Jeder Gründer, der Auth neu baut, verschwendet Zeit. Jedes Team, das Payments von Grund auf konfiguriert, verbrennt Geld. Niemand will gelöste Probleme lösen.\n\nDer Markt konsolidiert sich um Plattformen, die Setup eliminieren."
+          title: "2. Der Markt ist überflutet",
+          content: "Jeder Markt ist überfüllt. Jede Nische hat Konkurrenz. Die \"bau etwas und sie werden kommen\"-Ära ist vorbei.\n\nHerauszustechen erfordert Skills, die nichts mit Code zu tun haben. Es erfordert, Kunden tief zu verstehen. Scharf zu positionieren. Klar zu kommunizieren.\n\nDer technische Burggraben ist weg. Der neue Burggraben ist Go-to-Market."
         },
         {
-          title: "3. Gründer sind bereit",
-          content: "Die Toleranz für Entwicklungsreibung ist auf einem Allzeittief. Gründer haben gesehen, was mit modernen Tools möglich ist. Sie erwarten, schnell zu shippen.\n\nDer Appetit auf Geschwindigkeit war noch nie höher."
+          title: "3. Builder sind bereit",
+          content: "Es gibt eine Generation von Buildern, die das seit Jahren machen. Bauen, launchen, scheitern, neu anfangen.\n\nSie sind müde. Sie sind frustriert. Und sie sind endlich bereit zuzugeben, dass das, was sie gemacht haben, nicht funktioniert.\n\nDer Appetit auf einen anderen Ansatz war noch nie höher."
         }
       ]
     },
+
     theStakes: {
-      title: "Die Einsätze",
+      title: "Was auf dem Spiel steht",
       ifRight: {
-        title: "Wenn wir recht haben:",
-        content: "Gründer, die auf Compound-Plattformen bauen, werden:\n- Erste am Markt (während Konkurrenten konfigurieren)\n- Kapitaleffizient (mehr shippen mit weniger)\n- Attraktiv für Investoren (Velocity zählt)\n- Frei, sich zu fokussieren (auf Probleme, die es wert sind, gelöst zu werden)"
+        title: "Wenn du das lernst:",
+        content: "Du wirst der seltene Builder, der beides kann. Bauen UND verkaufen. Shippen UND verteilen. Erschaffen UND Wert erfassen.\n\nEs geht nicht darum, Marketer statt Entwickler zu werden. Es geht darum, komplett zu werden.\n\nDie Builder, die beide Seiten meistern, kämpfen nicht um Kunden. Sie wählen, mit welchen Kunden sie arbeiten. Sie bauen Hebel. Sie bauen Freiheit."
       },
       ifWrong: {
-        title: "Wenn wir falsch liegen:",
-        content: "Wir gehen pleite. Gründer bauen zum 47. Mal Auth neu.\n\nAber wir liegen nicht falsch."
+        title: "Wenn du es nicht tust:",
+        content: "Noch ein Jahr Projekte starten. Noch ein Friedhof aufgegebener Ideen. Noch eine Runde glauben, dass das nächste anders sein wird.\n\nDas Muster bricht sich nicht selbst. Du musst es brechen.\n\nOder du bist in 12 Monaten wieder hier, immer noch null Umsatz, immer noch am Fragen warum."
       }
     },
+
     theMovement: {
-      title: "Unser Engagement",
-      content: `Für unsere Builder:
+      title: "Das ist L4YERCAK3",
+      content: `Eine Community für Builder, die fertig sind mit Neuanfängen.
 
-Wir werden niemals neue Kunden über den Erfolg bestehender Builder priorisieren. Unser Geschäftsmodell hängt davon ab, dass du shippst—was bedeutet, wir gewinnen nur, wenn du gewinnst.
+Die bereit sind, die andere Hälfte des Spiels zu lernen.
 
-Dein Launch ist kein Nebeneffekt. Es ist das gesamte Geschäftsmodell.
+Die von anderen umgeben sein wollen, die dasselbe tun.
 
-Für unser Team:
+Die verstehen, dass die Skills, die sie haben, wertvoll sind—aber unvollständig.
 
-Wir werden Infrastruktur bauen, die echte Probleme löst, nicht Features, die in Demos gut aussehen.
+Das ist kein Kurs. Das ist keine Abkürzung. Das ist die harte Arbeit, ein kompletter Builder zu werden.
 
-Code zu versenden ist nicht das Ziel. Buildern beim Shippen zu helfen ist es.
-
-Für uns selbst:
-
-Wir werden diese Überzeugungen nicht für kurzfristigen Umsatz kompromittieren. Wir werden Privatsphäre nicht für Bequemlichkeit opfern.
-
-Wir werden die Plattform bauen, die wir uns gewünscht hätten, als wir anfingen.`
+Wir sind hier, um zu helfen. Aber du musst die Arbeit machen.`
     },
+
     theInvitation: {
       title: "Die Einladung",
-      content: `Das geht nicht nur um l4yercak3. Das geht darum, wie Software gebaut werden sollte.
+      content: `Wenn du es satt hast, Dinge zu bauen, die niemand kauft.
 
-Wir bauen den Beweis, dass Compound-Plattformen Gründern profitabel dienen können. Dass KI Builder-Kapazität multiplizieren kann. Dass die langweiligen Teile einmal gelöst werden können, für alle.
+Wenn du bereit bist zu lernen, wie man verkauft, ohne sich schmierig zu fühlen.
 
-Wenn wir erfolgreich sind, beweisen wir, dass das Modell funktioniert. Dann hat jeder Gründer einen Plan für schnelleres Shippen.
+Wenn du von Buildern umgeben sein willst, die sich gegenseitig pushen, wirklich zu shippen UND zu verkaufen.
 
-Das ist größer als ein Unternehmen.`
+Wenn du fertig bist mit der Tutorial-Falle und bereit für das Echte.
+
+Dann ist diese Community für dich.`
     },
+
     ourCommitment: {
       title: "Unser Engagement",
       toCustomers: {
-        title: "Für unsere Builder:",
-        content: "Wir werden niemals neue Kunden über den Erfolg bestehender Builder priorisieren. Unser Geschäftsmodell hängt davon ab, dass du shippst—was bedeutet, wir gewinnen nur, wenn du gewinnst.\n\nDein Launch ist kein Nebeneffekt. Es ist das gesamte Geschäftsmodell."
+        title: "An unsere Community:",
+        content: "Wir werden dir Frameworks geben, die funktionieren, nicht Theorie, die gut klingt. Alles, was wir lehren, wurde im Feld getestet.\n\nWir versprechen keinen Overnight-Erfolg. Ein echtes Business aufzubauen braucht Zeit. Aber wir stellen sicher, dass diese Zeit kumuliert statt verschwendet wird."
       },
       toTeam: {
-        title: "Für unser Team:",
-        content: "Wir werden Infrastruktur bauen, die echte Probleme löst, nicht Features, die in Demos gut aussehen.\n\nCode zu versenden ist nicht das Ziel. Buildern beim Shippen zu helfen ist es."
+        title: "An uns selbst:",
+        content: "Wir werden praktizieren, was wir predigen. Alles, was wir von dir verlangen, haben wir selbst gemacht.\n\nWir sind keine Gurus. Wir sind Builder, die auf die harte Tour gelernt haben und deinen Weg kürzer machen wollen."
       },
       toIndustry: {
-        title: "Für unsere Branche:",
-        content: "Wir werden unsere Erkenntnisse offen veröffentlichen. Wir werden unsere Fehler transparent teilen. Wir werden beweisen, dass Compound-Plattformen Gründern profitabel dienen können.\n\nWenn wir erfolgreich sind, profitiert die gesamte Branche."
+        title: "An die Branche:",
+        content: "Wir werden beweisen, dass technische Builder lernen können zu verkaufen. Dass die Maker/Marketer-Trennung falsch ist. Dass dieselbe Person, die den Code schreibt, den Deal abschließen kann.\n\nWir bauen den Beweis."
       },
       toOurselves: {
-        title: "Für uns selbst:",
-        content: "Wir werden diese Überzeugungen nicht für kurzfristigen Umsatz kompromittieren. Wir werden Privatsphäre nicht für Bequemlichkeit opfern.\n\nWir werden die Plattform bauen, die wir uns gewünscht hätten, als wir anfingen."
+        title: "An dich:",
+        content: "Wir werden ehrlich sein. Wenn deine Idee schlecht ist, sagen wir es dir. Wenn du die harte Arbeit vermeidest, rufen wir es auf. Wenn du nicht bereit bist, sagen wir es.\n\nKomfort baut keine Businesses. Die Wahrheit tut es."
       }
     },
+
     bottomLine: {
       title: "Das Fazit",
-      content: "Die Boilerplate-Ära gab uns die Entwicklungshölle.\n\nCompound-Plattformen geben uns Zeit zum Bauen.\n\nL4YERCAK3 gibt Gründern die Freiheit, sich auf das Wichtige zu konzentrieren statt auf das, was schon gelöst wurde.\n\nDas ist unser Manifest. Das ist, woran wir glauben. Das ist, was wir bauen."
+      content: `Du kannst alles bauen.
+
+Jetzt lern, es zu verkaufen.
+
+Der Friedhof aufgegebener Projekte ist voll von Buildern, die sich geweigert haben, die andere Hälfte zu lernen.
+
+Sei nicht einer von ihnen.`
     },
+
     joinUs: {
-      title: "Schließ dich uns an",
-      content: `Wenn du glaubst:
-- Ship-Geschwindigkeit schlägt Perfektionismus
-- Systeme schlagen Services
-- KI sollte Builder multiplizieren, nicht ersetzen
-- Software sollte unsichtbar zusammenarbeiten
-- Privatsphäre ist ein Recht, nicht ein Feature
-- Compound-Plattformen gewinnen
+      title: "Tritt der Community bei",
+      content: `Hör auf, alleine zu bauen.
 
-Dann bist du Teil dieser Bewegung.
+Hör auf, alleine zu lernen.
 
-Die Compound-Builder-Ära ist da. Sei Teil des Aufbaus.`
+Hör auf, alleine zu scheitern.
+
+Schließ dich Buildern an, die die harte Arbeit zusammen machen.
+
+Die kostenlose Community ist offen. Die Frameworks warten. Das Einzige, was fehlt, bist du.`
     },
+
     signature: {
-      content: "Unterzeichnet,\nDas L4YERCAK3 Team"
+      content: "— Remington\nGründer, L4YERCAK3"
     }
   },
 
   // Call to action
   cta: {
-    title: "Bereit zu shippen?",
-    description: "Schließ dich den Gründern an, die schneller bauen, weil sie mit mehr starten.",
-    buttons: {
-      scheduleCall: "Strategie-Gespräch buchen",
-      calculateROI: "Tue mehr mit weniger",
-      readStory: "Für Build Sprint bewerben"
-    }
+    title: "Bereit, die andere Hälfte zu lernen?",
+    description: "Tritt der kostenlosen Community bei. Hol dir die Frameworks. Fang an zu bauen UND zu verkaufen."
   }
 };
