@@ -71,14 +71,42 @@ export const landingEn = {
     header: "What You Get (Free)",
     free: {
       title: "Free Community Access",
+      subtitle: "Real value, no credit card required",
       items: {
-        frameworks: "L4YERCAK3 Systems — 5 battle-tested frameworks for ICP research, rapid validation, StoryBrand messaging",
-        tutorials: "Structured video content: Go-to-market, AI workflows, Git basics, and storytelling",
-        templates: "Templates for outreach, proposals, and pricing",
-        icp: "ICP worksheets to find your ideal clients",
-        teardowns: "Project teardowns showing what works",
-        community: "A community of builders who actually ship",
-        gamification: "Gamification: level up to unlock more",
+        fundamentals: {
+          title: "5 Core Video Lessons",
+          description: "Why most builders fail, the 3 things you need, picking projects worth finishing, building offers, reaching buyers",
+        },
+        frameworks: {
+          title: "L4YERCAK3 Systems (GitHub)",
+          description: "5 battle-tested frameworks for ICP research, rapid validation, StoryBrand messaging",
+        },
+        templates: {
+          title: "Templates & Worksheets",
+          description: "ICP worksheets, basic outreach scripts — more templates unlock as you level up",
+        },
+        community: {
+          title: "Active Community",
+          description: "Builders sharing progress, asking questions, helping each other ship",
+        },
+        challenges: {
+          title: "Monthly Build Challenges",
+          description: "Real briefs, community voting, winner showcases — build your portfolio",
+        },
+        levels: {
+          title: "Gamification System",
+          description: "Participate to level up — unlock better templates, teardowns, and direct feedback",
+        },
+      },
+      levelBreakdown: {
+        title: "What You Unlock",
+        levels: {
+          level1: "Access to fundamentals + community",
+          level2: "ICP worksheet + basic outreach script",
+          level3: "Full ICP template + cold DM templates + email sequences",
+          level4: "Project scoping + pricing framework + proposal template",
+          level5: "Build challenges + past winner gallery",
+        },
       },
     },
     upgrade: {
@@ -428,14 +456,42 @@ export const landingDe = {
     header: "Was du bekommst (Kostenlos)",
     free: {
       title: "Kostenloser Community-Zugang",
+      subtitle: "Echter Wert, keine Kreditkarte nötig",
       items: {
-        frameworks: "L4YERCAK3 Systems — 5 praxiserprobte Frameworks für ICP-Research, schnelle Validierung, StoryBrand-Messaging",
-        tutorials: "Strukturierte Video-Inhalte: Go-to-Market, KI-Workflows, Git-Grundlagen und Storytelling",
-        templates: "Templates für Outreach, Proposals und Pricing",
-        icp: "ICP-Worksheets um deine idealen Kunden zu finden",
-        teardowns: "Projekt-Teardowns, die zeigen was funktioniert",
-        community: "Eine Community von Buildern, die wirklich liefern",
-        gamification: "Gamification: Level auf um mehr freizuschalten",
+        fundamentals: {
+          title: "5 Kern-Videolektionen",
+          description: "Warum die meisten Builder scheitern, die 3 Dinge die du brauchst, Projekte auswählen die es wert sind, Angebote erstellen, Käufer erreichen",
+        },
+        frameworks: {
+          title: "L4YERCAK3 Systems (GitHub)",
+          description: "5 praxiserprobte Frameworks für ICP-Research, schnelle Validierung, StoryBrand-Messaging",
+        },
+        templates: {
+          title: "Templates & Worksheets",
+          description: "ICP-Worksheets, einfache Outreach-Scripts — mehr Templates freischalten durch Leveln",
+        },
+        community: {
+          title: "Aktive Community",
+          description: "Builder die Fortschritte teilen, Fragen stellen, sich gegenseitig beim Shippen helfen",
+        },
+        challenges: {
+          title: "Monatliche Build Challenges",
+          description: "Echte Briefs, Community-Voting, Gewinner-Showcases — bau dein Portfolio auf",
+        },
+        levels: {
+          title: "Gamification System",
+          description: "Mitmachen um zu leveln — bessere Templates, Teardowns und direktes Feedback freischalten",
+        },
+      },
+      levelBreakdown: {
+        title: "Was du freischaltest",
+        levels: {
+          level1: "Zugang zu Grundlagen + Community",
+          level2: "ICP-Worksheet + einfaches Outreach-Script",
+          level3: "Volles ICP-Template + Cold DM Templates + E-Mail-Sequenzen",
+          level4: "Projekt-Scoping + Pricing-Framework + Proposal-Template",
+          level5: "Build Challenges + Gewinner-Galerie",
+        },
       },
     },
     upgrade: {
