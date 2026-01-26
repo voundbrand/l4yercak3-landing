@@ -25,7 +25,11 @@ function ApprenticeshipContent() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-medium text-lg hover:bg-primary/90 transition-colors"
+            className={cn(
+              "inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium text-lg transition-colors",
+              "bg-primary text-primary-foreground hover:bg-primary/90",
+              readingMode === 'sepia' && "bg-amber-800 hover:bg-amber-700 text-amber-50"
+            )}
           >
             {t('landing.apprenticeship.page.hero.cta')}
           </button>
@@ -238,7 +242,11 @@ function ApprenticeshipContent() {
           </p>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-medium text-lg hover:bg-primary/90 transition-colors"
+            className={cn(
+              "inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium text-lg transition-colors",
+              "bg-primary text-primary-foreground hover:bg-primary/90",
+              readingMode === 'sepia' && "bg-amber-800 hover:bg-amber-700 text-amber-50"
+            )}
           >
             {t('landing.apprenticeship.page.cta.button')}
           </button>

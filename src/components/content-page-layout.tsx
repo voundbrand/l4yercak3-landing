@@ -4,7 +4,7 @@ import { useState, useEffect, ReactNode, createContext, useContext } from 'react
 import Link from 'next/link';
 import { GitHubLogoIcon, InstagramLogoIcon } from '@radix-ui/react-icons';
 import { cn } from '@/lib/utils';
-import { BookCallButton } from '@/components/book-call-button';
+import { CommunityButton } from '@/components/community-button';
 import { MinimalNav } from '@/components/minimal-nav';
 import { useTranslation } from 'react-i18next';
 import { socialLinks } from '@/lib/constants';
@@ -178,8 +178,8 @@ export function ContentPageLayout({
                 </button>
               </div>
               
-              {/* Book a Call Button */}
-              <BookCallButton />
+              {/* Community Button */}
+              <CommunityButton />
             </div>
           </div>
         </div>
