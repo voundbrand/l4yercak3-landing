@@ -59,6 +59,19 @@ function ApprenticeshipContent() {
             </div>
           </section>
 
+          {/* Flywheel Section */}
+          <section>
+            <h2 className={cn("font-serif text-3xl italic mb-6 transition-colors duration-300", theme.headings)}>
+              {t('landing.apprenticeship.page.flywheel.title')}
+            </h2>
+            <div className={cn("border-l-4 border-blue-500 pl-6 py-4 rounded-r-lg transition-colors duration-300",
+              readingMode === 'sepia' ? 'bg-blue-100/80' : 'bg-blue-50 dark:bg-blue-900/20')}>
+              <p className="whitespace-pre-line">
+                {t('landing.apprenticeship.page.flywheel.content')}
+              </p>
+            </div>
+          </section>
+
           {/* How It Works Section */}
           <section>
             <h2 className={cn("font-serif text-3xl italic mb-8 transition-colors duration-300", theme.headings)}>

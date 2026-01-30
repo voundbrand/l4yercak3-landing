@@ -235,6 +235,10 @@ export const landingEn = {
         title: "Coaching Meets Apprenticeship",
         content: "This isn't a course where you watch videos. And it's not just 'here's a task, figure it out.'\n\nIt's an intensive coaching program where you work WITH me on real client projects — and I hand you every framework, system, and shortcut I've built over 20 years of software delivery and 5 years running an agency.\n\nTogether, we find the perfect project for you — either from my pipeline of 10+ active client opportunities, or we identify a new project that fits your skills, interests, and growth goals.\n\nYou'll see exactly how I scope projects, communicate with clients, handle problems when they arise (and they always do), and deliver results that get us paid.\n\nYou don't just learn by doing. You learn by doing it right — with proven systems, not guesswork.",
       },
+      flywheel: {
+        title: "Why This Compounds",
+        content: "Most coaching programs give you knowledge. This one gives you a system that gets better every time you use it.\n\nYou deliver lead gen for a client using my frameworks. They get results. You get paid. They refer you to another agency owner. You deliver again — faster this time, because the system is repeatable.\n\nYour reputation compounds. Your income compounds. Your speed compounds.\n\nThat's not a course. That's a business.",
+      },
       howItWorks: {
         title: "Your Path to Getting Paid",
         steps: [
@@ -348,6 +352,146 @@ export const landingEn = {
         description: "I review every application personally. If there's a fit, we talk. If not, I'll tell you exactly what to work on first.\n\nNo gatekeeping. No endless waitlists. Just honest assessment and real opportunities.",
         button: "Apply for Apprenticeship",
       },
+    },
+  },
+  affiliate: {
+    hero: {
+      headline: "Your Audience Is Paying €300/Month\nfor GoHighLevel.",
+      headline2: "Show Them What's Next.",
+      subheadline: "Layer Cake is the GHL alternative built for 2025.\nAI-native. Simpler. One platform to replace them all.",
+      commission: "Earn 40% recurring — for life — helping agencies make the switch.",
+      cta: "Apply to Become an Affiliate",
+      ctaSecondary: "Watch the 4-minute story",
+    },
+    stakes: {
+      header: "GoHighLevel Was Built for 2018.\nYour Audience Deserves Better.",
+      body: "Let's be honest about GHL:",
+      points: [
+        "The learning curve is brutal (3+ weeks to feel comfortable)",
+        "The page builder feels dated",
+        "AI features are bolted on, not native",
+        "It can't build real custom apps",
+        "€297-497/month for complexity",
+      ],
+      closing: "Your audience is paying for a tool that's showing its age.\n\nThey're watching tutorials for hours.\nThey're wrestling with workflows.\nThey're wondering if there's something better.\n\nThere is.",
+    },
+    valueProp: {
+      header: "Layer Cake: What GoHighLevel Should Be",
+      intro: "Built from scratch for the AI era:",
+      features: [
+        "AI-native page builder — describe it, it builds it",
+        "CRM that actually makes sense",
+        "Forms, payments, messaging — all built in",
+        "Custom app building (auth, dashboards, multi-tenancy)",
+        "Delivery in 2 days, not 2 weeks",
+        "A learning curve measured in days, not weeks",
+      ],
+      forAudience: "One platform. Everything an agency needs.\nNo more €600/month in stacked tools.\nNo more 3-week onboarding.",
+      forYou: "For your audience:\nThe tool that replaces GHL AND makes them faster.",
+      forYouCommission: "For you:\n40% recurring commission. Forever.",
+    },
+    comparison: {
+      header: "The Honest Comparison",
+      features: [
+        { feature: "Page Builder", ghl: "Basic, dated", lc: "AI-native, modern" },
+        { feature: "Learning Curve", ghl: "3+ weeks", lc: "Days" },
+        { feature: "AI Capabilities", ghl: "Bolted on", lc: "Built from scratch" },
+        { feature: "Custom App Building", ghl: "No", lc: "Yes (core feature)" },
+        { feature: "CRM", ghl: "Yes", lc: "Yes" },
+        { feature: "Forms", ghl: "Yes", lc: "Yes" },
+        { feature: "Payments", ghl: "Stripe integration", lc: "Native Stripe" },
+        { feature: "Multi-tenancy", ghl: "Basic", lc: "Full white-label" },
+        { feature: "Price", ghl: "€297-497/month", lc: "€499/month (all-in)" },
+        { feature: "Built For", ghl: "2018 agency model", lc: "2025 AI-native agency" },
+      ],
+      colGhl: "GoHighLevel",
+      colLc: "Layer Cake",
+    },
+    guide: {
+      header: "I Used GHL for 3 Years. Then I Built the Replacement.",
+      body: "I'm Remington.\n\nI ran a marketing agency for 5 years. €240k/year revenue.\n4 employees. Great clients.\n\nAnd I took home nothing.\n\nEvery month: €1,000 in software (GHL, HubSpot, form builders, the whole stack).\nEvery new client: 2 weeks to onboard.\n\nGHL was supposed to simplify things. Instead, I spent hours watching tutorials, fixing workflows, managing complexity.\n\nThere was a moment where I had to be honest with myself — I was spinning my wheels.\n\nSo I asked myself:\nWhat if I built what GHL should be?\n\nAI-native. Simpler. Actually fast to learn.\nOne platform that does everything — including custom app building.\n\nThat's Layer Cake.\n\nThe tool I wish existed when I was running my agency.\nThe tool your audience is searching for right now.",
+    },
+    video: {
+      header: "The Full Story (4 minutes)",
+      belowVideo: "Ready to help your audience escape GHL?",
+      cta: "Apply Now",
+    },
+    plan: {
+      header: "How the Affiliate Program Works",
+      steps: [
+        { number: "1", title: "Apply", description: "Fill out a 2-minute application. Tell me about your audience." },
+        { number: "2", title: "Get Approved", description: "I personally review every application. If your audience includes agency owners frustrated with their current tools — you're in." },
+        { number: "3", title: "Share", description: "Get your unique affiliate link, a full demo account, and \"GHL vs Layer Cake\" comparison content." },
+        { number: "4", title: "Earn", description: "40% of every payment, every month, for as long as they're a customer. They switch once. You earn forever." },
+      ],
+    },
+    opportunity: {
+      header: "Why This Matters Right Now",
+      body: "The GHL affiliate space is saturated.\n\nThousands of affiliates promoting the same thing.\nThe same tutorials. The same offers. The same audience.\n\nLayer Cake affiliate space? Wide open.\n\nYou're not competing with 10,000 other affiliates.\nYou're one of 20 founding partners.\n\nAnd you're offering something people are actively searching for:\nA modern alternative to GoHighLevel.\n\nFirst-mover advantage is real.\nIn 12 months, everyone will be promoting Layer Cake.\nRight now, you can be first.",
+    },
+    offer: {
+      header: "The Numbers",
+      commission: "40% recurring. Lifetime. No caps.",
+      pricing: "Layer Cake: €499/month\nYou earn: €200/month per customer",
+      pricingNote: "That's not a one-time bounty.\nThat's €200/month, every month, forever.",
+      referralTable: [
+        { referrals: "5 customers", monthly: "€1,000/mo", annual: "€12,000/yr" },
+        { referrals: "10 customers", monthly: "€2,000/mo", annual: "€24,000/yr" },
+        { referrals: "25 customers", monthly: "€5,000/mo", annual: "€60,000/yr" },
+        { referrals: "50 customers", monthly: "€10,000/mo", annual: "€120,000/yr" },
+      ],
+      foundingHeader: "First 20 affiliates only:",
+      foundingBonuses: [
+        "€100 bonus on every first sale (on top of 40%)",
+        "\"GHL vs Layer Cake\" content kit",
+        "Featured on partners page",
+        "Direct Slack access to me",
+        "Early access to new features",
+      ],
+    },
+    faq: {
+      header: "Questions",
+      items: [
+        {
+          question: "Isn't GHL already established? Why would people switch?",
+          answer: "Established doesn't mean best. GHL was built for 2018. It's powerful, but it's complex. The page builder is dated. AI is bolted on. Learning curve is brutal.\n\nThere's a growing group of agency owners frustrated with GHL. They're searching for alternatives right now.\n\nYou're not convincing happy GHL users to switch. You're reaching the people ready for something better.",
+        },
+        {
+          question: "What if my audience already uses GHL?",
+          answer: "Even better. They already understand the category. They already pay for software. They already know the pain points.\n\nAll you have to do is show them the alternative.",
+        },
+        {
+          question: "Won't GHL affiliates be angry?",
+          answer: "You're not attacking GHL. You're offering a choice.\n\nSome people need GHL. Some people need Layer Cake. You're serving the ones who need Layer Cake.\n\nAnd honestly — the GHL affiliate space is overcrowded. Layer Cake affiliate space is wide open.",
+        },
+        {
+          question: "What makes Layer Cake actually better?",
+          answer: "Three things:\n\n1. AI-native — GHL added AI features. Layer Cake was BUILT on AI. Describe what you want. It builds it.\n\n2. Simpler — GHL takes 3+ weeks to learn. Layer Cake takes days.\n\n3. Custom apps — GHL does funnels and automations. Layer Cake does that PLUS real custom app building (auth, payments, dashboards, multi-tenancy).\n\nIt's the evolution, not just an alternative.",
+        },
+        {
+          question: "What about features GHL has that Layer Cake doesn't?",
+          answer: "GHL has more features today. No question.\n\nLayer Cake is focused on what agencies actually need in 2025: AI-powered building, fast delivery, and simplicity.\n\nMulti-channel comms, email, SMS — those are on the roadmap.\n\nYou're promoting the future, not the past.",
+        },
+        {
+          question: "Cookie window?",
+          answer: "90 days. 3x longer than most programs.\n\nSomeone clicks, forgets for 2 months, comes back and buys — you still get credit.",
+        },
+      ],
+    },
+    finalCta: {
+      header: "The GHL Era Is Ending.\nBe First to What's Next.",
+      body: "We're taking 20 founding affiliates.\n\nNot thousands. Not hundreds.\n\n20 partners who see where the market is going and want to be first.\n\nYour audience is paying €300/month for a tool built in 2018.\nYou can show them what 2025 looks like.\n\n40% recurring. Lifetime. No caps.\nPlus €100 bonus per sale for founding partners.\n\nThe affiliate space for Layer Cake is empty right now.\nIt won't be for long.",
+      cta: "Apply to Become a Founding Affiliate",
+      belowCta: "Applications reviewed personally within 48 hours.",
+    },
+    footer: {
+      trustElements: [
+        "40% recurring, lifetime",
+        "90-day cookie window",
+        "€100 bonus per first sale (founding affiliates)",
+        "GHL comparison content provided",
+        "Direct access to founder",
+      ],
     },
   },
   linktree: {
@@ -632,6 +776,10 @@ export const landingDe = {
         title: "Coaching trifft Apprenticeship",
         content: "Das ist kein Kurs, in dem du Videos schaust. Und es ist nicht einfach nur 'hier ist eine Aufgabe, komm klar damit.'\n\nEs ist ein intensives Coaching-Programm, bei dem du MIT mir an echten Kundenprojekten arbeitest — und ich dir jedes Framework, jedes System und jeden Shortcut gebe, den ich über 20 Jahre Software-Delivery und 5 Jahre Agenturführung aufgebaut habe.\n\nGemeinsam finden wir das perfekte Projekt für dich — entweder aus meiner Pipeline von 10+ aktiven Kundenmöglichkeiten, oder wir identifizieren ein neues Projekt, das zu deinen Skills, Interessen und Wachstumszielen passt.\n\nDu siehst genau, wie ich Projekte scope, mit Kunden kommuniziere, Probleme löse wenn sie auftreten (und sie treten immer auf), und Ergebnisse liefer, die uns bezahlt machen.\n\nDu lernst nicht nur durchs Machen. Du lernst, es richtig zu machen — mit bewährten Systemen, nicht mit Rätselraten.",
       },
+      flywheel: {
+        title: "Warum das sich aufbaut",
+        content: "Die meisten Coaching-Programme geben dir Wissen. Dieses gibt dir ein System, das jedes Mal besser wird, wenn du es nutzt.\n\nDu lieferst Lead-Generierung für einen Kunden mit meinen Frameworks. Sie bekommen Ergebnisse. Du wirst bezahlt. Sie empfehlen dich an einen anderen Agenturinhaber. Du lieferst wieder — schneller diesmal, weil das System wiederholbar ist.\n\nDein Ruf baut sich auf. Dein Einkommen baut sich auf. Deine Geschwindigkeit baut sich auf.\n\nDas ist kein Kurs. Das ist ein Business.",
+      },
       howItWorks: {
         title: "Dein Weg zum Bezahltwerden",
         steps: [
@@ -745,6 +893,146 @@ export const landingDe = {
         description: "Ich prüfe jede Bewerbung persönlich. Wenn es passt, reden wir. Wenn nicht, sage ich dir genau, woran du zuerst arbeiten sollst.\n\nKein Gatekeeping. Keine endlosen Wartelisten. Nur ehrliche Einschätzung und echte Möglichkeiten.",
         button: "Für Apprenticeship bewerben",
       },
+    },
+  },
+  affiliate: {
+    hero: {
+      headline: "Dein Publikum zahlt €300/Monat\nfür GoHighLevel.",
+      headline2: "Zeig ihnen, was als Nächstes kommt.",
+      subheadline: "Layer Cake ist die GHL-Alternative für 2025.\nKI-nativ. Einfacher. Eine Plattform, die alle ersetzt.",
+      commission: "Verdiene 40% wiederkehrend — lebenslang — indem du Agenturen beim Wechsel hilfst.",
+      cta: "Als Affiliate bewerben",
+      ctaSecondary: "Die 4-Minuten-Geschichte ansehen",
+    },
+    stakes: {
+      header: "GoHighLevel wurde für 2018 gebaut.\nDein Publikum verdient Besseres.",
+      body: "Lass uns ehrlich über GHL sein:",
+      points: [
+        "Die Lernkurve ist brutal (3+ Wochen bis man sich wohlfühlt)",
+        "Der Page Builder wirkt veraltet",
+        "KI-Features sind aufgeschraubt, nicht nativ",
+        "Es kann keine echten Custom Apps bauen",
+        "€297-497/Monat für Komplexität",
+      ],
+      closing: "Dein Publikum zahlt für ein Tool, das in die Jahre kommt.\n\nSie schauen stundenlang Tutorials.\nSie kämpfen mit Workflows.\nSie fragen sich, ob es etwas Besseres gibt.\n\nGibt es.",
+    },
+    valueProp: {
+      header: "Layer Cake: Was GoHighLevel sein sollte",
+      intro: "Von Grund auf für die KI-Ära gebaut:",
+      features: [
+        "KI-nativer Page Builder — beschreibe es, es baut es",
+        "CRM, das tatsächlich Sinn ergibt",
+        "Formulare, Zahlungen, Messaging — alles eingebaut",
+        "Custom App Building (Auth, Dashboards, Multi-Tenancy)",
+        "Lieferung in 2 Tagen, nicht 2 Wochen",
+        "Eine Lernkurve in Tagen, nicht Wochen",
+      ],
+      forAudience: "Eine Plattform. Alles was eine Agentur braucht.\nKeine €600/Monat mehr für gestapelte Tools.\nKein 3-Wochen-Onboarding mehr.",
+      forYou: "Für dein Publikum:\nDas Tool, das GHL ersetzt UND sie schneller macht.",
+      forYouCommission: "Für dich:\n40% wiederkehrende Provision. Für immer.",
+    },
+    comparison: {
+      header: "Der ehrliche Vergleich",
+      features: [
+        { feature: "Page Builder", ghl: "Basic, veraltet", lc: "KI-nativ, modern" },
+        { feature: "Lernkurve", ghl: "3+ Wochen", lc: "Tage" },
+        { feature: "KI-Fähigkeiten", ghl: "Aufgeschraubt", lc: "Von Grund auf gebaut" },
+        { feature: "Custom App Building", ghl: "Nein", lc: "Ja (Kernfeature)" },
+        { feature: "CRM", ghl: "Ja", lc: "Ja" },
+        { feature: "Formulare", ghl: "Ja", lc: "Ja" },
+        { feature: "Zahlungen", ghl: "Stripe Integration", lc: "Native Stripe" },
+        { feature: "Multi-Tenancy", ghl: "Basic", lc: "Volles White-Label" },
+        { feature: "Preis", ghl: "€297-497/Monat", lc: "€499/Monat (alles inklusive)" },
+        { feature: "Gebaut für", ghl: "2018 Agentur-Modell", lc: "2025 KI-native Agentur" },
+      ],
+      colGhl: "GoHighLevel",
+      colLc: "Layer Cake",
+    },
+    guide: {
+      header: "Ich habe GHL 3 Jahre genutzt. Dann habe ich den Ersatz gebaut.",
+      body: "Ich bin Remington.\n\nIch habe 5 Jahre eine Marketing-Agentur geführt. €240k/Jahr Umsatz.\n4 Mitarbeiter. Tolle Kunden.\n\nUnd ich habe nichts mit nach Hause genommen.\n\nJeden Monat: €1.000 für Software (GHL, HubSpot, Formular-Builder, der ganze Stack).\nJeder neue Kunde: 2 Wochen Onboarding.\n\nGHL sollte alles vereinfachen. Stattdessen verbrachte ich Stunden damit, Tutorials zu schauen, Workflows zu reparieren und Komplexität zu managen.\n\nEs gab einen Moment, in dem ich ehrlich zu mir selbst sein musste — ich drehte mich im Kreis.\n\nAlso fragte ich mich:\nWas, wenn ich das baue, was GHL sein sollte?\n\nKI-nativ. Einfacher. Wirklich schnell zu lernen.\nEine Plattform, die alles kann — inklusive Custom App Building.\n\nDas ist Layer Cake.\n\nDas Tool, das ich mir gewünscht hätte, als ich meine Agentur geführt habe.\nDas Tool, nach dem dein Publikum gerade sucht.",
+    },
+    video: {
+      header: "Die ganze Geschichte (4 Minuten)",
+      belowVideo: "Bereit, deinem Publikum beim GHL-Ausstieg zu helfen?",
+      cta: "Jetzt bewerben",
+    },
+    plan: {
+      header: "So funktioniert das Affiliate-Programm",
+      steps: [
+        { number: "1", title: "Bewerben", description: "Fülle eine 2-Minuten-Bewerbung aus. Erzähl mir von deinem Publikum." },
+        { number: "2", title: "Genehmigt werden", description: "Ich prüfe jede Bewerbung persönlich. Wenn dein Publikum Agency Owner enthält, die mit ihren aktuellen Tools frustriert sind — bist du drin." },
+        { number: "3", title: "Teilen", description: "Erhalte deinen einzigartigen Affiliate-Link, einen vollen Demo-Account und \"GHL vs Layer Cake\" Vergleichscontent." },
+        { number: "4", title: "Verdienen", description: "40% jeder Zahlung, jeden Monat, so lange sie Kunde sind. Sie wechseln einmal. Du verdienst für immer." },
+      ],
+    },
+    opportunity: {
+      header: "Warum das jetzt wichtig ist",
+      body: "Der GHL-Affiliate-Markt ist übersättigt.\n\nTausende Affiliates bewerben dasselbe.\nDie gleichen Tutorials. Die gleichen Angebote. Das gleiche Publikum.\n\nLayer Cake Affiliate-Markt? Weit offen.\n\nDu konkurrierst nicht mit 10.000 anderen Affiliates.\nDu bist einer von 20 Gründungspartnern.\n\nUnd du bietest etwas an, wonach die Leute aktiv suchen:\nEine moderne Alternative zu GoHighLevel.\n\nFirst-Mover-Vorteil ist real.\nIn 12 Monaten wird jeder Layer Cake bewerben.\nJetzt kannst du der Erste sein.",
+    },
+    offer: {
+      header: "Die Zahlen",
+      commission: "40% wiederkehrend. Lebenslang. Keine Limits.",
+      pricing: "Layer Cake: €499/Monat\nDu verdienst: €200/Monat pro Kunde",
+      pricingNote: "Das ist kein einmaliger Bonus.\nDas sind €200/Monat, jeden Monat, für immer.",
+      referralTable: [
+        { referrals: "5 Kunden", monthly: "€1.000/Mo", annual: "€12.000/Jahr" },
+        { referrals: "10 Kunden", monthly: "€2.000/Mo", annual: "€24.000/Jahr" },
+        { referrals: "25 Kunden", monthly: "€5.000/Mo", annual: "€60.000/Jahr" },
+        { referrals: "50 Kunden", monthly: "€10.000/Mo", annual: "€120.000/Jahr" },
+      ],
+      foundingHeader: "Nur die ersten 20 Affiliates:",
+      foundingBonuses: [
+        "€100 Bonus auf jeden Erstverkauf (zusätzlich zu 40%)",
+        "\"GHL vs Layer Cake\" Content-Kit",
+        "Aufgeführt auf der Partner-Seite",
+        "Direkter Slack-Zugang zu mir",
+        "Früher Zugang zu neuen Features",
+      ],
+    },
+    faq: {
+      header: "Fragen",
+      items: [
+        {
+          question: "Ist GHL nicht schon etabliert? Warum würden Leute wechseln?",
+          answer: "Etabliert heißt nicht das Beste. GHL wurde für 2018 gebaut. Es ist leistungsfähig, aber komplex. Der Page Builder ist veraltet. KI ist aufgeschraubt. Die Lernkurve ist brutal.\n\nEs gibt eine wachsende Gruppe von Agency Ownern, die mit GHL frustriert sind. Sie suchen gerade nach Alternativen.\n\nDu überzeugst nicht zufriedene GHL-User zum Wechsel. Du erreichst die Leute, die bereit für etwas Besseres sind.",
+        },
+        {
+          question: "Was, wenn mein Publikum bereits GHL nutzt?",
+          answer: "Umso besser. Sie verstehen die Kategorie bereits. Sie zahlen bereits für Software. Sie kennen die Schmerzpunkte.\n\nAlles was du tun musst, ist ihnen die Alternative zu zeigen.",
+        },
+        {
+          question: "Werden GHL-Affiliates sauer sein?",
+          answer: "Du greifst GHL nicht an. Du bietest eine Wahl.\n\nManche brauchen GHL. Manche brauchen Layer Cake. Du bedienst die, die Layer Cake brauchen.\n\nUnd ehrlich — der GHL-Affiliate-Markt ist überfüllt. Der Layer Cake Affiliate-Markt ist weit offen.",
+        },
+        {
+          question: "Was macht Layer Cake tatsächlich besser?",
+          answer: "Drei Dinge:\n\n1. KI-nativ — GHL hat KI-Features hinzugefügt. Layer Cake wurde AUF KI GEBAUT. Beschreibe was du willst. Es baut es.\n\n2. Einfacher — GHL braucht 3+ Wochen zum Lernen. Layer Cake Tage.\n\n3. Custom Apps — GHL macht Funnels und Automatisierungen. Layer Cake macht das PLUS echtes Custom App Building (Auth, Zahlungen, Dashboards, Multi-Tenancy).\n\nEs ist die Evolution, nicht nur eine Alternative.",
+        },
+        {
+          question: "Was ist mit Features, die GHL hat und Layer Cake nicht?",
+          answer: "GHL hat heute mehr Features. Keine Frage.\n\nLayer Cake fokussiert sich auf das, was Agenturen 2025 wirklich brauchen: KI-gestütztes Building, schnelle Lieferung und Einfachheit.\n\nMulti-Channel Comms, E-Mail, SMS — das steht auf der Roadmap.\n\nDu bewirbst die Zukunft, nicht die Vergangenheit.",
+        },
+        {
+          question: "Cookie-Fenster?",
+          answer: "90 Tage. 3x länger als die meisten Programme.\n\nJemand klickt, vergisst es für 2 Monate, kommt zurück und kauft — du bekommst trotzdem die Gutschrift.",
+        },
+      ],
+    },
+    finalCta: {
+      header: "Die GHL-Ära endet.\nSei der Erste bei dem, was kommt.",
+      body: "Wir nehmen 20 Gründungsaffiliates auf.\n\nNicht Tausende. Nicht Hunderte.\n\n20 Partner, die sehen, wohin der Markt geht und die Ersten sein wollen.\n\nDein Publikum zahlt €300/Monat für ein Tool aus 2018.\nDu kannst ihnen zeigen, wie 2025 aussieht.\n\n40% wiederkehrend. Lebenslang. Keine Limits.\nPlus €100 Bonus pro Verkauf für Gründungspartner.\n\nDer Affiliate-Markt für Layer Cake ist gerade leer.\nDas wird nicht lange so bleiben.",
+      cta: "Als Gründungsaffiliate bewerben",
+      belowCta: "Bewerbungen werden persönlich innerhalb von 48 Stunden geprüft.",
+    },
+    footer: {
+      trustElements: [
+        "40% wiederkehrend, lebenslang",
+        "90-Tage Cookie-Fenster",
+        "€100 Bonus pro Erstverkauf (Gründungsaffiliates)",
+        "GHL-Vergleichscontent bereitgestellt",
+        "Direkter Zugang zum Gründer",
+      ],
     },
   },
   linktree: {
