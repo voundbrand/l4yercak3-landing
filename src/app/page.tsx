@@ -906,7 +906,7 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="mt-8"
           >
-            <Link href="/vibe" className="block group">
+            <Link href="https://app.l4yercak3.com" target="_blank" rel="noopener noreferrer" className="block group">
               <div className={cn(
                 "p-6 rounded-2xl border transition-all duration-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4",
                 readingMode === 'sepia'
