@@ -1,6 +1,6 @@
 export const landingEn = {
   hero: {
-    headline: "Stop Building. Start Shipping.",
+    headline: "Systemize Your Agency.",
     subheadline: "You don't have a skills problem. You have a delivery problem. You're duct-taping ten tools together and spending more time on setup than actual client work. Join a community of agency owners and builders who fix that—and get paid.",
     cta: "Join Free Community",
     ctaSecondary: "Watch the 50-second intro",
@@ -96,6 +96,11 @@ export const landingEn = {
         levels: {
           title: "Gamification System",
           description: "Participate to level up — unlock better templates, teardowns, and direct feedback",
+        },
+        vibeCoder: {
+          title: "AI Page Builder",
+          description: "Just want to build? Skip the strategy — get an AI page builder that turns your words into working pages. €20/month, no support, no hand-holding. Just ship.",
+          cta: "Start Building →",
         },
       },
       levelBreakdown: {
@@ -624,7 +629,7 @@ export const landingEn = {
 
 export const landingDe = {
   hero: {
-    headline: "Hör auf zu bauen. Fang an zu liefern.",
+    headline: "Systemisiere deine Agentur.",
     subheadline: "Du hast kein Skill-Problem. Du hast ein Delivery-Problem. Du klebst zehn Tools zusammen und verbringst mehr Zeit mit Setup als mit echter Kundenarbeit. Tritt einer Community von Agency Ownern und Buildern bei, die das lösen—und bezahlt werden.",
     cta: "Kostenlos beitreten",
     ctaSecondary: "Schau das 50-Sekunden-Intro",
@@ -720,6 +725,11 @@ export const landingDe = {
         levels: {
           title: "Gamification System",
           description: "Mitmachen um zu leveln — bessere Templates, Teardowns und direktes Feedback freischalten",
+        },
+        vibeCoder: {
+          title: "KI Page Builder",
+          description: "Willst du einfach nur bauen? Überspring die Strategie — hol dir einen KI-Page-Builder, der deine Worte in funktionierende Seiten verwandelt. €20/Monat, kein Support, kein Händchenhalten. Einfach shippen.",
+          cta: "Jetzt bauen →",
         },
       },
       levelBreakdown: {

@@ -898,11 +898,46 @@ export default function Home() {
             </motion.div>
           </div>
 
+          {/* Vibe Coder Tile — Full Width */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-8"
+          >
+            <Link href="/vibe" className="block group">
+              <div className={cn(
+                "p-6 rounded-2xl border transition-all duration-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4",
+                readingMode === 'sepia'
+                  ? 'bg-rose-100/80 border-rose-300/50 hover:bg-rose-200/80'
+                  : 'bg-rose-500/10 border-rose-500/30 hover:bg-rose-500/20'
+              )}>
+                <div className="flex-1">
+                  <h3 className={cn("font-semibold text-lg mb-1 transition-colors duration-300", theme.headings)}>
+                    {t("landing.features.free.items.vibeCoder.title")}
+                  </h3>
+                  <p className={cn("text-sm transition-colors duration-300", theme.muted)}>
+                    {t("landing.features.free.items.vibeCoder.description")}
+                  </p>
+                </div>
+                <span className={cn(
+                  "shrink-0 font-semibold text-sm px-4 py-2 rounded-full transition-all duration-200 group-hover:scale-105",
+                  readingMode === 'sepia'
+                    ? 'bg-rose-200 text-rose-800'
+                    : 'bg-rose-500/20 text-rose-400'
+                )}>
+                  {t("landing.features.free.items.vibeCoder.cta")}
+                </span>
+              </div>
+            </Link>
+          </motion.div>
+
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             className={cn("text-center text-sm mt-8 transition-colors duration-300", theme.muted)}
           >
             {t("landing.features.note")}
