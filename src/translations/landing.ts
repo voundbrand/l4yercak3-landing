@@ -1,7 +1,7 @@
 export const landingEn = {
   hero: {
     headline: "Stop Building. Start Shipping.",
-    subheadline: "You don't have a skills problem. You have a finishing problem. And a selling problem. Join a free community of builders who actually ship—and get paid.",
+    subheadline: "You don't have a skills problem. You have a delivery problem. You're duct-taping ten tools together and spending more time on setup than actual client work. Join a community of agency owners and builders who fix that—and get paid.",
     cta: "Join Free Community",
     ctaSecondary: "Watch the 50-second intro",
     learnMore: "Learn More",
@@ -9,29 +9,29 @@ export const landingEn = {
   problem: {
     header: "Sound Familiar?",
     graveyard: {
-      title: "The Graveyard",
-      description: "You've got a hard drive full of half-finished projects. Apps you started but never launched. Ideas that got 80% done and then... nothing.",
+      title: "The Stack Tax",
+      description: "GoHighLevel. Airtable. Zapier. Stripe. Calendly. Mailchimp. You're paying €500+ a month for tools that don't talk to each other—and spending 10-20 hours a month just keeping them connected.",
     },
     loop: {
-      title: "The Loop",
-      description: "Another tutorial. Another course. Another framework. You keep learning but never earning. The skill goes up, the income stays flat.",
+      title: "The Onboarding Trap",
+      description: "Every new client means weeks of setup. Connect this integration. Configure that automation. Build another funnel from scratch. Your team is working full bore—and you're still behind.",
     },
     catch22: {
-      title: "The Catch-22",
-      description: "You need clients to get experience. You need experience to get clients. So you stay stuck, building things nobody pays for.",
+      title: "The Margin Killer",
+      description: "Revenue looks great on paper. But after software costs, setup time, and delivery overhead—you're breaking even. More clients just means more work, not more profit.",
     },
     stakes: {
       title: "A year from now, what changes?",
-      description: "Without a system, you'll have three more unfinished projects. You'll still be watching others ship while you're stuck in tutorial hell. You'll still be trading hours for dollars—or worse, hours for nothing.\n\nThe projects won't finish themselves. The clients won't magically appear.",
+      description: "Without a better delivery system, you'll still be paying for tools that don't work together. You'll still be spending weeks onboarding each new client. You'll still be watching your revenue disappear into software licenses and setup time.\n\nThe margins won't fix themselves. The delivery bottleneck won't magically go away.",
     },
   },
   guide: {
     header: "I've Been There",
-    empathy: "I spent years building things nobody used. I'd finish a website, create software, deliver a product—and then... nothing. It just sat there. Not because it wasn't good, but because I didn't know how to position it. I had the skills to build anything, but I didn't have the marketing and sales skills to present it correctly.",
-    authority: "Eventually, I figured it out. 20 years building software. 5 years running a marketing agency where I had to sell every single project. I learned that building is only half the game—shipping and selling is the other half.\n\nNow I help builders like you do both.",
+    empathy: "I ran a marketing agency for five years. €240,000 a year in recurring revenue. Four employees. Six clients who loved us. And I took home nothing. The software stack cost €500 to €1,000 a month. Every new client took weeks to onboard. My team was working full bore, but delivery ate all the profit.",
+    authority: "My wife told me to shut it down. So I did. Then I went back to what I know—software engineering—and built the tool that would have saved my agency. 20 years building software. 5 years learning sales and marketing the hard way. Layer Cake is everything I wished I had.\n\nNow I help agency owners and builders solve the same delivery problem I lived.",
     proofPoints: {
       experience: "20 years building software",
-      sales: "5 years in sales & marketing",
+      sales: "5 years running a marketing agency",
       mentoring: "Currently mentoring 2 builders through ICP and go-to-market",
       retention: "100% client retention—never lost a customer",
     },
@@ -42,29 +42,29 @@ export const landingEn = {
     step1: {
       number: "1",
       title: "Join the Community",
-      description: "Sign up for free. Introduce yourself. Tell us what you're building. You'll get access to templates, frameworks, and other builders who are actually doing the work.",
+      description: "Sign up for free. Tell us what you're building and who you're building it for. Get access to templates, frameworks, and other agency owners who are solving the same delivery problems.",
     },
     step2: {
       number: "2",
       title: "Level Up",
-      description: "The more you participate, the more you unlock. Hit milestones, share your progress, help others. You'll earn access to better templates, project teardowns, and direct feedback.",
+      description: "The more you participate, the more you unlock. Share your progress, help others, hit milestones. Earn access to better templates, project teardowns, and direct feedback on your delivery setup.",
     },
     step3: {
       number: "3",
       title: "Ship and Get Paid",
-      description: "Stop building in isolation. Get accountability to actually finish. Learn to sell what you build. When you're ready, apply for the apprenticeship and work on real client projects with me.",
+      description: "Replace your duct-taped stack with a real delivery system. Onboard clients in minutes, not weeks. When you're ready, apply for the apprenticeship and work on real client projects with me.",
     },
   },
   success: {
     header: "Imagine This Instead",
     vision: {
-      item1: "You've shipped two projects that people actually use",
-      item2: "You've got clients paying you real money for your skills",
-      item3: "Other builders are asking YOU how you did it",
-      item4: "Your portfolio isn't fake apps—it's proof that you deliver",
-      item5: "You've stopped starting over and started stacking wins",
+      item1: "You onboard a new client in minutes instead of weeks",
+      item2: "Your software costs dropped from €500+/month to one platform",
+      item3: "You're actually keeping the revenue you earn",
+      item4: "Other agency owners are asking YOU how you deliver so fast",
+      item5: "You've stopped duct-taping and started scaling",
     },
-    contrast: "The difference between builders who make it and builders who stay stuck isn't talent. It's finishing. It's selling. It's being around others who push you to ship.",
+    contrast: "The difference between agencies that scale and agencies that stay stuck isn't talent or clients. It's delivery. It's having the right infrastructure so every new client means more profit—not just more work.",
     timeframe: "Six months from now:",
   },
   features: {
@@ -75,7 +75,7 @@ export const landingEn = {
       items: {
         fundamentals: {
           title: "5 Core Video Lessons",
-          description: "Why most builders fail, the 3 things you need, picking projects worth finishing, building offers, reaching buyers",
+          description: "Why most agencies bleed profit, the delivery problem, fixing your stack, building offers that scale, reaching buyers",
         },
         frameworks: {
           title: "L4YERCAK3 Systems (GitHub)",
@@ -83,11 +83,11 @@ export const landingEn = {
         },
         templates: {
           title: "Templates & Worksheets",
-          description: "ICP worksheets, basic outreach scripts — more templates unlock as you level up",
+          description: "ICP worksheets, outreach scripts, delivery checklists — more templates unlock as you level up",
         },
         community: {
           title: "Active Community",
-          description: "Builders sharing progress, asking questions, helping each other ship",
+          description: "Agency owners and builders sharing what works, solving delivery problems, helping each other scale",
         },
         challenges: {
           title: "Monthly Build Challenges",
@@ -150,8 +150,8 @@ export const landingEn = {
     note: "You don't need to upgrade. The free tier has real value. Upgrade when you're ready to go faster.",
   },
   finalCta: {
-    header: "Ready to Stop Starting Over?",
-    push: "Join the free community. Introduce yourself. Tell us what you're building.\n\nNo credit card. No pitch. Just builders helping builders ship.",
+    header: "Ready to Fix Your Delivery Problem?",
+    push: "Join the free community. Tell us what you're building and who you're building it for.\n\nNo credit card. No pitch. Just agency owners and builders who've solved the same problems you're facing.",
     cta: "Join Free Community",
     ctaSecondary: "Not sure yet? Watch the 50-second intro",
     objectionHandler: "Free forever. Upgrade only if you want to go faster. Unsubscribe anytime.",
@@ -386,7 +386,7 @@ export const landingEn = {
 export const landingDe = {
   hero: {
     headline: "Hör auf zu bauen. Fang an zu liefern.",
-    subheadline: "Du hast kein Skill-Problem. Du hast ein Fertigwerden-Problem. Und ein Verkaufs-Problem. Tritt einer kostenlosen Community von Buildern bei, die wirklich liefern—und bezahlt werden.",
+    subheadline: "Du hast kein Skill-Problem. Du hast ein Delivery-Problem. Du klebst zehn Tools zusammen und verbringst mehr Zeit mit Setup als mit echter Kundenarbeit. Tritt einer Community von Agency Ownern und Buildern bei, die das lösen—und bezahlt werden.",
     cta: "Kostenlos beitreten",
     ctaSecondary: "Schau das 50-Sekunden-Intro",
     learnMore: "Mehr erfahren",
@@ -394,29 +394,29 @@ export const landingDe = {
   problem: {
     header: "Kommt dir das bekannt vor?",
     graveyard: {
-      title: "Der Friedhof",
-      description: "Du hast eine Festplatte voller halbfertiger Projekte. Apps, die du angefangen aber nie gelauncht hast. Ideen, die 80% fertig waren und dann... nichts.",
+      title: "Die Stack-Steuer",
+      description: "GoHighLevel. Airtable. Zapier. Stripe. Calendly. Mailchimp. Du zahlst €500+ im Monat für Tools, die nicht miteinander reden—und verbringst 10-20 Stunden im Monat nur damit, sie verbunden zu halten.",
     },
     loop: {
-      title: "Die Schleife",
-      description: "Noch ein Tutorial. Noch ein Kurs. Noch ein Framework. Du lernst ständig, aber verdienst nie. Die Skills steigen, das Einkommen bleibt gleich.",
+      title: "Die Onboarding-Falle",
+      description: "Jeder neue Kunde bedeutet wochenlangen Setup. Diese Integration verbinden. Diese Automatisierung konfigurieren. Noch einen Funnel von Grund auf bauen. Dein Team arbeitet am Limit—und du hängst trotzdem hinterher.",
     },
     catch22: {
-      title: "Das Catch-22",
-      description: "Du brauchst Kunden um Erfahrung zu sammeln. Du brauchst Erfahrung um Kunden zu bekommen. Also steckst du fest und baust Dinge, für die niemand zahlt.",
+      title: "Der Margin-Killer",
+      description: "Der Umsatz sieht auf dem Papier großartig aus. Aber nach Software-Kosten, Setup-Zeit und Delivery-Overhead—gehst du auf null raus. Mehr Kunden bedeutet nur mehr Arbeit, nicht mehr Gewinn.",
     },
     stakes: {
       title: "Was ändert sich in einem Jahr?",
-      description: "Ohne ein System wirst du drei weitere unfertige Projekte haben. Du wirst immer noch anderen beim Shippen zusehen, während du in der Tutorial-Hölle feststeckst. Du wirst immer noch Stunden gegen Euros tauschen—oder schlimmer, Stunden gegen nichts.\n\nDie Projekte werden sich nicht von selbst fertigstellen. Die Kunden werden nicht magisch erscheinen.",
+      description: "Ohne ein besseres Delivery-System wirst du immer noch für Tools zahlen, die nicht zusammenarbeiten. Du wirst immer noch Wochen brauchen, um jeden neuen Kunden einzurichten. Du wirst immer noch zusehen, wie dein Umsatz in Software-Lizenzen und Setup-Zeit verschwindet.\n\nDie Margen werden sich nicht von selbst reparieren. Der Delivery-Engpass wird nicht magisch verschwinden.",
     },
   },
   guide: {
     header: "Ich war dort",
-    empathy: "Ich habe jahrelang Dinge gebaut, die niemand benutzt hat. Ich habe eine Website fertiggestellt, Software erstellt, ein Produkt geliefert—und dann... nichts. Es lag einfach da. Nicht weil es nicht gut war, sondern weil ich nicht wusste, wie ich es positionieren sollte. Ich hatte die Fähigkeiten alles zu bauen, aber nicht die Marketing- und Vertriebsfähigkeiten es richtig zu präsentieren.",
-    authority: "Irgendwann habe ich es verstanden. 20 Jahre Software-Entwicklung. 5 Jahre eine Marketing-Agentur führen, wo ich jedes einzelne Projekt verkaufen musste. Ich habe gelernt, dass Bauen nur die halbe Miete ist—Liefern und Verkaufen ist die andere Hälfte.\n\nJetzt helfe ich Buildern wie dir, beides zu tun.",
+    empathy: "Ich habe fünf Jahre lang eine Marketing-Agentur geführt. €240.000 im Jahr an wiederkehrendem Umsatz. Vier Mitarbeiter. Sechs Kunden, die uns geliebt haben. Und ich habe nichts mit nach Hause genommen. Der Software-Stack hat €500 bis €1.000 im Monat gekostet. Jeder neue Kunde brauchte Wochen fürs Onboarding. Mein Team hat Vollgas gearbeitet, aber die Delivery hat den ganzen Gewinn aufgefressen.",
+    authority: "Meine Frau hat gesagt, ich soll es dichtmachen. Also habe ich es getan. Dann bin ich zurückgekehrt zu dem, was ich kann—Software-Entwicklung—und habe das Tool gebaut, das meine Agentur gerettet hätte. 20 Jahre Software bauen. 5 Jahre Sales und Marketing auf die harte Tour lernen. Layer Cake ist alles, was ich mir gewünscht hätte.\n\nJetzt helfe ich Agency Ownern und Buildern, das gleiche Delivery-Problem zu lösen, das ich durchlebt habe.",
     proofPoints: {
       experience: "20 Jahre Software-Entwicklung",
-      sales: "5 Jahre in Vertrieb & Marketing",
+      sales: "5 Jahre eine Marketing-Agentur geführt",
       mentoring: "Aktuell 2 Builder durch ICP und Go-to-Market begleitend",
       retention: "100% Kundenbindung—nie einen Kunden verloren",
     },
@@ -427,29 +427,29 @@ export const landingDe = {
     step1: {
       number: "1",
       title: "Tritt der Community bei",
-      description: "Melde dich kostenlos an. Stell dich vor. Erzähl uns, was du baust. Du bekommst Zugang zu Templates, Frameworks und anderen Buildern, die wirklich arbeiten.",
+      description: "Melde dich kostenlos an. Erzähl uns, was du baust und für wen. Bekomme Zugang zu Templates, Frameworks und anderen Agency Ownern, die die gleichen Delivery-Probleme lösen.",
     },
     step2: {
       number: "2",
       title: "Level auf",
-      description: "Je mehr du mitmachst, desto mehr schaltest du frei. Erreiche Meilensteine, teile deinen Fortschritt, hilf anderen. Du verdienst dir Zugang zu besseren Templates, Projekt-Teardowns und direktem Feedback.",
+      description: "Je mehr du mitmachst, desto mehr schaltest du frei. Teile deinen Fortschritt, hilf anderen, erreiche Meilensteine. Verdiene dir Zugang zu besseren Templates, Projekt-Teardowns und direktem Feedback zu deinem Delivery-Setup.",
     },
     step3: {
       number: "3",
       title: "Liefer und werde bezahlt",
-      description: "Hör auf, isoliert zu bauen. Hol dir Accountability um wirklich fertig zu werden. Lerne zu verkaufen, was du baust. Wenn du bereit bist, bewirb dich für die Apprenticeship und arbeite an echten Kundenprojekten mit mir.",
+      description: "Ersetze deinen zusammengeklebten Stack durch ein echtes Delivery-System. Onboarde Kunden in Minuten, nicht Wochen. Wenn du bereit bist, bewirb dich für die Apprenticeship und arbeite an echten Kundenprojekten mit mir.",
     },
   },
   success: {
     header: "Stell dir das stattdessen vor",
     vision: {
-      item1: "Du hast zwei Projekte geliefert, die Leute wirklich nutzen",
-      item2: "Du hast Kunden, die dir echtes Geld für deine Skills zahlen",
-      item3: "Andere Builder fragen DICH, wie du das gemacht hast",
-      item4: "Dein Portfolio sind keine Fake-Apps—es ist Beweis, dass du lieferst",
-      item5: "Du hast aufgehört neu anzufangen und angefangen Erfolge zu stapeln",
+      item1: "Du onboardest einen neuen Kunden in Minuten statt Wochen",
+      item2: "Deine Software-Kosten sind von €500+/Monat auf eine Plattform gesunken",
+      item3: "Du behältst tatsächlich den Umsatz, den du verdienst",
+      item4: "Andere Agency Owner fragen DICH, wie du so schnell lieferst",
+      item5: "Du hast aufgehört zu kleben und angefangen zu skalieren",
     },
-    contrast: "Der Unterschied zwischen Buildern, die es schaffen und Buildern, die stecken bleiben, ist nicht Talent. Es ist Fertigwerden. Es ist Verkaufen. Es ist, unter anderen zu sein, die dich zum Shippen pushen.",
+    contrast: "Der Unterschied zwischen Agenturen, die skalieren und Agenturen, die stecken bleiben, ist nicht Talent oder Kunden. Es ist Delivery. Es ist die richtige Infrastruktur, damit jeder neue Kunde mehr Gewinn bedeutet—nicht nur mehr Arbeit.",
     timeframe: "In sechs Monaten:",
   },
   features: {
@@ -460,7 +460,7 @@ export const landingDe = {
       items: {
         fundamentals: {
           title: "5 Kern-Videolektionen",
-          description: "Warum die meisten Builder scheitern, die 3 Dinge die du brauchst, Projekte auswählen die es wert sind, Angebote erstellen, Käufer erreichen",
+          description: "Warum die meisten Agenturen Gewinn bluten, das Delivery-Problem, deinen Stack reparieren, skalierbare Angebote bauen, Käufer erreichen",
         },
         frameworks: {
           title: "L4YERCAK3 Systems (GitHub)",
@@ -468,11 +468,11 @@ export const landingDe = {
         },
         templates: {
           title: "Templates & Worksheets",
-          description: "ICP-Worksheets, einfache Outreach-Scripts — mehr Templates freischalten durch Leveln",
+          description: "ICP-Worksheets, Outreach-Scripts, Delivery-Checklisten — mehr Templates freischalten durch Leveln",
         },
         community: {
           title: "Aktive Community",
-          description: "Builder die Fortschritte teilen, Fragen stellen, sich gegenseitig beim Shippen helfen",
+          description: "Agency Owner und Builder teilen was funktioniert, lösen Delivery-Probleme, helfen sich gegenseitig beim Skalieren",
         },
         challenges: {
           title: "Monatliche Build Challenges",
@@ -535,8 +535,8 @@ export const landingDe = {
     note: "Du musst nicht upgraden. Die kostenlose Stufe hat echten Wert. Upgrade wenn du bereit bist schneller zu werden.",
   },
   finalCta: {
-    header: "Bereit aufzuhören neu anzufangen?",
-    push: "Tritt der kostenlosen Community bei. Stell dich vor. Erzähl uns, was du baust.\n\nKeine Kreditkarte. Kein Pitch. Nur Builder, die Buildern beim Shippen helfen.",
+    header: "Bereit, dein Delivery-Problem zu lösen?",
+    push: "Tritt der kostenlosen Community bei. Erzähl uns, was du baust und für wen.\n\nKeine Kreditkarte. Kein Pitch. Nur Agency Owner und Builder, die die gleichen Probleme gelöst haben, vor denen du stehst.",
     cta: "Kostenlos beitreten",
     ctaSecondary: "Noch unsicher? Schau das 50-Sekunden-Intro",
     objectionHandler: "Für immer kostenlos. Upgrade nur wenn du schneller werden willst. Jederzeit abmelden.",
