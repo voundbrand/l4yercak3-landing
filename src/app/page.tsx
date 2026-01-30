@@ -919,7 +919,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className={cn("font-serif text-3xl sm:text-4xl md:text-5xl italic mb-8 transition-colors duration-300", theme.headings)}>
+            <h2 className={cn("font-serif text-2xl sm:text-3xl md:text-4xl italic mb-8 transition-colors duration-300", theme.headings)}>
               {t("landing.finalCta.header")}
             </h2>
             <p className={cn("text-base md:text-lg leading-relaxed mb-10 whitespace-pre-line transition-colors duration-300", theme.muted)}>

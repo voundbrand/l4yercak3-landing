@@ -10,7 +10,7 @@ export const landingEn = {
     header: "Sound Familiar?",
     graveyard: {
       title: "The Stack Tax",
-      description: "GoHighLevel. Airtable. Zapier. Stripe. Calendly. Mailchimp. You're paying €500+ a month for tools that don't talk to each other—and spending 10-20 hours a month just keeping them connected.",
+      description: "GoHighLevel. Airtable. Zapier. Stripe. Calendly. Mailchimp. You're paying up to €1,000 a month for tools that don't talk to each other—and spending 10-20 hours a month just keeping them connected.",
     },
     loop: {
       title: "The Onboarding Trap",
@@ -27,8 +27,8 @@ export const landingEn = {
   },
   guide: {
     header: "I've Been There",
-    empathy: "I ran a marketing agency for five years. €240,000 a year in recurring revenue. Four employees. Six clients who loved us. And I took home nothing. The software stack cost €500 to €1,000 a month. Every new client took weeks to onboard. My team was working full bore, but delivery ate all the profit.",
-    authority: "My wife told me to shut it down. So I did. Then I went back to what I know—software engineering—and built the tool that would have saved my agency. 20 years building software. 5 years learning sales and marketing the hard way. Layer Cake is everything I wished I had.\n\nNow I help agency owners and builders solve the same delivery problem I lived.",
+    empathy: "I ran a marketing agency for five years. €240,000 a year in recurring revenue. Four employees. Our clients loved us. And I took home nothing. The software stack cost €500 to €1,000 a month. Every new client took weeks to onboard. My team was working full bore, but delivery ate all the profit.",
+    authority: "There was a moment where I had to be honest with myself—I was spinning my wheels. Working harder than ever and ending up with nothing left. So I shut it down and went back to what I know: software engineering. And I built the tool that would have saved my agency. 20 years building software. 5 years learning sales and marketing the hard way. Layer Cake is everything I wished I had.\n\nNow I help agency owners and builders solve the same delivery problem I lived.",
     proofPoints: {
       experience: "20 years building software",
       sales: "5 years running a marketing agency",
@@ -59,7 +59,7 @@ export const landingEn = {
     header: "Imagine This Instead",
     vision: {
       item1: "You onboard a new client in minutes instead of weeks",
-      item2: "Your software costs dropped from €500+/month to one platform",
+      item2: "Your software costs dropped from €1,000/month to one platform",
       item3: "You're actually keeping the revenue you earn",
       item4: "Other agency owners are asking YOU how you deliver so fast",
       item5: "You've stopped duct-taping and started scaling",
@@ -222,18 +222,18 @@ export const landingEn = {
     },
     page: {
       hero: {
-        headline: "Stop Building Fake Projects.",
-        subheadline: "Work on real client software with me. Ship it. Get paid. Build a portfolio that actually matters.",
+        headline: "Stop Guessing. Start Delivering.",
+        subheadline: "Learn my delivery frameworks, work on real client projects with me, and build the systems that let you deliver fast and get paid.",
         cta: "Apply Now",
         watchVideo: "Watch the 4-minute intro",
       },
       problem: {
-        title: "The Catch-22",
-        content: "You've taken the courses. Built the to-do apps. Followed the tutorials.\n\nAnd when you try to land clients or get hired, you hear the same thing:\n\n\"Do you have experience with real projects?\"\n\nNo. Because nobody let you work on real projects.\n\nYou can't get experience without experience. So you stay stuck. More tutorials. More fake projects. More waiting.\n\nMeanwhile, your skills are rotting. The market is moving. And every day you spend building things nobody uses is a day you're not building your career.",
+        title: "The Delivery Gap",
+        content: "You can build. Maybe you can even vibe code. You've got the technical skills to create things that work.\n\nBut delivering to a real client? That's a completely different game.\n\nScoping a project so it doesn't spiral. Communicating with clients when requirements change. Knowing what to build first and what to skip. Pricing your work so you actually make money. Shipping on deadline when things break.\n\nNobody teaches this. Not courses, not tutorials, not YouTube videos. You only learn delivery by doing it — under real constraints, with real money on the line.\n\nThat's why most builders stay stuck. They can build anything, but they can't productize themselves. They can't simplify their delivery into a repeatable system. And without that, every project is starting from scratch.",
       },
       solution: {
-        title: "This Is Different",
-        content: "You don't learn from me. You work WITH me.\n\nI have 20 years of software development experience and 5 years running a marketing agency. I've shipped dozens of projects for paying clients. Now I'm looking for builders who want to do the same.\n\nTogether, we find the perfect project for you — either from my pipeline of 10+ active client opportunities, or we identify a new project that fits your skills, interests, and growth goals.\n\nYou'll see exactly how I scope projects, communicate with clients, handle problems when they arise (and they always do), and deliver results that get us paid.\n\nThis isn't theory. It's apprenticeship — the way people actually learned trades for centuries before everything got locked behind paywalls and certificates.",
+        title: "Coaching Meets Apprenticeship",
+        content: "This isn't a course where you watch videos. And it's not just 'here's a task, figure it out.'\n\nIt's an intensive coaching program where you work WITH me on real client projects — and I hand you every framework, system, and shortcut I've built over 20 years of software delivery and 5 years running an agency.\n\nTogether, we find the perfect project for you — either from my pipeline of 10+ active client opportunities, or we identify a new project that fits your skills, interests, and growth goals.\n\nYou'll see exactly how I scope projects, communicate with clients, handle problems when they arise (and they always do), and deliver results that get us paid.\n\nYou don't just learn by doing. You learn by doing it right — with proven systems, not guesswork.",
       },
       howItWorks: {
         title: "Your Path to Getting Paid",
@@ -258,24 +258,36 @@ export const landingEn = {
           { name: "AI Integrations", description: "LLM-powered features, chatbots, content automation" },
         ],
       },
+      deliveryFrameworks: {
+        title: "The Delivery Frameworks You'll Get",
+        description: "These are the exact systems I built over 20 years of shipping software and 5 years running an agency. You get all of them.",
+        items: [
+          { name: "Rapid Scoping System", description: "How to scope a project in hours, not weeks — so you know exactly what to build, what to skip, and what to charge" },
+          { name: "Client Communication Playbook", description: "Templates and frameworks for onboarding, updates, scope changes, and difficult conversations" },
+          { name: "Vibe Coding Workflow", description: "How to use AI tools (Cursor, Claude, v0) to build production-quality software 10x faster" },
+          { name: "Delivery Pipeline", description: "My step-by-step system for going from client kickoff to paid invoice — repeatable for every project" },
+          { name: "Productization Framework", description: "How to turn custom client work into repeatable packages so you stop trading hours for dollars" },
+          { name: "Quality & Ship Checklist", description: "What to check before every delivery so clients stay happy and you build a reputation that compounds" },
+        ],
+      },
       whatYouGet: {
         title: "What You Get",
         items: [
           "A real project matched to your skills and interests — not random busywork",
-          "Daily guidance from someone who's shipped dozens of client projects",
+          "Intensive coaching from someone who's shipped dozens of client projects",
+          "All my delivery frameworks, systems, and templates — the ones that took years to build",
           "Revenue share on everything you help deliver — real money, not exposure",
-          "Portfolio pieces that prove you can ship under real constraints",
-          "Inside look at how to scope, price, and deliver client work",
+          "Portfolio pieces that prove you can deliver under real constraints",
+          "The skills to productize yourself and simplify your delivery",
           "Reference and endorsement when you're ready to go solo",
-          "A network of other builders doing the same thing",
         ],
       },
       whatYouDontGet: {
         title: "What This Isn't",
         items: [
-          "A course — we're shipping software, not watching videos",
-          "Hand-holding — I guide and unblock you, I don't write your code",
-          "A certificate — you get results, money, and proof. Not PDFs",
+          "A passive course — there's structured coaching, but we're shipping real software, not watching modules",
+          "Hand-holding — I coach and unblock you, I don't write your code",
+          "A certificate — you get results, money, frameworks, and proof. Not PDFs",
           "Employment — it's project-based, you're not an employee",
           "Guaranteed income — you earn when we deliver. That's the deal",
         ],
@@ -285,11 +297,11 @@ export const landingEn = {
         ideal: {
           title: "This is for you if...",
           points: [
-            "You can already build — you've written code that works, even if imperfect",
-            "You've shipped SOMETHING — a side project, a contribution, anything real",
+            "You can already build — you've written code or used AI tools to create things that work",
+            "You want to deliver to real clients — not just build side projects for yourself",
+            "You want systems, not guesswork — you're ready for frameworks that make delivery repeatable",
             "You can commit serious time — not 2 hours on weekends, real focus",
             "You're tired of learning without earning — courses aren't cutting it anymore",
-            "You want experience, not another tutorial — you learn by doing",
             "You can handle feedback — direct, honest, sometimes uncomfortable",
             "You're resourceful — you Google before you ask, you try before you give up",
           ],
@@ -298,11 +310,11 @@ export const landingEn = {
           title: "This is NOT for you if...",
           points: [
             "You're a complete beginner — you need fundamentals first, not client pressure",
-            "You need constant validation — I'll support you, but I won't coddle you",
+            "You need constant validation — I'll coach you hard, but I won't coddle you",
             "You disappear when things get hard — projects have deadlines",
-            "You're collecting credentials — this won't look good on a resume, it'll build one",
+            "You just want to learn more — this is about delivering and earning, not collecting knowledge",
             "You can't handle ambiguity — client work is messy, requirements change",
-            "You expect hand-holding — I guide, I don't do your work for you",
+            "You expect someone else to do the work — I guide, I don't build for you",
           ],
         },
       },
@@ -395,7 +407,7 @@ export const landingDe = {
     header: "Kommt dir das bekannt vor?",
     graveyard: {
       title: "Die Stack-Steuer",
-      description: "GoHighLevel. Airtable. Zapier. Stripe. Calendly. Mailchimp. Du zahlst €500+ im Monat für Tools, die nicht miteinander reden—und verbringst 10-20 Stunden im Monat nur damit, sie verbunden zu halten.",
+      description: "GoHighLevel. Airtable. Zapier. Stripe. Calendly. Mailchimp. Du zahlst bis zu €1.000 im Monat für Tools, die nicht miteinander reden—und verbringst 10-20 Stunden im Monat nur damit, sie verbunden zu halten.",
     },
     loop: {
       title: "Die Onboarding-Falle",
@@ -412,8 +424,8 @@ export const landingDe = {
   },
   guide: {
     header: "Ich war dort",
-    empathy: "Ich habe fünf Jahre lang eine Marketing-Agentur geführt. €240.000 im Jahr an wiederkehrendem Umsatz. Vier Mitarbeiter. Sechs Kunden, die uns geliebt haben. Und ich habe nichts mit nach Hause genommen. Der Software-Stack hat €500 bis €1.000 im Monat gekostet. Jeder neue Kunde brauchte Wochen fürs Onboarding. Mein Team hat Vollgas gearbeitet, aber die Delivery hat den ganzen Gewinn aufgefressen.",
-    authority: "Meine Frau hat gesagt, ich soll es dichtmachen. Also habe ich es getan. Dann bin ich zurückgekehrt zu dem, was ich kann—Software-Entwicklung—und habe das Tool gebaut, das meine Agentur gerettet hätte. 20 Jahre Software bauen. 5 Jahre Sales und Marketing auf die harte Tour lernen. Layer Cake ist alles, was ich mir gewünscht hätte.\n\nJetzt helfe ich Agency Ownern und Buildern, das gleiche Delivery-Problem zu lösen, das ich durchlebt habe.",
+    empathy: "Ich habe fünf Jahre lang eine Marketing-Agentur geführt. €240.000 im Jahr an wiederkehrendem Umsatz. Vier Mitarbeiter. Unsere Kunden haben uns geliebt. Und ich habe nichts mit nach Hause genommen. Der Software-Stack hat €500 bis €1.000 im Monat gekostet. Jeder neue Kunde brauchte Wochen fürs Onboarding. Mein Team hat Vollgas gearbeitet, aber die Delivery hat den ganzen Gewinn aufgefressen.",
+    authority: "Es gab einen Moment, in dem ich ehrlich zu mir selbst sein musste—ich drehte mich im Kreis. Arbeitete härter als je zuvor und hatte am Ende nichts übrig. Also habe ich dichtgemacht und bin zurückgekehrt zu dem, was ich kann: Software-Entwicklung. Und ich habe das Tool gebaut, das meine Agentur gerettet hätte. 20 Jahre Software bauen. 5 Jahre Sales und Marketing auf die harte Tour lernen. Layer Cake ist alles, was ich mir gewünscht hätte.\n\nJetzt helfe ich Agency Ownern und Buildern, das gleiche Delivery-Problem zu lösen, das ich durchlebt habe.",
     proofPoints: {
       experience: "20 Jahre Software-Entwicklung",
       sales: "5 Jahre eine Marketing-Agentur geführt",
@@ -444,7 +456,7 @@ export const landingDe = {
     header: "Stell dir das stattdessen vor",
     vision: {
       item1: "Du onboardest einen neuen Kunden in Minuten statt Wochen",
-      item2: "Deine Software-Kosten sind von €500+/Monat auf eine Plattform gesunken",
+      item2: "Deine Software-Kosten sind von €1.000/Monat auf eine Plattform gesunken",
       item3: "Du behältst tatsächlich den Umsatz, den du verdienst",
       item4: "Andere Agency Owner fragen DICH, wie du so schnell lieferst",
       item5: "Du hast aufgehört zu kleben und angefangen zu skalieren",
@@ -607,18 +619,18 @@ export const landingDe = {
     },
     page: {
       hero: {
-        headline: "Hör auf, Fake-Projekte zu bauen.",
-        subheadline: "Arbeite an echter Kunden-Software mit mir. Liefer. Werde bezahlt. Bau ein Portfolio, das wirklich zählt.",
+        headline: "Hör auf zu raten. Fang an zu liefern.",
+        subheadline: "Lerne meine Delivery-Frameworks, arbeite an echten Kundenprojekten mit mir und baue die Systeme, mit denen du schnell lieferst und bezahlt wirst.",
         cta: "Jetzt bewerben",
         watchVideo: "Schau das 4-Minuten-Intro",
       },
       problem: {
-        title: "Das Catch-22",
-        content: "Du hast die Kurse gemacht. Die To-Do-Apps gebaut. Den Tutorials gefolgt.\n\nUnd wenn du versuchst, Kunden zu landen oder einen Job zu bekommen, hörst du immer das Gleiche:\n\n\"Hast du Erfahrung mit echten Projekten?\"\n\nNein. Weil dich niemand an echten Projekten arbeiten ließ.\n\nDu kannst keine Erfahrung ohne Erfahrung sammeln. Also steckst du fest. Mehr Tutorials. Mehr Fake-Projekte. Mehr Warten.\n\nIn der Zwischenzeit rosten deine Skills. Der Markt bewegt sich. Und jeder Tag, den du mit Projekten verbringst, die niemand nutzt, ist ein Tag, an dem du nicht deine Karriere aufbaust.",
+        title: "Die Delivery-Lücke",
+        content: "Du kannst bauen. Vielleicht kannst du sogar Vibe Coden. Du hast die technischen Skills, um Dinge zu erstellen, die funktionieren.\n\nAber für einen echten Kunden liefern? Das ist ein komplett anderes Spiel.\n\nEin Projekt scopen, damit es nicht ausufert. Mit Kunden kommunizieren, wenn sich Anforderungen ändern. Wissen, was man zuerst baut und was man weglässt. Deine Arbeit so bepreisen, dass du wirklich Geld verdienst. Pünktlich liefern, wenn Dinge kaputt gehen.\n\nDas lehrt niemand. Nicht Kurse, nicht Tutorials, nicht YouTube-Videos. Man lernt Delivery nur durch Machen — unter echten Bedingungen, mit echtem Geld auf dem Spiel.\n\nDeshalb bleiben die meisten Builder stecken. Sie können alles bauen, aber sie können sich nicht produktisieren. Sie können ihre Delivery nicht zu einem wiederholbaren System vereinfachen. Und ohne das fängt jedes Projekt bei null an.",
       },
       solution: {
-        title: "Das hier ist anders",
-        content: "Du lernst nicht von mir. Du arbeitest MIT mir.\n\nIch habe 20 Jahre Software-Entwicklungserfahrung und 5 Jahre eine Marketing-Agentur geleitet. Ich habe dutzende Projekte für zahlende Kunden ausgeliefert. Jetzt suche ich Builder, die das Gleiche tun wollen.\n\nGemeinsam finden wir das perfekte Projekt für dich — entweder aus meiner Pipeline von 10+ aktiven Kundenmöglichkeiten, oder wir identifizieren ein neues Projekt, das zu deinen Skills, Interessen und Wachstumszielen passt.\n\nDu siehst genau, wie ich Projekte scope, mit Kunden kommuniziere, Probleme löse wenn sie auftreten (und sie treten immer auf), und Ergebnisse liefer, die uns bezahlt machen.\n\nDas ist keine Theorie. Das ist Apprenticeship — so wie Menschen jahrhundertelang Handwerk gelernt haben, bevor alles hinter Paywalls und Zertifikaten eingesperrt wurde.",
+        title: "Coaching trifft Apprenticeship",
+        content: "Das ist kein Kurs, in dem du Videos schaust. Und es ist nicht einfach nur 'hier ist eine Aufgabe, komm klar damit.'\n\nEs ist ein intensives Coaching-Programm, bei dem du MIT mir an echten Kundenprojekten arbeitest — und ich dir jedes Framework, jedes System und jeden Shortcut gebe, den ich über 20 Jahre Software-Delivery und 5 Jahre Agenturführung aufgebaut habe.\n\nGemeinsam finden wir das perfekte Projekt für dich — entweder aus meiner Pipeline von 10+ aktiven Kundenmöglichkeiten, oder wir identifizieren ein neues Projekt, das zu deinen Skills, Interessen und Wachstumszielen passt.\n\nDu siehst genau, wie ich Projekte scope, mit Kunden kommuniziere, Probleme löse wenn sie auftreten (und sie treten immer auf), und Ergebnisse liefer, die uns bezahlt machen.\n\nDu lernst nicht nur durchs Machen. Du lernst, es richtig zu machen — mit bewährten Systemen, nicht mit Rätselraten.",
       },
       howItWorks: {
         title: "Dein Weg zum Bezahltwerden",
@@ -643,24 +655,36 @@ export const landingDe = {
           { name: "KI-Integrationen", description: "LLM-gestützte Features, Chatbots, Content-Automatisierung" },
         ],
       },
+      deliveryFrameworks: {
+        title: "Die Delivery-Frameworks, die du bekommst",
+        description: "Das sind genau die Systeme, die ich über 20 Jahre Software-Delivery und 5 Jahre Agenturführung aufgebaut habe. Du bekommst alle.",
+        items: [
+          { name: "Rapid Scoping System", description: "Wie man ein Projekt in Stunden scopt, nicht Wochen — damit du genau weißt, was du baust, was du weglässt und was du verlangst" },
+          { name: "Client Communication Playbook", description: "Templates und Frameworks für Onboarding, Updates, Scope-Änderungen und schwierige Gespräche" },
+          { name: "Vibe Coding Workflow", description: "Wie du KI-Tools (Cursor, Claude, v0) nutzt, um produktionsreife Software 10x schneller zu bauen" },
+          { name: "Delivery Pipeline", description: "Mein Schritt-für-Schritt-System vom Kunden-Kickoff bis zur bezahlten Rechnung — wiederholbar für jedes Projekt" },
+          { name: "Productization Framework", description: "Wie du individuelle Kundenarbeit in wiederholbare Pakete verwandelst, damit du aufhörst Stunden gegen Euros zu tauschen" },
+          { name: "Quality & Ship Checklist", description: "Was du vor jeder Auslieferung prüfst, damit Kunden zufrieden bleiben und du dir einen Ruf aufbaust, der sich potenziert" },
+        ],
+      },
       whatYouGet: {
         title: "Was du bekommst",
         items: [
           "Ein echtes Projekt, das zu deinen Skills und Interessen passt — keine Zufallsarbeit",
-          "Tägliche Anleitung von jemandem, der dutzende Kundenprojekte geliefert hat",
+          "Intensives Coaching von jemandem, der dutzende Kundenprojekte geliefert hat",
+          "Alle meine Delivery-Frameworks, Systeme und Templates — die, die Jahre gebraucht haben um sie zu bauen",
           "Umsatzbeteiligung an allem, was du hilfst auszuliefern — echtes Geld, keine Exposure",
           "Portfolio-Stücke, die beweisen, dass du unter echten Bedingungen liefern kannst",
-          "Einblick, wie man Kundenarbeit scopt, preist und liefert",
+          "Die Skills, dich selbst zu produktisieren und deine Delivery zu vereinfachen",
           "Referenz und Empfehlung, wenn du bereit bist solo zu gehen",
-          "Ein Netzwerk von anderen Buildern, die das Gleiche tun",
         ],
       },
       whatYouDontGet: {
         title: "Was das hier nicht ist",
         items: [
-          "Ein Kurs — wir liefern Software, wir schauen keine Videos",
-          "Händchenhalten — ich führe und entsperre dich, ich schreibe nicht deinen Code",
-          "Ein Zertifikat — du bekommst Ergebnisse, Geld und Beweis. Keine PDFs",
+          "Ein passiver Kurs — es gibt strukturiertes Coaching, aber wir liefern echte Software, keine Module",
+          "Händchenhalten — ich coache und entsperre dich, ich schreibe nicht deinen Code",
+          "Ein Zertifikat — du bekommst Ergebnisse, Geld, Frameworks und Beweis. Keine PDFs",
           "Anstellung — es ist projektbasiert, du bist kein Angestellter",
           "Garantiertes Einkommen — du verdienst wenn wir liefern. So ist der Deal",
         ],
@@ -670,11 +694,11 @@ export const landingDe = {
         ideal: {
           title: "Das ist für dich, wenn...",
           points: [
-            "Du kannst schon bauen — du hast Code geschrieben, der funktioniert, auch wenn nicht perfekt",
-            "Du hast ETWAS geliefert — ein Nebenprojekt, eine Contribution, irgendetwas Echtes",
+            "Du kannst schon bauen — du hast Code geschrieben oder KI-Tools genutzt, um Dinge zu erstellen, die funktionieren",
+            "Du willst für echte Kunden liefern — nicht nur Nebenprojekte für dich selbst bauen",
+            "Du willst Systeme, kein Rätselraten — du bist bereit für Frameworks, die Delivery wiederholbar machen",
             "Du kannst ernsthafte Zeit investieren — nicht 2 Stunden am Wochenende, echter Fokus",
             "Du bist müde vom Lernen ohne Verdienen — Kurse reichen nicht mehr",
-            "Du willst Erfahrung, kein weiteres Tutorial — du lernst durchs Machen",
             "Du kannst mit Feedback umgehen — direkt, ehrlich, manchmal unbequem",
             "Du bist einfallsreich — du googelst bevor du fragst, du probierst bevor du aufgibst",
           ],
@@ -683,11 +707,11 @@ export const landingDe = {
           title: "Das ist NICHT für dich, wenn...",
           points: [
             "Du bist kompletter Anfänger — du brauchst erst Grundlagen, keinen Kundendruck",
-            "Du brauchst ständige Bestätigung — ich unterstütze dich, aber ich verhätschle nicht",
+            "Du brauchst ständige Bestätigung — ich coache dich intensiv, aber ich verhätschle nicht",
             "Du verschwindest, wenn es schwer wird — Projekte haben Deadlines",
-            "Du sammelst Zertifikate — das sieht nicht gut im Lebenslauf aus, es baut einen",
+            "Du willst nur noch mehr lernen — hier geht es ums Liefern und Verdienen, nicht ums Wissen sammeln",
             "Du kannst nicht mit Unsicherheit umgehen — Kundenarbeit ist chaotisch, Anforderungen ändern sich",
-            "Du erwartest Händchenhalten — ich führe, ich mache nicht deine Arbeit",
+            "Du erwartest, dass jemand anderes die Arbeit macht — ich führe, ich baue nicht für dich",
           ],
         },
       },

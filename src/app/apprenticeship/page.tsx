@@ -109,6 +109,30 @@ function ApprenticeshipContent() {
             </div>
           </section>
 
+          {/* Delivery Frameworks Section */}
+          <section>
+            <h2 className={cn("font-serif text-3xl italic mb-4 transition-colors duration-300", theme.headings)}>
+              {t('landing.apprenticeship.page.deliveryFrameworks.title')}
+            </h2>
+            <p className={cn("mb-6 transition-colors duration-300", theme.muted)}>
+              {t('landing.apprenticeship.page.deliveryFrameworks.description')}
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {(t('landing.apprenticeship.page.deliveryFrameworks.items', { returnObjects: true }) as any[]).map((item: any, index: number) => (
+                <div key={index} className={cn("p-4 rounded-lg transition-colors duration-300",
+                  readingMode === 'sepia' ? 'bg-amber-100/80' : 'bg-amber-50 dark:bg-amber-900/20')}>
+                  <h3 className={cn("text-base font-semibold mb-2 transition-colors duration-300", theme.headings)}>
+                    {item.name}
+                  </h3>
+                  <p className={cn("text-xs transition-colors duration-300", theme.muted)}>
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
           {/* What You Get / Don't Get Section */}
           <section>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
