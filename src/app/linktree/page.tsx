@@ -145,7 +145,7 @@ export default function LinktreePage() {
 
           {/* Community Link - SECONDARY */}
           <motion.a
-            href="https://www.skool.com/l4yercak3/about"
+            href="https://www.skool.com/der-hebel-1168/about"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}

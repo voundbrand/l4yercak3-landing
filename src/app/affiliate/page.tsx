@@ -115,7 +115,7 @@ function VideoModal({
 }
 
 // Application form link (placeholder - update with real form URL)
-const AFFILIATE_APPLY_URL = "https://www.skool.com/l4yercak3/about";
+const AFFILIATE_APPLY_URL = "https://www.skool.com/der-hebel-1168/about";
 
 export default function AffiliatePage() {
   const { t } = useTranslation();
