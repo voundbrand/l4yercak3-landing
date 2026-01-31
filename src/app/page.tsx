@@ -122,20 +122,20 @@ const clientLogos = [
   { name: "Hinrichs", src: "/Brunnenbau_Hinrichs_black.png", alt: "Hinrichs - Geotechnical Engineering" },
 ];
 
-// Integration data with Font Awesome icons and brand colors
+// Integration data with inline SVG icons and brand colors
 const integrations = [
-  { name: "Stripe", icon: "fab fa-stripe-s", status: "live" as const, color: "text-[#635BFF]", bg: "bg-[#635BFF]/10", border: "border-[#635BFF]/25" },
-  { name: "Google", icon: "fab fa-google", status: "live" as const, color: "text-[#4285F4]", bg: "bg-[#4285F4]/10", border: "border-[#4285F4]/25" },
-  { name: "GitHub", icon: "fab fa-github", status: "live" as const, color: "text-[#f0f0f0]", bg: "bg-[#333]/15", border: "border-[#666]/25" },
-  { name: "Vercel", icon: "fas fa-cloud", status: "live" as const, color: "text-[#f0f0f0]", bg: "bg-[#333]/15", border: "border-[#666]/25" },
-  { name: "Microsoft", icon: "fab fa-microsoft", status: "live" as const, color: "text-[#00A4EF]", bg: "bg-[#00A4EF]/10", border: "border-[#00A4EF]/25" },
-  { name: "Active Campaign", icon: "fas fa-envelope-open-text", status: "live" as const, color: "text-[#356AE6]", bg: "bg-[#356AE6]/10", border: "border-[#356AE6]/25" },
-  { name: "PayPal", icon: "fab fa-paypal", status: "coming" as const, color: "text-[#003087]", bg: "bg-[#003087]/10", border: "border-[#003087]/25" },
-  { name: "Zapier", icon: "fas fa-bolt", status: "coming" as const, color: "text-[#FF4A00]", bg: "bg-[#FF4A00]/10", border: "border-[#FF4A00]/25" },
-  { name: "Slack", icon: "fab fa-slack", status: "coming" as const, color: "text-[#E01E5A]", bg: "bg-[#E01E5A]/10", border: "border-[#E01E5A]/25" },
-  { name: "n8n", icon: "fas fa-project-diagram", status: "coming" as const, color: "text-[#EA4B71]", bg: "bg-[#EA4B71]/10", border: "border-[#EA4B71]/25" },
-  { name: "Make", icon: "fas fa-cogs", status: "coming" as const, color: "text-[#6D00CC]", bg: "bg-[#6D00CC]/10", border: "border-[#6D00CC]/25" },
-  { name: "ManyChat", icon: "fab fa-facebook-messenger", status: "coming" as const, color: "text-[#0084FF]", bg: "bg-[#0084FF]/10", border: "border-[#0084FF]/25" },
+  { name: "Stripe", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z"/></svg>, status: "live" as const, color: "text-[#635BFF]", bg: "bg-[#635BFF]/10", border: "border-[#635BFF]/25" },
+  { name: "Google", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>, status: "live" as const, color: "text-[#4285F4]", bg: "bg-[#4285F4]/10", border: "border-[#4285F4]/25" },
+  { name: "GitHub", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>, status: "live" as const, color: "text-[#f0f0f0]", bg: "bg-[#333]/15", border: "border-[#666]/25" },
+  { name: "Vercel", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M12 1L24 22H0L12 1z"/></svg>, status: "live" as const, color: "text-[#f0f0f0]", bg: "bg-[#333]/15", border: "border-[#666]/25" },
+  { name: "Microsoft", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M0 0h11.377v11.372H0zm12.623 0H24v11.372H12.623zM0 12.623h11.377V24H0zm12.623 0H24V24H12.623z"/></svg>, status: "live" as const, color: "text-[#00A4EF]", bg: "bg-[#00A4EF]/10", border: "border-[#00A4EF]/25" },
+  { name: "Active Campaign", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.41 14.59l-3.54-3.54 1.41-1.41 2.12 2.12 4.24-4.24 1.41 1.41-5.64 5.66z"/></svg>, status: "live" as const, color: "text-[#356AE6]", bg: "bg-[#356AE6]/10", border: "border-[#356AE6]/25" },
+  { name: "PayPal", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M7.076 21.337H2.47a.641.641 0 01-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 00-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 00-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 00.554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 01.923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>, status: "coming" as const, color: "text-[#003087]", bg: "bg-[#003087]/10", border: "border-[#003087]/25" },
+  { name: "Zapier", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M15.977 10.08l3.122-3.121a8.455 8.455 0 00-2.058-2.058l-3.121 3.122a4.462 4.462 0 00-3.84 0L6.959 4.901a8.455 8.455 0 00-2.058 2.058l3.122 3.121a4.462 4.462 0 000 3.84L4.901 17.041a8.455 8.455 0 002.058 2.058l3.121-3.122a4.462 4.462 0 003.84 0l3.121 3.122a8.455 8.455 0 002.058-2.058l-3.122-3.121a4.462 4.462 0 000-3.84zM12 13.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/></svg>, status: "coming" as const, color: "text-[#FF4A00]", bg: "bg-[#FF4A00]/10", border: "border-[#FF4A00]/25" },
+  { name: "Slack", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M5.042 15.165a2.528 2.528 0 01-2.52 2.523A2.528 2.528 0 010 15.165a2.527 2.527 0 012.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 012.521-2.52 2.527 2.527 0 012.521 2.52v6.313A2.528 2.528 0 018.834 24a2.528 2.528 0 01-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 01-2.521-2.52A2.528 2.528 0 018.834 0a2.528 2.528 0 012.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 012.521 2.521 2.528 2.528 0 01-2.521 2.521H2.522A2.528 2.528 0 010 8.834a2.528 2.528 0 012.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 012.522-2.521A2.528 2.528 0 0124 8.834a2.528 2.528 0 01-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 01-2.523 2.521 2.527 2.527 0 01-2.52-2.521V2.522A2.527 2.527 0 0115.165 0a2.528 2.528 0 012.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 012.523 2.522A2.528 2.528 0 0115.165 24a2.527 2.527 0 01-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 01-2.52-2.523 2.526 2.526 0 012.52-2.52h6.313A2.527 2.527 0 0124 15.165a2.528 2.528 0 01-2.522 2.523h-6.313z"/></svg>, status: "coming" as const, color: "text-[#E01E5A]", bg: "bg-[#E01E5A]/10", border: "border-[#E01E5A]/25" },
+  { name: "n8n", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M12 2a3 3 0 00-3 3v2.268A3.992 3.992 0 007 8a4 4 0 00-4 4 4 4 0 004 4 3.99 3.99 0 002-.535V19a3 3 0 106 0v-3.535A3.99 3.99 0 0017 16a4 4 0 004-4 4 4 0 00-4-4 3.992 3.992 0 00-2 .535V5a3 3 0 00-3-3zm-5 8a2 2 0 110 4 2 2 0 010-4zm10 0a2 2 0 110 4 2 2 0 010-4z"/></svg>, status: "coming" as const, color: "text-[#EA4B71]", bg: "bg-[#EA4B71]/10", border: "border-[#EA4B71]/25" },
+  { name: "Make", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>, status: "coming" as const, color: "text-[#6D00CC]", bg: "bg-[#6D00CC]/10", border: "border-[#6D00CC]/25" },
+  { name: "ManyChat", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.908 1.434 5.503 3.678 7.2V22l3.455-1.896A11.218 11.218 0 0012 20.485c5.523 0 10-4.144 10-9.242C22 6.145 17.523 2 12 2zm1.076 12.444l-2.55-2.72-4.98 2.72 5.473-5.81 2.613 2.72 4.916-2.72-5.472 5.81z"/></svg>, status: "coming" as const, color: "text-[#0084FF]", bg: "bg-[#0084FF]/10", border: "border-[#0084FF]/25" },
 ];
 
 export default function Home() {
@@ -414,11 +414,12 @@ export default function Home() {
                     integration.bg, integration.border
                   )}
                 >
-                  <i className={cn(
-                    integration.icon,
-                    "text-2xl md:text-3xl transition-colors duration-300",
+                  <span className={cn(
+                    "transition-colors duration-300",
                     integration.color
-                  )} />
+                  )}>
+                    {integration.icon}
+                  </span>
                   <span className={cn(
                     "text-xs font-medium text-center leading-tight transition-colors duration-300",
                     readingMode === 'sepia' ? 'text-amber-800' : 'text-foreground/70'

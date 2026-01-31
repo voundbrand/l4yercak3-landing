@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Script from "next/script";
+
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { ClientProviders } from "@/components/client-providers";
@@ -95,11 +95,6 @@ export default function RootLayout({
           </LanguageProvider>
         </ClientProviders>
         <PerformanceMonitor />
-        <Script
-          src="https://kit.fontawesome.com/ee3dfef1ab.js"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   );
