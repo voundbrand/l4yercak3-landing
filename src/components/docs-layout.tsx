@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { GitHubLogoIcon, InstagramLogoIcon } from '@radix-ui/react-icons';
 import { cn } from '@/lib/utils';
-import { BookCallButton } from '@/components/book-call-button';
+import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
 import { socialLinks } from '@/lib/constants';
 import XLogoIcon from './icons/x';
@@ -387,9 +387,11 @@ export function DocsLayout({ children }: DocsLayoutProps) {
                     </button>
                   </div>
 
-                  {/* Book a Call Button - Hidden on mobile */}
+                  {/* Go to App Button - Hidden on mobile */}
                   <div className="hidden sm:block">
-                    <BookCallButton />
+                    <Button asChild size="sm">
+                      <a href="https://app.l4yercak3.com">{t('common.startBuilding')}</a>
+                    </Button>
                   </div>
                 </div>
               </div>

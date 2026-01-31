@@ -3,7 +3,7 @@
 import { ContentPageLayout, useContentTheme } from '@/components/content-page-layout';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import { BookCallButton } from '@/components/book-call-button';
+import { Button } from '@/components/ui/button';
 
 function SupportContent() {
   const theme = useContentTheme();
@@ -48,7 +48,9 @@ function SupportContent() {
                 <p className={cn("mb-4", theme.muted)}>
                   Schedule a call for personalized assistance or partnership discussions.
                 </p>
-                <BookCallButton />
+                <Button asChild size="sm">
+                  <a href="mailto:info@voundbrand.com">Contact Us</a>
+                </Button>
               </div>
             </div>
           </section>

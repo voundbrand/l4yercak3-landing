@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { MinimalNav } from '@/components/minimal-nav';
 import { MobileMenu } from '@/components/mobile-menu';
 import { useTranslation } from 'react-i18next';
+import { useLanguage } from '@/components/language-provider';
 import { socialLinks } from '@/lib/constants';
 import XLogoIcon from './icons/x';
 import LinkedInIcon from './icons/linkedin';
@@ -58,6 +59,7 @@ export function ContentPageLayout({
 }: ContentPageLayoutProps) {
   const [readingMode, setReadingMode] = useState<ReadingMode>('dark');
   const { i18n, t } = useTranslation();
+  const { language, setLanguage } = useLanguage();
 
   // Load saved reading mode preference
   useEffect(() => {
@@ -171,26 +173,16 @@ export function ContentPageLayout({
                 </button>
               </div>
 
-              {/* Community Button */}
+              {/* Start Building Button */}
               <Button asChild size="sm" className="text-sm">
-                <Link
-                  href="https://www.skool.com/l4yercak3/about"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t('common.joinCommunity')}
-                </Link>
+                <a href="https://app.l4yercak3.com">
+                  {t('common.startBuilding')}
+                </a>
               </Button>
             </div>
 
             {/* Mobile Menu */}
-            <MobileMenu
-              readingMode={readingMode}
-              setReadingMode={setReadingMode}
-              language={i18n.language as 'en' | 'de'}
-              setLanguage={(lang) => i18n.changeLanguage(lang)}
-              variant="content"
-            />
+            <MobileMenu readingMode={readingMode} setReadingMode={setReadingMode} language={language} setLanguage={setLanguage} />
           </div>
         </div>
       </header>

@@ -200,13 +200,7 @@ export default function AffiliatePage() {
 
         {/* Mobile Menu */}
         <div className="absolute top-4 right-4 z-20 md:hidden">
-          <MobileMenu
-            readingMode={readingMode}
-            setReadingMode={setReadingMode}
-            language={language}
-            setLanguage={setLanguage}
-            variant="hero"
-          />
+          <MobileMenu readingMode={readingMode} setReadingMode={setReadingMode} language={language} setLanguage={setLanguage} variant="hero" />
         </div>
 
         {/* Hero Content */}
@@ -759,7 +753,7 @@ export default function AffiliatePage() {
       </section>
 
       {/* ===== FOOTER ===== */}
-      <Footer readingMode={readingMode} />
+      <Footer />
     </main>
   );
 }

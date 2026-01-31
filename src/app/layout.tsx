@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { ClientProviders } from "@/components/client-providers";
@@ -47,22 +48,22 @@ export const metadata: Metadata = {
       { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
     ],
   },
-  description: "We stand at the forefront of a new era, where creativity meets technology to redefine what's possible. Join us for exclusive private access and stay updated with our newsletter.",
-  keywords: ["web development", "innovation", "technology", "creative solutions", "l4yercak3"],
+  description: "Beautiful lead gen funnels, CRM, and email. Live in minutes. Free to start.",
+  keywords: ["funnel builder", "page builder", "CRM", "email marketing", "lead generation", "l4yercak3"],
   authors: [{ name: "l4yercak3" }],
   creator: "l4yercak3",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://l4yercak3.com",
-    title: "l4yercak3 - Modern Web Solutions",
-    description: "We stand at the forefront of a new era, where creativity meets technology to redefine what's possible.",
+    title: "l4yercak3 - Funnels, CRM, and Email",
+    description: "Beautiful lead gen funnels, CRM, and email. Live in minutes. Free to start.",
     siteName: "l4yercak3",
   },
   twitter: {
     card: "summary_large_image",
-    title: "l4yercak3 - Modern Web Solutions",
-    description: "We stand at the forefront of a new era, where creativity meets technology to redefine what's possible.",
+    title: "l4yercak3 - Funnels, CRM, and Email",
+    description: "Beautiful lead gen funnels, CRM, and email. Live in minutes. Free to start.",
     creator: "@l4yercak3",
   },
   robots: {
@@ -94,6 +95,11 @@ export default function RootLayout({
           </LanguageProvider>
         </ClientProviders>
         <PerformanceMonitor />
+        <Script
+          src="https://kit.fontawesome.com/ee3dfef1ab.js"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

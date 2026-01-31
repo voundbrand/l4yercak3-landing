@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
@@ -47,17 +46,6 @@ const SunIcon = ({ className }: { className?: string }) => (
 type ReadingMode = 'dark' | 'sepia';
 type Language = 'en' | 'de';
 
-interface NavLink {
-  href: string;
-  labelKey: string;
-}
-
-const navLinks: NavLink[] = [
-  { href: '/', labelKey: 'navigation.home' },
-  { href: '/manifesto', labelKey: 'navigation.manifesto' },
-  { href: '/apprenticeship', labelKey: 'navigation.apprenticeship' },
-];
-
 interface MobileMenuProps {
   readingMode: ReadingMode;
   setReadingMode: (mode: ReadingMode) => void;
@@ -74,7 +62,6 @@ export function MobileMenu({
   variant = 'content',
 }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
   const { t } = useTranslation();
 
   const isHero = variant === 'hero';
@@ -144,51 +131,39 @@ export function MobileMenu({
 
               {/* Navigation Links */}
               <div className="flex-1 flex flex-col items-center justify-center gap-8 px-6">
-                {navLinks.map((link, index) => {
-                  const isActive = pathname === link.href;
-                  return (
-                    <motion.div
-                      key={link.href}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.1 + index * 0.05 }}
-                    >
-                      <Link
-                        href={link.href}
-                        onClick={() => setIsOpen(false)}
-                        className={cn(
-                          "text-3xl uppercase transition-colors",
-                          isActive
-                            ? readingMode === 'sepia'
-                              ? "text-amber-800 font-medium"
-                              : "text-primary font-medium"
-                            : readingMode === 'sepia'
-                              ? "text-amber-900 hover:text-amber-700"
-                              : "text-foreground hover:text-primary"
-                        )}
-                      >
-                        {t(link.labelKey)}
-                      </Link>
-                    </motion.div>
-                  );
-                })}
-
-                {/* Join Community CTA */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.25 }}
+                  transition={{ delay: 0.1 }}
+                >
+                  <Link
+                    href="/"
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "text-3xl uppercase transition-colors",
+                      readingMode === 'sepia'
+                        ? "text-amber-900 hover:text-amber-700"
+                        : "text-foreground hover:text-primary"
+                    )}
+                  >
+                    {t('navigation.home')}
+                  </Link>
+                </motion.div>
+
+                {/* Start Building CTA */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
                   className="pt-4"
                 >
                   <Button asChild size="lg" className="text-base px-8">
-                    <Link
-                      href="https://www.skool.com/l4yercak3/about"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <a
+                      href="https://app.l4yercak3.com"
                       onClick={() => setIsOpen(false)}
                     >
-                      {t('common.joinCommunity')}
-                    </Link>
+                      {t('common.startBuilding')}
+                    </a>
                   </Button>
                 </motion.div>
               </div>
