@@ -40,7 +40,7 @@ export const landingEn = {
     step1: {
       number: "1",
       title: "Sign Up Free",
-      description: "Create your account in 30 seconds. No credit card. You get a funnel, 3 pages, 100 contacts, and full access to the builder. Start building immediately.",
+      description: "Create your account in 30 seconds. No credit card. You get free credits and full access to the builder. Start building immediately.",
     },
     step2: {
       number: "2",
@@ -50,7 +50,7 @@ export const landingEn = {
     step3: {
       number: "3",
       title: "Grow & Get Paid",
-      description: "Track every lead in your CRM. Automate follow-ups. Process payments. When you need more, upgrade to Pro for €20/month — unlimited everything.",
+      description: "Track every lead in your CRM. Automate follow-ups. Process payments. Pay only for what you use — upgrade to Pro for more credits and higher limits.",
     },
   },
   success: {
@@ -112,7 +112,7 @@ export const landingEn = {
         { name: "ManyChat", status: "coming" },
       ],
     },
-    pricing: "Free: 1 funnel, 3 pages, 100 contacts. Pro (€20/mo): Unlimited everything.",
+    pricing: "Free to start. Usage-based — pay only for what you use. Pro (€20/mo): more credits, higher limits. Team plans available in-app.",
     note: "No hidden charges. No per-email fees. No surprise invoices.",
   },
   urgencyPill: {
@@ -123,7 +123,7 @@ export const landingEn = {
     push: "Sign up for free. Build your first funnel today.\n\nNo credit card. No onboarding calls. No 3-week learning curve.\nJust open the builder and start shipping.",
     cta: "Start Building for Free",
     ctaSecondary: "Watch the demo",
-    objectionHandler: "Free forever on the starter plan. Upgrade only when you need more. Cancel anytime.",
+    objectionHandler: "Free to start with included credits. Pay only for what you use. Upgrade anytime, cancel anytime.",
   },
   affiliate: {
     hero: {
@@ -335,7 +335,7 @@ export const landingDe = {
     step1: {
       number: "1",
       title: "Kostenlos anmelden",
-      description: "Account in 30 Sekunden erstellen. Keine Kreditkarte. Du bekommst einen Funnel, 3 Seiten, 100 Kontakte und vollen Zugang zum Builder.",
+      description: "Account in 30 Sekunden erstellen. Keine Kreditkarte. Du bekommst kostenlose Credits und vollen Zugang zum Builder.",
     },
     step2: {
       number: "2",
@@ -345,7 +345,7 @@ export const landingDe = {
     step3: {
       number: "3",
       title: "Wachsen & verdienen",
-      description: "Jeden Lead im CRM tracken. Follow-ups automatisieren. Zahlungen verarbeiten. Wenn du mehr brauchst: Pro f\u00fcr \u20ac20/Monat \u2014 alles unbegrenzt.",
+      description: "Jeden Lead im CRM tracken. Follow-ups automatisieren. Zahlungen verarbeiten. Zahle nur, was du nutzt \u2014 upgrade auf Pro f\u00fcr mehr Credits und h\u00f6here Limits.",
     },
   },
   success: {
@@ -407,7 +407,7 @@ export const landingDe = {
         { name: "ManyChat", status: "coming" },
       ],
     },
-    pricing: "Free: 1 Funnel, 3 Seiten, 100 Kontakte. Pro (\u20ac20/Mo): Alles unbegrenzt.",
+    pricing: "Kostenlos starten. Nutzungsbasiert \u2014 zahle nur, was du nutzt. Pro (\u20ac20/Mo): mehr Credits, h\u00f6here Limits. Team-Pl\u00e4ne in der App verf\u00fcgbar.",
     note: "Keine versteckten Geb\u00fchren. Keine Pro-E-Mail-Kosten. Keine \u00dcberraschungsrechnungen.",
   },
   urgencyPill: {
@@ -418,7 +418,7 @@ export const landingDe = {
     push: "Melde dich kostenlos an. Baue deinen ersten Funnel heute.\n\nKeine Kreditkarte. Keine Onboarding-Calls. Keine 3-w\u00f6chige Lernkurve.\nEinfach den Builder \u00f6ffnen und losbauen.",
     cta: "Jetzt kostenlos bauen",
     ctaSecondary: "Demo ansehen",
-    objectionHandler: "Starter-Plan f\u00fcr immer kostenlos. Upgrade nur wenn du mehr brauchst. Jederzeit k\u00fcndbar.",
+    objectionHandler: "Kostenlos starten mit inkludierten Credits. Zahle nur, was du nutzt. Jederzeit upgraden, jederzeit k\u00fcndbar.",
   },
   affiliate: {} as typeof landingEn.affiliate,
   linktree: {
