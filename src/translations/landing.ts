@@ -55,15 +55,14 @@ export const landingEn = {
   },
   success: {
     header: "Imagine This Instead",
-    timeframe: "30 days from now:",
+    timeframe: "This week:",
     vision: {
-      item1: "You onboard a new client in minutes instead of weeks",
-      item2: "Your software costs dropped from €1,000/month to one platform",
-      item3: "Your funnels look beautiful and convert — without a designer",
-      item4: "Payments, email, CRM — all in one place, all talking to each other",
-      item5: "You've stopped duct-taping tools and started scaling",
+      item1: "Your first funnel is live and generating leads",
+      item2: "Payments, email, CRM — all connected, all in one place",
+      item3: "No designer. No developer. No 3-week setup.",
+      item4: "Your client sees results before their next invoice",
     },
-    contrast: "The difference between marketers who scale and marketers who stay stuck isn't talent or clients. It's tools. It's having one platform so every new campaign means more profit — not just more setup.",
+    contrast: "Even the most talented marketers can't outwork bad tools. One platform. Funnel to payment. Live in days, not months.",
   },
   features: {
     header: "Everything You Need. Nothing You Don't.",
@@ -350,15 +349,14 @@ export const landingDe = {
   },
   success: {
     header: "Stell dir das vor",
-    timeframe: "In 30 Tagen:",
+    timeframe: "Diese Woche:",
     vision: {
-      item1: "Du onboardest neue Kunden in Minuten statt Wochen",
-      item2: "Deine Softwarekosten sind von \u20ac1.000/Monat auf eine Plattform gesunken",
-      item3: "Deine Funnels sehen sch\u00f6n aus und konvertieren \u2014 ohne Designer",
-      item4: "Zahlungen, E-Mail, CRM \u2014 alles an einem Ort, alles verbunden",
-      item5: "Du hast aufgeh\u00f6rt Tools zusammenzukleben und angefangen zu skalieren",
+      item1: "Dein erster Funnel ist live und generiert Leads",
+      item2: "Zahlungen, E-Mail, CRM \u2014 alles verbunden, alles an einem Ort",
+      item3: "Kein Designer. Kein Entwickler. Kein 3-w\u00f6chiges Setup.",
+      item4: "Dein Kunde sieht Ergebnisse vor der n\u00e4chsten Rechnung",
     },
-    contrast: "Der Unterschied zwischen Marketern, die skalieren, und solchen, die steckenbleiben, ist nicht Talent oder Kunden. Es sind die Tools.",
+    contrast: "Selbst die talentiertesten Marketer k\u00f6nnen schlechte Tools nicht ausgleichen. Eine Plattform. Vom Funnel zur Zahlung. Live in Tagen, nicht Monaten.",
   },
   features: {
     header: "Alles was du brauchst. Nichts, was du nicht brauchst.",

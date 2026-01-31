@@ -351,7 +351,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="p-6 md:p-8 rounded-2xl bg-green-500/20 border border-green-500/30 backdrop-blur-sm mb-8">
             <p className="text-green-400 font-semibold text-lg mb-4">{t("landing.success.timeframe")}</p>
             <ul className="space-y-3 text-white/90 text-base md:text-lg">
-              {(['item1', 'item2', 'item3', 'item4', 'item5'] as const).map((item) => (
+              {(['item1', 'item2', 'item3', 'item4'] as const).map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="text-green-400 mt-1">✓</span>
                   {t(`landing.success.vision.${item}`)}
