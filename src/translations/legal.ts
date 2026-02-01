@@ -372,6 +372,92 @@ export const legalEn = {
       },
     },
   },
+  // Data Deletion Policy page
+  dataDeletion: {
+    title: "Data Deletion Policy",
+    subtitle: "How to request deletion of your data",
+    lastUpdated: "Last Updated: February 1, 2026",
+    sections: {
+      overview: {
+        title: "1. Overview",
+        content: "is committed to protecting your privacy and giving you control over your data. This page explains how you can request the deletion of your personal data from our systems, including any data obtained through Facebook or WhatsApp integrations.",
+      },
+      dataCollected: {
+        title: "2. Data Collected via Facebook & WhatsApp",
+        content: "When you interact with our services through Facebook or WhatsApp, we may receive and store the following data:",
+        items: {
+          profile: "Profile Information: Name, profile picture, and email address associated with your Facebook account.",
+          userId: "User ID: Your Facebook or WhatsApp user identifier.",
+          messages: "Message Data: Messages you send to us through WhatsApp Business, including text, images, and attachments.",
+          phone: "Phone Number: Your WhatsApp phone number, if provided.",
+          interaction: "Interaction Data: Timestamps and metadata related to your communications with us.",
+        },
+      },
+      howToRequest: {
+        title: "3. How to Request Data Deletion",
+        content: "You can request the deletion of your data at any time using one of the following methods:",
+        emailOption: {
+          title: "Option 1: Email Request",
+          content: "Send an email to info@voundbrand.com with the subject line \"Data Deletion Request\". Please include:",
+          items: [
+            "Your full name",
+            "The email address associated with your account",
+            "Your Facebook or WhatsApp user ID (if applicable)",
+            "A description of the data you want deleted",
+          ],
+        },
+        supportOption: {
+          title: "Option 2: Support Page",
+          content: "Visit our Support page to contact us directly about your deletion request.",
+        },
+      },
+      whatWeDelete: {
+        title: "4. What We Delete",
+        content: "Upon receiving a valid deletion request, we will delete:",
+        items: [
+          "Your account data and profile information",
+          "Message history and communication records",
+          "Facebook and WhatsApp identifiers linked to your account",
+          "Any content or files you submitted through our platform",
+          "Usage and interaction data associated with your account",
+        ],
+        exceptions: "We may retain certain data where required by law (e.g., tax and commercial records under German law per § 257 HGB and § 147 AO, retained for 6–10 years) or where necessary to protect our legitimate interests (e.g., fraud prevention, legal claims).",
+      },
+      timeline: {
+        title: "5. Processing Timeline",
+        content: "We process data deletion requests as follows:",
+        items: {
+          acknowledgment: "Acknowledgment: We will confirm receipt of your request within 48 hours.",
+          verification: "Verification: We may need to verify your identity before processing the request.",
+          deletion: "Deletion: Your data will be deleted within 30 days of verification.",
+          confirmation: "Confirmation: You will receive a confirmation email once deletion is complete.",
+        },
+      },
+      statusCheck: {
+        title: "6. Check Deletion Status",
+        content: "To check the status of your data deletion request, email info@voundbrand.com with the subject line \"Deletion Status Check\" and include the email address used in your original request. We will respond with the current status within 48 business hours.",
+      },
+      legalBasis: {
+        title: "7. Legal Basis",
+        content: "Your right to data deletion is protected under:",
+        items: [
+          "GDPR Article 17 — Right to Erasure (\"Right to be Forgotten\")",
+          "Facebook Platform Terms — Data deletion requirements for platform apps",
+          "German Federal Data Protection Act (BDSG)",
+        ],
+      },
+      contact: {
+        title: "8. Contact Us",
+        content: "If you have any questions about data deletion, please contact us at:",
+      },
+    },
+    relatedDocuments: {
+      privacy: "Privacy Policy",
+      terms: "Terms of Service",
+      dpa: "Data Processing Agreement",
+      support: "Support",
+    },
+  },
 };
 
 export const legalDe = {
@@ -744,6 +830,92 @@ export const legalDe = {
         privacyPolicy: "Datenschutzerklärung",
         termsOfService: "Allgemeine Geschäftsbedingungen",
       },
+    },
+  },
+  // Datenlöschungsrichtlinie
+  dataDeletion: {
+    title: "Datenlöschungsrichtlinie",
+    subtitle: "So beantragen Sie die Löschung Ihrer Daten",
+    lastUpdated: "Zuletzt aktualisiert: 1. Februar 2026",
+    sections: {
+      overview: {
+        title: "1. Überblick",
+        content: "ist dem Schutz Ihrer Privatsphäre und der Kontrolle über Ihre Daten verpflichtet. Diese Seite erklärt, wie Sie die Löschung Ihrer personenbezogenen Daten aus unseren Systemen beantragen können, einschließlich aller Daten, die über Facebook- oder WhatsApp-Integrationen erhoben wurden.",
+      },
+      dataCollected: {
+        title: "2. Über Facebook & WhatsApp erhobene Daten",
+        content: "Wenn Sie über Facebook oder WhatsApp mit unseren Diensten interagieren, können wir folgende Daten empfangen und speichern:",
+        items: {
+          profile: "Profilinformationen: Name, Profilbild und E-Mail-Adresse, die mit Ihrem Facebook-Konto verknüpft sind.",
+          userId: "Benutzer-ID: Ihre Facebook- oder WhatsApp-Benutzerkennung.",
+          messages: "Nachrichtendaten: Nachrichten, die Sie uns über WhatsApp Business senden, einschließlich Text, Bilder und Anhänge.",
+          phone: "Telefonnummer: Ihre WhatsApp-Telefonnummer, sofern angegeben.",
+          interaction: "Interaktionsdaten: Zeitstempel und Metadaten zu Ihrer Kommunikation mit uns.",
+        },
+      },
+      howToRequest: {
+        title: "3. So beantragen Sie die Datenlöschung",
+        content: "Sie können die Löschung Ihrer Daten jederzeit auf einem der folgenden Wege beantragen:",
+        emailOption: {
+          title: "Option 1: E-Mail-Anfrage",
+          content: "Senden Sie eine E-Mail an info@voundbrand.com mit dem Betreff \"Antrag auf Datenlöschung\". Bitte geben Sie Folgendes an:",
+          items: [
+            "Ihren vollständigen Namen",
+            "Die mit Ihrem Konto verknüpfte E-Mail-Adresse",
+            "Ihre Facebook- oder WhatsApp-Benutzer-ID (falls zutreffend)",
+            "Eine Beschreibung der Daten, die Sie löschen lassen möchten",
+          ],
+        },
+        supportOption: {
+          title: "Option 2: Support-Seite",
+          content: "Besuchen Sie unsere Support-Seite, um uns direkt bezüglich Ihres Löschantrags zu kontaktieren.",
+        },
+      },
+      whatWeDelete: {
+        title: "4. Was wir löschen",
+        content: "Nach Eingang eines gültigen Löschantrags löschen wir:",
+        items: [
+          "Ihre Kontodaten und Profilinformationen",
+          "Nachrichtenverlauf und Kommunikationsaufzeichnungen",
+          "Mit Ihrem Konto verknüpfte Facebook- und WhatsApp-Kennungen",
+          "Alle Inhalte oder Dateien, die Sie über unsere Plattform eingereicht haben",
+          "Nutzungs- und Interaktionsdaten, die mit Ihrem Konto verknüpft sind",
+        ],
+        exceptions: "Wir können bestimmte Daten aufbewahren, soweit dies gesetzlich vorgeschrieben ist (z. B. steuerliche und handelsrechtliche Unterlagen gemäß § 257 HGB und § 147 AO, Aufbewahrungsfrist 6–10 Jahre) oder zum Schutz unserer berechtigten Interessen erforderlich ist (z. B. Betrugsprävention, Rechtsansprüche).",
+      },
+      timeline: {
+        title: "5. Bearbeitungszeitraum",
+        content: "Wir bearbeiten Löschanträge wie folgt:",
+        items: {
+          acknowledgment: "Bestätigung: Wir bestätigen den Eingang Ihres Antrags innerhalb von 48 Stunden.",
+          verification: "Überprüfung: Wir müssen möglicherweise Ihre Identität überprüfen, bevor wir den Antrag bearbeiten.",
+          deletion: "Löschung: Ihre Daten werden innerhalb von 30 Tagen nach der Überprüfung gelöscht.",
+          confirmation: "Abschlussbestätigung: Sie erhalten eine Bestätigungs-E-Mail, sobald die Löschung abgeschlossen ist.",
+        },
+      },
+      statusCheck: {
+        title: "6. Löschstatus prüfen",
+        content: "Um den Status Ihres Löschantrags zu überprüfen, senden Sie eine E-Mail an info@voundbrand.com mit dem Betreff \"Löschstatus-Abfrage\" und geben Sie die E-Mail-Adresse an, die Sie in Ihrem ursprünglichen Antrag verwendet haben. Wir antworten innerhalb von 48 Geschäftsstunden mit dem aktuellen Status.",
+      },
+      legalBasis: {
+        title: "7. Rechtsgrundlage",
+        content: "Ihr Recht auf Datenlöschung ist geschützt durch:",
+        items: [
+          "DSGVO Artikel 17 — Recht auf Löschung (\"Recht auf Vergessenwerden\")",
+          "Facebook-Plattformrichtlinien — Anforderungen zur Datenlöschung für Plattform-Apps",
+          "Bundesdatenschutzgesetz (BDSG)",
+        ],
+      },
+      contact: {
+        title: "8. Kontakt",
+        content: "Wenn Sie Fragen zur Datenlöschung haben, kontaktieren Sie uns bitte unter:",
+      },
+    },
+    relatedDocuments: {
+      privacy: "Datenschutzerklärung",
+      terms: "Allgemeine Geschäftsbedingungen",
+      dpa: "Auftragsverarbeitungsvertrag",
+      support: "Support",
     },
   },
 };

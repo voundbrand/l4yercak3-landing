@@ -1,32 +1,32 @@
 export const landingEn = {
   hero: {
-    headline: "Your marketing platform shouldn't feel like 2018.",
-    subheadline: "Funnels, CRM, email, payments, booking — one platform that's actually fast. No 3-week learning curve. No 10-second load times. Just open the builder and ship.",
-    cta: "Start Building for Free",
+    headline: "Deliver marketing to your clients. Under your brand. In minutes.",
+    subheadline: "White-label client portals, CRM, payments, booking, email — one platform for agencies and freelancers who are done duct-taping 6 tools together. Fast. Simple. Built for how you actually work.",
+    cta: "Start Free",
     ctaSecondary: "Watch the demo",
   },
   problem: {
     header: "Sound Familiar?",
     graveyard: {
-      title: "\"The whole site randomly becomes unclickable.\"",
-      description: "10-second load times. Autosave that freezes your screen mid-sentence. A page builder that feels like it was designed for a different decade. You're not building — you're waiting.",
+      title: "\"Every new client means more work for me personally.\"",
+      description: "You're the bottleneck. Answering messages at 10pm. Onboarding each client manually. You're capped at 15-20 clients because there's only one of you — and every new signup means another 5 hours a week you don't have.",
     },
     loop: {
-      title: "\"Simple tasks involved digging through menu systems.\"",
-      description: "30-40 hours of setup before your first campaign. Menus everywhere. Workflows that break silently. Every new client means weeks of onboarding — and when something goes wrong, you're their tech support.",
+      title: "\"I'm paying for 6 tools that don't talk to each other.\"",
+      description: "CRM here. Page builder there. Forms in one place, payments in another, booking somewhere else. €600-1,000/month in software — and you're still the one wiring it all together. Every new client means weeks of setup before they see a single result.",
     },
     catch22: {
-      title: "\"Watch out for those surprise charges.\"",
-      description: "Per-email fees that add up fast. Deliverability issues that force you to buy another tool. Stripe and PayPal that feel independent of the platform instead of integrated. The real cost isn't €297/month — it's €600-1,000 once you've plugged all the holes.",
+      title: "\"The platform feels heavy and delay-prone.\"",
+      description: "10-second load times. Menus everywhere. A page builder designed for a different decade. Your \"all-in-one\" platform can't even cancel a subscription without opening Stripe in a separate tab. You're fighting the tool instead of doing the work.",
     },
     stakes: {
       title: "A year from now, what changes?",
-      description: "Without a better system, you'll still be waiting 10 seconds for every click. Still watching your page builder autosave and freeze mid-sentence. Still explaining to clients why their funnel isn't live yet.\n\nYour automation will send the wrong email to the wrong person — again. Support will create a ticket and never watch the Loom you recorded. You'll open another tab to Stripe because your platform can't even cancel a subscription.\n\nThe tool you're paying €300/month for was built in 2018. It feels like it. And deep down, you already know: this isn't going to get better.",
+      description: "Without a better system, you'll still be capped at 15 clients. Still onboarding each one manually. Still answering WhatsApp messages at midnight because there's no system handling it for you.\n\nYou'll still be paying for 6 tools that barely work together. Still explaining to clients why their funnel isn't live yet. Still watching your margins shrink every time you add a new software subscription.\n\nYou're building a job, not a business. And the tools you're paying €300/month for were built in 2018. Deep down, you already know: this isn't going to get better.",
     },
   },
   guide: {
     header: "Why I Built This",
-    story: "I spent 20 years building software. Then I asked: why does every marketing tool feel like it was built by an intern in 2015?\n\nI ran a marketing agency for five years. \u20ac240,000 a year in recurring revenue. Four employees. Great clients.\n\nAnd I took home nothing.\n\nEvery month: \u20ac500 to \u20ac1,000 in software. GoHighLevel, HubSpot, form builders, email tools\u2014the whole stack. Every new client: two to three weeks to onboard. My team spent more time fighting the tools than doing the work.\n\nI watched my team sit there waiting for pages to load. I watched automations send the wrong emails to the wrong people. I called support and got a ticket number and silence. I opened Stripe in a separate tab because my \u201call-in-one\u201d platform couldn\u2019t handle a simple cancellation.\n\nThere was a moment where I had to be honest with myself: I was building someone else\u2019s dream on a foundation of duct tape. Working harder than ever. \u20ac240k in revenue. Nothing left at the end of the month.\n\nSo I shut it down.\n\nWent back to what I actually know\u2014software engineering. Twenty years of it. And I built the tool that would have saved my agency.\n\nNot another feature-bloated platform built in 2018. Something fast. Something simple. Something that doesn\u2019t make you want to throw your laptop across the room.\n\nThat\u2019s Layer Cake.",
+    story: "I ran a marketing agency for five years. \u20ac240,000 a year in recurring revenue. Four employees. Great clients.\n\nAnd I took home nothing.\n\nEvery month: \u20ac500 to \u20ac1,000 in software. GoHighLevel, HubSpot, form builders, email tools\u2014the whole stack. Every new client: two to three weeks to onboard. My team spent more time fighting the tools than doing the work.\n\nI watched my team sit there waiting for pages to load. I watched automations send the wrong emails to the wrong people. I called support and got a ticket number and silence. I opened Stripe in a separate tab because my \u201call-in-one\u201d platform couldn\u2019t handle a simple cancellation.\n\nI was the bottleneck. Every new client meant more tools, more setup, more hours. \u20ac240k in revenue. Nothing left at the end of the month.\n\nSo I shut it down.\n\nWent back to what I actually know\u2014software engineering. Twenty years of it. And I built the platform that would have saved my agency.\n\nOne place to configure everything a client needs \u2014 pages, CRM, email, payments, booking. White-label it under my brand. Deploy in minutes instead of weeks. Move on to the next client.\n\nThat\u2019s Layer Cake.",
     proofPoints: {
       experience: "20 years building software",
       sales: "5 years running a marketing agency",
@@ -39,60 +39,60 @@ export const landingEn = {
     header: "Here's How It Works",
     step1: {
       number: "1",
-      title: "Sign Up Free",
-      description: "Create your account in 30 seconds. No credit card. You get free credits and full access to the builder. Start building immediately.",
+      title: "Configure",
+      description: "Pick a template or start from scratch. Set up pages, forms, CRM pipeline, email sequences, payments, and booking. Everything in one place — no integrations to wire together.",
     },
     step2: {
       number: "2",
-      title: "Build & Launch",
-      description: "Drag and drop your pages. Connect your forms. Set up your email sequences. Integrate Stripe for payments. Go live when you're ready — in minutes, not weeks.",
+      title: "Brand It Yours",
+      description: "Create a sub-organisation for your client. Your logo, your colors, your domain. They log in and see your brand — not ours. You control what they see and what they pay.",
     },
     step3: {
       number: "3",
-      title: "Grow & Get Paid",
-      description: "Track every lead in your CRM. Automate follow-ups. Process payments. Pay only for what you use — upgrade to Pro for more credits and higher limits.",
+      title: "Deploy & Earn",
+      description: "Go live in minutes. Your client gets a professional portal with CRM, booking, and analytics. You get recurring revenue. Repeat for every new client — same setup, new brand.",
     },
   },
   success: {
     header: "Imagine This Instead",
     timeframe: "This week:",
     vision: {
-      item1: "Your first funnel is live and generating leads",
-      item2: "Payments, email, CRM — all connected, all in one place",
-      item3: "No designer. No developer. No 3-week setup.",
-      item4: "Your client sees results before their next invoice",
+      item1: "Three clients onboarded — each with their own branded portal",
+      item2: "Leads, payments, bookings, email — all flowing through one platform",
+      item3: "You configured once. Deployed three times. No rebuilding from scratch.",
+      item4: "Recurring revenue growing. You're not the bottleneck anymore.",
     },
-    contrast: "Even the most talented marketers can't outwork bad tools. One platform. Funnel to payment. Live in days, not months.",
+    contrast: "You're not the bottleneck. Your tools were. One platform to deliver professional marketing to every client \u2014 under your brand, live in days, not months.",
   },
   features: {
     header: "Everything You Need. Nothing You Don't.",
-    builder: {
-      title: "Page & Funnel Builder",
-      description: "Drag-and-drop. Beautiful defaults. Mobile-ready. Build forms, funnels, webpages — connect them to workflows. Publish in minutes.",
+    multiTenant: {
+      title: "White-Label Client Portals",
+      description: "Create sub-organisations for each client. Your logo, your colors, your domain. Built-in authentication and user management. Your clients see your brand — you control the experience and the pricing.",
     },
     crm: {
       title: "Contacts & Pipeline",
-      description: "Every opt-in tracked. Segment, tag, follow up. Visual pipeline. Multi-tenant organisations with authentication — connect your clients directly into your marketing.",
+      description: "Every lead tracked per client. Segment, tag, follow up. Visual pipeline. Your agency sees all clients from one dashboard — each client sees only their own data.",
+    },
+    builder: {
+      title: "Page & Funnel Builder",
+      description: "Drag-and-drop. Beautiful defaults. Mobile-ready. Build landing pages, funnels, and client-facing sites. Publish in minutes — not weeks.",
     },
     email: {
       title: "Email & Automation",
-      description: "Sequences, broadcasts, and workflows that actually land in the inbox. Trigger emails from form fills, purchases, or any event.",
+      description: "Sequences, broadcasts, and workflows that actually land in the inbox. Trigger emails from form fills, purchases, bookings, or any event.",
     },
     payments: {
       title: "Payments & Invoicing",
-      description: "Fully integrated Stripe checkout. PayPal coming soon. B2B and B2C invoicing built in. No leaving the platform to manage billing.",
+      description: "Fully integrated Stripe checkout. B2B and B2C invoicing built in. Your clients pay through your platform — no leaving to manage billing in a separate tab.",
     },
     booking: {
       title: "Booking & Calendar",
-      description: "Let leads book directly. Calendar sync. Automatic confirmations and reminders. No more back-and-forth scheduling.",
+      description: "Self-service booking for your clients' customers. Calendar sync. Automatic confirmations and reminders via email. No more back-and-forth scheduling.",
     },
     comms: {
       title: "Multi-Channel Comms",
-      description: "iPhone and Android app so you and your customers can talk — all data in one spot. ManyChat and MoltBolt integrations coming soon.",
-    },
-    multiTenant: {
-      title: "Multi-Tenant & White-Label",
-      description: "Create sub-organisations for your clients. Built-in authentication. If they promote up, you earn affiliate revenue. Top-line orgs get mobile app access.",
+      description: "iPhone and Android app for you and your clients. All conversations in one place. WhatsApp Business API and Instagram DM integrations on the roadmap.",
     },
     integrations: {
       title: "Integrations That Work",
@@ -103,26 +103,26 @@ export const landingEn = {
         { name: "Vercel", status: "live" },
         { name: "Microsoft", status: "live" },
         { name: "Active Campaign", status: "live" },
+        { name: "WhatsApp Business", status: "coming" },
         { name: "PayPal", status: "coming" },
-        { name: "Zapier", status: "coming" },
-        { name: "Slack", status: "coming" },
         { name: "n8n", status: "coming" },
         { name: "Make", status: "coming" },
         { name: "ManyChat", status: "coming" },
+        { name: "Zapier", status: "coming" },
       ],
     },
-    pricing: "Free to start. Usage-based — pay only for what you use. Pro (€20/mo): more credits, higher limits. Team plans available in-app.",
-    note: "No hidden charges. No per-email fees. No surprise invoices.",
+    pricing: "Free to start. Usage-based — pay only for what you use. Pro (€29/mo): more credits, higher limits. Agency plans available for multi-client setups.",
+    note: "No hidden charges. No per-email fees. No surprise invoices. You set your own client pricing — keep the margin.",
   },
   urgencyPill: {
-    text: "Free plan available — Start Building Now",
+    text: "Free plan available — Deploy Your First Client Today",
   },
   finalCta: {
-    header: "Ready to Stop Fighting Your Tools?",
-    push: "Sign up for free. Build your first funnel today.\n\nNo credit card. No onboarding calls. No 3-week learning curve.\nJust open the builder and start shipping.",
-    cta: "Start Building for Free",
+    header: "Ready to Deliver Like a Platform — Not a Freelancer?",
+    push: "Sign up for free. Set up your first client portal today.\n\nNo credit card. No onboarding calls. No 3-week learning curve.\nConfigure, brand it yours, deploy.",
+    cta: "Start Free",
     ctaSecondary: "Watch the demo",
-    objectionHandler: "Free to start with included credits. Pay only for what you use. Upgrade anytime, cancel anytime.",
+    objectionHandler: "Free to start with included credits. Pay only for what you use. You set your own client pricing. Upgrade anytime, cancel anytime.",
   },
   affiliate: {
     hero: {
@@ -265,15 +265,15 @@ export const landingEn = {
     },
   },
   linktree: {
-    headline: "Building in public.",
-    tagline: "l4yercak3 \u2014 The marketing suite that doesn\u2019t fight you",
+    headline: "One platform. Your brand. Every client.",
+    tagline: "l4yercak3 — White-label portals, CRM, payments, booking, email for agencies",
     sections: {
       freeResources: "Free Resources",
     },
     links: {
       platform: {
-        title: "Start Building",
-        description: "Page builder, CRM, email. Free to start.",
+        title: "Deploy Your First Client",
+        description: "White-label portals, CRM, payments, booking. Free to start.",
         badge: "Free",
       },
       community: {
@@ -294,33 +294,33 @@ export const landingEn = {
 
 export const landingDe = {
   hero: {
-    headline: "Deine Marketing-Plattform sollte sich nicht wie 2018 anf\u00fchlen.",
-    subheadline: "Funnels, CRM, E-Mail, Zahlungen, Buchungen \u2014 eine Plattform, die wirklich schnell ist. Keine 3-w\u00f6chige Lernkurve. Keine 10-Sekunden-Ladezeiten. Einfach \u00f6ffnen und losbauen.",
-    cta: "Jetzt kostenlos bauen",
+    headline: "Marketing f\u00fcr deine Kunden liefern. Unter deiner Marke. In Minuten.",
+    subheadline: "White-Label-Kundenportale, CRM, Zahlungen, Buchungen, E-Mail \u2014 eine Plattform f\u00fcr Agenturen und Freelancer, die keine 6 Tools mehr zusammenkleben wollen. Schnell. Einfach. Gebaut f\u00fcr echte Arbeit.",
+    cta: "Kostenlos starten",
     ctaSecondary: "Demo ansehen",
   },
   problem: {
     header: "Kommt dir das bekannt vor?",
     graveyard: {
-      title: "\u201eDie ganze Seite wird zuf\u00e4llig unklickbar.\u201c",
-      description: "10 Sekunden Ladezeit. Autosave, das deinen Bildschirm mitten im Satz einfriert. Ein Page Builder, der sich anf\u00fchlt wie aus einem anderen Jahrzehnt. Du baust nicht \u2014 du wartest.",
+      title: "\u201eJeder neue Kunde bedeutet mehr Arbeit f\u00fcr mich pers\u00f6nlich.\u201c",
+      description: "Du bist der Flaschenhals. Nachrichten um 22 Uhr beantworten. Jeden Kunden manuell einrichten. Du bist bei 15-20 Kunden gedeckelt, weil es dich nur einmal gibt \u2014 und jeder neue Kunde kostet 5 Stunden pro Woche, die du nicht hast.",
     },
     loop: {
-      title: "\u201eEinfache Aufgaben bedeuteten, durch Men\u00fcsysteme zu graben.\u201c",
-      description: "30-40 Stunden Setup vor der ersten Kampagne. Men\u00fcs \u00fcberall. Workflows, die lautlos kaputtgehen. Jeder neue Kunde bedeutet Wochen Onboarding \u2014 und wenn etwas schiefgeht, bist du deren Tech-Support.",
+      title: "\u201eIch bezahle 6 Tools, die nicht miteinander reden.\u201c",
+      description: "CRM hier. Page Builder da. Formulare an einem Ort, Zahlungen wo anders, Buchungen nochmal woanders. \u20ac600-1.000/Monat f\u00fcr Software \u2014 und du bist trotzdem derjenige, der alles zusammenbastelt. Jeder neue Kunde: Wochen Setup, bevor er ein einziges Ergebnis sieht.",
     },
     catch22: {
-      title: "\u201eAufpassen bei den \u00dcberraschungsgeb\u00fchren.\u201c",
-      description: "Pro-E-Mail-Geb\u00fchren, die sich schnell summieren. Zustellbarkeitsprobleme, die dich zwingen, ein weiteres Tool zu kaufen. Stripe und PayPal, die sich unabh\u00e4ngig von der Plattform anf\u00fchlen. Die echten Kosten sind nicht \u20ac297/Monat \u2014 sondern \u20ac600-1.000, wenn du alle L\u00fccken gestopft hast.",
+      title: "\u201eDie Plattform f\u00fchlt sich schwer und langsam an.\u201c",
+      description: "10 Sekunden Ladezeit. Men\u00fcs \u00fcberall. Ein Page Builder aus einem anderen Jahrzehnt. Dein \u201eAlles-in-einem\u201c kann nicht mal ein Abo k\u00fcndigen, ohne Stripe in einem separaten Tab zu \u00f6ffnen. Du k\u00e4mpfst gegen das Tool statt zu arbeiten.",
     },
     stakes: {
       title: "Was \u00e4ndert sich in einem Jahr?",
-      description: "Ohne ein besseres System wirst du immer noch 10 Sekunden pro Klick warten. Der Page Builder wird sich immer noch mitten im Satz speichern und einfrieren. Du wirst Kunden immer noch erkl\u00e4ren m\u00fcssen, warum ihr Funnel noch nicht live ist.\n\nDeine Automatisierung wird die falsche E-Mail an die falsche Person senden \u2014 wieder. Der Support wird ein Ticket erstellen und dein Loom nie anschauen. Du wirst einen weiteren Tab zu Stripe \u00f6ffnen, weil deine Plattform nicht mal ein Abo k\u00fcndigen kann.\n\nDas Tool, f\u00fcr das du \u20ac300/Monat zahlst, wurde 2018 gebaut. Es f\u00fchlt sich auch so an. Und tief im Inneren wei\u00dft du es schon: Das wird nicht besser.",
+      description: "Ohne ein besseres System wirst du immer noch bei 15 Kunden gedeckelt sein. Immer noch jeden einzeln onboarden. Immer noch um Mitternacht WhatsApp-Nachrichten beantworten, weil kein System das f\u00fcr dich \u00fcbernimmt.\n\nDu wirst immer noch f\u00fcr 6 Tools bezahlen, die kaum zusammenarbeiten. Immer noch Kunden erkl\u00e4ren, warum ihr Funnel noch nicht live ist. Immer noch zusehen, wie deine Marge schrumpft mit jedem neuen Software-Abo.\n\nDu baust einen Job, kein Unternehmen. Und die Tools, f\u00fcr die du \u20ac300/Monat bezahlst, wurden 2018 gebaut. Tief im Inneren wei\u00dft du es: Das wird nicht besser.",
     },
   },
   guide: {
     header: "Warum ich das gebaut habe",
-    story: "Ich habe 20 Jahre Software gebaut. Dann fragte ich mich: Warum fühlt sich jedes Marketing-Tool an, als hätte es ein Praktikant 2015 gebaut?\n\nIch habe fünf Jahre lang eine Marketing-Agentur geführt. €240.000 Jahresumsatz. Vier Mitarbeiter. Zufriedene Kunden.\n\nUnd ich habe nichts davon behalten.\n\nJeden Monat: €500 bis €1.000 für Software. GoHighLevel, HubSpot, Formular-Tools, E-Mail-Tools\u2014der ganze Stack. Jeder neue Kunde: zwei bis drei Wochen Onboarding. Mein Team hat mehr Zeit damit verbracht, gegen die Tools zu kämpfen als zu arbeiten.\n\nIch habe zugesehen, wie mein Team auf ladende Seiten gewartet hat. Wie Automatisierungen die falschen E-Mails an die falschen Leute geschickt haben. Ich habe den Support angerufen und eine Ticketnummer und Stille bekommen. Ich habe Stripe in einem separaten Tab geöffnet, weil meine \u201eAlles-in-einem\u201c-Plattform nicht mal eine Kündigung verarbeiten konnte.\n\nEs gab einen Moment, in dem ich ehrlich zu mir sein musste: Ich baute den Traum von jemand anderem auf einem Fundament aus Klebeband. Härter gearbeitet als je zuvor. €240k Umsatz. Nichts übrig am Monatsende.\n\nAlso habe ich zugemacht.\n\nBin zurückgegangen zu dem, was ich wirklich kann\u2014Softwareentwicklung. Zwanzig Jahre davon. Und ich habe das Tool gebaut, das meine Agentur gerettet hätte.\n\nKeine weitere feature-überladene Plattform von 2018. Etwas Schnelles. Etwas Einfaches. Etwas, bei dem man nicht den Laptop durch den Raum werfen will.\n\nDas ist Layer Cake.",
+    story: "Ich habe f\u00fcnf Jahre lang eine Marketing-Agentur gef\u00fchrt. \u20ac240.000 Jahresumsatz. Vier Mitarbeiter. Zufriedene Kunden.\n\nUnd ich habe nichts davon behalten.\n\nJeden Monat: \u20ac500 bis \u20ac1.000 f\u00fcr Software. GoHighLevel, HubSpot, Formular-Tools, E-Mail-Tools\u2014der ganze Stack. Jeder neue Kunde: zwei bis drei Wochen Onboarding. Mein Team hat mehr Zeit damit verbracht, gegen die Tools zu k\u00e4mpfen als zu arbeiten.\n\nIch habe zugesehen, wie mein Team auf ladende Seiten gewartet hat. Wie Automatisierungen die falschen E-Mails an die falschen Leute geschickt haben. Ich habe den Support angerufen und eine Ticketnummer und Stille bekommen. Ich habe Stripe in einem separaten Tab ge\u00f6ffnet, weil meine \u201eAlles-in-einem\u201c-Plattform nicht mal eine K\u00fcndigung verarbeiten konnte.\n\nIch war der Flaschenhals. Jeder neue Kunde bedeutete mehr Tools, mehr Setup, mehr Stunden. \u20ac240k Umsatz. Nichts \u00fcbrig am Monatsende.\n\nAlso habe ich zugemacht.\n\nBin zur\u00fcckgegangen zu dem, was ich wirklich kann\u2014Softwareentwicklung. Zwanzig Jahre davon. Und ich habe die Plattform gebaut, die meine Agentur gerettet h\u00e4tte.\n\nEin Ort, um alles zu konfigurieren, was ein Kunde braucht \u2014 Seiten, CRM, E-Mail, Zahlungen, Buchungen. White-Label unter meiner Marke. In Minuten deployen statt in Wochen. Weiter zum n\u00e4chsten Kunden.\n\nDas ist Layer Cake.",
     proofPoints: {
       experience: "20 Jahre Softwareentwicklung",
       sales: "5 Jahre Marketing-Agentur gef\u00fchrt",
@@ -333,60 +333,60 @@ export const landingDe = {
     header: "So funktioniert's",
     step1: {
       number: "1",
-      title: "Kostenlos anmelden",
-      description: "Account in 30 Sekunden erstellen. Keine Kreditkarte. Du bekommst kostenlose Credits und vollen Zugang zum Builder.",
+      title: "Konfigurieren",
+      description: "Template w\u00e4hlen oder von Null starten. Seiten, Formulare, CRM-Pipeline, E-Mail-Sequenzen, Zahlungen und Buchungen einrichten. Alles an einem Ort \u2014 keine Integrationen zusammenbasteln.",
     },
     step2: {
       number: "2",
-      title: "Bauen & starten",
-      description: "Drag & Drop deine Seiten. Formulare verbinden. E-Mail-Sequenzen einrichten. Stripe f\u00fcr Zahlungen integrieren. In Minuten live gehen.",
+      title: "Deine Marke drauf",
+      description: "Sub-Organisation f\u00fcr deinen Kunden erstellen. Dein Logo, deine Farben, deine Domain. Dein Kunde loggt sich ein und sieht deine Marke \u2014 nicht unsere. Du bestimmst, was er sieht und was er zahlt.",
     },
     step3: {
       number: "3",
-      title: "Wachsen & verdienen",
-      description: "Jeden Lead im CRM tracken. Follow-ups automatisieren. Zahlungen verarbeiten. Zahle nur, was du nutzt \u2014 upgrade auf Pro f\u00fcr mehr Credits und h\u00f6here Limits.",
+      title: "Deployen & verdienen",
+      description: "In Minuten live. Dein Kunde bekommt ein professionelles Portal mit CRM, Buchungen und Analytics. Du bekommst wiederkehrende Einnahmen. F\u00fcr jeden neuen Kunden wiederholen \u2014 gleiches Setup, neue Marke.",
     },
   },
   success: {
     header: "Stell dir das vor",
     timeframe: "Diese Woche:",
     vision: {
-      item1: "Dein erster Funnel ist live und generiert Leads",
-      item2: "Zahlungen, E-Mail, CRM \u2014 alles verbunden, alles an einem Ort",
-      item3: "Kein Designer. Kein Entwickler. Kein 3-w\u00f6chiges Setup.",
-      item4: "Dein Kunde sieht Ergebnisse vor der n\u00e4chsten Rechnung",
+      item1: "Drei Kunden ongeboardet \u2014 jeder mit eigenem Marken-Portal",
+      item2: "Leads, Zahlungen, Buchungen, E-Mail \u2014 alles l\u00e4uft \u00fcber eine Plattform",
+      item3: "Einmal konfiguriert. Dreimal deployt. Kein Neuaufbau von Null.",
+      item4: "Wiederkehrende Einnahmen wachsen. Du bist nicht mehr der Flaschenhals.",
     },
-    contrast: "Selbst die talentiertesten Marketer k\u00f6nnen schlechte Tools nicht ausgleichen. Eine Plattform. Vom Funnel zur Zahlung. Live in Tagen, nicht Monaten.",
+    contrast: "Du bist nicht der Flaschenhals. Deine Tools waren es. Eine Plattform, um professionelles Marketing an jeden Kunden zu liefern \u2014 unter deiner Marke, live in Tagen, nicht Monaten.",
   },
   features: {
     header: "Alles was du brauchst. Nichts, was du nicht brauchst.",
-    builder: {
-      title: "Page & Funnel Builder",
-      description: "Drag-and-Drop. Sch\u00f6ne Defaults. Mobil-optimiert. Formulare, Funnels, Webseiten bauen und mit Workflows verbinden.",
+    multiTenant: {
+      title: "White-Label-Kundenportale",
+      description: "Sub-Organisationen f\u00fcr jeden Kunden. Dein Logo, deine Farben, deine Domain. Eingebaute Authentifizierung und Benutzerverwaltung. Deine Kunden sehen deine Marke \u2014 du steuerst die Erfahrung und die Preise.",
     },
     crm: {
       title: "Kontakte & Pipeline",
-      description: "Jeder Opt-in erfasst. Segmentieren, taggen, nachfassen. Visuelle Pipeline. Multi-Tenant mit Authentifizierung.",
+      description: "Jeder Lead pro Kunde erfasst. Segmentieren, taggen, nachfassen. Visuelle Pipeline. Deine Agentur sieht alle Kunden \u2014 jeder Kunde sieht nur seine eigenen Daten.",
+    },
+    builder: {
+      title: "Page & Funnel Builder",
+      description: "Drag-and-Drop. Sch\u00f6ne Defaults. Mobil-optimiert. Landing Pages, Funnels und Kundenportale bauen. In Minuten ver\u00f6ffentlichen \u2014 nicht Wochen.",
     },
     email: {
       title: "E-Mail & Automatisierung",
-      description: "Sequenzen, Broadcasts und Workflows, die tats\u00e4chlich im Posteingang landen.",
+      description: "Sequenzen, Broadcasts und Workflows, die tats\u00e4chlich im Posteingang landen. E-Mails ausl\u00f6sen bei Formular-Eintr\u00e4gen, K\u00e4ufen, Buchungen oder jedem Event.",
     },
     payments: {
       title: "Zahlungen & Rechnungen",
-      description: "Voll integrierter Stripe-Checkout. PayPal kommt bald. B2B- und B2C-Rechnungsstellung eingebaut.",
+      description: "Voll integrierter Stripe-Checkout. B2B- und B2C-Rechnungsstellung eingebaut. Deine Kunden zahlen \u00fcber deine Plattform \u2014 kein Wechsel zu einem separaten Tab.",
     },
     booking: {
       title: "Buchung & Kalender",
-      description: "Leads buchen direkt. Kalender-Sync. Automatische Best\u00e4tigungen und Erinnerungen.",
+      description: "Self-Service-Buchung f\u00fcr die Kunden deiner Kunden. Kalender-Sync. Automatische Best\u00e4tigungen und Erinnerungen per E-Mail.",
     },
     comms: {
       title: "Multi-Channel-Kommunikation",
-      description: "iPhone- und Android-App f\u00fcr dich und deine Kunden. Alle Daten an einem Ort.",
-    },
-    multiTenant: {
-      title: "Multi-Tenant & White-Label",
-      description: "Sub-Organisationen f\u00fcr deine Kunden erstellen. Eingebaute Authentifizierung. Affiliate-Revenue bei Promotion.",
+      description: "iPhone- und Android-App f\u00fcr dich und deine Kunden. Alle Gespr\u00e4che an einem Ort. WhatsApp Business API und Instagram DM auf der Roadmap.",
     },
     integrations: {
       title: "Integrationen, die funktionieren",
@@ -397,38 +397,38 @@ export const landingDe = {
         { name: "Vercel", status: "live" },
         { name: "Microsoft", status: "live" },
         { name: "Active Campaign", status: "live" },
+        { name: "WhatsApp Business", status: "coming" },
         { name: "PayPal", status: "coming" },
-        { name: "Zapier", status: "coming" },
-        { name: "Slack", status: "coming" },
         { name: "n8n", status: "coming" },
         { name: "Make", status: "coming" },
         { name: "ManyChat", status: "coming" },
+        { name: "Zapier", status: "coming" },
       ],
     },
-    pricing: "Kostenlos starten. Nutzungsbasiert \u2014 zahle nur, was du nutzt. Pro (\u20ac20/Mo): mehr Credits, h\u00f6here Limits. Team-Pl\u00e4ne in der App verf\u00fcgbar.",
-    note: "Keine versteckten Geb\u00fchren. Keine Pro-E-Mail-Kosten. Keine \u00dcberraschungsrechnungen.",
+    pricing: "Kostenlos starten. Nutzungsbasiert \u2014 zahle nur, was du nutzt. Pro (\u20ac29/Mo): mehr Credits, h\u00f6here Limits. Agentur-Pl\u00e4ne f\u00fcr Multi-Kunden-Setups verf\u00fcgbar.",
+    note: "Keine versteckten Geb\u00fchren. Keine Pro-E-Mail-Kosten. Keine \u00dcberraschungsrechnungen. Du bestimmst deine Kundenpreise \u2014 die Marge beh\u00e4ltst du.",
   },
   urgencyPill: {
-    text: "Kostenloser Plan verf\u00fcgbar \u2014 Jetzt bauen",
+    text: "Kostenloser Plan verf\u00fcgbar \u2014 Ersten Kunden heute deployen",
   },
   finalCta: {
-    header: "Bereit, mit deinen Tools aufzuh\u00f6ren zu k\u00e4mpfen?",
-    push: "Melde dich kostenlos an. Baue deinen ersten Funnel heute.\n\nKeine Kreditkarte. Keine Onboarding-Calls. Keine 3-w\u00f6chige Lernkurve.\nEinfach den Builder \u00f6ffnen und losbauen.",
-    cta: "Jetzt kostenlos bauen",
+    header: "Bereit, wie eine Plattform zu liefern \u2014 nicht wie ein Freelancer?",
+    push: "Melde dich kostenlos an. Richte dein erstes Kundenportal heute ein.\n\nKeine Kreditkarte. Keine Onboarding-Calls. Keine 3-w\u00f6chige Lernkurve.\nKonfigurieren, deine Marke drauf, deployen.",
+    cta: "Kostenlos starten",
     ctaSecondary: "Demo ansehen",
-    objectionHandler: "Kostenlos starten mit inkludierten Credits. Zahle nur, was du nutzt. Jederzeit upgraden, jederzeit k\u00fcndbar.",
+    objectionHandler: "Kostenlos starten mit inkludierten Credits. Zahle nur, was du nutzt. Du bestimmst deine Kundenpreise. Jederzeit upgraden, jederzeit k\u00fcndbar.",
   },
   affiliate: {} as typeof landingEn.affiliate,
   linktree: {
-    headline: "\u00d6ffentlich bauen.",
-    tagline: "l4yercak3 \u2014 Die Marketing-Suite, die nicht gegen dich arbeitet",
+    headline: "Eine Plattform. Deine Marke. Jeder Kunde.",
+    tagline: "l4yercak3 — White-Label-Portale, CRM, Zahlungen, Buchungen, E-Mail f\u00fcr Agenturen",
     sections: {
       freeResources: "Kostenlose Ressourcen",
     },
     links: {
       platform: {
-        title: "Jetzt bauen",
-        description: "Page Builder, CRM, E-Mail. Kostenlos starten.",
+        title: "Ersten Kunden deployen",
+        description: "White-Label-Portale, CRM, Zahlungen, Buchungen. Kostenlos starten.",
         badge: "Kostenlos",
       },
       community: {
