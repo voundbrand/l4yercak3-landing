@@ -199,17 +199,14 @@ function PrivacyContent() {
       <div className="mt-16">
         <div className={cn("rounded-2xl p-8 transition-colors duration-300", theme.cta)}>
           <h3 className={cn("font-serif text-2xl italic mb-4 transition-colors duration-300", theme.headings)}>
-            Related Legal Documents
+            See also
           </h3>
           <div className="flex flex-wrap gap-4">
+            <Link href="/cookies" className={cn("underline hover:opacity-80 transition-opacity", theme.content)}>
+              Cookie Policy
+            </Link>
             <Link href="/terms" className={cn("underline hover:opacity-80 transition-opacity", theme.content)}>
               Terms of Service
-            </Link>
-            <Link href="/dpa" className={cn("underline hover:opacity-80 transition-opacity", theme.content)}>
-              Data Processing Agreement
-            </Link>
-            <Link href="/docs" className={cn("underline hover:opacity-80 transition-opacity", theme.content)}>
-              Integration Documentation
             </Link>
           </div>
         </div>

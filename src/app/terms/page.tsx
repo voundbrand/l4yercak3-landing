@@ -174,17 +174,14 @@ function TermsContent() {
       <div className="mt-16">
         <div className={cn("rounded-2xl p-8 transition-colors duration-300", theme.cta)}>
           <h3 className={cn("font-serif text-2xl italic mb-4 transition-colors duration-300", theme.headings)}>
-            Related Legal Documents
+            See also
           </h3>
           <div className="flex flex-wrap gap-4">
             <Link href="/privacy" className={cn("underline hover:opacity-80 transition-opacity", theme.content)}>
               Privacy Policy
             </Link>
-            <Link href="/dpa" className={cn("underline hover:opacity-80 transition-opacity", theme.content)}>
-              Data Processing Agreement
-            </Link>
-            <Link href="/reseller" className={cn("underline hover:opacity-80 transition-opacity", theme.content)}>
-              Reseller Agreement
+            <Link href="/cookies" className={cn("underline hover:opacity-80 transition-opacity", theme.content)}>
+              Cookie Policy
             </Link>
           </div>
         </div>
