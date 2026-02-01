@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { GitHubLogoIcon, InstagramLogoIcon } from '@radix-ui/react-icons';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { MinimalNav } from '@/components/minimal-nav';
 import { MobileMenu } from '@/components/mobile-menu';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '@/components/language-provider';
@@ -186,11 +185,6 @@ export function ContentPageLayout({
           </div>
         </div>
       </header>
-
-      {/* Navigation underneath the header divider (Desktop Only) */}
-      <div className="hidden md:block max-w-4xl mx-auto px-6 py-3">
-        <MinimalNav />
-      </div>
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-6 py-12">
