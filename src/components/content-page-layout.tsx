@@ -277,6 +277,15 @@ export function ContentPageLayout({
                 {t('legal.links.privacy')}
               </Link>
               <Link
+                href="/cookies"
+                className={cn(
+                  "hover:underline transition-colors",
+                  readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
+                )}
+              >
+                {t('legal.links.cookies')}
+              </Link>
+              <Link
                 href="/terms"
                 className={cn(
                   "hover:underline transition-colors",
@@ -311,6 +320,15 @@ export function ContentPageLayout({
                 )}
               >
                 {t('legal.links.support')}
+              </Link>
+              <Link
+                href="/pricing"
+                className={cn(
+                  "hover:underline transition-colors",
+                  readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
+                )}
+              >
+                {t('legal.links.pricing')}
               </Link>
             </div>
 

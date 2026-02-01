@@ -79,6 +79,9 @@ export const Footer = ({ readingMode = 'dark' }: FooterProps) => {
           <Link href="/privacy" className={cn("hover:underline transition-colors", isSepia ? "hover:text-amber-900" : "hover:text-foreground/80")}>
             {t('legal.links.privacy')}
           </Link>
+          <Link href="/cookies" className={cn("hover:underline transition-colors", isSepia ? "hover:text-amber-900" : "hover:text-foreground/80")}>
+            {t('legal.links.cookies')}
+          </Link>
           <Link href="/terms" className={cn("hover:underline transition-colors", isSepia ? "hover:text-amber-900" : "hover:text-foreground/80")}>
             {t('legal.links.terms')}
           </Link>
@@ -93,6 +96,9 @@ export const Footer = ({ readingMode = 'dark' }: FooterProps) => {
           </Link>
           <Link href="/data-deletion" className={cn("hover:underline transition-colors", isSepia ? "hover:text-amber-900" : "hover:text-foreground/80")}>
             {t('legal.links.dataDeletion')}
+          </Link>
+          <Link href="/pricing" className={cn("hover:underline transition-colors", isSepia ? "hover:text-amber-900" : "hover:text-foreground/80")}>
+            {t('legal.links.pricing')}
           </Link>
         </div>
 

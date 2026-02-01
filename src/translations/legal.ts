@@ -18,6 +18,7 @@ export const legalEn = {
   // Footer legal links
   links: {
     privacy: "Privacy",
+    cookies: "Cookies",
     terms: "Terms",
     eula: "EULA",
     docs: "Docs",
@@ -25,6 +26,7 @@ export const legalEn = {
     dpa: "DPA",
     reseller: "Reseller",
     dataDeletion: "Data Deletion",
+    pricing: "Pricing",
   },
   // Privacy Policy page
   privacy: {
@@ -478,6 +480,7 @@ export const legalDe = {
   // Footer legal links
   links: {
     privacy: "Datenschutz",
+    cookies: "Cookies",
     terms: "AGB",
     eula: "EULA",
     docs: "Dokumentation",
@@ -485,6 +488,7 @@ export const legalDe = {
     dpa: "AVV",
     reseller: "Reseller",
     dataDeletion: "Datenlöschung",
+    pricing: "Preise",
   },
   // Privacy Policy page
   privacy: {
