@@ -91,6 +91,9 @@ export const Footer = ({ readingMode = 'dark' }: FooterProps) => {
           <Link href="/support" className={cn("hover:underline transition-colors", isSepia ? "hover:text-amber-900" : "hover:text-foreground/80")}>
             {t('legal.links.support')}
           </Link>
+          <Link href="/data-deletion" className={cn("hover:underline transition-colors", isSepia ? "hover:text-amber-900" : "hover:text-foreground/80")}>
+            {t('legal.links.dataDeletion')}
+          </Link>
         </div>
 
         {/* Tagline */}

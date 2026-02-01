@@ -24,6 +24,7 @@ export const legalEn = {
     support: "Support",
     dpa: "DPA",
     reseller: "Reseller",
+    dataDeletion: "Data Deletion",
   },
   // Privacy Policy page
   privacy: {
@@ -397,6 +398,7 @@ export const legalDe = {
     support: "Support",
     dpa: "AVV",
     reseller: "Reseller",
+    dataDeletion: "Datenlöschung",
   },
   // Privacy Policy page
   privacy: {
