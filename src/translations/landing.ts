@@ -57,12 +57,12 @@ export const landingEn = {
     header: "Imagine This Instead",
     timeframe: "This week:",
     vision: {
-      item1: "Three clients onboarded — each with their own branded portal",
+      item1: "Your client's funnel is live and generating leads",
       item2: "Leads, payments, bookings, email — all flowing through one platform",
       item3: "You configured once. Deployed three times. No rebuilding from scratch.",
       item4: "Recurring revenue growing. You're not the bottleneck anymore.",
     },
-    contrast: "You're not the bottleneck. Your tools were. One platform to deliver professional marketing to every client \u2014 under your brand, live in days, not months.",
+    contrast: "Talent isn\u2019t the bottleneck. Your tools are. One platform to get your clients generating leads \u2014 live in days, not months.",
   },
   features: {
     header: "Everything You Need. Nothing You Don't.",
@@ -351,12 +351,12 @@ export const landingDe = {
     header: "Stell dir das vor",
     timeframe: "Diese Woche:",
     vision: {
-      item1: "Drei Kunden ongeboardet \u2014 jeder mit eigenem Marken-Portal",
+      item1: "Der Funnel deines Kunden ist live und generiert Leads",
       item2: "Leads, Zahlungen, Buchungen, E-Mail \u2014 alles l\u00e4uft \u00fcber eine Plattform",
       item3: "Einmal konfiguriert. Dreimal deployt. Kein Neuaufbau von Null.",
       item4: "Wiederkehrende Einnahmen wachsen. Du bist nicht mehr der Flaschenhals.",
     },
-    contrast: "Du bist nicht der Flaschenhals. Deine Tools waren es. Eine Plattform, um professionelles Marketing an jeden Kunden zu liefern \u2014 unter deiner Marke, live in Tagen, nicht Monaten.",
+    contrast: "Talent ist nicht der Engpass. Deine Tools sind es. Eine Plattform, damit deine Kunden Leads generieren \u2014 live in Tagen, nicht Monaten.",
   },
   features: {
     header: "Alles was du brauchst. Nichts, was du nicht brauchst.",
