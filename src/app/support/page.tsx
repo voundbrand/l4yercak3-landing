@@ -55,6 +55,51 @@ function SupportContent() {
             </div>
           </section>
 
+          {/* AI Agents FAQ */}
+          <section>
+            <h2 className={cn("font-serif text-2xl italic mb-4 transition-colors duration-300", theme.headings)}>
+              AI Agents
+            </h2>
+
+            <div className="space-y-6 mt-6">
+              <div>
+                <h3 className={cn("text-xl font-semibold mb-2", theme.headings)}>
+                  How do I create an AI agent for my client?
+                </h3>
+                <p className={theme.muted}>
+                  Start a conversation with our onboarding agent. It will ask about your client&apos;s business and build the agent from your answers. No forms or configuration needed.
+                </p>
+              </div>
+
+              <div>
+                <h3 className={cn("text-xl font-semibold mb-2", theme.headings)}>
+                  What if the AI says something wrong?
+                </h3>
+                <p className={theme.muted}>
+                  Every agent knows when to escalate to a human. It starts cautious and only handles more as you approve. You control what it can and can&apos;t do.
+                </p>
+              </div>
+
+              <div>
+                <h3 className={cn("text-xl font-semibold mb-2", theme.headings)}>
+                  Which channels can agents use?
+                </h3>
+                <p className={theme.muted}>
+                  WhatsApp, Telegram, and web chat. Deploy on one or all — the agent adapts to each channel.
+                </p>
+              </div>
+
+              <div>
+                <h3 className={cn("text-xl font-semibold mb-2", theme.headings)}>
+                  Does the agent get smarter over time?
+                </h3>
+                <p className={theme.muted}>
+                  Yes. The agent observes its own conversations, proposes improvements, and waits for your approval before changing anything. It gets better every week without losing the client&apos;s voice.
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* FAQ */}
           <section>
             <h2 className={cn("font-serif text-2xl italic mb-4 transition-colors duration-300", theme.headings)}>

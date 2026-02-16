@@ -31,9 +31,9 @@ function QuickStartContent() {
         <h3 className={cn("font-semibold mb-3", theme.headings)}>On this page</h3>
         <ul className="space-y-2 text-sm">
           <li><a href="#create-account" className="hover:underline">1. Create an Account</a></li>
-          <li><a href="#create-project" className="hover:underline">2. Create Your First Project</a></li>
-          <li><a href="#connect-integration" className="hover:underline">3. Connect an Integration</a></li>
-          <li><a href="#deploy" className="hover:underline">4. Deploy Your App</a></li>
+          <li><a href="#start-conversation" className="hover:underline">2. Start the Onboarding Conversation</a></li>
+          <li><a href="#share-stories" className="hover:underline">3. Share Your Client&apos;s Stories</a></li>
+          <li><a href="#deploy" className="hover:underline">4. Deploy on Any Channel</a></li>
           <li><a href="#next-steps" className="hover:underline">Next Steps</a></li>
         </ul>
       </div>
@@ -47,50 +47,42 @@ function QuickStartContent() {
             1. Create an Account
           </h2>
           <p className="mb-4">
-            Visit <a href="https://app.l4yercak3.com" target="_blank" rel="noopener noreferrer" className="underline">app.l4yercak3.com</a> and sign up for a free account.
+            Visit <a href="https://app.l4yercak3.com" target="_blank" rel="noopener noreferrer" className="underline">app.l4yercak3.com</a> and sign up for a free account. No credit card required.
           </p>
           <div className={cn("p-4 rounded-lg", theme.quote)}>
             <p className={theme.muted}>
-              You can sign up with your email or use social authentication (Google, GitHub).
+              Sign up with your email or use social authentication (Google, GitHub). You&apos;ll be ready to deploy your first agent in minutes.
             </p>
           </div>
         </section>
 
         {/* Step 2 */}
-        <section id="create-project" className="mb-12 scroll-mt-20">
+        <section id="start-conversation" className="mb-12 scroll-mt-20">
           <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
-            2. Create Your First Project
+            2. Start the Onboarding Conversation
           </h2>
           <p className="mb-4">
-            Once logged in, click &quot;New Project&quot; from the dashboard. Choose from:
+            Open the onboarding agent. It asks about your client&apos;s business in natural language — what they do, how they handle customers, what the AI should never say.
           </p>
-          <ul className="list-disc pl-6 space-y-2 mb-4">
-            <li><strong>Blank Project</strong> - Start from scratch</li>
-            <li><strong>Template</strong> - Use a pre-built template</li>
-            <li><strong>Import</strong> - Import an existing project from GitHub</li>
-          </ul>
-          <p>
-            Give your project a name and description, then click &quot;Create&quot;.
-          </p>
+          <div className={cn("p-4 rounded-lg", theme.quote)}>
+            <p className={theme.muted}>
+              No forms. No config screens. Just a conversation that builds your client&apos;s AI agent from the ground up.
+            </p>
+          </div>
         </section>
 
         {/* Step 3 */}
-        <section id="connect-integration" className="mb-12 scroll-mt-20">
+        <section id="share-stories" className="mb-12 scroll-mt-20">
           <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
-            3. Connect an Integration
+            3. Share Your Client&apos;s Stories
           </h2>
           <p className="mb-4">
-            To deploy your app, you&apos;ll need to connect a deployment platform:
+            The agent asks for real stories: &quot;Tell me about a time a customer was upset.&quot; &quot;What happens when someone asks for a price?&quot; Your answers become the agent&apos;s identity — not config fields.
           </p>
-          <ol className="list-decimal pl-6 space-y-2 mb-4">
-            <li>Go to <strong>Settings → Integrations</strong></li>
-            <li>Click &quot;Connect&quot; next to your preferred platform (e.g., Vercel)</li>
-            <li>Authorize the integration when prompted</li>
-          </ol>
           <div className={cn("p-4 rounded-lg border-l-4 border-blue-500", theme.cta)}>
-            <p className="font-semibold mb-2">Recommended</p>
+            <p className="font-semibold mb-2">Why stories?</p>
             <p className={theme.muted}>
-              We recommend starting with the <Link href="/docs/integrations/vercel" className="underline">Vercel integration</Link> for the smoothest deployment experience.
+              Stories capture how the business actually works — the tone, the boundaries, the exceptions. Templates can&apos;t do that.
             </p>
           </div>
         </section>
@@ -98,20 +90,16 @@ function QuickStartContent() {
         {/* Step 4 */}
         <section id="deploy" className="mb-12 scroll-mt-20">
           <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
-            4. Deploy Your App
+            4. Deploy on Any Channel
           </h2>
           <p className="mb-4">
-            With an integration connected, deploying is easy:
+            Your client&apos;s agent goes live on WhatsApp, Telegram, or web. Their customers get instant responses 24/7. You earn recurring revenue.
           </p>
-          <ol className="list-decimal pl-6 space-y-2 mb-4">
-            <li>Open your project in l4yercak3</li>
-            <li>Click the &quot;Deploy&quot; button in the top right</li>
-            <li>Select your deployment target</li>
-            <li>Click &quot;Deploy Now&quot;</li>
-          </ol>
-          <p>
-            Your app will be live in seconds! You&apos;ll receive a URL where you can view your deployed application.
-          </p>
+          <div className={cn("p-4 rounded-lg", theme.quote)}>
+            <p className={theme.muted}>
+              Deploy on one channel or all of them — the agent adapts. You set the price. Your client pays monthly. You keep the margin.
+            </p>
+          </div>
         </section>
 
         {/* Next Steps */}

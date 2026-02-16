@@ -14,6 +14,7 @@ export const de = {
     home: "Startseite",
     features: "Features",
     pricing: "Preise",
+    blueprint: "Blueprint",
     toggleMenu: "Men\u00fc umschalten",
     openMenu: "Men\u00fc \u00f6ffnen",
     closeMenu: "Men\u00fc schlie\u00dfen",
@@ -25,11 +26,13 @@ export const de = {
   landing: landingDe,
   footer: {
     copyright: "\u00a9 2025 l4yercak3. Alle Rechte vorbehalten.",
-    tagline: "Gebaut f\u00fcr Marketer, die shippen.",
+    tagline: "KI-Mitarbeiter für deine Kunden.",
+    product: "Produkt",
+    legal: "Rechtliches",
   },
   pricing: {
     title: "Preise",
-    subtitle: "Einfache, transparente Preise f\u00fcr Teams jeder Gr\u00f6\u00dfe. Starte kostenlos, upgrade wenn du bereit bist.",
+    subtitle: "Einfache, transparente Preise. Deploye deinen ersten Agenten kostenlos, skaliere wenn du bereit bist.",
     billing: {
       monthly: "Monatlich",
       annual: "J\u00e4hrlich",
@@ -41,18 +44,18 @@ export const de = {
       free: {
         name: "Free",
         price: "Kostenlos",
-        description: "F\u00fcr Solo-Kreative zum Einstieg.",
+        description: "Für Solo-Kreative, die ihren ersten KI-Agenten deployen.",
         cta: "Kostenlos starten",
       },
       pro: {
         name: "Pro",
-        description: "F\u00fcr wachsende Unternehmen und Power-User.",
+        description: "Für Agenturen, die Agenten für mehrere Kunden deployen.",
         cta: "Pro starten",
         badge: "Beliebteste Wahl",
       },
       agency: {
         name: "Agency",
-        description: "F\u00fcr Agenturen und Teams, die mehrere Marken verwalten.",
+        description: "Für Agenturen, die KI-Workforces im großen Maßstab verwalten.",
         cta: "Agency starten",
       },
     },

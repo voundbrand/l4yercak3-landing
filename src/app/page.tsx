@@ -11,6 +11,7 @@ import { UrgencyPill } from "@/components/urgency-pill";
 import { useLanguage } from "@/components/language-provider";
 import { MobileMenu } from "@/components/mobile-menu";
 import { cn } from "@/lib/utils";
+import { IntegrationConstellation } from "@/components/integration-constellation";
 
 const APP_URL = "https://app.l4yercak3.com";
 
@@ -130,9 +131,8 @@ const integrations = [
   { name: "Vercel", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M12 1L24 22H0L12 1z"/></svg>, status: "live" as const, color: "text-[#f0f0f0]", bg: "bg-[#333]/15", border: "border-[#666]/25" },
   { name: "Microsoft", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M0 0h11.377v11.372H0zm12.623 0H24v11.372H12.623zM0 12.623h11.377V24H0zm12.623 0H24V24H12.623z"/></svg>, status: "live" as const, color: "text-[#00A4EF]", bg: "bg-[#00A4EF]/10", border: "border-[#00A4EF]/25" },
   { name: "Active Campaign", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.41 14.59l-3.54-3.54 1.41-1.41 2.12 2.12 4.24-4.24 1.41 1.41-5.64 5.66z"/></svg>, status: "live" as const, color: "text-[#356AE6]", bg: "bg-[#356AE6]/10", border: "border-[#356AE6]/25" },
+  { name: "WhatsApp Business", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>, status: "coming" as const, color: "text-[#25D366]", bg: "bg-[#25D366]/10", border: "border-[#25D366]/25" },
   { name: "PayPal", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M7.076 21.337H2.47a.641.641 0 01-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 00-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 00-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 00.554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 01.923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>, status: "coming" as const, color: "text-[#003087]", bg: "bg-[#003087]/10", border: "border-[#003087]/25" },
-  { name: "Zapier", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M15.977 10.08l3.122-3.121a8.455 8.455 0 00-2.058-2.058l-3.121 3.122a4.462 4.462 0 00-3.84 0L6.959 4.901a8.455 8.455 0 00-2.058 2.058l3.122 3.121a4.462 4.462 0 000 3.84L4.901 17.041a8.455 8.455 0 002.058 2.058l3.121-3.122a4.462 4.462 0 003.84 0l3.121 3.122a8.455 8.455 0 002.058-2.058l-3.122-3.121a4.462 4.462 0 000-3.84zM12 13.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/></svg>, status: "coming" as const, color: "text-[#FF4A00]", bg: "bg-[#FF4A00]/10", border: "border-[#FF4A00]/25" },
-  { name: "Slack", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M5.042 15.165a2.528 2.528 0 01-2.52 2.523A2.528 2.528 0 010 15.165a2.527 2.527 0 012.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 012.521-2.52 2.527 2.527 0 012.521 2.52v6.313A2.528 2.528 0 018.834 24a2.528 2.528 0 01-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 01-2.521-2.52A2.528 2.528 0 018.834 0a2.528 2.528 0 012.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 012.521 2.521 2.528 2.528 0 01-2.521 2.521H2.522A2.528 2.528 0 010 8.834a2.528 2.528 0 012.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 012.522-2.521A2.528 2.528 0 0124 8.834a2.528 2.528 0 01-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 01-2.523 2.521 2.527 2.527 0 01-2.52-2.521V2.522A2.527 2.527 0 0115.165 0a2.528 2.528 0 012.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 012.523 2.522A2.528 2.528 0 0115.165 24a2.527 2.527 0 01-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 01-2.52-2.523 2.526 2.526 0 012.52-2.52h6.313A2.527 2.527 0 0124 15.165a2.528 2.528 0 01-2.522 2.523h-6.313z"/></svg>, status: "coming" as const, color: "text-[#E01E5A]", bg: "bg-[#E01E5A]/10", border: "border-[#E01E5A]/25" },
   { name: "n8n", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M12 2a3 3 0 00-3 3v2.268A3.992 3.992 0 007 8a4 4 0 00-4 4 4 4 0 004 4 3.99 3.99 0 002-.535V19a3 3 0 106 0v-3.535A3.99 3.99 0 0017 16a4 4 0 004-4 4 4 0 00-4-4 3.992 3.992 0 00-2 .535V5a3 3 0 00-3-3zm-5 8a2 2 0 110 4 2 2 0 010-4zm10 0a2 2 0 110 4 2 2 0 010-4z"/></svg>, status: "coming" as const, color: "text-[#EA4B71]", bg: "bg-[#EA4B71]/10", border: "border-[#EA4B71]/25" },
   { name: "Make", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>, status: "coming" as const, color: "text-[#6D00CC]", bg: "bg-[#6D00CC]/10", border: "border-[#6D00CC]/25" },
   { name: "ManyChat", icon: <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.908 1.434 5.503 3.678 7.2V22l3.455-1.896A11.218 11.218 0 0012 20.485c5.523 0 10-4.144 10-9.242C22 6.145 17.523 2 12 2zm1.076 12.444l-2.55-2.72-4.98 2.72 5.473-5.81 2.613 2.72 4.916-2.72-5.472 5.81z"/></svg>, status: "coming" as const, color: "text-[#0084FF]", bg: "bg-[#0084FF]/10", border: "border-[#0084FF]/25" },
@@ -373,9 +373,15 @@ export default function Home() {
             <h2 className={cn("font-serif text-3xl sm:text-4xl md:text-5xl italic text-center mb-12 md:mb-16 transition-colors duration-300", theme.headings)}>{t("landing.features.header")}</h2>
           </motion.div>
 
+          {/* AI Agents — Lead Differentiator */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 }} whileHover={{ scale: 1.01, y: -2 }} className={cn("p-6 rounded-2xl border transition-all cursor-default mb-12", readingMode === 'sepia' ? 'bg-purple-100/80 border-purple-300/50' : 'bg-purple-500/10 border-purple-500/30')}>
+            <h3 className={cn("font-semibold text-lg mb-2 transition-colors duration-300", theme.headings)}>{t("landing.features.ai.title")}</h3>
+            <p className={cn("text-sm leading-relaxed transition-colors duration-300", theme.muted)}>{t("landing.features.ai.description")}</p>
+          </motion.div>
+
           {/* Feature Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {(['builder', 'crm', 'email', 'payments', 'booking', 'comms'] as const).map((key, i) => (
+            {(['crm', 'builder', 'email', 'payments', 'booking', 'comms', 'multiTenant'] as const).map((key, i) => (
               <motion.div
                 key={key}
                 initial={{ opacity: 0, y: 20 }}
@@ -391,53 +397,16 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Multi-Tenant Full Width */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.35 }} whileHover={{ scale: 1.01, y: -2 }} className={cn("p-6 rounded-2xl border transition-all cursor-default mb-12", readingMode === 'sepia' ? 'bg-purple-100/80 border-purple-300/50' : 'bg-purple-500/10 border-purple-500/30')}>
-            <h3 className={cn("font-semibold text-lg mb-2 transition-colors duration-300", theme.headings)}>{t("landing.features.multiTenant.title")}</h3>
-            <p className={cn("text-sm leading-relaxed transition-colors duration-300", theme.muted)}>{t("landing.features.multiTenant.description")}</p>
-          </motion.div>
+        </div>
 
-          {/* Integrations */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4 }}>
-            <h3 className={cn("font-serif text-2xl italic text-center mb-8 transition-colors duration-300", theme.headings)}>{t("landing.features.integrations.title")}</h3>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 md:gap-6">
-              {integrations.map((integration, i) => (
-                <motion.div
-                  key={integration.name}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: 0.03 * i }}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  className={cn(
-                    "flex flex-col items-center justify-center gap-2 p-4 rounded-xl border transition-all cursor-default",
-                    integration.bg, integration.border
-                  )}
-                >
-                  <span className={cn(
-                    "transition-colors duration-300",
-                    integration.color
-                  )}>
-                    {integration.icon}
-                  </span>
-                  <span className={cn(
-                    "text-xs font-medium text-center leading-tight transition-colors duration-300",
-                    readingMode === 'sepia' ? 'text-amber-800' : 'text-foreground/70'
-                  )}>
-                    {integration.name}
-                  </span>
-                  {integration.status === 'coming' && (
-                    <span className={cn(
-                      "text-[10px] px-1.5 py-0.5 rounded-full",
-                      readingMode === 'sepia' ? 'bg-amber-200/60 text-amber-600' : 'bg-foreground/10 text-foreground/50'
-                    )}>soon</span>
-                  )}
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+        {/* Integrations — Full-width Molecular Constellation */}
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4 }} className="mt-12 md:mt-16">
+          <h3 className={cn("font-serif text-2xl italic text-center mb-8 transition-colors duration-300 px-6", theme.headings)}>{t("landing.features.integrations.title")}</h3>
+          <IntegrationConstellation integrations={integrations} readingMode={readingMode} />
+        </motion.div>
 
-          {/* Pricing line */}
+        {/* Pricing line */}
+        <div className="max-w-5xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.5 }} className="text-center mt-12">
             <p className={cn("text-base md:text-lg font-medium transition-colors duration-300", theme.headings)}>{t("landing.features.pricing")}</p>
             <p className={cn("text-sm mt-2 transition-colors duration-300", theme.muted)}>{t("landing.features.note")}</p>

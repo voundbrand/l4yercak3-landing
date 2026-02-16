@@ -1,9 +1,9 @@
 export const landingEn = {
   hero: {
-    headline: "Deploy AI for your clients. Under your brand. In minutes.",
-    subheadline: "White-label client portals, CRM, payments, booking, email — one platform for agencies and freelancers who are done duct-taping 6 tools together. Fast. Simple. Built for how you actually work.",
+    headline: "Deploy an AI employee for your client. Live in 15 minutes.",
+    subheadline: "Start a conversation with our agent. It learns your client's business through stories, not forms. Their customers reach it on WhatsApp, Telegram, or your website — 24/7. You set the price.",
     cta: "Start Free",
-    ctaSecondary: "Watch the demo",
+    ctaSecondary: "See it work",
   },
   problem: {
     header: "Sound Familiar?",
@@ -21,7 +21,7 @@ export const landingEn = {
     },
     stakes: {
       title: "A year from now, what changes?",
-      description: "Without a better system, you'll still be capped at 15 clients. Still onboarding each one manually. Still answering WhatsApp messages at midnight because there's no system handling it for you.\n\nYou'll still be paying for 6 tools that barely work together. Still explaining to clients why their funnel isn't live yet. Still watching your margins shrink every time you add a new software subscription.\n\nYou're building a job, not a business. And the tools you're paying €300/month for were built in 2018. Deep down, you already know: this isn't going to get better.",
+      description: "Without a better system, you'll still be capped at 15 clients. Still onboarding each one manually. Still answering WhatsApp messages at midnight because there's no system handling it for you.\n\nYou'll still be paying for 6 tools that barely work together. Still explaining to clients why their funnel isn't live yet. Still watching your margins shrink every time you add a new software subscription.\n\nYou're building a job, not a business. And the tools you're paying €300/month for were built in 2018. Deep down, you already know: this isn't going to get better.\n\nMeanwhile, the agencies pulling ahead aren't hiring more people. They're deploying AI agents that handle the frontline — and only bring in a human when it actually matters.",
     },
   },
   guide: {
@@ -39,33 +39,37 @@ export const landingEn = {
     header: "Here's How It Works",
     step1: {
       number: "1",
-      title: "Configure",
-      description: "Pick a template or start from scratch. Set up pages, forms, CRM pipeline, email sequences, payments, and booking. Everything in one place — no integrations to wire together.",
+      title: "Have a Conversation",
+      description: "Talk to our onboarding agent. It asks about your client's business — what they do, how they handle customers, what should never be promised. Share a few stories. No forms. No config screens.",
     },
     step2: {
       number: "2",
-      title: "Brand It Yours",
-      description: "Create a sub-organisation for your client. Your logo, your colors, your domain. They log in and see your brand — not ours. You control what they see and what they pay.",
+      title: "It Builds the Agent",
+      description: "From that conversation, it creates an AI agent with your client's voice, boundaries, and personality. It knows when to help and when to hand off to a human. Review it, tweak it, approve it.",
     },
     step3: {
       number: "3",
       title: "Deploy & Earn",
-      description: "Go live in minutes. Your client gets a professional portal with CRM, booking, and analytics. You get recurring revenue. Repeat for every new client — same setup, new brand.",
+      description: "Your client's agent goes live on WhatsApp, Telegram, web — wherever their customers already are. You set the price. Recurring revenue from day one. The agent gets smarter every week.",
     },
   },
   success: {
     header: "Imagine This Instead",
-    timeframe: "This week:",
+    timeframe: "After 15 minutes:",
     vision: {
-      item1: "Your client's funnel is live and generating leads",
-      item2: "Leads, payments, bookings, email — all flowing through one platform",
-      item3: "You configured once. Deployed three times. No rebuilding from scratch.",
-      item4: "Recurring revenue growing. You're not the bottleneck anymore.",
+      item1: "Your client's AI agent is live and handling customer inquiries",
+      item2: "Bookings, FAQs, follow-ups — handled 24/7 without you touching it",
+      item3: "The agent knows when something needs a human — and escalates cleanly",
+      item4: "You set the price. Your client pays monthly. You keep the margin.",
     },
-    contrast: "Talent isn\u2019t the bottleneck. Your tools are. One platform to get your clients generating leads \u2014 live in days, not months.",
+    contrast: "You don't need more tools. You don't need more hours. You need an AI employee that learns the business, handles the frontline, and gets smarter every week — without forgetting who it works for.",
   },
   features: {
-    header: "Everything You Need. Nothing You Don't.",
+    header: "Everything Your Agents Need. Nothing They Don't.",
+    ai: {
+      title: "AI Agents That Earn Trust",
+      description: "Each agent starts with your client's stories — not a template. Week 1: it asks about everything. Month 2: it handles 80% independently. It knows when to escalate. You approve every change. It never goes rogue.",
+    },
     multiTenant: {
       title: "White-Label Client Portals",
       description: "Create sub-organisations for each client. Your logo, your colors, your domain. Built-in authentication and user management. Your clients see your brand — you control the experience and the pricing.",
@@ -115,14 +119,14 @@ export const landingEn = {
     note: "No hidden charges. No per-email fees. No surprise invoices. You set your own client pricing — keep the margin.",
   },
   urgencyPill: {
-    text: "Free plan available — Deploy Your First Client Today",
+    text: "Free plan available — Deploy Your First Agent Today",
   },
   finalCta: {
-    header: "Ready to Deliver Like a Platform — Not a Freelancer?",
-    push: "Sign up for free. Set up your first client portal today.\n\nNo credit card. No onboarding calls. No 3-week learning curve.\nConfigure, brand it yours, deploy.",
+    header: "Your First Client's Agent Can Be Live Today.",
+    push: "Talk to our agent. Deploy your first client's AI employee in 15 minutes.\n\nNo credit card. No onboarding calls. No learning curve.\nHave a conversation. Deploy. Get paid.",
     cta: "Start Free",
-    ctaSecondary: "Watch the demo",
-    objectionHandler: "Free to start with included credits. Pay only for what you use. You set your own client pricing. Upgrade anytime, cancel anytime.",
+    ctaSecondary: "See it work",
+    objectionHandler: "Free to start. AI that escalates to humans when unsure — no rogue chatbots. WhatsApp, Telegram, web — every channel. You set your own client pricing. Cancel anytime.",
   },
   affiliate: {
     hero: {
@@ -265,10 +269,10 @@ export const landingEn = {
     },
   },
   blueprint: {
-    headline: "Get Your Personalized Recurring Revenue Blueprint",
-    headlineSuffix: "Tailored to Where You Are Right Now",
-    subheadline: "Answer a few questions. Get a blueprint built for where you are right now.",
-    socialProof: "Built from 5 years running a marketing agency. Battle-tested with real clients.",
+    headline: "Get Your AI Agent Revenue Blueprint",
+    headlineSuffix: "Tailored to Your Agency's Stage",
+    subheadline: "Answer a few questions. Get a blueprint for deploying AI agents and building recurring revenue.",
+    socialProof: "Built from 5 years running an agency and deploying AI agents for real clients.",
     consent: "By submitting, you agree to receive the Blueprint via email and occasional updates. You can unsubscribe anytime. We respect your privacy and process your data in accordance with GDPR.",
     form: {
       previous: "Previous",
@@ -356,15 +360,15 @@ export const landingEn = {
     },
   },
   linktree: {
-    headline: "One platform. Your brand. Every client.",
-    tagline: "l4yercak3 — White-label portals, CRM, payments, booking, email for agencies",
+    headline: "AI employees for your clients. Live in 15 minutes.",
+    tagline: "l4yercak3 — Deploy AI agents on WhatsApp, Telegram, web. Set your price. Earn recurring revenue.",
     sections: {
       freeResources: "Free Resources",
     },
     links: {
       platform: {
-        title: "Deploy Your First Client",
-        description: "White-label portals, CRM, payments, booking. Free to start.",
+        title: "Deploy Your First Agent",
+        description: "AI agents that learn your client's business. Free to start.",
         badge: "Free",
       },
       community: {
@@ -385,10 +389,10 @@ export const landingEn = {
 
 export const landingDe = {
   hero: {
-    headline: "KI f\u00fcr deine Kunden deployen. Unter deiner Marke. In Minuten.",
-    subheadline: "White-Label-Kundenportale, CRM, Zahlungen, Buchungen, E-Mail \u2014 eine Plattform f\u00fcr Agenturen und Freelancer, die keine 6 Tools mehr zusammenkleben wollen. Schnell. Einfach. Gebaut f\u00fcr echte Arbeit.",
+    headline: "Deploye einen KI-Mitarbeiter für deinen Kunden. Live in 15 Minuten.",
+    subheadline: "Starte ein Gespräch mit unserem Agenten. Er lernt das Business deines Kunden durch Geschichten, nicht Formulare. Die Kunden deines Kunden erreichen ihn auf WhatsApp, Telegram oder deiner Website — 24/7. Du bestimmst den Preis.",
     cta: "Kostenlos starten",
-    ctaSecondary: "Demo ansehen",
+    ctaSecondary: "So funktioniert's",
   },
   problem: {
     header: "Kommt dir das bekannt vor?",
@@ -406,7 +410,7 @@ export const landingDe = {
     },
     stakes: {
       title: "Was \u00e4ndert sich in einem Jahr?",
-      description: "Ohne ein besseres System wirst du immer noch bei 15 Kunden gedeckelt sein. Immer noch jeden einzeln onboarden. Immer noch um Mitternacht WhatsApp-Nachrichten beantworten, weil kein System das f\u00fcr dich \u00fcbernimmt.\n\nDu wirst immer noch f\u00fcr 6 Tools bezahlen, die kaum zusammenarbeiten. Immer noch Kunden erkl\u00e4ren, warum ihr Funnel noch nicht live ist. Immer noch zusehen, wie deine Marge schrumpft mit jedem neuen Software-Abo.\n\nDu baust einen Job, kein Unternehmen. Und die Tools, f\u00fcr die du \u20ac300/Monat bezahlst, wurden 2018 gebaut. Tief im Inneren wei\u00dft du es: Das wird nicht besser.",
+      description: "Ohne ein besseres System wirst du immer noch bei 15 Kunden gedeckelt sein. Immer noch jeden einzeln onboarden. Immer noch um Mitternacht WhatsApp-Nachrichten beantworten, weil kein System das für dich übernimmt.\n\nDu wirst immer noch für 6 Tools bezahlen, die kaum zusammenarbeiten. Immer noch Kunden erklären, warum ihr Funnel noch nicht live ist. Immer noch zusehen, wie deine Marge schrumpft mit jedem neuen Software-Abo.\n\nDu baust einen Job, kein Unternehmen. Und die Tools, für die du €300/Monat bezahlst, wurden 2018 gebaut. Tief im Inneren weißt du es: Das wird nicht besser.\n\nDie Agenturen, die vorankommen, stellen keine neuen Leute ein. Sie deployen KI-Agenten, die die Frontline übernehmen — und nur dann einen Menschen einschalten, wenn es wirklich nötig ist.",
     },
   },
   guide: {
@@ -424,33 +428,37 @@ export const landingDe = {
     header: "So funktioniert's",
     step1: {
       number: "1",
-      title: "Konfigurieren",
-      description: "Template w\u00e4hlen oder von Null starten. Seiten, Formulare, CRM-Pipeline, E-Mail-Sequenzen, Zahlungen und Buchungen einrichten. Alles an einem Ort \u2014 keine Integrationen zusammenbasteln.",
+      title: "Führe ein Gespräch",
+      description: "Sprich mit unserem Onboarding-Agenten. Er fragt nach dem Business deines Kunden — was sie machen, wie sie mit Kunden umgehen, was niemals versprochen werden darf. Erzähl ein paar Geschichten. Keine Formulare. Keine Konfigurationsmasken.",
     },
     step2: {
       number: "2",
-      title: "Deine Marke drauf",
-      description: "Sub-Organisation f\u00fcr deinen Kunden erstellen. Dein Logo, deine Farben, deine Domain. Dein Kunde loggt sich ein und sieht deine Marke \u2014 nicht unsere. Du bestimmst, was er sieht und was er zahlt.",
+      title: "Er baut den Agenten",
+      description: "Aus diesem Gespräch erstellt er einen KI-Agenten mit der Stimme, den Grenzen und der Persönlichkeit deines Kunden. Er weiß, wann er helfen und wann er an einen Menschen übergeben soll. Prüfen, anpassen, genehmigen.",
     },
     step3: {
       number: "3",
       title: "Deployen & verdienen",
-      description: "In Minuten live. Dein Kunde bekommt ein professionelles Portal mit CRM, Buchungen und Analytics. Du bekommst wiederkehrende Einnahmen. F\u00fcr jeden neuen Kunden wiederholen \u2014 gleiches Setup, neue Marke.",
+      description: "Der Agent deines Kunden geht live auf WhatsApp, Telegram, Web — überall dort, wo seine Kunden schon sind. Du bestimmst den Preis. Wiederkehrende Einnahmen ab Tag eins. Der Agent wird jede Woche schlauer.",
     },
   },
   success: {
     header: "Stell dir das vor",
-    timeframe: "Diese Woche:",
+    timeframe: "Nach 15 Minuten:",
     vision: {
-      item1: "Der Funnel deines Kunden ist live und generiert Leads",
-      item2: "Leads, Zahlungen, Buchungen, E-Mail \u2014 alles l\u00e4uft \u00fcber eine Plattform",
-      item3: "Einmal konfiguriert. Dreimal deployt. Kein Neuaufbau von Null.",
-      item4: "Wiederkehrende Einnahmen wachsen. Du bist nicht mehr der Flaschenhals.",
+      item1: "Der KI-Agent deines Kunden ist live und bearbeitet Kundenanfragen",
+      item2: "Buchungen, FAQs, Follow-ups — 24/7 erledigt, ohne dass du etwas tun musst",
+      item3: "Der Agent weiß, wann etwas einen Menschen braucht — und eskaliert sauber",
+      item4: "Du bestimmst den Preis. Dein Kunde zahlt monatlich. Du behältst die Marge.",
     },
-    contrast: "Talent ist nicht der Engpass. Deine Tools sind es. Eine Plattform, damit deine Kunden Leads generieren \u2014 live in Tagen, nicht Monaten.",
+    contrast: "Du brauchst nicht mehr Tools. Du brauchst nicht mehr Stunden. Du brauchst einen KI-Mitarbeiter, der das Business lernt, die Frontline übernimmt und jede Woche schlauer wird — ohne zu vergessen, für wen er arbeitet.",
   },
   features: {
-    header: "Alles was du brauchst. Nichts, was du nicht brauchst.",
+    header: "Alles, was deine Agenten brauchen. Nichts, was sie nicht brauchen.",
+    ai: {
+      title: "KI-Agenten, die Vertrauen verdienen",
+      description: "Jeder Agent startet mit den Geschichten deines Kunden — nicht mit einem Template. Woche 1: er fragt bei allem nach. Monat 2: er erledigt 80% selbstständig. Er weiß, wann er eskalieren muss. Du genehmigst jede Änderung. Er gerät nie außer Kontrolle.",
+    },
     multiTenant: {
       title: "White-Label-Kundenportale",
       description: "Sub-Organisationen f\u00fcr jeden Kunden. Dein Logo, deine Farben, deine Domain. Eingebaute Authentifizierung und Benutzerverwaltung. Deine Kunden sehen deine Marke \u2014 du steuerst die Erfahrung und die Preise.",
@@ -500,21 +508,21 @@ export const landingDe = {
     note: "Keine versteckten Geb\u00fchren. Keine Pro-E-Mail-Kosten. Keine \u00dcberraschungsrechnungen. Du bestimmst deine Kundenpreise \u2014 die Marge beh\u00e4ltst du.",
   },
   urgencyPill: {
-    text: "Kostenloser Plan verf\u00fcgbar \u2014 Ersten Kunden heute deployen",
+    text: "Kostenloser Plan verfügbar — Ersten Agenten heute deployen",
   },
   finalCta: {
-    header: "Bereit, wie eine Plattform zu liefern \u2014 nicht wie ein Freelancer?",
-    push: "Melde dich kostenlos an. Richte dein erstes Kundenportal heute ein.\n\nKeine Kreditkarte. Keine Onboarding-Calls. Keine 3-w\u00f6chige Lernkurve.\nKonfigurieren, deine Marke drauf, deployen.",
+    header: "Der erste Agent deines Kunden kann heute live sein.",
+    push: "Sprich mit unserem Agenten. Deploye den ersten KI-Mitarbeiter deines Kunden in 15 Minuten.\n\nKeine Kreditkarte. Keine Onboarding-Calls. Keine Lernkurve.\nEin Gespräch führen. Deployen. Verdienen.",
     cta: "Kostenlos starten",
-    ctaSecondary: "Demo ansehen",
-    objectionHandler: "Kostenlos starten mit inkludierten Credits. Zahle nur, was du nutzt. Du bestimmst deine Kundenpreise. Jederzeit upgraden, jederzeit k\u00fcndbar.",
+    ctaSecondary: "So funktioniert's",
+    objectionHandler: "Kostenlos starten. KI, die bei Unsicherheit an Menschen eskaliert — keine unkontrollierten Chatbots. WhatsApp, Telegram, Web — jeder Kanal. Du bestimmst deine Kundenpreise. Jederzeit kündbar.",
   },
   affiliate: {} as typeof landingEn.affiliate,
   blueprint: {
-    headline: "Dein personalisierter Recurring Revenue Blueprint",
-    headlineSuffix: "Zugeschnitten auf deine aktuelle Phase",
-    subheadline: "Beantworte ein paar Fragen. Bekomme einen Blueprint, der zu dir passt.",
-    socialProof: "Entstanden aus 5 Jahren eigener Marketing-Agentur. Praxiserprobt mit echten Kunden.",
+    headline: "Dein KI-Agent Revenue Blueprint",
+    headlineSuffix: "Zugeschnitten auf die Phase deiner Agentur",
+    subheadline: "Beantworte ein paar Fragen. Bekomme einen Blueprint für den Einsatz von KI-Agenten und den Aufbau wiederkehrender Einnahmen.",
+    socialProof: "Entstanden aus 5 Jahren eigener Agentur und dem Einsatz von KI-Agenten für echte Kunden.",
     consent: "Mit der Einsendung stimmst du zu, den Blueprint per E-Mail und gelegentliche Updates zu erhalten. Du kannst dich jederzeit abmelden. Wir respektieren deine Privatsph\u00e4re und verarbeiten deine Daten DSGVO-konform.",
     form: {
       previous: "Zur\u00fcck",
@@ -602,15 +610,15 @@ export const landingDe = {
     },
   },
   linktree: {
-    headline: "Eine Plattform. Deine Marke. Jeder Kunde.",
-    tagline: "l4yercak3 \u2014 White-Label-Portale, CRM, Zahlungen, Buchungen, E-Mail f\u00fcr Agenturen",
+    headline: "KI-Mitarbeiter für deine Kunden. Live in 15 Minuten.",
+    tagline: "l4yercak3 — Deploye KI-Agenten auf WhatsApp, Telegram, Web. Bestimme deinen Preis. Verdiene wiederkehrende Einnahmen.",
     sections: {
       freeResources: "Kostenlose Ressourcen",
     },
     links: {
       platform: {
-        title: "Ersten Kunden deployen",
-        description: "White-Label-Portale, CRM, Zahlungen, Buchungen. Kostenlos starten.",
+        title: "Ersten Agenten deployen",
+        description: "KI-Agenten, die das Business deines Kunden lernen. Kostenlos starten.",
         badge: "Kostenlos",
       },
       community: {

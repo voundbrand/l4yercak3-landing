@@ -14,6 +14,7 @@ export const en = {
     home: "Home",
     features: "Features",
     pricing: "Pricing",
+    blueprint: "Blueprint",
     toggleMenu: "Toggle menu",
     openMenu: "Open menu",
     closeMenu: "Close menu",
@@ -25,11 +26,13 @@ export const en = {
   landing: landingEn,
   footer: {
     copyright: "\u00a9 2025 l4yercak3. All rights reserved.",
-    tagline: "Built for marketers who ship.",
+    tagline: "AI employees for your clients.",
+    product: "Product",
+    legal: "Legal",
   },
   pricing: {
     title: "Pricing",
-    subtitle: "Simple, transparent pricing for teams of every size. Start free, upgrade when you're ready.",
+    subtitle: "Simple, transparent pricing. Deploy your first agent free, scale when you're ready.",
     billing: {
       monthly: "Monthly",
       annual: "Annual",
@@ -41,18 +44,18 @@ export const en = {
       free: {
         name: "Free",
         price: "Free",
-        description: "For solo creators getting started.",
+        description: "For solo creators deploying their first AI agent.",
         cta: "Get Started Free",
       },
       pro: {
         name: "Pro",
-        description: "For growing businesses and power users.",
+        description: "For agencies deploying agents across multiple clients.",
         cta: "Start Pro",
         badge: "Most popular",
       },
       agency: {
         name: "Agency",
-        description: "For agencies and teams managing multiple brands.",
+        description: "For agencies managing AI workforces at scale.",
         cta: "Start Agency",
       },
     },

@@ -131,11 +131,8 @@ function DocsContent() {
         <h2 className={cn("font-serif text-2xl italic mb-4", theme.headings)}>
           About l4yercak3
         </h2>
-        <p className={cn("text-lg leading-relaxed mb-4", theme.content)}>
-          l4yercak3 is a retro desktop-style workflow platform that enables users to build, manage, and deploy web applications with ease. Our platform combines nostalgic design with modern capabilities.
-        </p>
         <p className={cn("text-lg leading-relaxed", theme.content)}>
-          Perfect for freelancers, agencies, and teams who want streamlined deployment workflows with the familiarity of a retro desktop interface.
+          l4yercak3 is an AI agent platform for agencies. Deploy AI employees for your clients — agents that learn the business through conversation, handle customer inquiries on any channel, and get smarter every week. Built for agencies and freelancers who want recurring revenue without recurring effort.
         </p>
       </section>
 
@@ -146,20 +143,20 @@ function DocsContent() {
         </h2>
         <div className="space-y-4">
           <div className={cn("p-4 rounded-lg", theme.quote)}>
-            <h3 className={cn("font-semibold mb-2", theme.headings)}>One-Click Deployments</h3>
-            <p className={theme.muted}>Deploy to Vercel, Netlify, or your own infrastructure with a single click.</p>
+            <h3 className={cn("font-semibold mb-2", theme.headings)}>Conversational Onboarding</h3>
+            <p className={theme.muted}>Set up a client&apos;s AI agent through a conversation, not a form. Share stories about how the business works. The agent builds itself.</p>
           </div>
           <div className={cn("p-4 rounded-lg", theme.quote)}>
-            <h3 className={cn("font-semibold mb-2", theme.headings)}>Environment Management</h3>
-            <p className={theme.muted}>Securely manage environment variables across all your projects.</p>
+            <h3 className={cn("font-semibold mb-2", theme.headings)}>Multi-Channel Deployment</h3>
+            <p className={theme.muted}>Deploy agents on WhatsApp, Telegram, web chat, or any channel your client&apos;s customers already use.</p>
           </div>
           <div className={cn("p-4 rounded-lg", theme.quote)}>
-            <h3 className={cn("font-semibold mb-2", theme.headings)}>Team Collaboration</h3>
-            <p className={theme.muted}>Work together with your team on projects with role-based access control.</p>
+            <h3 className={cn("font-semibold mb-2", theme.headings)}>Graduated Autonomy</h3>
+            <p className={theme.muted}>Agents start cautious and earn independence over time. You approve every change. They never go rogue.</p>
           </div>
           <div className={cn("p-4 rounded-lg", theme.quote)}>
-            <h3 className={cn("font-semibold mb-2", theme.headings)}>Real-Time Monitoring</h3>
-            <p className={theme.muted}>Track deployment status, logs, and analytics in real-time.</p>
+            <h3 className={cn("font-semibold mb-2", theme.headings)}>White-Label & CRM</h3>
+            <p className={theme.muted}>Full platform with CRM, payments, booking, email, and white-label client portals under your brand.</p>
           </div>
         </div>
       </section>
