@@ -4,23 +4,15 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { en } from "@/translations/en";
 import { de } from "@/translations/de";
-import { detectBrowserLanguage } from "./language-detection";
-
 // Initialize i18next instance
 const i18nInstance = i18n.createInstance();
 
-// Detect initial language
-const getInitialLanguage = () => {
-  if (typeof window === 'undefined') {
-    return 'en'; // Server-side default
-  }
-  return detectBrowserLanguage();
-};
-
+// Always init with 'en' to match server render and avoid hydration mismatch.
+// LanguageProvider switches to the detected language after hydration.
 i18nInstance
   .use(initReactI18next)
   .init({
-    lng: getInitialLanguage(),
+    lng: 'en',
     fallbackLng: "en",
     resources: {
       en: {

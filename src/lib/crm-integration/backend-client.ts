@@ -47,8 +47,8 @@ class BackendCRMClient {
   private apiKey: string;
 
   constructor() {
-    this.baseUrl = process.env.BACKEND_CRM_URL || "";
-    this.apiKey = process.env.BACKEND_CRM_API_KEY || "";
+    this.baseUrl = process.env.L4YERCAK3_BACKEND_URL || "";
+    this.apiKey = process.env.L4YERCAK3_API_KEY || "";
 
     if (!this.baseUrl || !this.apiKey) {
       console.warn("⚠️ Backend CRM credentials not configured - CRM sync will be skipped");
@@ -89,6 +89,7 @@ class BackendCRMClient {
           headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${this.apiKey}`,
+            "X-Organization-Id": process.env.L4YERCAK3_ORGANIZATION_ID || "",
           },
           body: JSON.stringify({
             contactInfo: data.contactInfo,

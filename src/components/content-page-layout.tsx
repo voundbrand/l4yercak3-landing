@@ -48,13 +48,15 @@ interface ContentPageLayoutProps {
   showBackButton?: boolean;
   backButtonText?: string;
   backButtonHref?: string;
+  showCta?: boolean;
 }
 
-export function ContentPageLayout({ 
-  children, 
+export function ContentPageLayout({
+  children,
   showBackButton = true,
   backButtonText = "Back to Home",
-  backButtonHref = "/"
+  backButtonHref = "/",
+  showCta = true,
 }: ContentPageLayoutProps) {
   const [readingMode, setReadingMode] = useState<ReadingMode>('dark');
   const { i18n, t } = useTranslation();
@@ -108,6 +110,37 @@ export function ContentPageLayout({
               l4yercak3
             </Link>
             
+            {/* Desktop Nav Links */}
+            <nav className="hidden md:flex items-center gap-6">
+              <Link
+                href="/"
+                className={cn(
+                  "text-sm font-medium transition-colors hover:opacity-80",
+                  readingMode === 'sepia' ? "text-amber-700" : "text-foreground/70"
+                )}
+              >
+                {t('navigation.home')}
+              </Link>
+              <Link
+                href="/pricing"
+                className={cn(
+                  "text-sm font-medium transition-colors hover:opacity-80",
+                  readingMode === 'sepia' ? "text-amber-700" : "text-foreground/70"
+                )}
+              >
+                {t('navigation.pricing')}
+              </Link>
+              <Link
+                href="/blueprint"
+                className={cn(
+                  "text-sm font-medium transition-colors hover:opacity-80",
+                  readingMode === 'sepia' ? "text-amber-700" : "text-foreground/70"
+                )}
+              >
+                {t('navigation.blueprint')}
+              </Link>
+            </nav>
+
             {/* Desktop Controls */}
             <div className="hidden md:flex items-center gap-2">
               {/* Reading Mode Toggle */}
@@ -173,15 +206,17 @@ export function ContentPageLayout({
               </div>
 
               {/* Start Building Button */}
-              <Button asChild size="sm" className="text-sm">
-                <a href="https://app.l4yercak3.com">
-                  {t('common.startBuilding')}
-                </a>
-              </Button>
+              {showCta && (
+                <Button asChild size="sm" className="text-sm">
+                  <a href="https://app.l4yercak3.com">
+                    {t('common.startBuilding')}
+                  </a>
+                </Button>
+              )}
             </div>
 
             {/* Mobile Menu */}
-            <MobileMenu readingMode={readingMode} setReadingMode={setReadingMode} language={language} setLanguage={setLanguage} />
+            <MobileMenu readingMode={readingMode} setReadingMode={setReadingMode} language={language} setLanguage={setLanguage} showCta={showCta} />
           </div>
         </div>
       </header>
@@ -194,153 +229,91 @@ export function ContentPageLayout({
       {/* Footer */}
       <footer className={cn("border-t mt-16 transition-colors duration-300",
         readingMode === 'sepia' ? 'border-amber-200/50' : 'border-border/20')}>
-        <div className="max-w-4xl mx-auto px-6 py-8">
-          <div className="flex flex-col items-center gap-4">
-            {/* Social Media Icons */}
-            <div className="flex gap-4 md:gap-6 items-center">
-              <Link
-                target="_blank"
-                href={socialLinks.linkedin}
-                className={cn(
-                  "p-2 rounded-full transition-all duration-200",
-                  readingMode === 'sepia'
-                    ? "bg-amber-200/50 hover:bg-amber-300/50 text-amber-800"
-                    : "bg-white/10 hover:bg-white/20 text-foreground"
-                )}
-                aria-label="Follow Remington on LinkedIn"
-              >
-                <LinkedInIcon className="size-5" />
-              </Link>
-              <Link
-                target="_blank"
-                href={socialLinks.x}
-                className={cn(
-                  "p-2 rounded-full transition-all duration-200",
-                  readingMode === 'sepia'
-                    ? "bg-amber-200/50 hover:bg-amber-300/50 text-amber-800"
-                    : "bg-white/10 hover:bg-white/20 text-foreground"
-                )}
-                aria-label="Follow Remington on X (Twitter)"
-              >
-                <XLogoIcon className="size-5" />
-              </Link>
-              <Link
-                target="_blank"
-                href={socialLinks.instagram}
-                className={cn(
-                  "p-2 rounded-full transition-all duration-200",
-                  readingMode === 'sepia'
-                    ? "bg-amber-200/50 hover:bg-amber-300/50 text-amber-800"
-                    : "bg-white/10 hover:bg-white/20 text-foreground"
-                )}
-                aria-label="Follow Remington on Instagram"
-              >
-                <InstagramLogoIcon className="size-5" />
-              </Link>
-              <Link
-                target="_blank"
-                href={socialLinks.youtube}
-                className={cn(
-                  "p-2 rounded-full transition-all duration-200",
-                  readingMode === 'sepia'
-                    ? "bg-amber-200/50 hover:bg-amber-300/50 text-amber-800"
-                    : "bg-white/10 hover:bg-white/20 text-foreground"
-                )}
-                aria-label="Subscribe to Remington on YouTube"
-              >
-                <YouTubeIcon className="size-5" />
-              </Link>
-              <Link
-                target="_blank"
-                href={socialLinks.github}
-                className={cn(
-                  "p-2 rounded-full transition-all duration-200",
-                  readingMode === 'sepia'
-                    ? "bg-amber-200/50 hover:bg-amber-300/50 text-amber-800"
-                    : "bg-white/10 hover:bg-white/20 text-foreground"
-                )}
-                aria-label="Follow Remington on GitHub"
-              >
-                <GitHubLogoIcon className="size-5" />
-              </Link>
+        <div className="max-w-4xl mx-auto px-6 py-10 md:py-14">
+          {/* Columns */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+            {/* Product */}
+            <div>
+              <h4 className={cn("text-xs font-semibold uppercase tracking-wider mb-3 transition-colors duration-300",
+                readingMode === 'sepia' ? 'text-amber-800' : 'text-foreground/80')}>
+                {t('footer.product')}
+              </h4>
+              <nav className="flex flex-col gap-2">
+                {[
+                  { href: '/', label: t('navigation.home') },
+                  { href: '/pricing', label: t('navigation.pricing') },
+                  { href: '/blueprint', label: t('navigation.blueprint') },
+                  { href: '/docs', label: t('legal.links.docs') },
+                  { href: '/support', label: t('legal.links.support') },
+                ].map(({ href, label }) => (
+                  <Link key={href} href={href} className={cn("text-xs hover:underline transition-colors",
+                    readingMode === 'sepia' ? 'text-amber-700 hover:text-amber-900' : 'text-muted-foreground hover:text-foreground/80')}>
+                    {label}
+                  </Link>
+                ))}
+              </nav>
             </div>
 
-            {/* Legal Links */}
-            <div className="flex flex-wrap justify-center gap-4 text-xs">
-              <Link
-                href="/privacy"
-                className={cn(
-                  "hover:underline transition-colors",
-                  readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
-                )}
-              >
-                {t('legal.links.privacy')}
-              </Link>
-              <Link
-                href="/cookies"
-                className={cn(
-                  "hover:underline transition-colors",
-                  readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
-                )}
-              >
-                {t('legal.links.cookies')}
-              </Link>
-              <Link
-                href="/terms"
-                className={cn(
-                  "hover:underline transition-colors",
-                  readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
-                )}
-              >
-                {t('legal.links.terms')}
-              </Link>
-              <Link
-                href="/eula"
-                className={cn(
-                  "hover:underline transition-colors",
-                  readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
-                )}
-              >
-                {t('legal.links.eula')}
-              </Link>
-              <Link
-                href="/docs"
-                className={cn(
-                  "hover:underline transition-colors",
-                  readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
-                )}
-              >
-                {t('legal.links.docs')}
-              </Link>
-              <Link
-                href="/support"
-                className={cn(
-                  "hover:underline transition-colors",
-                  readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
-                )}
-              >
-                {t('legal.links.support')}
-              </Link>
-              <Link
-                href="/pricing"
-                className={cn(
-                  "hover:underline transition-colors",
-                  readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground'
-                )}
-              >
-                {t('legal.links.pricing')}
-              </Link>
+            {/* Legal */}
+            <div>
+              <h4 className={cn("text-xs font-semibold uppercase tracking-wider mb-3 transition-colors duration-300",
+                readingMode === 'sepia' ? 'text-amber-800' : 'text-foreground/80')}>
+                {t('footer.legal')}
+              </h4>
+              <nav className="flex flex-col gap-2">
+                {[
+                  { href: '/privacy', label: t('legal.links.privacy') },
+                  { href: '/cookies', label: t('legal.links.cookies') },
+                  { href: '/terms', label: t('legal.links.terms') },
+                  { href: '/eula', label: t('legal.links.eula') },
+                  { href: '/data-deletion', label: t('legal.links.dataDeletion') },
+                ].map(({ href, label }) => (
+                  <Link key={href} href={href} className={cn("text-xs hover:underline transition-colors",
+                    readingMode === 'sepia' ? 'text-amber-700 hover:text-amber-900' : 'text-muted-foreground hover:text-foreground/80')}>
+                    {label}
+                  </Link>
+                ))}
+              </nav>
             </div>
 
-            {/* VC Batch Slogan */}
+            {/* Social */}
+            <div className="col-span-2 md:col-span-1">
+              <h4 className={cn("text-xs font-semibold uppercase tracking-wider mb-3 transition-colors duration-300",
+                readingMode === 'sepia' ? 'text-amber-800' : 'text-foreground/80')}>
+                Social
+              </h4>
+              <div className="flex gap-3 items-center">
+                {[
+                  { href: socialLinks.linkedin, label: 'Follow Remington on LinkedIn', icon: <LinkedInIcon className="size-4" /> },
+                  { href: socialLinks.x, label: 'Follow Remington on X (Twitter)', icon: <XLogoIcon className="size-4" /> },
+                  { href: socialLinks.instagram, label: 'Follow Remington on Instagram', icon: <InstagramLogoIcon className="size-4" /> },
+                  { href: socialLinks.youtube, label: 'Subscribe to Remington on YouTube', icon: <YouTubeIcon className="size-4" /> },
+                  { href: socialLinks.github, label: 'Follow Remington on GitHub', icon: <GitHubLogoIcon className="size-4" /> },
+                ].map(({ href, label, icon }) => (
+                  <Link key={href} target="_blank" href={href} aria-label={label} className={cn(
+                    "p-2 rounded-full transition-all duration-200",
+                    readingMode === 'sepia'
+                      ? "bg-amber-200/50 hover:bg-amber-300/50 text-amber-800"
+                      : "bg-white/10 hover:bg-white/20 text-foreground"
+                  )}>
+                    {icon}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom bar */}
+          <div className={cn(
+            "mt-8 pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-2 transition-colors duration-300",
+            readingMode === 'sepia' ? 'border-amber-200/50' : 'border-border/30'
+          )}>
             <div className={cn("text-xs font-medium transition-colors duration-300",
               readingMode === 'sepia' ? 'text-amber-600' : 'text-foreground/60')}>
-              {t('footer.vcBatch')}
+              {t('footer.tagline')}
             </div>
-
-            {/* Copyright */}
-            <p className={cn("text-sm transition-colors duration-300",
-              readingMode === 'sepia' ? 'text-amber-700' : 'text-muted-foreground')}>
+            <p className={cn("text-xs transition-colors duration-300",
+              readingMode === 'sepia' ? 'text-amber-500' : 'text-foreground/40')}>
               {t('footer.copyright')}
             </p>
           </div>

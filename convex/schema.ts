@@ -133,4 +133,52 @@ export default defineSchema({
     .index("by_email", ["email"])
     .index("by_submission_date", ["submittedAt"])
     .index("by_status", ["status"]),
+
+  leadMagnetLeads: defineTable({
+    // Step 1: Name
+    firstName: v.string(),
+    lastName: v.string(),
+
+    // Step 2: Email
+    email: v.string(),
+
+    // Step 3: Phone
+    countryCode: v.string(),
+    phone: v.string(),
+
+    // Step 4: Shipping Address
+    street: v.string(),
+    city: v.string(),
+    stateRegion: v.string(),
+    countryRegion: v.string(),
+    zip: v.string(),
+
+    // Step 5: Agency Journey
+    clientCount: v.string(),
+    monthlyRevenue: v.string(),
+    teamSize: v.string(),
+
+    // Computed
+    agencyStage: v.union(
+      v.literal("aspiring"),
+      v.literal("starter"),
+      v.literal("growing"),
+      v.literal("scaling"),
+      v.literal("established")
+    ),
+
+    // Email Tracking
+    confirmationEmailSent: v.boolean(),
+    confirmationEmailSentAt: v.optional(v.number()),
+    salesNotificationSent: v.boolean(),
+    salesNotificationSentAt: v.optional(v.number()),
+
+    // System Fields
+    language: v.union(v.literal("en"), v.literal("de")),
+    submittedAt: v.number(),
+    source: v.string(),
+  })
+    .index("by_email", ["email"])
+    .index("by_submission_date", ["submittedAt"])
+    .index("by_agency_stage", ["agencyStage"]),
 });

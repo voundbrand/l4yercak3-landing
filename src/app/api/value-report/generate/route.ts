@@ -273,8 +273,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Sync to backend CRM (contact + organization creation)
-    const CRM_URL = process.env.BACKEND_CRM_URL;
-    const CRM_API_KEY = process.env.BACKEND_CRM_API_KEY;
+    const CRM_URL = process.env.L4YERCAK3_BACKEND_URL;
+    const CRM_API_KEY = process.env.L4YERCAK3_API_KEY;
 
     if (CRM_URL && CRM_API_KEY) {
       try {
@@ -293,6 +293,7 @@ export async function POST(request: NextRequest) {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${CRM_API_KEY}`,
+            'X-Organization-Id': process.env.L4YERCAK3_ORGANIZATION_ID || '',
           },
           body: JSON.stringify({
             subtype: 'lead',

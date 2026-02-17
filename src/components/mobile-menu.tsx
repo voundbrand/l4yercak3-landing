@@ -52,6 +52,7 @@ interface MobileMenuProps {
   language: Language | string;
   setLanguage: (lang: Language) => void;
   variant?: 'hero' | 'content';
+  showCta?: boolean;
 }
 
 export function MobileMenu({
@@ -60,6 +61,7 @@ export function MobileMenu({
   language,
   setLanguage,
   variant = 'content',
+  showCta = true,
 }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
@@ -150,22 +152,62 @@ export function MobileMenu({
                   </Link>
                 </motion.div>
 
-                {/* Start Building CTA */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.15 }}
+                >
+                  <Link
+                    href="/pricing"
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "text-3xl uppercase transition-colors",
+                      readingMode === 'sepia'
+                        ? "text-amber-900 hover:text-amber-700"
+                        : "text-foreground hover:text-primary"
+                    )}
+                  >
+                    {t('navigation.pricing')}
+                  </Link>
+                </motion.div>
+
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="pt-4"
                 >
-                  <Button asChild size="lg" className="text-base px-8">
-                    <a
-                      href="https://app.l4yercak3.com"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {t('common.startBuilding')}
-                    </a>
-                  </Button>
+                  <Link
+                    href="/blueprint"
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "text-3xl uppercase transition-colors",
+                      readingMode === 'sepia'
+                        ? "text-amber-900 hover:text-amber-700"
+                        : "text-foreground hover:text-primary"
+                    )}
+                  >
+                    {t('navigation.blueprint')}
+                  </Link>
                 </motion.div>
+
+                {/* Start Building CTA */}
+                {showCta && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.25 }}
+                    className="pt-4"
+                  >
+                    <Button asChild size="lg" className="text-base px-8">
+                      <a
+                        href="https://app.l4yercak3.com"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {t('common.startBuilding')}
+                      </a>
+                    </Button>
+                  </motion.div>
+                )}
               </div>
 
               {/* Settings Section */}

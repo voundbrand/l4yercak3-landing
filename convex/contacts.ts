@@ -174,8 +174,8 @@ export const syncToCRM = action({
     )),
   },
   handler: async (ctx, args) => {
-    const CRM_URL = process.env.BACKEND_CRM_URL;
-    const CRM_API_KEY = process.env.BACKEND_CRM_API_KEY;
+    const CRM_URL = process.env.L4YERCAK3_BACKEND_URL;
+    const CRM_API_KEY = process.env.L4YERCAK3_API_KEY;
 
     const logPrefix = `[CRM Sync ${args.email}]`;
 
@@ -187,7 +187,7 @@ export const syncToCRM = action({
     if (!CRM_URL || !CRM_API_KEY) {
       const message = "⚠️ CRM integration not configured - skipping sync";
       console.error(`${logPrefix} ${message}`);
-      console.error(`${logPrefix} Missing: ${!CRM_URL ? 'BACKEND_CRM_URL ' : ''}${!CRM_API_KEY ? 'BACKEND_CRM_API_KEY' : ''}`);
+      console.error(`${logPrefix} Missing: ${!CRM_URL ? 'L4YERCAK3_BACKEND_URL ' : ''}${!CRM_API_KEY ? 'L4YERCAK3_API_KEY' : ''}`);
       return { success: false, error: "CRM not configured", logged: message };
     }
 
@@ -216,6 +216,7 @@ export const syncToCRM = action({
         headers: {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${CRM_API_KEY}`,
+          "X-Organization-Id": process.env.L4YERCAK3_ORGANIZATION_ID || "",
         },
         body: JSON.stringify({
           firstName,
