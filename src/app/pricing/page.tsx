@@ -99,8 +99,8 @@ function PricingContent() {
   ];
 
   const renderFeatureValue = (value: string | boolean) => {
-    if (value === true) return <CheckIcon className="size-4 text-green-400" />;
-    if (value === false) return <XIcon className="size-4 opacity-30" />;
+    if (value === true) return <CheckIcon className="size-4 mx-auto text-green-400" />;
+    if (value === false) return <XIcon className="size-4 mx-auto opacity-30" />;
     return <span className="text-sm">{value}</span>;
   };
 
