@@ -8,20 +8,20 @@ export const landingEn = {
   problem: {
     header: "Sound Familiar?",
     graveyard: {
-      title: "\"Every new client means more work for me personally.\"",
-      description: "You're the bottleneck. Answering messages at 10pm. Onboarding each client manually. You're capped at 15-20 clients because there's only one of you — and every new signup means another 5 hours a week you don't have.",
+      title: "\"I lost a customer because I didn't reply fast enough.\"",
+      description: "A message comes in at 9pm. You see it at 7am. By then, they've already booked somewhere else. You're not losing customers because your work is bad — you're losing them because you can't be everywhere at once.",
     },
     loop: {
-      title: "\"I'm paying for 6 tools that don't talk to each other.\"",
-      description: "CRM here. Page builder there. Forms in one place, payments in another, booking somewhere else. €600-1,000/month in software — and you're still the one wiring it all together. Every new client means weeks of setup before they see a single result.",
+      title: "\"I answer the same 10 questions every single day.\"",
+      description: "Hours, pricing, availability, directions, \"do you offer X?\" — the same conversations, over and over. You could write the answers in your sleep. But every one still takes your time, your focus, and your energy.",
     },
     catch22: {
-      title: "\"The platform feels heavy and delay-prone.\"",
-      description: "10-second load times. Menus everywhere. A page builder designed for a different decade. Your \"all-in-one\" platform can't even cancel a subscription without opening Stripe in a separate tab. You're fighting the tool instead of doing the work.",
+      title: "\"My customers expect instant replies. I can't deliver that.\"",
+      description: "They message on WhatsApp at midnight. They expect an answer before lunch. You're one person running a business — not a 24/7 call center. But your customers don't care about your schedule. They care about getting an answer now.",
     },
     stakes: {
       title: "A year from now, what changes?",
-      description: "Without a better system, you'll still be capped at 15 clients. Still onboarding each one manually. Still answering WhatsApp messages at midnight because there's no system handling it for you.\n\nYou'll still be paying for 6 tools that barely work together. Still explaining to clients why their funnel isn't live yet. Still watching your margins shrink every time you add a new software subscription.\n\nYou're building a job, not a business. And the tools you're paying €300/month for were built in 2018. Deep down, you already know: this isn't going to get better.\n\nMeanwhile, the agencies pulling ahead aren't hiring more people. They're deploying AI agents that handle the frontline — and only bring in a human when it actually matters.",
+      description: "Without a system handling customer conversations, you'll still be glued to your phone. Still answering the same questions. Still losing leads to businesses that reply faster.\n\nYour competitors aren't hiring more people. They're deploying AI that handles the frontline — answers instantly, books appointments, follows up — and only involves a human when it actually matters.\n\nThe gap between businesses that respond in 2 minutes and businesses that respond in 2 hours is only getting wider. And it's not about working harder. It's about having something working for you when you can't.",
     },
   },
   guide: {
@@ -397,20 +397,20 @@ export const landingDe = {
   problem: {
     header: "Kommt dir das bekannt vor?",
     graveyard: {
-      title: "\u201eJeder neue Kunde bedeutet mehr Arbeit f\u00fcr mich pers\u00f6nlich.\u201c",
-      description: "Du bist der Flaschenhals. Nachrichten um 22 Uhr beantworten. Jeden Kunden manuell einrichten. Du bist bei 15-20 Kunden gedeckelt, weil es dich nur einmal gibt \u2014 und jeder neue Kunde kostet 5 Stunden pro Woche, die du nicht hast.",
+      title: "\u201eIch habe einen Kunden verloren, weil ich nicht schnell genug geantwortet habe.\u201c",
+      description: "Eine Nachricht kommt um 21 Uhr. Du siehst sie um 7 Uhr morgens. Bis dahin hat der Kunde woanders gebucht. Du verlierst Kunden nicht wegen schlechter Arbeit \u2014 du verlierst sie, weil du nicht \u00fcberall gleichzeitig sein kannst.",
     },
     loop: {
-      title: "\u201eIch bezahle 6 Tools, die nicht miteinander reden.\u201c",
-      description: "CRM hier. Page Builder da. Formulare an einem Ort, Zahlungen wo anders, Buchungen nochmal woanders. \u20ac600-1.000/Monat f\u00fcr Software \u2014 und du bist trotzdem derjenige, der alles zusammenbastelt. Jeder neue Kunde: Wochen Setup, bevor er ein einziges Ergebnis sieht.",
+      title: "\u201eIch beantworte jeden Tag die gleichen 10 Fragen.\u201c",
+      description: "\u00d6ffnungszeiten, Preise, Verf\u00fcgbarkeit, Anfahrt, \u201eBieten Sie X an?\u201c \u2014 dieselben Gespr\u00e4che, immer wieder. Du k\u00f6nntest die Antworten im Schlaf schreiben. Aber jede einzelne kostet dich Zeit, Fokus und Energie.",
     },
     catch22: {
-      title: "\u201eDie Plattform f\u00fchlt sich schwer und langsam an.\u201c",
-      description: "10 Sekunden Ladezeit. Men\u00fcs \u00fcberall. Ein Page Builder aus einem anderen Jahrzehnt. Dein \u201eAlles-in-einem\u201c kann nicht mal ein Abo k\u00fcndigen, ohne Stripe in einem separaten Tab zu \u00f6ffnen. Du k\u00e4mpfst gegen das Tool statt zu arbeiten.",
+      title: "\u201eMeine Kunden erwarten sofortige Antworten. Das kann ich nicht leisten.\u201c",
+      description: "Sie schreiben um Mitternacht auf WhatsApp. Sie erwarten eine Antwort vor dem Mittag. Du bist eine Person, die ein Business f\u00fchrt \u2014 kein 24/7-Callcenter. Aber deinen Kunden ist dein Zeitplan egal. Sie wollen jetzt eine Antwort.",
     },
     stakes: {
       title: "Was \u00e4ndert sich in einem Jahr?",
-      description: "Ohne ein besseres System wirst du immer noch bei 15 Kunden gedeckelt sein. Immer noch jeden einzeln onboarden. Immer noch um Mitternacht WhatsApp-Nachrichten beantworten, weil kein System das für dich übernimmt.\n\nDu wirst immer noch für 6 Tools bezahlen, die kaum zusammenarbeiten. Immer noch Kunden erklären, warum ihr Funnel noch nicht live ist. Immer noch zusehen, wie deine Marge schrumpft mit jedem neuen Software-Abo.\n\nDu baust einen Job, kein Unternehmen. Und die Tools, für die du €300/Monat bezahlst, wurden 2018 gebaut. Tief im Inneren weißt du es: Das wird nicht besser.\n\nDie Agenturen, die vorankommen, stellen keine neuen Leute ein. Sie deployen KI-Agenten, die die Frontline übernehmen — und nur dann einen Menschen einschalten, wenn es wirklich nötig ist.",
+      description: "Ohne ein System, das Kundengespr\u00e4che \u00fcbernimmt, wirst du immer noch an deinem Handy kleben. Immer noch die gleichen Fragen beantworten. Immer noch Leads an Unternehmen verlieren, die schneller antworten.\n\nDeine Konkurrenz stellt nicht mehr Leute ein. Sie deployen KI, die die Frontline \u00fcbernimmt \u2014 sofort antwortet, Termine bucht, nachfasst \u2014 und nur dann einen Menschen einschaltet, wenn es wirklich n\u00f6tig ist.\n\nDer Abstand zwischen Unternehmen, die in 2 Minuten antworten, und solchen, die 2 Stunden brauchen, wird immer gr\u00f6\u00dfer. Und es geht nicht darum, h\u00e4rter zu arbeiten. Es geht darum, etwas zu haben, das f\u00fcr dich arbeitet, wenn du es nicht kannst.",
     },
   },
   guide: {

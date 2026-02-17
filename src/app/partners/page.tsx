@@ -40,6 +40,32 @@ function PartnersContent() {
           </div>
         </section>
 
+        {/* The Pain */}
+        <section>
+          <h2 className={cn("font-serif text-2xl italic mb-6 transition-colors duration-300", theme.headings)}>
+            Sound Familiar?
+          </h2>
+          <div className="space-y-4">
+            <div className={cn("p-4 rounded-lg", theme.quote)}>
+              <h3 className={cn("font-semibold mb-2", theme.headings)}>&ldquo;Every new client means more work for me personally.&rdquo;</h3>
+              <p className={theme.muted}>You&apos;re the bottleneck. Answering messages at 10pm. Onboarding each client manually. You&apos;re capped at 15-20 clients because there&apos;s only one of you — and every new signup means another 5 hours a week you don&apos;t have.</p>
+            </div>
+            <div className={cn("p-4 rounded-lg", theme.quote)}>
+              <h3 className={cn("font-semibold mb-2", theme.headings)}>&ldquo;I&apos;m paying for 6 tools that don&apos;t talk to each other.&rdquo;</h3>
+              <p className={theme.muted}>CRM here. Page builder there. Forms in one place, payments in another, booking somewhere else. &euro;600-1,000/month in software — and you&apos;re still the one wiring it all together. Every new client means weeks of setup before they see a single result.</p>
+            </div>
+            <div className={cn("p-4 rounded-lg", theme.quote)}>
+              <h3 className={cn("font-semibold mb-2", theme.headings)}>&ldquo;The platform feels heavy and delay-prone.&rdquo;</h3>
+              <p className={theme.muted}>10-second load times. Menus everywhere. A page builder designed for a different decade. Your &ldquo;all-in-one&rdquo; platform can&apos;t even cancel a subscription without opening Stripe in a separate tab. You&apos;re fighting the tool instead of doing the work.</p>
+            </div>
+          </div>
+          <div className={cn("mt-6 p-4 rounded-lg border-l-4 border-blue-500", theme.cta)}>
+            <p className={theme.muted}>
+              Without a better system, you&apos;ll still be capped at 15 clients. Still onboarding each one manually. Still watching your margins shrink with every new software subscription. The agencies pulling ahead aren&apos;t hiring more people — they&apos;re deploying AI agents that handle the frontline.
+            </p>
+          </div>
+        </section>
+
         {/* How it works */}
         <section>
           <h2 className={cn("font-serif text-2xl italic mb-6 transition-colors duration-300", theme.headings)}>
