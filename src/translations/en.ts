@@ -26,7 +26,7 @@ export const en = {
   landing: landingEn,
   footer: {
     copyright: "\u00a9 2025 l4yercak3. All rights reserved.",
-    tagline: "AI employees for your clients.",
+    tagline: "AI employees for your business.",
     product: "Product",
     legal: "Legal",
   },
@@ -44,19 +44,19 @@ export const en = {
       free: {
         name: "Free",
         price: "Free",
-        description: "For solo creators deploying their first AI agent.",
+        description: "For your first agent. See how it works.",
         cta: "Get Started Free",
       },
       pro: {
         name: "Pro",
-        description: "For agencies deploying agents across multiple clients.",
+        description: "For teams running multiple agents.",
         cta: "Start Pro",
         badge: "Most popular",
       },
       agency: {
-        name: "Agency",
-        description: "For agencies managing AI workforces at scale.",
-        cta: "Start Agency",
+        name: "Scale",
+        description: "For businesses managing agents at scale.",
+        cta: "Start Scale",
       },
     },
     features: {
@@ -124,7 +124,7 @@ export const en = {
       },
       payment: {
         q: "What payment methods do you accept?",
-        a: "All major credit cards via Stripe. Invoicing available for Agency and Enterprise.",
+        a: "All major credit cards via Stripe. Invoicing available for Scale and Enterprise.",
       },
       cancel: {
         q: "Can I cancel anytime?",

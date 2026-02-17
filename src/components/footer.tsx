@@ -54,6 +54,7 @@ export const Footer = ({ readingMode = 'dark' }: FooterProps) => {
               <Link href="/blueprint" className={linkClass}>{t('navigation.blueprint')}</Link>
               <Link href="/docs" className={linkClass}>{t('legal.links.docs')}</Link>
               <Link href="/support" className={linkClass}>{t('legal.links.support')}</Link>
+              <Link href="/partners" className={linkClass}>Partners</Link>
             </nav>
           </div>
 

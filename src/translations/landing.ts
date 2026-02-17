@@ -1,7 +1,7 @@
 export const landingEn = {
   hero: {
-    headline: "Deploy an AI employee for your client. Live in 15 minutes.",
-    subheadline: "Start a conversation with our agent. It learns your client's business through stories, not forms. Their customers reach it on WhatsApp, Telegram, or your website — 24/7. You set the price.",
+    headline: "An AI employee that learns your business. Live in 15 minutes.",
+    subheadline: "Have a conversation with our agent. Tell it how your business works — through stories, not forms. Your customers get answers on WhatsApp, Telegram, or your website. 24/7.",
     cta: "Start Free",
     ctaSecondary: "See it work",
   },
@@ -40,43 +40,43 @@ export const landingEn = {
     step1: {
       number: "1",
       title: "Have a Conversation",
-      description: "Talk to our onboarding agent. It asks about your client's business — what they do, how they handle customers, what should never be promised. Share a few stories. No forms. No config screens.",
+      description: "Talk to our onboarding agent. It asks about your business — what you do, how you handle customers, what should never be promised. Share a few stories. No forms. No config screens.",
     },
     step2: {
       number: "2",
-      title: "It Builds the Agent",
-      description: "From that conversation, it creates an AI agent with your client's voice, boundaries, and personality. It knows when to help and when to hand off to a human. Review it, tweak it, approve it.",
+      title: "It Builds Your Agent",
+      description: "From that conversation, it creates an AI agent with your voice, your boundaries, your personality. It knows when to help and when to hand off to a human. Review it, tweak it, approve it.",
     },
     step3: {
       number: "3",
-      title: "Deploy & Earn",
-      description: "Your client's agent goes live on WhatsApp, Telegram, web — wherever their customers already are. You set the price. Recurring revenue from day one. The agent gets smarter every week.",
+      title: "Deploy & Go Live",
+      description: "Your agent goes live on WhatsApp, Telegram, web — wherever your customers already are. It handles inquiries 24/7. It gets smarter every week.",
     },
   },
   success: {
     header: "Imagine This Instead",
     timeframe: "After 15 minutes:",
     vision: {
-      item1: "Your client's AI agent is live and handling customer inquiries",
+      item1: "Your AI employee is live and handling customer inquiries",
       item2: "Bookings, FAQs, follow-ups — handled 24/7 without you touching it",
       item3: "The agent knows when something needs a human — and escalates cleanly",
-      item4: "You set the price. Your client pays monthly. You keep the margin.",
+      item4: "You focus on the work that actually needs you",
     },
-    contrast: "You don't need more tools. You don't need more hours. You need an AI employee that learns the business, handles the frontline, and gets smarter every week — without forgetting who it works for.",
+    contrast: "You don't need more tools. You don't need more hours. You need an AI employee that learns your business, handles the frontline, and gets smarter every week — without forgetting who it works for.",
   },
   features: {
-    header: "Everything Your Agents Need. Nothing They Don't.",
+    header: "Everything Your Agent Needs. Nothing It Doesn't.",
     ai: {
       title: "AI Agents That Earn Trust",
-      description: "Each agent starts with your client's stories — not a template. Week 1: it asks about everything. Month 2: it handles 80% independently. It knows when to escalate. You approve every change. It never goes rogue.",
+      description: "Each agent starts with your stories — not a template. Week 1: it asks about everything. Month 2: it handles 80% independently. It knows when to escalate. You approve every change. It never goes rogue.",
     },
     multiTenant: {
-      title: "White-Label Client Portals",
-      description: "Create sub-organisations for each client. Your logo, your colors, your domain. Built-in authentication and user management. Your clients see your brand — you control the experience and the pricing.",
+      title: "Your Brand. Your Domain.",
+      description: "Run everything under your own brand. Your logo, your colors, your domain. Built-in authentication and user management. Your customers see your brand — you control the experience.",
     },
     crm: {
       title: "Contacts & Pipeline",
-      description: "Every lead tracked per client. Segment, tag, follow up. Visual pipeline. Your agency sees all clients from one dashboard — each client sees only their own data.",
+      description: "Every lead tracked and organized. Segment, tag, follow up. Visual pipeline. See everything from one dashboard — manage multiple locations or teams from a single view.",
     },
     builder: {
       title: "Page & Funnel Builder",
@@ -92,11 +92,11 @@ export const landingEn = {
     },
     booking: {
       title: "Booking & Calendar",
-      description: "Self-service booking for your clients' customers. Calendar sync. Automatic confirmations and reminders via email. No more back-and-forth scheduling.",
+      description: "Self-service booking for your customers. Calendar sync. Automatic confirmations and reminders via email. No more back-and-forth scheduling.",
     },
     comms: {
       title: "Multi-Channel Comms",
-      description: "iPhone and Android app for you and your clients. All conversations in one place. WhatsApp Business API and Instagram DM integrations on the roadmap.",
+      description: "iPhone and Android app for you and your team. All conversations in one place. WhatsApp Business API and Instagram DM integrations on the roadmap.",
     },
     integrations: {
       title: "Integrations That Work",
@@ -115,18 +115,18 @@ export const landingEn = {
         { name: "Zapier", status: "coming" },
       ],
     },
-    pricing: "Free to start. Usage-based — pay only for what you use. Pro (€29/mo): more credits, higher limits. Agency plans available for multi-client setups.",
-    note: "No hidden charges. No per-email fees. No surprise invoices. You set your own client pricing — keep the margin.",
+    pricing: "Free to start. Usage-based — pay only for what you use. Pro (€29/mo): more credits, higher limits. Scale plans available for teams managing multiple agents.",
+    note: "No hidden charges. No per-email fees. No surprise invoices. Simple pricing that grows with you.",
   },
   urgencyPill: {
     text: "Free plan available — Deploy Your First Agent Today",
   },
   finalCta: {
-    header: "Your First Client's Agent Can Be Live Today.",
-    push: "Talk to our agent. Deploy your first client's AI employee in 15 minutes.\n\nNo credit card. No onboarding calls. No learning curve.\nHave a conversation. Deploy. Get paid.",
+    header: "Your First Agent Can Be Live Today.",
+    push: "Have a conversation. Deploy your first AI employee in 15 minutes.\n\nNo credit card. No onboarding calls. No learning curve.\nHave a conversation. Deploy. Done.",
     cta: "Start Free",
     ctaSecondary: "See it work",
-    objectionHandler: "Free to start. AI that escalates to humans when unsure — no rogue chatbots. WhatsApp, Telegram, web — every channel. You set your own client pricing. Cancel anytime.",
+    objectionHandler: "Free to start. AI that escalates to humans when unsure — no rogue chatbots. WhatsApp, Telegram, web — every channel. Cancel anytime.",
   },
   affiliate: {
     hero: {
@@ -269,10 +269,10 @@ export const landingEn = {
     },
   },
   blueprint: {
-    headline: "Get Your AI Agent Revenue Blueprint",
-    headlineSuffix: "Tailored to Your Agency's Stage",
-    subheadline: "Answer a few questions. Get a blueprint for deploying AI agents and building recurring revenue.",
-    socialProof: "Built from 5 years running an agency and deploying AI agents for real clients.",
+    headline: "Get Your AI Agent Blueprint",
+    headlineSuffix: "Tailored to Where You Are Right Now",
+    subheadline: "Answer a few questions. Get a blueprint for deploying AI agents and freeing up your time.",
+    socialProof: "Built from 5 years running a business and deploying AI agents for real clients.",
     consent: "By submitting, you agree to receive the Blueprint via email and occasional updates. You can unsubscribe anytime. We respect your privacy and process your data in accordance with GDPR.",
     form: {
       previous: "Previous",
@@ -312,7 +312,7 @@ export const landingEn = {
         cta: "CONTINUE",
       },
       step5: {
-        question: "Where are you in your <strong>agency journey</strong>?",
+        question: "Where are you in your <strong>business journey</strong>?",
         clientCount: "How many clients do you currently manage?",
         clientCountOptions: {
           "0": "No clients yet",
@@ -360,15 +360,15 @@ export const landingEn = {
     },
   },
   linktree: {
-    headline: "AI employees for your clients. Live in 15 minutes.",
-    tagline: "l4yercak3 — Deploy AI agents on WhatsApp, Telegram, web. Set your price. Earn recurring revenue.",
+    headline: "An AI employee that learns your business. Live in 15 minutes.",
+    tagline: "l4yercak3 — Deploy AI agents on WhatsApp, Telegram, web. Your customers get answers 24/7.",
     sections: {
       freeResources: "Free Resources",
     },
     links: {
       platform: {
         title: "Deploy Your First Agent",
-        description: "AI agents that learn your client's business. Free to start.",
+        description: "AI agents that learn your business. Free to start.",
         badge: "Free",
       },
       community: {
@@ -389,8 +389,8 @@ export const landingEn = {
 
 export const landingDe = {
   hero: {
-    headline: "Deploye einen KI-Mitarbeiter für deinen Kunden. Live in 15 Minuten.",
-    subheadline: "Starte ein Gespräch mit unserem Agenten. Er lernt das Business deines Kunden durch Geschichten, nicht Formulare. Die Kunden deines Kunden erreichen ihn auf WhatsApp, Telegram oder deiner Website — 24/7. Du bestimmst den Preis.",
+    headline: "Ein KI-Mitarbeiter, der dein Business lernt. Live in 15 Minuten.",
+    subheadline: "Führe ein Gespräch mit unserem Agenten. Erzähl ihm, wie dein Business funktioniert — durch Geschichten, nicht Formulare. Deine Kunden bekommen Antworten auf WhatsApp, Telegram oder deiner Website. 24/7.",
     cta: "Kostenlos starten",
     ctaSecondary: "So funktioniert's",
   },
@@ -429,43 +429,43 @@ export const landingDe = {
     step1: {
       number: "1",
       title: "Führe ein Gespräch",
-      description: "Sprich mit unserem Onboarding-Agenten. Er fragt nach dem Business deines Kunden — was sie machen, wie sie mit Kunden umgehen, was niemals versprochen werden darf. Erzähl ein paar Geschichten. Keine Formulare. Keine Konfigurationsmasken.",
+      description: "Sprich mit unserem Onboarding-Agenten. Er fragt nach deinem Business — was du machst, wie du mit Kunden umgehst, was niemals versprochen werden darf. Erzähl ein paar Geschichten. Keine Formulare. Keine Konfigurationsmasken.",
     },
     step2: {
       number: "2",
-      title: "Er baut den Agenten",
-      description: "Aus diesem Gespräch erstellt er einen KI-Agenten mit der Stimme, den Grenzen und der Persönlichkeit deines Kunden. Er weiß, wann er helfen und wann er an einen Menschen übergeben soll. Prüfen, anpassen, genehmigen.",
+      title: "Er baut deinen Agenten",
+      description: "Aus diesem Gespräch erstellt er einen KI-Agenten mit deiner Stimme, deinen Grenzen und deiner Persönlichkeit. Er weiß, wann er helfen und wann er an einen Menschen übergeben soll. Prüfen, anpassen, genehmigen.",
     },
     step3: {
       number: "3",
-      title: "Deployen & verdienen",
-      description: "Der Agent deines Kunden geht live auf WhatsApp, Telegram, Web — überall dort, wo seine Kunden schon sind. Du bestimmst den Preis. Wiederkehrende Einnahmen ab Tag eins. Der Agent wird jede Woche schlauer.",
+      title: "Deployen & loslegen",
+      description: "Dein Agent geht live auf WhatsApp, Telegram, Web — überall dort, wo deine Kunden schon sind. Er bearbeitet Anfragen 24/7. Er wird jede Woche schlauer.",
     },
   },
   success: {
     header: "Stell dir das vor",
     timeframe: "Nach 15 Minuten:",
     vision: {
-      item1: "Der KI-Agent deines Kunden ist live und bearbeitet Kundenanfragen",
+      item1: "Dein KI-Mitarbeiter ist live und bearbeitet Kundenanfragen",
       item2: "Buchungen, FAQs, Follow-ups — 24/7 erledigt, ohne dass du etwas tun musst",
       item3: "Der Agent weiß, wann etwas einen Menschen braucht — und eskaliert sauber",
-      item4: "Du bestimmst den Preis. Dein Kunde zahlt monatlich. Du behältst die Marge.",
+      item4: "Du konzentrierst dich auf die Arbeit, die wirklich dich braucht",
     },
-    contrast: "Du brauchst nicht mehr Tools. Du brauchst nicht mehr Stunden. Du brauchst einen KI-Mitarbeiter, der das Business lernt, die Frontline übernimmt und jede Woche schlauer wird — ohne zu vergessen, für wen er arbeitet.",
+    contrast: "Du brauchst nicht mehr Tools. Du brauchst nicht mehr Stunden. Du brauchst einen KI-Mitarbeiter, der dein Business lernt, die Frontline übernimmt und jede Woche schlauer wird — ohne zu vergessen, für wen er arbeitet.",
   },
   features: {
-    header: "Alles, was deine Agenten brauchen. Nichts, was sie nicht brauchen.",
+    header: "Alles, was dein Agent braucht. Nichts, was er nicht braucht.",
     ai: {
       title: "KI-Agenten, die Vertrauen verdienen",
-      description: "Jeder Agent startet mit den Geschichten deines Kunden — nicht mit einem Template. Woche 1: er fragt bei allem nach. Monat 2: er erledigt 80% selbstständig. Er weiß, wann er eskalieren muss. Du genehmigst jede Änderung. Er gerät nie außer Kontrolle.",
+      description: "Jeder Agent startet mit deinen Geschichten — nicht mit einem Template. Woche 1: er fragt bei allem nach. Monat 2: er erledigt 80% selbstständig. Er weiß, wann er eskalieren muss. Du genehmigst jede Änderung. Er gerät nie außer Kontrolle.",
     },
     multiTenant: {
-      title: "White-Label-Kundenportale",
-      description: "Sub-Organisationen f\u00fcr jeden Kunden. Dein Logo, deine Farben, deine Domain. Eingebaute Authentifizierung und Benutzerverwaltung. Deine Kunden sehen deine Marke \u2014 du steuerst die Erfahrung und die Preise.",
+      title: "Deine Marke. Deine Domain.",
+      description: "Alles unter deiner eigenen Marke. Dein Logo, deine Farben, deine Domain. Eingebaute Authentifizierung und Benutzerverwaltung. Deine Kunden sehen deine Marke — du steuerst die Erfahrung.",
     },
     crm: {
       title: "Kontakte & Pipeline",
-      description: "Jeder Lead pro Kunde erfasst. Segmentieren, taggen, nachfassen. Visuelle Pipeline. Deine Agentur sieht alle Kunden \u2014 jeder Kunde sieht nur seine eigenen Daten.",
+      description: "Jeder Lead erfasst und organisiert. Segmentieren, taggen, nachfassen. Visuelle Pipeline. Alles von einem Dashboard aus sehen — mehrere Standorte oder Teams zentral verwalten.",
     },
     builder: {
       title: "Page & Funnel Builder",
@@ -481,11 +481,11 @@ export const landingDe = {
     },
     booking: {
       title: "Buchung & Kalender",
-      description: "Self-Service-Buchung f\u00fcr die Kunden deiner Kunden. Kalender-Sync. Automatische Best\u00e4tigungen und Erinnerungen per E-Mail.",
+      description: "Self-Service-Buchung für deine Kunden. Kalender-Sync. Automatische Bestätigungen und Erinnerungen per E-Mail.",
     },
     comms: {
       title: "Multi-Channel-Kommunikation",
-      description: "iPhone- und Android-App f\u00fcr dich und deine Kunden. Alle Gespr\u00e4che an einem Ort. WhatsApp Business API und Instagram DM auf der Roadmap.",
+      description: "iPhone- und Android-App für dich und dein Team. Alle Gespräche an einem Ort. WhatsApp Business API und Instagram DM auf der Roadmap.",
     },
     integrations: {
       title: "Integrationen, die funktionieren",
@@ -504,25 +504,25 @@ export const landingDe = {
         { name: "Zapier", status: "coming" },
       ],
     },
-    pricing: "Kostenlos starten. Nutzungsbasiert \u2014 zahle nur, was du nutzt. Pro (\u20ac29/Mo): mehr Credits, h\u00f6here Limits. Agentur-Pl\u00e4ne f\u00fcr Multi-Kunden-Setups verf\u00fcgbar.",
-    note: "Keine versteckten Geb\u00fchren. Keine Pro-E-Mail-Kosten. Keine \u00dcberraschungsrechnungen. Du bestimmst deine Kundenpreise \u2014 die Marge beh\u00e4ltst du.",
+    pricing: "Kostenlos starten. Nutzungsbasiert — zahle nur, was du nutzt. Pro (€29/Mo): mehr Credits, höhere Limits. Scale-Pläne für Teams mit mehreren Agenten verfügbar.",
+    note: "Keine versteckten Gebühren. Keine Pro-E-Mail-Kosten. Keine Überraschungsrechnungen. Einfache Preise, die mit dir wachsen.",
   },
   urgencyPill: {
     text: "Kostenloser Plan verfügbar — Ersten Agenten heute deployen",
   },
   finalCta: {
-    header: "Der erste Agent deines Kunden kann heute live sein.",
-    push: "Sprich mit unserem Agenten. Deploye den ersten KI-Mitarbeiter deines Kunden in 15 Minuten.\n\nKeine Kreditkarte. Keine Onboarding-Calls. Keine Lernkurve.\nEin Gespräch führen. Deployen. Verdienen.",
+    header: "Dein erster Agent kann heute live sein.",
+    push: "Führe ein Gespräch. Deploye deinen ersten KI-Mitarbeiter in 15 Minuten.\n\nKeine Kreditkarte. Keine Onboarding-Calls. Keine Lernkurve.\nEin Gespräch führen. Deployen. Fertig.",
     cta: "Kostenlos starten",
     ctaSecondary: "So funktioniert's",
-    objectionHandler: "Kostenlos starten. KI, die bei Unsicherheit an Menschen eskaliert — keine unkontrollierten Chatbots. WhatsApp, Telegram, Web — jeder Kanal. Du bestimmst deine Kundenpreise. Jederzeit kündbar.",
+    objectionHandler: "Kostenlos starten. KI, die bei Unsicherheit an Menschen eskaliert — keine unkontrollierten Chatbots. WhatsApp, Telegram, Web — jeder Kanal. Jederzeit kündbar.",
   },
   affiliate: {} as typeof landingEn.affiliate,
   blueprint: {
-    headline: "Dein KI-Agent Revenue Blueprint",
-    headlineSuffix: "Zugeschnitten auf die Phase deiner Agentur",
-    subheadline: "Beantworte ein paar Fragen. Bekomme einen Blueprint für den Einsatz von KI-Agenten und den Aufbau wiederkehrender Einnahmen.",
-    socialProof: "Entstanden aus 5 Jahren eigener Agentur und dem Einsatz von KI-Agenten für echte Kunden.",
+    headline: "Dein KI-Agent Blueprint",
+    headlineSuffix: "Zugeschnitten auf deine aktuelle Situation",
+    subheadline: "Beantworte ein paar Fragen. Bekomme einen Blueprint für den Einsatz von KI-Agenten und mehr freie Zeit.",
+    socialProof: "Entstanden aus 5 Jahren eigenem Business und dem Einsatz von KI-Agenten für echte Kunden.",
     consent: "Mit der Einsendung stimmst du zu, den Blueprint per E-Mail und gelegentliche Updates zu erhalten. Du kannst dich jederzeit abmelden. Wir respektieren deine Privatsph\u00e4re und verarbeiten deine Daten DSGVO-konform.",
     form: {
       previous: "Zur\u00fcck",
@@ -562,7 +562,7 @@ export const landingDe = {
         cta: "WEITER",
       },
       step5: {
-        question: "Wo stehst du auf deiner <strong>Agentur-Reise</strong>?",
+        question: "Wo stehst du auf deiner <strong>Business-Reise</strong>?",
         clientCount: "Wie viele Kunden betreust du aktuell?",
         clientCountOptions: {
           "0": "Noch keine Kunden",
@@ -610,15 +610,15 @@ export const landingDe = {
     },
   },
   linktree: {
-    headline: "KI-Mitarbeiter für deine Kunden. Live in 15 Minuten.",
-    tagline: "l4yercak3 — Deploye KI-Agenten auf WhatsApp, Telegram, Web. Bestimme deinen Preis. Verdiene wiederkehrende Einnahmen.",
+    headline: "Ein KI-Mitarbeiter, der dein Business lernt. Live in 15 Minuten.",
+    tagline: "l4yercak3 — Deploye KI-Agenten auf WhatsApp, Telegram, Web. Deine Kunden bekommen 24/7 Antworten.",
     sections: {
       freeResources: "Kostenlose Ressourcen",
     },
     links: {
       platform: {
         title: "Ersten Agenten deployen",
-        description: "KI-Agenten, die das Business deines Kunden lernen. Kostenlos starten.",
+        description: "KI-Agenten, die dein Business lernen. Kostenlos starten.",
         badge: "Kostenlos",
       },
       community: {

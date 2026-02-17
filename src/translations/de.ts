@@ -26,7 +26,7 @@ export const de = {
   landing: landingDe,
   footer: {
     copyright: "\u00a9 2025 l4yercak3. Alle Rechte vorbehalten.",
-    tagline: "KI-Mitarbeiter für deine Kunden.",
+    tagline: "KI-Mitarbeiter für dein Business.",
     product: "Produkt",
     legal: "Rechtliches",
   },
@@ -44,19 +44,19 @@ export const de = {
       free: {
         name: "Free",
         price: "Kostenlos",
-        description: "Für Solo-Kreative, die ihren ersten KI-Agenten deployen.",
+        description: "Für deinen ersten Agenten. Sieh, wie es funktioniert.",
         cta: "Kostenlos starten",
       },
       pro: {
         name: "Pro",
-        description: "Für Agenturen, die Agenten für mehrere Kunden deployen.",
+        description: "Für Teams mit mehreren Agenten.",
         cta: "Pro starten",
         badge: "Beliebteste Wahl",
       },
       agency: {
-        name: "Agency",
-        description: "Für Agenturen, die KI-Workforces im großen Maßstab verwalten.",
-        cta: "Agency starten",
+        name: "Scale",
+        description: "Für Unternehmen, die Agenten im großen Maßstab verwalten.",
+        cta: "Scale starten",
       },
     },
     features: {
@@ -124,7 +124,7 @@ export const de = {
       },
       payment: {
         q: "Welche Zahlungsmethoden akzeptiert ihr?",
-        a: "Alle g\u00e4ngigen Kreditkarten \u00fcber Stripe. Rechnungsstellung f\u00fcr Agency und Enterprise verf\u00fcgbar.",
+        a: "Alle gängigen Kreditkarten über Stripe. Rechnungsstellung für Scale und Enterprise verfügbar.",
       },
       cancel: {
         q: "Kann ich jederzeit k\u00fcndigen?",

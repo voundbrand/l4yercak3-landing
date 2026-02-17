@@ -245,6 +245,7 @@ export function ContentPageLayout({
                   { href: '/blueprint', label: t('navigation.blueprint') },
                   { href: '/docs', label: t('legal.links.docs') },
                   { href: '/support', label: t('legal.links.support') },
+                  { href: '/partners', label: 'Partners' },
                 ].map(({ href, label }) => (
                   <Link key={href} href={href} className={cn("text-xs hover:underline transition-colors",
                     readingMode === 'sepia' ? 'text-amber-700 hover:text-amber-900' : 'text-muted-foreground hover:text-foreground/80')}>

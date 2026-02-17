@@ -132,7 +132,7 @@ function DocsContent() {
           About l4yercak3
         </h2>
         <p className={cn("text-lg leading-relaxed", theme.content)}>
-          l4yercak3 is an AI agent platform for agencies. Deploy AI employees for your clients — agents that learn the business through conversation, handle customer inquiries on any channel, and get smarter every week. Built for agencies and freelancers who want recurring revenue without recurring effort.
+          l4yercak3 is an AI agent platform for businesses that talk to customers. Deploy an AI employee that learns your business through conversation, handles customer inquiries on any channel, and gets smarter every week. Built for teams who want to spend less time answering the same questions — and more time doing the work that matters.
         </p>
       </section>
 
@@ -144,19 +144,19 @@ function DocsContent() {
         <div className="space-y-4">
           <div className={cn("p-4 rounded-lg", theme.quote)}>
             <h3 className={cn("font-semibold mb-2", theme.headings)}>Conversational Onboarding</h3>
-            <p className={theme.muted}>Set up a client&apos;s AI agent through a conversation, not a form. Share stories about how the business works. The agent builds itself.</p>
+            <p className={theme.muted}>Set up your AI agent through a conversation, not a form. Share stories about how your business works. The agent builds itself.</p>
           </div>
           <div className={cn("p-4 rounded-lg", theme.quote)}>
             <h3 className={cn("font-semibold mb-2", theme.headings)}>Multi-Channel Deployment</h3>
-            <p className={theme.muted}>Deploy agents on WhatsApp, Telegram, web chat, or any channel your client&apos;s customers already use.</p>
+            <p className={theme.muted}>Deploy agents on WhatsApp, Telegram, web chat, or any channel your customers already use.</p>
           </div>
           <div className={cn("p-4 rounded-lg", theme.quote)}>
             <h3 className={cn("font-semibold mb-2", theme.headings)}>Graduated Autonomy</h3>
             <p className={theme.muted}>Agents start cautious and earn independence over time. You approve every change. They never go rogue.</p>
           </div>
           <div className={cn("p-4 rounded-lg", theme.quote)}>
-            <h3 className={cn("font-semibold mb-2", theme.headings)}>White-Label & CRM</h3>
-            <p className={theme.muted}>Full platform with CRM, payments, booking, email, and white-label client portals under your brand.</p>
+            <h3 className={cn("font-semibold mb-2", theme.headings)}>Your Brand & CRM</h3>
+            <p className={theme.muted}>Full platform with CRM, payments, booking, email — everything runs under your brand on your domain.</p>
           </div>
         </div>
       </section>

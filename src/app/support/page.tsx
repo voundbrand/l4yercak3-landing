@@ -64,10 +64,10 @@ function SupportContent() {
             <div className="space-y-6 mt-6">
               <div>
                 <h3 className={cn("text-xl font-semibold mb-2", theme.headings)}>
-                  How do I create an AI agent for my client?
+                  How do I create an AI agent?
                 </h3>
                 <p className={theme.muted}>
-                  Start a conversation with our onboarding agent. It will ask about your client&apos;s business and build the agent from your answers. No forms or configuration needed.
+                  Start a conversation with our onboarding agent. It will ask about your business and build the agent from your answers. No forms or configuration needed.
                 </p>
               </div>
 
@@ -94,7 +94,7 @@ function SupportContent() {
                   Does the agent get smarter over time?
                 </h3>
                 <p className={theme.muted}>
-                  Yes. The agent observes its own conversations, proposes improvements, and waits for your approval before changing anything. It gets better every week without losing the client&apos;s voice.
+                  Yes. The agent observes its own conversations, proposes improvements, and waits for your approval before changing anything. It gets better every week without losing your voice.
                 </p>
               </div>
             </div>
@@ -148,7 +148,7 @@ function SupportContent() {
                   Do you offer enterprise plans?
                 </h3>
                 <p className={theme.muted}>
-                  Yes, we offer custom enterprise solutions and white-label partnerships. Contact us for more information.
+                  Yes, we offer custom enterprise solutions. Contact us for more information.
                 </p>
               </div>
 
