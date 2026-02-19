@@ -143,7 +143,7 @@ export class BasePDFTemplate {
     this.doc.text('L4YERCAK3 - Modern Automation Solutions', this.config.margins.left, footerY);
     
     // Contact info in center
-    const contactInfo = 'info@l4yercak3.com | www.l4yercak3.com';
+    const contactInfo = 'support@l4yercak3.com | www.l4yercak3.com';
     const contactWidth = this.doc.getTextWidth(contactInfo);
     this.doc.text(
       contactInfo,

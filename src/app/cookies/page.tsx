@@ -142,8 +142,8 @@ function CookiesContent() {
             </h2>
             <p>
               Contact us at{' '}
-              <a href="mailto:hello@l4yercak3.com" className="underline hover:opacity-80 transition-opacity">
-                hello@l4yercak3.com
+              <a href="mailto:support@l4yercak3.com" className="underline hover:opacity-80 transition-opacity">
+                support@l4yercak3.com
               </a>
             </p>
           </section>

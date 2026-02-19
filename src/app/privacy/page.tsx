@@ -49,7 +49,7 @@ function PrivacyContent() {
               <p>Am Markt 11</p>
               <p>17309 Pasewalk</p>
               <p>Germany</p>
-              <p>Email: info@voundbrand.com</p>
+              <p>Email: support@l4yercak3.com</p>
               <p>UST-ID: DE293728593</p>
             </div>
             <p className="mt-4">
@@ -188,7 +188,7 @@ function PrivacyContent() {
             <p>If you have any questions about this Privacy Policy, please contact us at:</p>
             <div className={cn("p-4 rounded-lg mt-4", theme.quote)}>
               <p className="font-semibold">Vound Brand UG (haftungsbeschränkt)</p>
-              <p>Email: info@voundbrand.com</p>
+              <p>Email: support@l4yercak3.com</p>
             </div>
           </section>
 

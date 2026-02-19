@@ -11,7 +11,7 @@ export const legalEn = {
       address: "Am Markt 11",
       city: "17309 Pasewalk",
       country: "Germany",
-      email: "info@voundbrand.com",
+      email: "support@l4yercak3.com",
       vatId: "UST-ID: DE293728593",
     },
   },
@@ -193,7 +193,7 @@ export const legalEn = {
         title: "9. Right of Withdrawal (Widerrufsbelehrung)",
         content: "If you are a consumer (Verbraucher) within the meaning of § 13 BGB, you have a statutory right of withdrawal.",
         boxTitle: "Right of Withdrawal",
-        boxContent: "You have the right to withdraw from this contract within 14 days without giving any reason. The withdrawal period will expire after 14 days from the day of the conclusion of the contract. To exercise the right of withdrawal, you must inform us (Vound Brand UG (haftungsbeschränkt), Am Markt 11, 17309 Pasewalk, info@voundbrand.com) of your decision to withdraw from this contract by an unequivocal statement (e.g., a letter sent by post or e-mail).",
+        boxContent: "You have the right to withdraw from this contract within 14 days without giving any reason. The withdrawal period will expire after 14 days from the day of the conclusion of the contract. To exercise the right of withdrawal, you must inform us (Vound Brand UG (haftungsbeschränkt), Am Markt 11, 17309 Pasewalk, support@l4yercak3.com) of your decision to withdraw from this contract by an unequivocal statement (e.g., a letter sent by post or e-mail).",
         effectsTitle: "Effects of Withdrawal",
         effectsContent: "If you withdraw from this contract, we shall reimburse to you all payments received from you, including the costs of delivery, without undue delay and in any event not later than 14 days from the day on which we are informed about your decision to withdraw from this contract.",
       },
@@ -400,7 +400,7 @@ export const legalEn = {
         content: "You can request the deletion of your data at any time using one of the following methods:",
         emailOption: {
           title: "Option 1: Email Request",
-          content: "Send an email to info@voundbrand.com with the subject line \"Data Deletion Request\". Please include:",
+          content: "Send an email to support@l4yercak3.com with the subject line \"Data Deletion Request\". Please include:",
           items: [
             "Your full name",
             "The email address associated with your account",
@@ -437,7 +437,7 @@ export const legalEn = {
       },
       statusCheck: {
         title: "6. Check Deletion Status",
-        content: "To check the status of your data deletion request, email info@voundbrand.com with the subject line \"Deletion Status Check\" and include the email address used in your original request. We will respond with the current status within 48 business hours.",
+        content: "To check the status of your data deletion request, email support@l4yercak3.com with the subject line \"Deletion Status Check\" and include the email address used in your original request. We will respond with the current status within 48 business hours.",
       },
       legalBasis: {
         title: "7. Legal Basis",
@@ -473,7 +473,7 @@ export const legalDe = {
       address: "Am Markt 11",
       city: "17309 Pasewalk",
       country: "Deutschland",
-      email: "info@voundbrand.com",
+      email: "support@l4yercak3.com",
       vatId: "UST-ID: DE293728593",
     },
   },
@@ -655,7 +655,7 @@ export const legalDe = {
         title: "9. Widerrufsbelehrung",
         content: "Wenn Sie ein Verbraucher im Sinne von § 13 BGB sind, haben Sie ein gesetzliches Widerrufsrecht.",
         boxTitle: "Widerrufsrecht",
-        boxContent: "Sie haben das Recht, binnen 14 Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt 14 Tage ab dem Tag des Vertragsabschlusses. Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (Vound Brand UG (haftungsbeschränkt), Am Markt 11, 17309 Pasewalk, info@voundbrand.com) mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren.",
+        boxContent: "Sie haben das Recht, binnen 14 Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt 14 Tage ab dem Tag des Vertragsabschlusses. Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (Vound Brand UG (haftungsbeschränkt), Am Markt 11, 17309 Pasewalk, support@l4yercak3.com) mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren.",
         effectsTitle: "Folgen des Widerrufs",
         effectsContent: "Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten, unverzüglich und spätestens binnen 14 Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist.",
       },
@@ -862,7 +862,7 @@ export const legalDe = {
         content: "Sie können die Löschung Ihrer Daten jederzeit auf einem der folgenden Wege beantragen:",
         emailOption: {
           title: "Option 1: E-Mail-Anfrage",
-          content: "Senden Sie eine E-Mail an info@voundbrand.com mit dem Betreff \"Antrag auf Datenlöschung\". Bitte geben Sie Folgendes an:",
+          content: "Senden Sie eine E-Mail an support@l4yercak3.com mit dem Betreff \"Antrag auf Datenlöschung\". Bitte geben Sie Folgendes an:",
           items: [
             "Ihren vollständigen Namen",
             "Die mit Ihrem Konto verknüpfte E-Mail-Adresse",
@@ -899,7 +899,7 @@ export const legalDe = {
       },
       statusCheck: {
         title: "6. Löschstatus prüfen",
-        content: "Um den Status Ihres Löschantrags zu überprüfen, senden Sie eine E-Mail an info@voundbrand.com mit dem Betreff \"Löschstatus-Abfrage\" und geben Sie die E-Mail-Adresse an, die Sie in Ihrem ursprünglichen Antrag verwendet haben. Wir antworten innerhalb von 48 Geschäftsstunden mit dem aktuellen Status.",
+        content: "Um den Status Ihres Löschantrags zu überprüfen, senden Sie eine E-Mail an support@l4yercak3.com mit dem Betreff \"Löschstatus-Abfrage\" und geben Sie die E-Mail-Adresse an, die Sie in Ihrem ursprünglichen Antrag verwendet haben. Wir antworten innerhalb von 48 Geschäftsstunden mit dem aktuellen Status.",
       },
       legalBasis: {
         title: "7. Rechtsgrundlage",

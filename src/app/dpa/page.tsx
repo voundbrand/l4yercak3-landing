@@ -157,7 +157,7 @@ function DPAContent() {
             </div>
             <div className={cn("p-4 rounded-lg mt-4", theme.quote)}>
               <p className="font-semibold">Annex 2: List of Subprocessors</p>
-              <p className="mt-2">Current list available upon request at info@voundbrand.com</p>
+              <p className="mt-2">Current list available upon request at support@l4yercak3.com</p>
             </div>
           </section>
 

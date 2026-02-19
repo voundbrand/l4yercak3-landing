@@ -127,7 +127,7 @@ function TermsContent() {
             <p>If you are a consumer (<em>Verbraucher</em>) within the meaning of § 13 BGB, you have a statutory right of withdrawal.</p>
             <div className={cn("p-4 rounded-lg mt-4", theme.quote)}>
               <p className="font-semibold">Right of Withdrawal</p>
-              <p className="mt-2">You have the right to withdraw from this contract within 14 days without giving any reason. The withdrawal period will expire after 14 days from the day of the conclusion of the contract. To exercise the right of withdrawal, you must inform us (Vound Brand UG (haftungsbeschränkt), Am Markt 11, 17309 Pasewalk, info@voundbrand.com) of your decision to withdraw from this contract by an unequivocal statement (e.g., a letter sent by post or e-mail).</p>
+              <p className="mt-2">You have the right to withdraw from this contract within 14 days without giving any reason. The withdrawal period will expire after 14 days from the day of the conclusion of the contract. To exercise the right of withdrawal, you must inform us (Vound Brand UG (haftungsbeschränkt), Am Markt 11, 17309 Pasewalk, support@l4yercak3.com) of your decision to withdraw from this contract by an unequivocal statement (e.g., a letter sent by post or e-mail).</p>
               <p className="mt-2 font-semibold">Effects of Withdrawal</p>
               <p className="mt-2">If you withdraw from this contract, we shall reimburse to you all payments received from you, including the costs of delivery, without undue delay and in any event not later than 14 days from the day on which we are informed about your decision to withdraw from this contract.</p>
             </div>
@@ -163,7 +163,7 @@ function TermsContent() {
               <p>Am Markt 11</p>
               <p>17309 Pasewalk</p>
               <p>Germany</p>
-              <p>Email: info@voundbrand.com</p>
+              <p>Email: support@l4yercak3.com</p>
             </div>
           </section>
 

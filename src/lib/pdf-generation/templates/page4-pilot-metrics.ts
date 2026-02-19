@@ -281,12 +281,12 @@ export class PilotMetricsTemplate extends BasePDFTemplate {
     const contactInfo = language === 'de' 
       ? [
           'Kontaktieren Sie uns für eine kostenlose Pilot-Bewertung:',
-          'E-Mail: sales@l4yercak3.com',
+          'E-Mail: support@l4yercak3.com',
           'Oder antworten Sie direkt auf diese E-Mail'
         ]
       : [
           'Contact us for a free pilot assessment:',
-          'Email: sales@l4yercak3.com',
+          'Email: support@l4yercak3.com',
           'Or reply directly to this email'
         ];
     

@@ -187,7 +187,7 @@ function EULAContent() {
               <p>Am Markt 11</p>
               <p>17309 Pasewalk</p>
               <p>Germany</p>
-              <p>Email: info@voundbrand.com</p>
+              <p>Email: support@l4yercak3.com</p>
             </div>
           </section>
 

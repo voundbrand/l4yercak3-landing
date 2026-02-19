@@ -161,7 +161,7 @@ function ResellerContent() {
             Contact us to discuss partnership opportunities and receive a customized agreement.
           </p>
           <a
-            href="mailto:info@voundbrand.com?subject=Reseller%20Partnership%20Inquiry"
+            href="mailto:support@l4yercak3.com?subject=Reseller%20Partnership%20Inquiry"
             className={cn("inline-block px-6 py-3 rounded-lg font-semibold transition-all hover:opacity-80",
               "bg-foreground text-background"
             )}

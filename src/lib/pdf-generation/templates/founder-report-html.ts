@@ -289,7 +289,7 @@ export const FOUNDER_REPORT_HTML = `
                 </div>
                 <div class="contact-info">
                     <div>l4yercak3.com</div>
-                    <div>hello@l4yercak3.com</div>
+                    <div>support@l4yercak3.com</div>
                 </div>
             </div>
         </div>

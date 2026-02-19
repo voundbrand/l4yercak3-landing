@@ -36,10 +36,10 @@ function SupportContent() {
                   For general inquiries, technical issues, or feature requests.
                 </p>
                 <a
-                  href="mailto:info@voundbrand.com"
+                  href="mailto:support@l4yercak3.com"
                   className="inline-block mt-4 underline hover:opacity-80 transition-opacity"
                 >
-                  info@voundbrand.com
+                  support@l4yercak3.com
                 </a>
               </div>
 
@@ -49,7 +49,7 @@ function SupportContent() {
                   Schedule a call for personalized assistance or partnership discussions.
                 </p>
                 <Button asChild size="sm">
-                  <a href="mailto:info@voundbrand.com">Contact Us</a>
+                  <a href="mailto:support@l4yercak3.com">Contact Us</a>
                 </Button>
               </div>
             </div>
@@ -210,7 +210,7 @@ function SupportContent() {
               <p>17309 Pasewalk</p>
               <p>Germany</p>
               <p className="mt-4">UST-ID: DE293728593</p>
-              <p>Email: info@voundbrand.com</p>
+              <p>Email: support@l4yercak3.com</p>
             </div>
           </section>
 

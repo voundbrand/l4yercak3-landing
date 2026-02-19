@@ -104,7 +104,7 @@ export function generateApplicationCustomerEmail(
           Bei Fragen können Sie uns gerne kontaktieren:
         </p>
         <p style="margin: 0; font-size: 14px; color: #64748b;">
-          📧 <a href="mailto:remington@l4yercak3.com" style="color: #2563eb; text-decoration: none;">remington@l4yercak3.com</a>
+          📧 <a href="mailto:support@l4yercak3.com" style="color: #2563eb; text-decoration: none;">support@l4yercak3.com</a>
         </p>
       </div>
     </div>
@@ -191,7 +191,7 @@ export function generateApplicationCustomerEmail(
           If you have any questions, feel free to reach out:
         </p>
         <p style="margin: 0; font-size: 14px; color: #64748b;">
-          📧 <a href="mailto:remington@l4yercak3.com" style="color: #2563eb; text-decoration: none;">remington@l4yercak3.com</a>
+          📧 <a href="mailto:support@l4yercak3.com" style="color: #2563eb; text-decoration: none;">support@l4yercak3.com</a>
         </p>
       </div>
     </div>

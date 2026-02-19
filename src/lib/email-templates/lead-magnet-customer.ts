@@ -102,7 +102,7 @@ export function generateLeadMagnetCustomerEmail(
 
       <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid #e5e7eb;">
         <p style="margin: 0; font-size: 14px; color: #64748b;">
-          Bei Fragen: <a href="mailto:remington@l4yercak3.com" style="color: #2563eb; text-decoration: none;">remington@l4yercak3.com</a>
+          Bei Fragen: <a href="mailto:support@l4yercak3.com" style="color: #2563eb; text-decoration: none;">support@l4yercak3.com</a>
         </p>
       </div>
     </div>
@@ -195,7 +195,7 @@ export function generateLeadMagnetCustomerEmail(
 
       <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid #e5e7eb;">
         <p style="margin: 0; font-size: 14px; color: #64748b;">
-          Questions? <a href="mailto:remington@l4yercak3.com" style="color: #2563eb; text-decoration: none;">remington@l4yercak3.com</a>
+          Questions? <a href="mailto:support@l4yercak3.com" style="color: #2563eb; text-decoration: none;">support@l4yercak3.com</a>
         </p>
       </div>
     </div>

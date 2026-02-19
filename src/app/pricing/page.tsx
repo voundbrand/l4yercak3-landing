@@ -227,7 +227,7 @@ function PricingContent() {
           {t('pricing.enterprise.description')}
         </p>
         <Button asChild>
-          <a href="mailto:hello@l4yercak3.com">{t('pricing.enterprise.cta')}</a>
+          <a href="mailto:support@l4yercak3.com">{t('pricing.enterprise.cta')}</a>
         </Button>
       </div>
 

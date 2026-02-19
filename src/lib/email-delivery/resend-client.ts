@@ -229,7 +229,7 @@ export function getSalesTeamEmail(): string {
 
   if (!salesEmail) {
     console.warn('SALES_EMAIL environment variable not set, using default');
-    return 'remington@l4yercak3.com';
+    return 'support@l4yercak3.com';
   }
 
   // Clean email: remove whitespace, newlines, etc.
@@ -244,7 +244,7 @@ export function getReplyToEmail(): string {
 
   if (!replyToEmail) {
     console.warn('REPLY_TO_EMAIL environment variable not set, using default');
-    return 'remington@l4yercak3.com';
+    return 'support@l4yercak3.com';
   }
 
   // Clean email: remove whitespace, newlines, etc.
